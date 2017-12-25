@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    quill:
+        restart: always
+        build: ./quill
+        command: gulp server
+        expose:
+            - "3000"
+        env_file: .env.config
+        volumes:
+            - ./quill:/code
+            - /code/node_modules
+
+    nginx:
+        restart: always
+        build: ./nginx
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - quill:quill
