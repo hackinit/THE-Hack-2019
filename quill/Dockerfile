@@ -8,6 +8,7 @@ WORKDIR /code
 ADD package.json /code/
 ADD bower.json /code/
 ADD app.json /code/
+ADD .env.config /code/
 
 RUN npm install -g bower
 
