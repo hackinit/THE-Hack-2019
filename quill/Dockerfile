@@ -9,8 +9,7 @@ ADD package.json /code/
 ADD bower.json /code/
 ADD app.json /code/
 
-RUN apt-get -qq update
-RUN apt-get -qq -y install bower
+RUN npm install -g bower
 
 RUN npm install
 RUN bower install
