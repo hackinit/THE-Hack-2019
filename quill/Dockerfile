@@ -12,7 +12,7 @@ ADD app.json /code/
 RUN npm install -g bower
 
 RUN npm install
-RUN bower install
+RUN bower install --allow-root
 RUN npm run config
 
 ADD . /code/
