@@ -1,13 +1,22 @@
 version: '2'
 
 services:
+    mongo:
+        restart: always
+        image: mongo:3.0.15-wheezy
+        expose:
+            - "27017"
+        volumes:
+            - ../db:/data/db
+
     quill:
         restart: always
         build: ./quill
         command: gulp server
         expose:
             - "3000"
-        network_mode: host
+        links:
+            - mongo:mongo
 
     nginx:
         restart: always
