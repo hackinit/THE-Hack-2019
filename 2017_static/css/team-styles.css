@@ -1,0 +1,136 @@
+body {
+    font-family: 'Lato';
+}
+
+.darkgrey-background {
+    background-color: #252525;
+}
+
+.horizontal-center {
+    text-align: center;
+}
+
+.navbar-brand-logo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar-brand-logo img {
+    width: 40px;
+}
+
+.navbar-brand-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: -15px;
+    line-height: 20px;
+}
+
+#team {
+    width: 970px;
+    max-width: 100%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.content-text {
+    padding-top: 50px;
+    width: 83.333333%;
+    margin: 0 auto;
+}
+
+.content-text p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hi-team {
+    width: 150px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.hi-team-img {
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.hi-team-img img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.hi-team-content {
+    min-height: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.hi-team-name {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.hi-team-role {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.hi-team-link a {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.hi-team-link a:hover, .hi-team-link a:focus {
+    text-decoration: none;
+}
+
+#advisors-title-row {
+    padding-top: 50px;
+}
+
+.advisor-bio {
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.advisor-bio img {
+    width: 180px;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 50%;
+    display: block;
+}
+
+.advisor-bio h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.advisor-bio p {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.footer {
+    color: #888;
+    font-size: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+.footer p a, .footer p a:hover {
+    color: white;
+    text-decoration: none;
+}
