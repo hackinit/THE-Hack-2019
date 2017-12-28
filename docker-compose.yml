@@ -37,5 +37,6 @@ services:
             - "443:443"
         links:
             - quill:quill
+            - 2017_marko:2017_marko
         volumes_from:
             - 2017_static
