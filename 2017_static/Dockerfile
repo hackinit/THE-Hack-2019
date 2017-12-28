@@ -1,5 +1,6 @@
-FROM nginx:latest
+FROM nginx:1.13.7
 
 MAINTAINER Yuchong Pan <panyuchong@gmail.com>
 
-ADD . /usr/share/static
+RUN mkdir /usr/share/2017_static
+ADD . /usr/share/2017_static

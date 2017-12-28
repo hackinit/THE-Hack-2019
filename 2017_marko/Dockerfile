@@ -1,4 +1,5 @@
-FROM node:7-alpine
+FROM node:9.3.0
+
 MAINTAINER Yuchong Pan <panyuchong@gmail.com>
 
 RUN mkdir /code
