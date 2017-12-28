@@ -28,8 +28,6 @@ services:
     2017_static:
         restart: always
         build: ./2017/static
-        volumes:
-            - ./static:/usr/share/static
 
     nginx:
         restart: always
