@@ -9,6 +9,7 @@ ADD package.json /code/
 ADD bower.json /code/
 ADD app.json /code/
 ADD .env.config /code/
+ADD .bowerrc /code/
 
 RUN npm install -g bower
 RUN npm install -g gulp
