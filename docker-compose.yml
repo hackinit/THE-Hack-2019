@@ -7,10 +7,6 @@ services:
         command: gulp server
         expose:
             - "3000"
-        env_file: ./quill/.env.config
-        volumes:
-            - ./quill:/code
-            - /code/node_modules
 
     nginx:
         restart: always
