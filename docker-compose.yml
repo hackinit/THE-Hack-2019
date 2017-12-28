@@ -18,6 +18,17 @@ services:
         links:
             - mongo:mongo
 
+    2017_marko:
+        restart: always
+        build: ./2017_marko
+        expose:
+            - "8080"
+        command: node app.js
+
+    2017_static:
+        restart: always
+        build: ./static
+
     nginx:
         restart: always
         build: ./nginx
@@ -26,3 +37,5 @@ services:
             - "443:443"
         links:
             - quill:quill
+        volumes_from:
+            - 2017_static
