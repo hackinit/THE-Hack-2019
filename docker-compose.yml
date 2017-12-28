@@ -20,14 +20,14 @@ services:
 
     2017_marko:
         restart: always
-        build: ./2017_marko
+        build: ./2017/marko
         expose:
             - "8080"
         command: node app.js
 
     2017_static:
         restart: always
-        build: ./static
+        build: ./2017/static
 
     nginx:
         restart: always
