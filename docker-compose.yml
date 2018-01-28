@@ -31,6 +31,13 @@ services:
         volumes:
             - ./hackinit/static:/usr/share/static/hackinit:ro
 
+    hackinit_django:
+        restart: always
+        build: ./hackinit/django
+        command: python manage.py runserver 0.0.0.0:8000
+        expose:
+            - "8000"
+
     hackshanghai_mongo:
         restart: always
         image: mongo:3.0.15-wheezy
@@ -96,6 +103,7 @@ services:
         links:
             - hackinit_quill:hackinit_quill
             - hackinit_marko:hackinit_marko
+            - hackinit_django:hackinit_django
             - hackshanghai_quill:hackshanghai_quill
             - hackshanghai_marko:hackshanghai_marko
             - thehack_marko:thehack_marko
