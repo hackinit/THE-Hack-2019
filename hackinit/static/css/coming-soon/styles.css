@@ -6,7 +6,7 @@
 .coming-soon.col {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
 }
 
 img.coming-soon {
