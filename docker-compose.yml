@@ -24,6 +24,13 @@ services:
         volumes:
             - ./static:/usr/share/static:ro
 
+    marko:
+        restart: always
+        build: ./marko
+        expose:
+            - "8080"
+        command: node app.js
+
     2017_marko:
         restart: always
         build: ./2017/marko
@@ -45,6 +52,7 @@ services:
             - "443:443"
         links:
             - quill:quill
+            - marko:marko
             - 2017_marko:2017_marko
         volumes_from:
             - static
