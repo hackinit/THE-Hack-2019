@@ -18,6 +18,12 @@ services:
         links:
             - mongo:mongo
 
+    static:
+        restart: always
+        build: ./static
+        volumes:
+            - ./static:/usr/share/static:ro
+
     2017_marko:
         restart: always
         build: ./2017/marko
@@ -41,4 +47,5 @@ services:
             - quill:quill
             - 2017_marko:2017_marko
         volumes_from:
+            - static
             - 2017_static
