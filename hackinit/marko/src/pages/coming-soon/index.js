@@ -17,7 +17,11 @@ module.exports = function(req, res) {
     var lang = getLang(req, res);
     var data = {};
     for (var key in dataAll) {
-        data[key] = dataAll[key][lang];
+        if (dataAll[key][lang] !== undefined) {
+            data[key] = dataAll[key][lang];
+        } else {
+            data[key] = dataAll[key]["default"];
+        }
     }
     res.marko(template, data);
 };
