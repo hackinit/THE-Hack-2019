@@ -1,35 +1,35 @@
 version: '2'
 
 services:
-    mongo:
+    hackinit_mongo:
         restart: always
         image: mongo:3.0.15-wheezy
         expose:
             - "27017"
         volumes:
-            - ../db:/data/db
+            - ../db/hackinit:/data/db
 
-    quill:
+    hackinit_quill:
         restart: always
-        build: ./quill
+        build: ./hackinit/quill
         command: gulp server
         expose:
             - "3000"
         links:
-            - mongo:mongo
+            - hackinit_mongo:mongo
 
-    static:
+    hackinit_marko:
         restart: always
-        build: ./static
-        volumes:
-            - ./static:/usr/share/static:ro
-
-    marko:
-        restart: always
-        build: ./marko
+        build: ./hackinit/marko
         expose:
             - "8080"
         command: node app.js
+
+    hackinit_static:
+        restart: always
+        build: ./hackinit/static
+        volumes:
+            - ./hackinit/static:/usr/share/static/hackinit:ro
 
     2017_marko:
         restart: always
@@ -51,9 +51,9 @@ services:
             - "80:80"
             - "443:443"
         links:
-            - quill:quill
-            - marko:marko
+            - hackinit_quill:hackinit_quill
+            - hackinit_marko:hackinit_marko
             - 2017_marko:2017_marko
         volumes_from:
-            - static
+            - hackinit_static
             - 2017_static
