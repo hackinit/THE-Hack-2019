@@ -4,6 +4,9 @@
 # Marko
 *.marko.js
 
+# Django
+*.pyc
+
 # macOS
 .DS_Store
 
