@@ -31,14 +31,6 @@ services:
         volumes:
             - ./hackinit/static:/usr/share/static/hackinit:ro
 
-    hackinit_django:
-        restart: always
-        build: ./hackinit/django
-        command: python manage.py runserver 0.0.0.0:8000
-        expose:
-            - "8000"
-        env_file: secrets.env
-
     hackshanghai_mongo:
         restart: always
         image: mongo:3.0.15-wheezy
@@ -68,14 +60,6 @@ services:
         build: ./hackshanghai/static
         volumes:
             - ./hackshanghai/static:/usr/share/static/hackshanghai:ro
-
-    hackshanghai_django:
-        restart: always
-        build: ./hackshanghai/django
-        command: python manage.py runserver 0.0.0.0:8000
-        expose:
-            - "8000"
-        env_file: secrets.env
 
     thehack_marko:
         restart: always
