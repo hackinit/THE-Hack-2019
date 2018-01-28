@@ -61,6 +61,19 @@ services:
         volumes:
             - ./hackshanghai/static:/usr/share/static/hackshanghai:ro
 
+    thehack_marko:
+        restart: always
+        build: ./thehack/marko
+        expose:
+            - "8080"
+        command: node app.js
+
+    thehack_static:
+        restart: always
+        build: ./thehack/static
+        volumes:
+            - ./thehack/static:/usr/share/static/thehack:ro
+
     2017_marko:
         restart: always
         build: ./2017/marko
@@ -85,8 +98,10 @@ services:
             - hackinit_marko:hackinit_marko
             - hackshanghai_quill:hackshanghai_quill
             - hackshanghai_marko:hackshanghai_marko
+            - thehack_marko:thehack_marko
             - 2017_marko:2017_marko
         volumes_from:
             - hackinit_static
             - hackshanghai_static
+            - thehack_static
             - 2017_static
