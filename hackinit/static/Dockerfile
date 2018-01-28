@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:1.13.7
 
 MAINTAINER Yuchong Pan <panyuchong@gmail.com>
 
