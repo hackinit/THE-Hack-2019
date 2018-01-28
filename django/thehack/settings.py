@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b(hdt6k*hm^9#&!iwcp*t&*le=@v6$$7i$tgaskal*f7*w1+)q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ["DEBUG"] == "true" else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["api.thehack.io"]
 
 
 # Application definition
