@@ -9,7 +9,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>hack.init() - ${data.title}</title>
+        <title if(data.lang==="zh")>hack[上海] - ${data.title}</title>
+        <title if(data.lang!=="zh")>hack[Shanghai] - ${data.title}</title>
         <link rel="icon" href="/s/img/shared/favicon.ico">
 
         <!-- CSS -->
