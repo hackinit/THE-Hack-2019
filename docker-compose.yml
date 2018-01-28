@@ -68,6 +68,13 @@ services:
         volumes:
             - ./hackshanghai/static:/usr/share/static/hackshanghai:ro
 
+    hackshanghai_django:
+        restart: always
+        build: ./hackshanghai/django
+        command: python manage.py runserver 0.0.0.0:8000
+        expose:
+            - "8000"
+
     thehack_marko:
         restart: always
         build: ./thehack/marko
@@ -106,6 +113,7 @@ services:
             - hackinit_django:hackinit_django
             - hackshanghai_quill:hackshanghai_quill
             - hackshanghai_marko:hackshanghai_marko
+            - hackshanghai_django:hackshanghai_django
             - thehack_marko:thehack_marko
             - 2017_marko:2017_marko
         volumes_from:
