@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%y+&#8=2q^q$u6e+f9*d@b4byk6a^5c001fk1d+)co&be@-3hn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ["DEBUG"] == "true" else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".hackinit.io", ".hackinit.tech", ".hackinit.org"]
 
 
 # Application definition
