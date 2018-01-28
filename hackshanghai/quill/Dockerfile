@@ -11,6 +11,8 @@ ADD app.json /code/
 ADD .env.config /code/
 ADD .bowerrc /code/
 
+RUN npm config set registry https://registry.npm.taobao.org
+
 RUN npm install -g bower
 RUN npm install -g gulp
 
