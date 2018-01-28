@@ -1,0 +1,14 @@
+.coming-soon.container {
+    position: relative;
+    height: 100vh;
+}
+
+.coming-soon.col {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+}
+
+img.coming-soon {
+    width: 100%;
+}
