@@ -102,14 +102,13 @@ services:
             - "80:80"
             - "443:443"
         links:
-            - hackinit_quill:hackinit_quill
-            - hackinit_marko:hackinit_marko
-            - hackinit_django:hackinit_django
-            - hackshanghai_quill:hackshanghai_quill
-            - hackshanghai_marko:hackshanghai_marko
-            - hackshanghai_django:hackshanghai_django
-            - thehack_marko:thehack_marko
-            - 2017_marko:2017_marko
+            - django
+            - hackinit_quill
+            - hackinit_marko
+            - hackshanghai_quill
+            - hackshanghai_marko
+            - thehack_marko
+            - 2017_marko
         volumes_from:
             - hackinit_static
             - hackshanghai_static
