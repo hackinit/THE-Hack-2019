@@ -16,7 +16,7 @@ services:
         expose:
             - "3000"
         links:
-            - hackinit_mongo:mongo
+            - hackinit_mongo
 
     hackinit_marko:
         restart: always
@@ -35,7 +35,7 @@ services:
         restart: always
         image: mongo:3.0.15-wheezy
         expose:
-            - "27018"
+            - "27017"
         volumes:
             - ../db/hackshanghai:/data/db
 
@@ -46,7 +46,7 @@ services:
         expose:
             - "3000"
         links:
-            - hackshanghai_mongo:mongo
+            - hackshanghai_mongo
 
     hackshanghai_marko:
         restart: always
