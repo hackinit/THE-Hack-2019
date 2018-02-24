@@ -11,7 +11,7 @@ var cookieParser    = require('cookie-parser');
 
 var mongoose        = require('mongoose');
 var port            = process.env.PORT || 3000;
-var database        = process.env.DATABASE || process.env.MONGODB_URI || "mongodb://mongo:27017";
+var database        = process.env.DATABASE || process.env.MONGODB_URI || "mongodb://hackinit_mongo:27017";
 
 var settingsConfig  = require('./config/settings');
 var adminConfig     = require('./config/admin');
