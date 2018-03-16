@@ -2,7 +2,22 @@
     "title": {
         "default": "Premier Hackathons in China"
     },
-    "thehack": {
+    "navbarTheHack": {
         "default": "THE Hack"
+    },
+    "navbarHome": {
+        "default": "HOME"
+    },
+    "navbarAbout": {
+        "default": "ABOUT"
+    },
+    "navbarFaq": {
+        "default": "FAQ"
+    },
+    "navbarEvents": {
+        "default": "EVENTS"
+    },
+    "navbarTeam": {
+        "default": "OUR TEAM"
     }
 }
