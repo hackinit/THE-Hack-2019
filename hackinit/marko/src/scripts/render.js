@@ -12,7 +12,7 @@ function getLang(req, res) {
 }
 
 function render(req, res, dataAll, template) {
-    var lang = getLang(req);
+    var lang = getLang(req, res);
     if (lang === null) {
         return;
     }
