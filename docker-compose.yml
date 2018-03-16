@@ -25,12 +25,6 @@ services:
             - "8080"
         command: node app.js
 
-    hackinit_static:
-        restart: always
-        build: ./hackinit/static
-        volumes:
-            - ./hackinit/static:/usr/share/static/hackinit:ro
-
     hackshanghai_mongo:
         restart: always
         image: mongo:3.0.15-wheezy
@@ -55,24 +49,12 @@ services:
             - "8080"
         command: node app.js
 
-    hackshanghai_static:
-        restart: always
-        build: ./hackshanghai/static
-        volumes:
-            - ./hackshanghai/static:/usr/share/static/hackshanghai:ro
-
     thehack_marko:
         restart: always
         build: ./thehack/marko
         expose:
             - "8080"
         command: node app.js
-
-    thehack_static:
-        restart: always
-        build: ./thehack/static
-        volumes:
-            - ./thehack/static:/usr/share/static/thehack:ro
 
     2017_marko:
         restart: always
@@ -110,7 +92,4 @@ services:
             - thehack_marko
             - 2017_marko
         volumes_from:
-            - hackinit_static
-            - hackshanghai_static
-            - thehack_static
             - 2017_static
