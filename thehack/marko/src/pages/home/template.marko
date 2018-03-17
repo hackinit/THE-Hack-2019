@@ -1,12 +1,18 @@
 <include("./../../components/layout.marko", data)>
 
-<@css>
-    <link rel="stylesheet" href="//static.thehack.io/css/thehack/home/styles.css">
-</@css>
-
 <@body>
-    <div class="container-fluid full-screen">
+    <div class="full-height full-width">
         <include("./../../components/header.marko", data)></include>
+        <div class="container-fluid bottom">
+            <div class="row full-width">
+                <div class="col full-width">
+                    <button type="button" class="btn btn-light btn-block">hack.init() 2018</button>
+                </div>
+                <div class="col full-width">
+                    <button type="button" class="btn btn-dark btn-block">hackShanghai 2018</button>
+                </div>
+            </div>
+        </div>
     </div>
 </@body>
 
