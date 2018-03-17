@@ -5,3 +5,8 @@ body {
 .horizontal-center {
     text-align: center;
 }
+
+.full-screen {
+    height: 100vh;
+    padding: 0 !important;
+}
