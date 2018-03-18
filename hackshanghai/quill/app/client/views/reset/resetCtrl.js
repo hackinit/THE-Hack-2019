@@ -14,7 +14,7 @@ angular.module('reg')
         var confirm = $scope.confirm;
 
         if (password !== confirm){
-          $scope.error = "Passwords don't match!";
+          $scope.error = "两次新密码输入不一致";
           $scope.confirm = "";
           return;
         }
@@ -24,8 +24,8 @@ angular.module('reg')
           $scope.password,
           function(message){
             sweetAlert({
-              title: "Neato!",
-              text: "Your password has been changed!",
+              title: "重置成功",
+              text: "你的密码已经被修改",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
