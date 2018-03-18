@@ -1,0 +1,26 @@
+{
+    "title": {
+        "default": "hack.init() 2018"
+    },
+    "navbarTheHack": {
+        "default": "THE Hack"
+    },
+    "navbarHome": {
+        "default": "Home"
+    },
+    "navbarAbout": {
+        "default": "ABOUT"
+    },
+    "navbarFaq": {
+        "default": "FAQ"
+    },
+    "navbarAgenda": {
+        "default": "SCHEDULE"
+    },
+    "navbarSponsor": {
+        "default": "SPONSORS"
+    },
+    "navbarOurTeam": {
+        "default": "OUR TEAM"
+    }
+}
