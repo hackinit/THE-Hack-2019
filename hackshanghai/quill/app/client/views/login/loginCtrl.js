@@ -47,8 +47,8 @@ angular.module('reg')
         var email = $scope.email;
         AuthService.sendResetEmail(email);
         sweetAlert({
-          title: "Don't Sweat!",
-          text: "An email should be sent to you shortly.",
+          title: "不用担心",
+          text: "密码重置邮件已发送到你的注册邮箱",
           type: "success",
           confirmButtonColor: "#e76482"
         });
