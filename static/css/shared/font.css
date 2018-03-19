@@ -3,8 +3,8 @@
     font-style: normal;
     font-weight: 400;
     src: local('Lato Regular'),
-        url("//s3.cn-north-1.amazonaws.com.cn/thehackfonts/Lato-Regular.woff2") format("woff2"),
-        url("//s3.cn-north-1.amazonaws.com.cn/thehackfonts/Lato-Regular.woff") format("woff"),
-        url("//s3.cn-north-1.amazonaws.com.cn/thehackfonts/Lato-Regular.ttf") format("ttf");
+        url("//static.hackinit.org/fonts/Lato-Regular.woff2") format("woff2"),
+        url("//static.hackinit.org/fonts/Lato-Regular.woff") format("woff"),
+        url("//static.hackinit.org/fonts/Lato-Regular.ttf") format("ttf");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
