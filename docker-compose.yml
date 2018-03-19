@@ -77,6 +77,23 @@ services:
             - "8000"
         env_file: ./django/secrets.env
 
+    ambassador_mongo:
+        restart: always
+        image: mongo:3.0.15-wheezy
+        expose:
+            - "27017"
+        volumes:
+            - ../db/ambassador:/data/db
+
+    ambassador_quill:
+        restart: always
+        build: ./ambassador
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - ambassador_mongo
+
     nginx:
         restart: always
         build: ./nginx
@@ -91,5 +108,6 @@ services:
             - hackshanghai_marko
             - thehack_marko
             - 2017_marko
+            - ambassador_quill
         volumes_from:
             - 2017_static
