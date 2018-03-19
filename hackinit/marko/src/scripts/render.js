@@ -1,18 +1,18 @@
 var langs = require("./langs.json")
 
-function getLang(req, res) {
+function getLang(req, res, path) {
     if (req.params.lang && langs.supported.indexOf(req.params.lang) != -1) {
         return req.params.lang;
-    } else if (req.path === "/") {
+    } else if (req.path === path) {
         return langs.default;
     } else {
-        res.redirect("/");
+        res.redirect(path);
         return null;
     }
 }
 
-function render(req, res, dataAll, template) {
-    var lang = getLang(req, res);
+function render(req, res, dataAll, template, path) {
+    var lang = getLang(req, res, path);
     if (lang === null) {
         return;
     }
