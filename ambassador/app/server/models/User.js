@@ -381,14 +381,14 @@ schema.virtual('status.name').get(function(){
   }
 
   if (this.status.completedProfile){
-    return "已提交";
+    return "submitted";
   }
 
   if (!this.verified){
-    return "未验证";
+    return "unverified";
   }
 
-  return "未完成";
+  return "incomplete";
 
 });
 
