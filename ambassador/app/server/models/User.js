@@ -15,7 +15,7 @@ var profile = {
 
   adult: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 
   school: {
@@ -29,12 +29,6 @@ var profile = {
     enum: {
       values: '2018 2019 2020 2021 2022+'.split(' '),
     }
-  },
-
-  description: {
-    type: String,
-    min: 0,
-    max: 300
   },
 
   essay: {
@@ -59,7 +53,7 @@ var profile = {
     type: String
   },
 
-  essayHackathon: {
+  schoolRole: {
     type: String,
   },
 
@@ -355,7 +349,7 @@ schema.statics.validateProfile = function(profile, cb){
     profile.name.length > 0 &&
     profile.adult &&
     profile.school.length > 0 &&
-    ['2016', '2017', '2018', '2019'].indexOf(profile.graduationYear) > -1 &&
+    ['2018', '2019', '2020', '2021', '2022+'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));
 };

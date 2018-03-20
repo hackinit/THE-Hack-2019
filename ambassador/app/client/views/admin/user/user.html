@@ -131,6 +131,13 @@
         </select>
       </div>
 
+      <div class="field">
+        <label> 校内担任的职务（如果有） </label>
+        <input type="text"
+               name="role"
+               ng-model="selectedUser.profile.schoolRole">
+      </div>
+
       <!--<div class="field">
         <label>I would describe myself as a...</label>
         <input type="text"
@@ -167,14 +174,6 @@
             你是否参加过hackathon？请列出你参加过的hackathon。
         </label>
         <textarea ng-model="selectedUser.profile.isHacker">
-        </textarea>
-      </div>
-
-      <div class="field">
-        <label>
-            请简要描述你对hackathon的认识和理解。
-        </label>
-        <textarea ng-model="selectedUser.profile.essayHackathon">
         </textarea>
       </div>
 
