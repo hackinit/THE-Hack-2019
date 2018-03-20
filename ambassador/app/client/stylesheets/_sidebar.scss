@@ -87,7 +87,7 @@
   #sidebar {
     @include transform(translate3d(-$sidebar-width, 0, 0));
 
-    img {
+    .tab img {
       max-width:100%;
       max-height:100%;
     }
@@ -112,6 +112,11 @@
       opacity: 1;
       @include transform(translate3d(0,0,0));
       padding: 12px;
+
+      img {
+        max-width:100%;
+        max-height:100%;
+      }
     }
     .note {
       display: none;
