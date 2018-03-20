@@ -15,7 +15,7 @@ var profile = {
 
   adult: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 
   school: {
@@ -29,12 +29,6 @@ var profile = {
     enum: {
       values: '2018 2019 2020 2021 2022+'.split(' '),
     }
-  },
-
-  description: {
-    type: String,
-    min: 0,
-    max: 300
   },
 
   essay: {
