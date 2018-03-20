@@ -15,7 +15,6 @@ var profile = {
 
   adult: {
     type: Boolean,
-    required: true,
     default: false,
   },
 
@@ -28,7 +27,7 @@ var profile = {
   graduationYear: {
     type: String,
     enum: {
-      values: '2016 2017 2018 2019'.split(' '),
+      values: '2018 2019 2020 2021 2022+'.split(' '),
     }
   },
 
@@ -42,6 +41,30 @@ var profile = {
     type: String,
     min: 0,
     max: 1500
+  },
+
+  phoneNum: {
+    type: String
+  },
+
+  whereHeard: {
+    type: String
+  },
+
+  promoExperience: {
+    type: String
+  },
+
+  isHacker: {
+    type: String
+  },
+
+  essayHackathon: {
+    type: String,
+  },
+
+  promoPlan: {
+    type: String,
   },
 
   // Optional info for demographics

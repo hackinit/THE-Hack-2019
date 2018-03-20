@@ -223,17 +223,29 @@ angular.module('reg')
                 name: 'Gender',
                 value: user.profile.gender
               },{
+                name: 'Phone Number',
+                value: user.profile.phoneNum
+              },{
                 name: 'School',
                 value: user.profile.school
               },{
                 name: 'Graduation Year',
                 value: user.profile.graduationYear
               },{
-                name: 'Description',
-                value: user.profile.description
+                name: 'Where heard THE Hack',
+                value: user.profile.whereHeard
               },{
-                name: 'Essay',
-                value: user.profile.essay
+                name: 'Previous Promotional Experience',
+                value: user.profile.promoExperience
+              },{
+                name: 'Hacker Experience?',
+                value: user.profile.isHacker
+              },{
+                name: 'Understanding of Hackathons',
+                value: user.profile.essayHackathon
+              },{
+                name: 'Promotional Plan',
+                value: user.profile.promoPlan
               }
             ]
           },{

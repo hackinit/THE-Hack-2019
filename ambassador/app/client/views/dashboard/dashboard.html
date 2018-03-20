@@ -33,7 +33,7 @@
 
         <div class="ui divider"></div>
 
-        <div ng-if="user.profile.name.length > 0">
+        <!-- <div ng-if="user.profile.name.length > 0">
           <p>
             <strong>
               Welcome back 欢迎回来, {{user.profile.name}}!
@@ -41,21 +41,21 @@
           </p>
           <p>
           </p>
-        </div>
+        </div> -->
 
         <div
           ng-if="dashState('unverified')"
           class="description">
           <p>
             <strong>
-            Your account ({{user.email}}) has not been verified. <br>你的账号 ({{user.email}}) 还未被验证。
+            你的账号 ({{user.email}}) 还未被验证。
             </strong>
           </p>
           <p>
             {{ DASHBOARD.UNVERIFIED }}
           </p>
           <div class="ui purple button" ng-click="resendEmail()">
-            Resend Verification Email <br />重新发送验证邮件
+            重新发送验证邮件
           </div>
         </div>
 
@@ -63,19 +63,19 @@
           ng-class="settings.timeClose"
           ng-if="!dashState('admittedAndCanConfirm') || !dashState('admittedAndCannotConfirm') || !dashState('confirmed') || !dashState('declined')">
           <strong>
-            Application Deadline 参赛申请截止日期：
+            校园大使申请截止日期：
           </strong>
           {{ timeClose }}
         </div>
 
-        <div
+        <!--<div
           ng-class="settings.timeConfirm"
           ng-if="dashState('admittedAndCanConfirm') || dashState('admittedAndCannotConfirm') || dashState('confirmed') || dashState('declined')">
           <strong>
-            Confirmation Deadline 确认参赛截止日期：
+            确认参赛截止日期：
           </strong>
           {{ timeConfirm }}
-        </div>
+        </div>-->
 
         <div
           ng-if="dashState('openAndIncomplete')"
@@ -91,7 +91,7 @@
 
           <div class="ui purple button"
                ui-sref="app.application">
-            Complete your Application <br />完成你的申请
+            完成你的申请
           </div>
 
         </div>
@@ -109,22 +109,22 @@
           </p>
           <div class="ui purple button"
                ui-sref="app.application">
-            Edit your Application <br />修改你的申请
+            修改你的申请
           </div>
 
-          <div
+          <!--<div
             class="ui pink button"
             ng-show="!user.teamCode"
             ui-sref="app.team">
             Create or Join a Team <br /> 创建或加入一个团队
-          </div>
+          </div>-->
 
-          <div
+          <!--<div
             class="ui pink button"
             ng-show="user.teamCode"
             ui-sref="app.team">
             View your Team<br /> 查看你的团队
-          </div>
+          </div>-->
 
         </div>
 
@@ -154,15 +154,15 @@
             查看你的申请
           </div>
 
-          <div
+          <!--<div
             class="ui pink button"
             ng-show="user.teamCode"
             ui-sref="app.team">
             查看你的团队
           </div>
-        </div>
+        </div>-->
 
-        <div
+        <!--<div
           class="description"
           ng-if="dashState('admittedAndCanConfirm')">
 
@@ -247,10 +247,9 @@
           <p>
             {{ DASHBOARD.DECLINED }}
           </p>
-        </div>
+        </div>-->
 
       </div>
-
     </div>
   </div>
 </div>
