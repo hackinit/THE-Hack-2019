@@ -13,6 +13,60 @@ angular.module('reg')
       // Set up the user
       $scope.user = currentUser.data;
 
+      var dropzoneConfig = {
+        url: '/api/resume/upload',
+        previewTemplate: document.querySelector('#resume-dropzone-preview').innerHTML,
+        maxFiles: 1,
+        maxFilesize: .5, // MB
+        uploadMultiple: false,
+        acceptedFiles: 'application/pdf',
+        autoProcessQueue: false,
+        clickable: ['.resume-dropzone', '.resume-dropzone>span'],
+        headers: {
+          'x-access-token': Session.getToken()
+        }
+      };
+
+      $scope.showResumeDropzoneIcon = true;
+      $scope.resumeDropzoneErrorMessage = '';
+      $scope.showResumeDropzone = false;
+
+      $scope.resumeDropzone = new Dropzone('div#resume-upload', dropzoneConfig);
+
+      $scope.resumeDropzone.on("error", function(file, errorMessage) {
+        $scope.resumeDropzoneHasError = true;
+        $scope.resumeDropzoneErrorMessage = errorMessage;
+        $scope.$apply();
+      });
+
+      $scope.resumeDropzone.on("addedfile", function() {
+        if ($scope.resumeDropzone.files.length > 1) {
+          $scope.resumeDropzone.removeFile($scope.resumeDropzone.files[0]);
+        }
+
+        $scope.resumeDropzoneHasError = false;
+        $scope.resumeDropzoneErrorMessage = '';
+        $scope.showResumeDropzoneIcon = !!!$scope.resumeDropzone.files.length;
+        $scope.submitButtonDisabled = false;
+        $scope.$apply();
+      })
+
+      $scope.resumeDropzone.on("removedfile", function() {
+        $scope.resumeDropzoneHasError = false;
+        $scope.resumeDropzoneErrorMessage = '';
+        $scope.showResumeDropzoneIcon = !!!$scope.resumeDropzone.files.length;
+        $scope.$apply();
+      })
+
+      $scope.resumeDropzone.on("processing", function() {
+        $scope.resumeDropzoneIsUploading = true;
+      })
+
+      $scope.toggleResumeDropzone = function() {
+        $scope.showResumeDropzone = !$scope.showResumeDropzone;
+      }
+
+
       // Is the student from MIT?
       $scope.isMitStudent = $scope.user.email.split('@')[1] == 'mit.edu';
 
@@ -45,26 +99,26 @@ angular.module('reg')
 
         $http
           .get('/assets/schools.csv')
-          .then(function(res){ 
+          .then(function(res){
             $scope.schools = res.data.split('\n');
             $scope.schools.push('Other');
 
             var content = [];
 
-            for(i = 0; i < $scope.schools.length; i++) {                                          
-              $scope.schools[i] = $scope.schools[i].trim(); 
+            for(i = 0; i < $scope.schools.length; i++) {
+              $scope.schools[i] = $scope.schools[i].trim();
               content.push({title: $scope.schools[i]})
             }
 
             $('#school.ui.search')
               .search({
                 source: content,
-                cache: true,     
-                onSelect: function(result, response) {                                    
+                cache: true,
+                onSelect: function(result, response) {
                   $scope.user.profile.school = result.title.trim();
-                }        
-              })             
-          });          
+                }
+              })
+          });
       }
 
       function _updateUser(e){

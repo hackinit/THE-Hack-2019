@@ -3,6 +3,23 @@ var SettingsController = require('../controllers/SettingsController');
 
 var request = require('request');
 
+jwt        = require('jsonwebtoken');
+JWT_SECRET = '';
+
+var aws = require('aws-sdk');
+aws.config.update({
+  region: 'us-west-1',
+  accessKeyId: process.env.AWS_ACCESS,
+  secretAccessKey: process.env.AWS_SECRET
+});
+var s3 = new aws.S3();
+var s3BucketName = process.env.AWS_S3_BUCKET;
+
+var multer = require('multer')
+var multerS3 = require('multer-s3')
+var uuidv4 = require('uuid/v4');
+
+
 module.exports = function(router) {
 
   function getToken(req){
