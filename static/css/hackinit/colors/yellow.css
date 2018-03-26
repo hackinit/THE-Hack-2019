@@ -1,0 +1,199 @@
+/* default color: #FBA507  */
+.bg-color,
+section.bg-color,
+section.call-to-action,
+#mainmenu li li a:hover,
+#mainmenu ul li:hover > a,
+.price-row,
+.slider-info .text1,
+.btn-primary,
+.bg-id-color,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus,
+.dropcap,
+.fullwidthbanner-container a.btn,
+.feature-box-big-icon i,
+#testimonial-full,
+.icon-deco i,
+.feature-box-small-icon .border,
+.small-border,
+#jpreBar,
+.date-post,
+.team-list .small-border,
+.de-team-list .small-border,
+.btn-line:hover,a.btn-line:hover,
+.btn-line.hover,a.btn-line.hover,
+.owl-arrow span,
+.de-progress .progress-bar,
+#btn-close-x:hover,
+.box-fx .info,
+.btn-more,
+.widget .small-border,
+.product img:hover,
+#btn-search,
+.de_tab.timeline li.active .dot,
+.btn-id,
+.tiny-border,
+#back-to-top,
+#subheader .small-border-deco span,
+#services-list li a:hover,
+.timeline .tl-block .tl-line,
+.de_tab.tab_style_2 .de_nav li.active span,
+.de_tab.tab_steps.style-2 .de_nav li.active span,
+.feature-box-small-icon.style-2 .number.bg-color,
+a.btn-custom,.btn-custom,
+span.overlay,
+.owl-custom-nav .btn-next:before,
+.owl-custom-nav .btn-prev:before,
+.timeline > li > .timeline-badge,
+.de_light  .de_tab.tab_style_3 .de_nav li.active span,
+.de_tab.tab_style_4 .de_nav li.active span,
+.circle,
+.social-icons-sm i:hover,
+.btn-rsvp,
+.btn-close,
+.pricing-s1 .ribbon,
+.de_tab.tab_style_4 .de_nav li.active,
+a.btn-fullwidth,
+.de_testi.opt-3 blockquote:before
+{
+	background-color:#FBA507 ;
+}
+
+.feature-box i,
+#mainmenu li:hover > ul,
+#mainmenu li:hover > a,
+.date-box .day,
+.slider_text h1,
+.id-color,
+h1.id-color,h2.id-color,h3.id-color,h4.id-color,
+.pricing-box li h1,
+.title span,
+i.large:hover,
+.feature-box-small-icon-2 i,
+address span i,
+.pricing-dark .pricing-box li.price-row,
+.ratings i,
+#mainmenu a:hover,
+header.smaller #mainmenu a.active,
+.pricing-dark .pricing-box li.price-row,
+.dark .feature-box-small-icon i,
+a.btn-slider:after,
+.box-icon-simple i,
+a.btn-line:after,
+.team-list .social a,
+.de_contact_info i,
+.dark .btn-line:hover:after, .dark a.btn-line:hover:after, .dark a.btn-line.hover:after,
+a.btn-text:after,
+.separator span  i,
+address span strong,
+.de_tab.tab_steps .de_nav li span:hover,
+.de_testi_by,
+.widget_tags li a,
+.dark .btn-line:after, .dark  a.btn-line:after,
+.crumb a,
+.btn-right:after,
+.btn-left:before,
+#mainmenu li a:after,
+header .info .social i:hover,
+#back-to-top:hover:before,
+#services-list li.active,
+#services-list li.active a:after,
+.testimonial-list:before,
+#filters a.selected,
+span.deco-big,
+h2.hs1 span,
+.wm,.wm2,
+.blog-list .date-box .day,
+.social-icons-sm i,
+.pricing-s1 .top .price .currency,
+.de_tab.tab_style_4 .de_nav li span,
+.schedule-item .sc-name,
+.de_testi.opt-2 .de_testi_by,
+.de_testi.opt-2 blockquote:before,
+.pricing-s1 .bottom i,
+#mainmenu li a.active,
+.de_light #mainmenu li a.active,
+.profile_pic .subtitle,
+.countdown-s3 .countdown-period,
+.countdown-s4 .countdown-period
+{
+	color:#FBA507;
+}
+
+.feature-box i,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus
+.feature-box-big-icon i:after,
+.btn-line:hover,a.btn-line:hover,
+.btn-line.hover,a.btn-line.hover,
+.product img:hover,
+#contact_form input[type=text]:focus,#contact_form textarea:focus, #search:focus,
+#contact_form .de_light input[type=text]:focus, #contact_form .de_lighttextarea:focus, #contact_form .de_light #search:focus,
+.form-transparent input[type=text]:focus, .form-transparent textarea:focus, .form-transparent input[type=email]:focus,
+.de_tab.tab_steps.style-2 .de_nav li.active span,
+#filters a.selected,
+.social-icons-sm i,
+.box-border,
+.de_tab.tab_style_4 .de_nav
+{
+
+	border-color:#FBA507 ;
+}
+
+.box-fx .inner,
+.dark .box-fx .inner,
+.blog-list img,
+.arrow-up,
+.de_light  .de_tab.tab_style_2 .de_nav li.active span,
+.timeline > li > .timeline-panel,
+.separator span:before,
+.separator span:after,
+.de_light .separator span:before,
+.de_light .separator span:after,
+.text-light .separator span:before,
+.text-light .separator span:after ,
+.form-underline input[type=text]:focus, .form-underline textarea:focus, .form-underline input[type=email]:focus, .form-underline select:focus
+{
+	border-bottom-color:#FBA507 ;
+}
+
+.arrow-down,
+.preloader1{
+	border-top-color:#FBA507 ;
+}
+
+.callbacks_nav {
+	background-color:#FBA507 ;
+}
+
+
+.de_tab .de_nav li span {
+border-top: 3px solid #FBA507 ;
+}
+
+.feature-box-big-icon i:after {
+border-color: #FBA507  transparent; /*same colour as the lower of the bubble's gradient*/
+}
+
+.de_review li.active img{
+	border:solid 4px #FBA507 ;
+}
+
+.de_tab.tab_style_4 .de_nav li{
+border-right-color:#FBA507 ;
+}
+
+blockquote{
+border-left-color:#FBA507;
+}
+
+
