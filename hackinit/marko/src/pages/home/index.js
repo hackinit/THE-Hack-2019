@@ -3,5 +3,5 @@ var template = require("./template.marko");
 var render = require("./../../scripts/render.js");
 
 module.exports = function(req, res) {
-    render(req, res, dataAll, template, "/home");
+    render(req, res, dataAll, template, "/");
 };
