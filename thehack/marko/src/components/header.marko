@@ -3,32 +3,79 @@
     EMAIL: panyuchong@gmail.com
 -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg bg-light">
+    <!-- <a class="navbar-brand" href="#">
         <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         ${data.navbarTheHack}
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    </a> -->
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">${data.navbarHome} <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">${data.navbarAbout}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">${data.navbarFaq}</a>
+                <a class="nav-link" href="#">${data.navbarTeam}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">${data.navbarEvents}</a>
             </li>
+             <li class="nav-logo">
+                <a class="nav-link" href="#">${data.navbarTheHack}</a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">${data.navbarOurTeam}</a>
+                <a class="nav-link" href="#">${data.navbarLogin}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">${data.navbarSearch}</a>
             </li>
         </ul>
     </div>
 </nav>
+
+<style>
+
+.navbar-expand-lg{
+    padding:0px;
+    background-color:#FFFFFF;
+}
+.navbar-nav{
+    box-sizing:unset;
+    width:100%
+}
+.nav-logo{
+    width:50%;
+    margin: 0 -1px 0 0;
+    border-width:1px;
+    height:80px;
+    border-color:#678f8d;
+    border-style:solid;
+}
+.nav-item{
+    width:10%;
+    margin: 0 -1px 0 0;
+    border-width:1px;
+    height:80px;
+    border-color:#678f8d;
+    border-style:solid;
+}
+.nav-link-logo{
+    height:100%;
+    color:#2d4245;
+    text-align:center;
+}
+.nav-link{
+    height:100%;
+    padding:25px;
+    color:#2d4245;
+    background-color:#FFFFFF;
+    text-align:center;
+}
+.nav-link:hover{
+    background-color:#2d4245;
+    color:#FFFFFF;
+}
+</style>
