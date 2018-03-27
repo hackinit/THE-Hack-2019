@@ -71,4 +71,3 @@ typings/
 
 # dotenv environment variables file
 .env
-nginx.conf
