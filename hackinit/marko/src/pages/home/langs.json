@@ -9,18 +9,18 @@
         "default": "Home"
     },
     "navbarAbout": {
-        "default": "ABOUT"
+        "default": "关于我们"
     },
     "navbarFaq": {
-        "default": "FAQ"
+        "default": "常见问题"
     },
     "navbarAgenda": {
-        "default": "SCHEDULE"
+        "default": "日程安排"
     },
     "navbarSponsor": {
-        "default": "SPONSORS"
+        "default": "合作伙伴"
     },
     "navbarOurTeam": {
-        "default": "OUR TEAM"
+        "default": "我们的团队"
     }
 }
