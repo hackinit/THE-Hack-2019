@@ -39,7 +39,7 @@
           <label> School </label>
           <div id="school" class="ui search">
             <div class="ui input">
-              <input class="prompt" type="text" placeholder="School" name="school" ng-model="user.profile.school">                
+              <input class="prompt" type="text" placeholder="School" name="school" ng-model="user.profile.school">
             </div>
             <div class="results"></div>
           </div>
@@ -86,6 +86,27 @@
           </textarea>
         </div>
 
+        <div class="field">
+         <label>
+           Resume (PDF)
+           <span class="required">*</span>
+         </label>
+         <button class="ui violet tiny button" ng-show="!showResumeDropzone" ng-click="toggleResumeDropzone()">Upload New Resume</button>
+         <button class="ui pink tiny button" ng-click="openResume()">View Resume</button>
+         <div class="resume-dropzone center"
+           ng-class="{ 'resume-uploading': resumeDropzoneIsUploading, 'resume-dropzone-error': resumeDropzoneHasError }"
+           ng-show="showResumeDropzone"
+           id="resume-upload">
+           <span ng-show="showResumeDropzoneIcon">
+             <i class="fa fa-upload" aria-hidden="true"></i>
+             DRAG AND DROP
+           </span>
+           <div class="fallback">
+             <input name="file" type="file" accept="application/pdf" />
+           </div>
+         </div>
+       </div>
+
         <div class="field"
              ng-hide="isMitStudent">
           <p>
@@ -116,5 +137,16 @@
         </fieldset>
       </div>
     </div>
+  </div>
+</div>
+
+<div id="resume-dropzone-preview" class="dz-preview dz-file-preview" style="display:none">
+  <div class="dz-details">
+    <div class="dz-icon">
+      <i class="fa fa-file" aria-hidden="true"></i>
+    </div>
+    <div class="dz-filename"><span data-dz-name></span></div>
+    <div class="dz-size" data-dz-size></div>
+    <div class="dz-error-message"><span data-dz-errormessage ng-bind="resumeDropzoneErrorMessage"></span></div>
   </div>
 </div>

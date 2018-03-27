@@ -1,0 +1,72 @@
+]/*
+/*
+	Section Background (bg.css)
+
+	Table of Content
+	- general settings for section & subheader
+	- background settings for page subheader
+	- background settings for section
+	- media query
+/*
+
+/* general settings for section & subheader */
+section,#subheader{
+-webkit-background-size: 100% !important;
+-moz-background-size: 100% !important;
+-o-background-size: 100% !important;
+background-size: 100% !important;
+}
+
+/* background settings for section */
+#section-fun-facts {background:url(//static.hackinit.org/img/hackinit/web/background/1.jpg) fixed;}
+#section-testimonial {background:url(//static.hackinit.org/img/hackinit/web/background/2.jpg) fixed;}
+#section-fun-facts-2 {background:url(//static.hackinit.org/img/hackinit/web/background/8.jpg) fixed;}
+#section-intro-1 {background:url(//static.hackinit.org/img/hackinit/web/background/3.jpg) fixed;}
+#section-intro-2 {background:url(//static.hackinit.org/img/hackinit/web/background/4.jpg) fixed;}
+#section-intro-3 {background:url(//static.hackinit.org/img/hackinit/web/background/5.jpg) fixed;}
+#section-intro-4 {background:url(//static.hackinit.org/img/hackinit/web/background/6.jpg) fixed;}
+#section-intro-5 {background:url(//static.hackinit.org/img/hackinit/web/background/7.jpg) fixed;}
+#section-tickets {background:url(//static.hackinit.org/img/hackinit/web/background/8.jpg) fixed;}
+#section-intro-6 {background:url(//static.hackinit.org/img/hackinit/web/background/9.jpg) fixed;}
+#section-intro-7 {background:url(//static.hackinit.org/img/hackinit/web/background/10.jpg) fixed;}
+#intro-bg {
+	background-image: url(//static.hackinit.org/img/hackinit/quill/bg.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#section-intro-9 {background:url(//static.hackinit.org/img/hackinit/web/background/12.jpg) fixed;}
+
+#subheader {background:url(//static.hackinit.org/img/hackinit/web/background/12.jpg) fixed;}
+
+#section-side-1.side-bg .background-image{background:url(//static.hackinit.org/img/hackinit/web/background/bg-side-1.jpg);}
+#section-side-2.side-bg .background-image{background:url(//static.hackinit.org/img/hackinit/web/background/bg-side-2.jpg);}
+
+/* media query */
+@media only screen and (min-device-width: 768) and (max-device-width: 1024) and (orientation: portrait){
+	section{
+	-webkit-background-size: auto 100% !important;
+	-moz-background-size: auto 100% !important;
+	-o-background-size: auto 100% !important;
+	background-size: auto 100% !important;
+	background-attachment:scroll !important;
+	}
+}
+@media only screen and (max-width: 992px) {
+	#subheader{
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+	background-attachment:scroll !important;
+	}
+}
+@media only screen and (max-width: 992px) {
+	section{
+	-webkit-background-size: auto 100% !important;
+	-moz-background-size: auto 100% !important;
+	-o-background-size: auto 100% !important;
+	background-size: auto 100% !important;
+	background-attachment:scroll !important;
+	}
+}
