@@ -1,0 +1,195 @@
+/* jQuery Countdown styles 2.0.0. */
+/* modified */
+.is-countdown {
+}
+.countdown-rtl {
+	direction: rtl;
+}
+.countdown-holding span {
+	color: #888;
+}
+.countdown-row {
+	clear: both;
+	width: 100%;
+	padding: 0px 2px;
+	text-align: center;
+}
+.countdown-show1 .countdown-section {
+	width: 98%;
+}
+.countdown-show2 .countdown-section {
+	width: 48%;
+}
+.countdown-show3 .countdown-section {
+	width: 32.5%;
+}
+.countdown-show4 .countdown-section {
+	width: 24.5%;
+}
+.countdown-show5 .countdown-section {
+	width: 19.5%;
+}
+.countdown-show6 .countdown-section {
+	width: 16.25%;
+}
+.countdown-show7 .countdown-section {
+	width: 14%;
+}
+.countdown-section {
+	font-family:"Poppins";
+	display: block;
+	float: left;
+	font-size: 16px;
+	text-align: center;
+}
+.countdown-amount {
+	font-weight:300;
+    font-size: 48px;
+	color:#333;
+}
+.text-light .countdown-amount,
+.text-light .countdown-period{
+	color:#fff;
+}
+.countdown-period {
+    display: block;
+	width:70px;
+	margin:0 auto;
+	margin-top:5px;
+	font-weight:bold;
+}
+.countdown-descr {
+	display: block;
+	width: 100%;
+}
+
+.countdown-s1{
+	display:inline-block;
+}
+
+.countdown-s1 .countdown-show4 .countdown-section {
+	width: 80px;
+	float:left;
+	background:rgba(255,255,255,.1);
+	padding:20px 0 10px 0;
+	margin-right:10px;
+}
+
+.countdown-s1.no-bg .countdown-section{
+	background:none;
+}
+
+.countdown-s1 .countdown-amount {
+	width:auto;
+	margin:0;
+	font-size:26px;
+	font-weight:400;
+}
+
+.countdown-s1 .countdown-period {
+	width:auto;
+	margin:0 auto;
+	font-weight:400;
+	font-size:12px;
+}
+
+.countdown-s2{
+	display:inline-block;
+}
+
+.countdown-s2 .countdown-show4 .countdown-section {
+	width: 80px;
+	height:80px;
+	float:left;
+	background:none;
+	border:solid 1px rgba(255,255,255,.2);
+	padding:20px 0 10px 0;
+	margin:0 15px 0 15px;
+	border-radius:60px;
+	-moz-border-radius:60px;
+	-webkit-border-radius:60px;
+}
+
+.countdown-s2 .countdown-amount {
+	width:auto;
+	margin:0;
+	font-size:26px;
+	line-height:0;
+	padding:0;
+}
+
+.countdown-s2 .countdown-period {
+	width:auto;
+	margin:0 auto;
+	padding:0;
+	font-weight:400;
+	font-size:12px;
+	line-height:10px;
+}
+
+
+.countdown-s3{
+	display:inline-block;
+}
+
+.countdown-s3 .countdown-show4 .countdown-section {
+	width: 160px;
+	height:160px;
+	float:left;
+	background:none;
+	border:solid 3px rgba(255,255,255,.2);
+	padding:65px 0 10px 0;
+	margin:0 25px 30px 25px;
+	border-radius:90px;
+	-moz-border-radius:90px;
+	-webkit-border-radius:90px;
+}
+
+.countdown-s3 .countdown-amount {
+	font-weight:300;
+	margin:0;
+	font-size:60px;
+	line-height:0;
+	padding:0;
+}
+
+.countdown-s3 .countdown-period {
+	width:auto;
+	margin:0 auto;
+	padding:0;
+	font-weight:400;
+	font-size:16px;
+	line-height:30px;
+}
+
+
+.countdown-s4{
+	display:inline-block;
+}
+
+.countdown-s4 .countdown-show4 .countdown-section {
+	width: 160px;
+	height:150px;
+	float:left;
+	background:rgba(255,255,255,.1);
+	padding:65px 0 10px 0;
+	margin:0 5px 30px 5px;
+}
+
+.countdown-s4 .countdown-amount {
+	font-weight:500;
+	margin:0;
+	font-size:60px;
+	line-height:0;
+	padding:0;
+	font-weight:300;
+}
+
+.countdown-s4 .countdown-period {
+	width:auto;
+	margin:0 auto;
+	padding:0;
+	font-weight:300;
+	font-size:16px;
+	line-height:30px;
+}

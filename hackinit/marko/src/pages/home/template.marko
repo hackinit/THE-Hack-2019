@@ -1,9 +1,25 @@
 <include("./../../components/layout.marko", data)>
 
 <@body>
-    <div class="full-height full-width">
-        <include("./../../components/header.marko", data)></include>
-    </div>
+<div class="full-width">
+  <include("./../../components/header.marko", data)></include>
+
+  <div id="content" class="no-bottom no-top">
+
+    <include("./../../components/cover.marko", data)></include>
+    <include("./../../components/about.marko", data)></include>
+    <!--<include("./../../components/fun-facts.marko", data)></include>-->
+    <include("./../../components/faq.marko", data)></include>
+    <include("./../../components/sponsor.marko", data)></include>
+    <!--<include("./../../components/sponsor-list.marko", data)></include>-->
+    <include("./../../components/footer.marko", data)></include>
+
+
+  </div>
+
+
+</div>
+
 </@body>
 
 </include>
