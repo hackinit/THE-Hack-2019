@@ -9,14 +9,12 @@
             <div class="col">
                 <div id="carouselHackathons" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="..." alt="First slide">
+                        <div class="carousel-item active ci-hi">
+                            <p class="center-text"></p>
+                            <p class="center-text">ENTER</p>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item ci-sh">
                             <img class="d-block w-100" src="..." alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="..." alt="Third slide">
                         </div>
                     </div>
                 </div>
@@ -27,10 +25,11 @@
     <div class="container-fluid bottom" id="buttons">
         <div class="row full-width">
             <div class="col full-width">
-                <button type="button" class="btn btn-light btn-block" v-on:click="clickHackInit">hack.init() 2018</button>
+                <button type="button" class="btn btn-hackinit btn-block" v-on:click="clickHackInit">
+                <img src="//static.thehack.io/thehack/web-assets/img/thehack/logo/th-256px-b.png">hack.init() 2018</button>
             </div>
             <div class="col full-width">
-                <button type="button" class="btn btn-dark btn-block" v-on:click="clickHackShanghai">hackShanghai 2018</button>
+                <button type="button" class="btn btn-hackshanghai btn-block" v-on:click="clickHackShanghai">hackShanghai 2018</button>
             </div>
         </div>
     </div>
@@ -40,5 +39,43 @@
 <@javascript>
 <script src="//static.thehack.io/js/thehack/home/carousel.js"></script>
 </@javascript>
+
+<@css>
+<style>
+    .btn-hackinit,.btn-hackshanghai{
+        border:none;
+        border-radius:unset;
+        height:130px;
+        color:#000000;
+        background-color:#FFFFFF;
+    }
+    .btn-hackinit:hover{
+        color:#FFFFFF;
+        background-color:#DA612F;
+    }
+    .btn-hackshanghai:hover{
+        color:#FFFFFF;
+        background-color:#2d4245;
+    }
+    .center-text{
+        width:50%;
+        padding-top:200px;        
+        font-size:100px;
+        color:#FFFFFF;
+        text-align:center;
+    }
+    .ci-hi{
+        height:870px;
+        background-color:#000000;
+    }
+    .ci-hs{
+         height:870px;
+         background-color:#FFFFFF;
+    }
+    .col{
+        padding:0px;
+    }
+</style>
+</@css>
 
 </include>
