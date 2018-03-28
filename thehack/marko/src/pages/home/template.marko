@@ -4,17 +4,22 @@
 <div class="full-height full-width">
     <include("./../../components/header.marko", data)></include>
 
-    <div class="container-fluid">
+    <div class="container-fluid slide-container">
         <div class="row">
             <div class="col">
-                <div id="carouselHackathons" class="carousel slide" data-ride="carousel">
+                <div id="carouselHackathons" class="carousel slide">
                     <div class="carousel-inner">
-                        <div class="carousel-item active ci-hi">
-                            <p class="center-text"></p>
-                            <p class="center-text">ENTER</p>
+                        <div class="carousel-item  ci-hi">
+                            <div>
+                                <img src="//s3.cn-north-1.amazonaws.com.cn/thehack/web-assets/img/thehack/logo/hi-640px-c.png">
+                                <span class="center-text">ENTER</span>
+                            </div>
                         </div>
-                        <div class="carousel-item ci-sh">
-                            <img class="d-block w-100" src="..." alt="Second slide">
+                        <div class="carousel-item active ci-hs">
+                            <div>
+                                <img src="//s3.cn-north-1.amazonaws.com.cn/thehack/web-assets/img/thehack/logo/hs-512px-c.png">
+                                <span class="center-text-black">ENTER</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -26,10 +31,11 @@
         <div class="row full-width">
             <div class="col full-width">
                 <button type="button" class="btn btn-hackinit btn-block" v-on:click="clickHackInit">
-                <img src="//static.thehack.io/thehack/web-assets/img/thehack/logo/th-256px-b.png">hack.init() 2018</button>
+                <img class="bottom-logo" src="//s3.cn-north-1.amazonaws.com.cn/thehack/web-assets/img/thehack/logo/hs-64px-b.png">hack.init() 2018</button>
             </div>
             <div class="col full-width">
-                <button type="button" class="btn btn-hackshanghai btn-block" v-on:click="clickHackShanghai">hackShanghai 2018</button>
+                <button type="button" class="btn btn-hackshanghai btn-block" v-on:click="clickHackShanghai">
+                <img class="bottom-logo" src="//s3.cn-north-1.amazonaws.com.cn/thehack/web-assets/img/thehack/logo/hi-64px-b.png">hackShanghai 2018</button>
             </div>
         </div>
     </div>
@@ -38,10 +44,29 @@
 
 <@javascript>
 <script src="//static.thehack.io/js/thehack/home/carousel.js"></script>
+<script>
+    (function() {
+        const hi = document.querySelector('.ci-hi')
+        const hs = document.querySelector('.ci-hs')
+        const hackInit = document.querySelector('.btn-hackinit')
+        hackInit.addEventListener('mouseenter', function (e) {
+            hs.classList.remove('active')
+            hi.classList.add('active')
+        })
+        const hackshanghai = document.querySelector('.btn-hackshanghai')
+        hackshanghai.addEventListener('mouseenter', function (e) {
+            hi.classList.remove('active')
+            hs.classList.add('active')
+        })
+    })()
+</script>
 </@javascript>
 
 <@css>
 <style>
+    .bottom-logo{
+        margin:0 10px 0 0 ;
+    }
     .btn-hackinit,.btn-hackshanghai{
         border:none;
         border-radius:unset;
@@ -57,23 +82,52 @@
         color:#FFFFFF;
         background-color:#2d4245;
     }
-    .center-text{
-        width:50%;
-        padding-top:200px;        
+    .center-text{    
+        padding-left: 35%;
         font-size:100px;
         color:#FFFFFF;
-        text-align:center;
+        text-align:center; 
+        height: 100%;
+        margin: auto;
+    }
+    .center-text-black{    
+        padding-left: 35%;
+        font-size:100px;
+        color:#000000;
+        text-align:center; 
+        height: 100%;
+        margin: auto;
     }
     .ci-hi{
-        height:870px;
+        height:100%;
         background-color:#000000;
     }
     .ci-hs{
-         height:870px;
+         height:100%;
          background-color:#FFFFFF;
     }
     .col{
         padding:0px;
+    }   
+    .slide-container {
+        height: calc(100% - 210px);
+    }
+    .slide-container .row,
+    .slide-container .carousel-inner,
+    .slide-container .carousel{
+        height: 100%;
+    }
+    .slide-container .carousel-item {
+        display: none;        
+        align-items:center;
+        justify-content:center;
+    }
+    .slide-container .carousel-item div {
+        display: flex;
+        justify-content: center;
+    }
+    .carousel-item.active {
+        display: flex;
     }
 </style>
 </@css>
