@@ -9,32 +9,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>hack.init() | July 8 - 9, 2017</title>
-        <link rel="icon" href="/s/img/favicon.ico">
+        <title>hackShanghai | July 21 - 22, 2018</title>
+        <link rel="icon" href="//static.hackinit.org/img/hackshanghai/favicon.ico">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="/s/lib/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/s/lib/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/s/lib/font-awesome-animation/font-awesome-animation.min.css">
-        <link rel="stylesheet" href="/s/lib/alertify/css/alertify.css">
-        <link rel="stylesheet" href="/s/lib/intl-tel-input/css/intlTelInput.css">
-        <link rel="stylesheet" href="/s/css/styles.css">
-        <link rel="stylesheet" href="/s/css/font.css">
+        <link rel="stylesheet" href="//static.hackinit.org/lib/bootstrap-v3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//static.hackinit.org/lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//static.hackinit.org/lib/font-awesome-animation/font-awesome-animation.min.css">
+        <link rel="stylesheet" href="//static.hackinit.org/lib/alertify/css/alertify.css">
+        <link rel="stylesheet" href="//static.hackinit.org/lib/intl-tel-input/css/intlTelInput.css">
+        <link rel="stylesheet" href="//static.hackinit.org/css/hackshanghai/home/styles.css">
+        <link rel="stylesheet" href="//static.hackinit.org/css/shared/font.css">
         <!-- /CSS -->
     </head>
 
     <body>
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-93677768-1', 'auto');
-          ga('send', 'pageview');
-
-        </script>
-
         <!-- HEADER -->
         <nav id="navbar-container" class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
@@ -46,19 +35,16 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand navbar-brand-logo" href>
-                        <img alt="Brand" src="/s/img/favicon.ico">
-                    </a>
-                    <a class="navbar-brand navbar-brand-text" href>
-                        hack.init()
+                        <img alt="Brand" src="//static.hackinit.org/img/hackshanghai/text-logo.png">
                     </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">ABOUT</a></li>
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">FAQ</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">SCHEDULE</a></li>
+                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">SCHEDULE</a></li>-->
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">SPONSOR</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
+                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>-->
                         <!--
                         <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
                         <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
@@ -70,9 +56,9 @@
                     <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">关于我们</a></li>
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">常见问题</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">日程安排</a></li>
+                        <!--><li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">日程安排</a></li>-->
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">合作伙伴</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
+                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>-->
                         <!--
                         <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
                         <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
@@ -91,8 +77,10 @@
             <div class="row">
                 <div class="col-xs-12 hackinit-logo-col">
                     <div class="horizontal-center">
+                        <!--
                         <img id="hackinit-horizontal" class="hackinit-logo" alt="HackInitLogoHorizontal" src="/s/img/hackinit-horizontal-small.png">
                         <img id="hackinit-vertical" class="hackinit-logo" alt="HackInitLogoVertical" src="/s/img/hackinit-vertical-small.png">
+                        -->
                     </div>
                     <div class="row subscription-row">
                         <!--
@@ -115,6 +103,7 @@
                             </div>
                         </div>
                         -->
+                        <!--
                         <div class="col-xs-12 col-sm-6 col-sm-offset-3 input-field">
                             <a target="_blank" href="/s/doc/Award-Recipients.pdf" class="btn btn-primary caapp-btn-sm">
                                 <i class="fa fa-cloud fa-resource"></i>
@@ -122,6 +111,7 @@
                                 <span if(data.lang==="zh")>获奖项目名单</span>
                             </a>
                         </div>
+                        -->
                     </div>
                 </div>
             </div>
@@ -147,17 +137,20 @@
         <div id="about" class="container-fluid grey-background">
             <div class="row">
                 <div class="col-xs-12 about" if(data.lang==="en")>
-                    <h2><b>Hi, Welcome to hack.init()!</b></h2>
-                    <p><b>hack.init()</b> is China's premier youth hackathon that promotes inclusivity and cultural diversity. As a rare hackathon open to high schoolers, we are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning. Unlike traditional hackathons, <b>hack.init()</b> pays special attention to local high school students, international high school students and university freshmen.</p>
-                    <p>This year, we are emphasizing on cultural diversity and fusion. Additionally, by expanding the range of eligible students to undergraduate freshmen, we are emphasizing in the word "<b>Fusion</b>", where high school students and university undergrads can team up to tackle issues at hand and create feasible solutions.</p>
+                    <h2><b>Hi, Welcome to hackShanghai!</b></h2>
+                    <p>HackShanghai is the first and largest college hackathon in China for the top hackers. 250 participating graduate and undergraduate students will be chosen from applications and join the 24-hour marathon event. Students work in teams to build a tech product within the time limit.</p>
+                    <p>HackShanghai have already had very successful events in 2014 and 2015. In 2014, 250 hackers were selected out of almost 1500 applications from top universities in China and around the globe. For 24 hours, they all worked together, in teams, to build products that accomplish their vision, and may change the future. In 2015, the 250 participating graduate and undergraduate students were chosen from applications from over 100 universities, including Harvard, Tsinghua U, Peking U, MIT, and CalTech. The 24-hour marathon event is sponsored by 21 companies, such as ICBC, Goldman Sachs, IBM, DBS. HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</p>
+                    <p>HackShanghai is a model of innovation and driving force of the current hackathon movement in Asia，which is designed to expand on the hackathon model born in the US and currently employed by universities such as MIT, Yale or Harvard. Our aims are to cross geographical and cultural boundaries and bring together a multitude of different innovators, each with their own view of the world we live in. With so many vastly different perspectives, we want to see how programming can display the very basics of what brings humans together and leave a positive mark on our rapidly advancing world.</p>
                 </div>
                 <div class="col-xs-12 about" if(data.lang==="zh")>
-                    <h2><b>Hi，欢迎加入hack.init()！</b></h2>
-                    <p><b>hack.init()</b>是中国顶级的青年人创客马拉松，并以宣传包容性与文化多样性为核心。作为少有的开放给高中生的创客马拉松，我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。与传统的创客马拉松不同的是，<b>hack.init()</b>的参与者大多为高中生，也有相当一部分的大学低年级学生。我们将着重关注区域内本部高中学生、国际高中学生与区域内大学低年级学生这三个群体。</p>
-                    <p>我们推动文化多样性及文化间的融合。此外，通过将参与人范围扩大到大学低年级学生，我们着重强调“<b>融合</b>”一词，促使并希望高中生和大学生能携手合作解决问题，创造出可行的解决方案。</p>
+                    <h2><b>Hi，欢迎来到hack.init()！</b></h2>
+                    <p>hackShanghai 是中国首个也是最大的大学生创客马拉松。250位本科生和研究生将被挑选参加这场持续24小时的创客盛宴。在有限的时间内，参赛者将以小组的形式当场设计创造科技产品。</p>
+                    <p>hackShanghai 在2014年和2015年举办了十分成功的创客马拉松活动。在2014年，250位来自中国和全球顶尖大学的创客从1500份申请中脱颖而出。在24个小时中，他们以小组的形式设计产品，实现构想，改变未来。在2015年，来自哈佛，清华，北大，麻省理工和加州理工等大学的250位创客参赛。赞助商包括ICBC, Goldman Sachs, IBM, DBS等21家公司。hackShanghai也支持并与其他创客马拉松赛合作，包括Unique Hack Day，HackNTU和THacks。</p>
+                    <p>HackShanghai堪称当前亚洲创客马拉松运动的创新和推动力的典范，旨在扩展这种在美国开始的创客马拉松模式。目前这种模式仍然被麻省理工学院，耶鲁大学或哈佛大学等大学采用。我们的目标是跨越地理和文化的界限，汇集来自各地的创新者，让每个人不同的见解得到交流。我们希望看到编程如何将人们聚集在一起，并在我们飞速发展的世界上留下印记。</p>
                 </div>
             </div>
         </div>
+        <!--
         <div class="container-fluid lightgrey-background">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 count-block">
@@ -185,6 +178,7 @@
                 </div>
             </div>
         </div>
+        -->
 
         <div id="faq" class="container">
             <div class="row">
@@ -201,14 +195,14 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq1-collapse" aria-expanded="false" aria-controls="faq1">
                                     <div class="panel-heading" role="tab" id="faq1">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What is <b>hack.init()</b>?</span>
-                                        <span if(data.lang==="zh")>什么是<b>hack.init()</b>？</span>
+                                        <span if(data.lang==="en")>What is hackShanghai?</span>
+                                        <span if(data.lang==="zh")>什么是hackShanghai（创客上海）？</span>
                                     </div>
                                 </a>
                                 <div id="faq1-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq1">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")><b>hack.init()</b> is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning.</span>
-                                        <span if(data.lang==="zh")><b>hack.init()</b>是中国最顶级的青年人创客马拉松，也是第一个宣传包容性与文化多样性的开放给高中生的创客马拉松。我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。</span>
+                                        <span if(data.lang==="en")>hackShanghai is the model of innovation and driving force of the current hackathon movement in Asia. Having already had very successful events in 2014 and 2015, HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</span>
+                                        <span if(data.lang==="zh")>hackShanghai（创客上海）是当今亚洲创客⻢拉松运动的创新典范及先驱。于2014及2015年成功举办两场活动，在过去两年中，hackShanghai 已经合作或⽀持了多场⼤型创客⻢拉松，包括 Unique Hack Day（华中科技⼤学）、HackNTU（国⽴⽴台湾⼤学）及THacks（清华⼤学）。</span>
                                     </div>
                                 </div>
                             </div>
@@ -241,8 +235,8 @@
                                 </a>
                                 <div id="faq3-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq3">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>Anyone within 16-21 years old are welcome to participate, whether you are currently enrolled in high school, university or dropped out. For those who are over the age limit, you are still encouraged to apply to be considered for our Invitational that runs simultaneously with our main event. Our VC and incubator partners will pay more attention to your work!</span>
-                                        <span if(data.lang==="zh")>年龄在16至21岁间的人——不管是高中生、大学生或已经辍学——都可以报名参加我们的主活动。对于超过年龄限制的申请者，我们仍然鼓励你申请——你将有机会进入与主活动同时展开的邀请赛中进行开发，并获得来自风投与创业孵化机构更多的关注。</span>
+                                        <span if(data.lang==="en")>Anyone is welcome to participate, whether you are currently enrolled in high school, university or dropped out.</span>
+                                        <span if(data.lang==="zh")>不管是高中生、大学生或已经辍学，你都可以报名参加我们的主活动。</span>
                                     </div>
                                 </div>
                             </div>
@@ -258,8 +252,8 @@
                                 </a>
                                 <div id="faq4-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq4">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>Unfortunately, due to legal restrictions, we are unable to host minors less than 16 years old. However, feel free to come to our expo on July 9 to check out awesome projects built by others during the hackathon.</span>
-                                        <span if(data.lang==="zh")>很可惜，由于法律限制，本次活动我们无法允许小于16岁的未成年人参赛。但是，欢迎在7月9日到活动现场了解本次创客马拉松中所创造出的一系列令人惊叹的项目！</span>
+                                        <span if(data.lang==="en")>Please <a href="mailto:minors@hackshanghai.com">send us an email</a> with your personal information. We may be able to invite you to our events, but the decision depends on your health and a permission from your guardian.</span>
+                                        <span if(data.lang==="zh")>请<a href="mailto:minors@hackshanghai.com">发送一封邮件给我们</a>，并说明你的情况。我们可能可以邀请你参加我们的活动，但仍然取决于你的健康状况及监护人许可。</span>
                                     </div>
                                 </div>
                             </div>
@@ -276,7 +270,7 @@
                                 <div id="faq5-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq5">
                                     <div class="panel-body">
                                         <span if(data.lang==="en")>Have no fear - <b>hack.init()</b> is, first and foremost, a fun learning experience! We will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to over 10 workshops before and at the hackathon to better prepare yourself.</span>
-                                        <span if(data.lang==="zh")>不要怕！<b>hack.init()</b>的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。</span>
+                                        <span if(data.lang==="zh")>不要怕！hackShanghai的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。</span>
                                     </div>
                                 </div>
                             </div>
@@ -375,6 +369,7 @@
             </div>
         </div>
 
+        <!--
         <div id="schedule" class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -540,20 +535,21 @@
                 </div>
             </div>
         </div>
+        -->
 
         <div id="sponsor" class="container">
             <div class="row">
                 <div class="col-xs-12 sponsorship" if(data.lang==="en")>
                     <h2><b>Sponsorship</b></h2>
-                    <p><b>hack.init()</b> is a perfect place to feel the vibe of the newest generation. At <b>hack.init()</b>, you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.</p>
-                    <p>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href="mailto:sponsorship@hackinit.org">sponsorship@hackinit.org</a>.</p>
-                    <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="/s/doc/Program-Prospectus.pdf" class="btn btn-info btn-lg" role="button">Program Prospectus</a></div>
+                    <p>HackShanghai is a perfect place to feel the vibe of the newest generation. At <b>hack.init()</b>, you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.</p>
+                    <p>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href="mailto:sponsorship@hackshanghai.com">sponsorship@hackshanghai.com</a>.</p>
+                    <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-en_US.pdf" class="btn btn-info btn-lg" role="button">Program Prospectus</a></div>
                 </div>
                 <div class="col-xs-12 sponsorship" if(data.lang==="zh")>
                     <h2><b>与我们合作</b></h2>
-                    <p><b>hack.init()</b>是感受新一代青年人活力与能力的绝佳活动。在<b>hack.init()</b>中，你可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传你的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望你能参与到我们的伟大任务中来。</p>
-                    <p>有兴趣与我们合作？ 请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到<a href="mailto:sponsorship@hackinit.org">sponsorship@hackinit.org</a>与我们联系！</p>
-                    <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="/s/doc/Program-Prospectus-zh.pdf" class="btn btn-info btn-lg" role="button">项目计划书</a></div>
+                    <p>hackShanghai是感受新一代青年人活力与能力的绝佳活动。在<b>hack.init()</b>中，你可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传你的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望你能参与到我们的伟大任务中来。</p>
+                    <p>有兴趣与我们合作？ 请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到<a href="mailto:sponsorship@hackshanghai.com">sponsorship@hackshanghai.com</a>与我们联系！</p>
+                    <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-info btn-lg" role="button">项目计划书</a></div>
                 </div>
             </div>
         </div>
@@ -567,13 +563,14 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-1">
-                    <a target="_blank" href="http://hackinit.io/team">
-                        <img alt="The hack.init() Team" src="/s/img/hackinit-logo.png">
+                    <a target="_blank" href="http://thehack.io">
+                        <img alt="The hack.init() Team" src="//static.hackinit.org/img/thehack/logo/th-1024px-c.png">
                     </a>
                 </div>
             </div>
         </div>
 
+        <!--
         <div id="cohost-logos" class="container sponsor-partner">
             <div class="row">
                 <div class="col-xs-12">
@@ -861,9 +858,9 @@
                     <a>
                         <img alt="Chaping" src="/s/img/chaping.png">
                     </a>
-                    <!--<a target="_blank" href="http://36kr.com/">
+                    <a target="_blank" href="http://36kr.com/">
                         <img alt="36Kr" src="/s/img/36kr.png">
-                    </a>-->
+                    </a>
                     <a target="_blank" href="http://technode.com/">
                         <img alt="TechNode" src="/s/img/technode.png">
                     </a>
@@ -894,6 +891,7 @@
                 </div>
             </div>
         </div>
+        -->
 
         <!--
         <div id="recruit" class="container-fluid grey-background">
@@ -912,14 +910,14 @@
             <div class="row">
                 <div class="col-xs-12 footer" if(data.lang==="en")>
                     <div class="horizontal-center">
-                        <p>Copyright <i class="fa fa-copyright"></i> 2017 <a href>hackinit.io</a>. All Rights Reserved.</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                        <p>Copyright <i class="fa fa-copyright"></i> 2018 <a href>hackshanghai.com</a>. All Rights Reserved.</p>
+                        <p><a target="_blank" href="//static.hackinit.org/doc/shared/Code-of-Conduct.pdf">Code of Conduct</a></p>
                     </div>
                 </div>
                 <div class="col-xs-12 footer" if(data.lang==="zh")>
                     <div class="horizontal-center">
-                        <p>Copyright <i class="fa fa-copyright"></i> 2017 <a href>hackinit.io</a>. 版权所有。</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                        <p>Copyright <i class="fa fa-copyright"></i> 2018 <a href>hackshanghai.com</a>. 版权所有。</p>
+                        <p><a target="_blank" href="//static.hackinit.org/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
                     </div>
                 </div>
             </div>
@@ -927,15 +925,15 @@
         <!-- /MAIN -->
 
         <!-- JAVASCRIPT -->
-        <script src="/s/lib/jquery/jquery-3.1.1.min.js"></script>
-        <script src="/s/lib/vue/vue.min.js"></script>
-        <script src="/s/lib/vue/vue-resource.min.js"></script>
-        <script src="/s/lib/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/s/lib/waypoints/jquery.waypoints.min.js"></script>
-        <script src="/s/lib/countUp/countUp.min.js"></script>
-        <script src="/s/lib/alertify/js/alertify.js"></script>
-        <script src="/s/lib/intl-tel-input/js/intlTelInput.min.js"></script>
-        <script src="/s/js/controller.js"></script>
+        <script src="//static.hackinit.org/lib/jquery/jquery-3.1.1.min.js"></script>
+        <script src="//static.hackinit.org/lib/vue/vue.min.js"></script>
+        <script src="//static.hackinit.org/lib/vue/vue-resource.min.js"></script>
+        <script src="//static.hackinit.org/lib/bootstrap-v3/js/bootstrap.min.js"></script>
+        <script src="//static.hackinit.org/lib/waypoints/jquery.waypoints.min.js"></script>
+        <script src="//static.hackinit.org/lib/countUp/countUp.min.js"></script>
+        <script src="//static.hackinit.org/lib/alertify/js/alertify.js"></script>
+        <script src="//static.hackinit.org/lib/intl-tel-input/js/intlTelInput.min.js"></script>
+        <script src="//static.hackinit.org/js/hackshanghai/home/controller.js"></script>
         <!-- /JAVASCRIPT -->
     </body>
 </html>
