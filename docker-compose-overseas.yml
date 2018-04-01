@@ -13,7 +13,7 @@ services:
         restart: always
         build:
             context: ./hackinit/quill
-            dockerfile: ./hackinit/quill/Dockerfile-overseas
+            dockerfile: Dockerfile-overseas
         command: gulp server
         expose:
             - "3000"
@@ -39,7 +39,7 @@ services:
         restart: always
         build:
             context: ./hackshanghai/quill
-            dockerfile: ./hackshanghai/quill/Dockerfile-overseas
+            dockerfile: Dockerfile-overseas
         command: gulp server
         expose:
             - "3000"
@@ -93,7 +93,7 @@ services:
         restart: always
         build:
             context: ./ambassador
-            dockerfile: ./ambassador/Dockerfile-overseas
+            dockerfile: Dockerfile-overseas
         command: gulp server
         expose:
             - "3000"
