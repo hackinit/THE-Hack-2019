@@ -19,11 +19,5 @@
     },
     "navbarTeam": {
         "default": "OUR TEAM"
-    },
-    "navbarLogin": {
-        "default": "LOGIN"
-    },
-    "navbarSearch": {
-        "default": "SEAECH"
     }
 }
