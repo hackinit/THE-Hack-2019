@@ -130,12 +130,6 @@ body {
     margin-right: 10px;
 }
 
-#faq .panel-default .panel-title .panel-heading {
-    color: #333;
-    background-color: #f5f5f5;
-    border-color: #ddd;
-}
-
 #faq .panel-body {
     font-size: 16px;
 }
@@ -519,5 +513,20 @@ input:-webkit-autofill:active {
 .btn-hacksh:hover, .btn-hacksh:active, .btn-hacksh:focus {
     color: #fff;
     background-color: #6d2121;
+    border-color: #6d2121;
+}
+
+.darkblue-background {
+    background-color: #353b55;
+    color: white;
+}
+
+#faq .panel-hacksh .panel-title .panel-heading {
+    color: white;
+    background-color: #a93535;
+    border-color: #bd3b3b;
+}
+
+.panel-hacksh {
     border-color: #6d2121;
 }
