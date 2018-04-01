@@ -1,0 +1,119 @@
+version: '2'
+
+services:
+    hackinit_mongo:
+        restart: always
+        image: mongo:3.0.15-wheezy
+        expose:
+            - "27017"
+        volumes:
+            - ../db/hackinit:/data/db
+
+    hackinit_quill:
+        restart: always
+        build:
+            context: ./hackinit/quill
+            dockerfile: ./hackinit/quill/Dockerfile-overseas
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - hackinit_mongo
+
+    hackinit_marko:
+        restart: always
+        build: ./hackinit/marko
+        expose:
+            - "8080"
+        command: node app.js
+
+    hackshanghai_mongo:
+        restart: always
+        image: mongo:3.0.15-wheezy
+        expose:
+            - "27017"
+        volumes:
+            - ../db/hackshanghai:/data/db
+
+    hackshanghai_quill:
+        restart: always
+        build:
+            context: ./hackshanghai/quill
+            dockerfile: ./hackshanghai/quill/Dockerfile-overseas
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - hackshanghai_mongo
+
+    hackshanghai_marko:
+        restart: always
+        build: ./hackshanghai/marko
+        expose:
+            - "8080"
+        command: node app.js
+
+    thehack_marko:
+        restart: always
+        build: ./thehack/marko
+        expose:
+            - "8080"
+        command: node app.js
+
+    2017_marko:
+        restart: always
+        build: ./2017/marko
+        expose:
+            - "8080"
+        command: node app.js
+
+    2017_static:
+        restart: always
+        build: ./2017/static
+        volumes:
+            - ./2017/static:/usr/share/static/2017:ro
+
+    django:
+        restart: always
+        build: django
+        command: python manage.py runserver 0.0.0.0:8000
+        expose:
+            - "8000"
+        env_file: ./django/secrets.env
+
+    ambassador_mongo:
+        restart: always
+        image: mongo:3.0.15-wheezy
+        expose:
+            - "27017"
+        volumes:
+            - ../db/ambassador:/data/db
+
+    ambassador_quill:
+        restart: always
+        build:
+            context: ./ambassador
+            dockerfile: ./ambassador/Dockerfile-overseas
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - ambassador_mongo
+
+    nginx:
+        restart: always
+        build: ./nginx
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - django
+            - hackinit_quill
+            - hackinit_marko
+            - hackshanghai_quill
+            - hackshanghai_marko
+            - thehack_marko
+            - 2017_marko
+            - ambassador_quill
+        volumes_from:
+            - 2017_static
