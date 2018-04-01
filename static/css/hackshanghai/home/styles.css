@@ -313,22 +313,6 @@ body {
     margin-right: 5px;
 }
 
-.footer {
-    color: #888;
-    font-size: 15px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.footer p {
-    margin-bottom: 5px;
-}
-
-.footer p a, .footer p a:hover {
-    color: white;
-    text-decoration: none;
-}
-
 .intl-tel-input {
     display: table-cell;
 }
@@ -481,4 +465,59 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
     transition: background-color 9999s ease-in-out 9999s;
+}
+
+/* hackShanghai 2018 new */
+.navbar-hacksh {
+    background-color: #a93535;
+    border-color: #a93535;
+}
+
+.navbar-hacksh .navbar-collapse, .navbar-hacksh .navbar-form {
+    border-color: #a93535;
+}
+
+.navbar-hacksh .navbar-toggle {
+    border-color: #6d2121;
+}
+
+.navbar-hacksh .navbar-toggle:focus, .navbar-hacksh .navbar-toggle:hover {
+    background-color: #6d2121;
+}
+
+.navbar-hacksh .navbar-nav>li>a {
+    color: lightgrey;
+}
+
+.darkred-background {
+    background-color: #a93535;
+}
+
+.footer {
+    color: lightgrey;
+    font-size: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+.footer p a, .footer p a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-hacksh {
+    color: #fff;
+    background-color: #a93535;
+    border-color: #6d2121;
+    background: #a93535;
+}
+
+.btn-hacksh:hover, .btn-hacksh:active, .btn-hacksh:focus {
+    color: #fff;
+    background-color: #6d2121;
+    border-color: #6d2121;
 }
