@@ -53,7 +53,7 @@ var navbar = new Vue({
             }, function() {
                 navbar.logoutError();
             });
-        }
+        },
     }
 });
 
@@ -139,6 +139,15 @@ var banner = new Vue({
                 }
             });
         }
+    },
+});
+
+var leftBar = new Vue({
+    el: "#left-bar",
+    mounted: function() {
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        });
     }
 });
 

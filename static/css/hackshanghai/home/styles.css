@@ -533,13 +533,53 @@ input:-webkit-autofill:active {
 
 .logo-background {
     background-color: #f8eed1;
-    width: 250px;
+    width: 20%;
     height: 100%;
-    position: absolute;
-    left: 80px;
+    position: fixed;
+    z-index: 100;
 }
 
-.about {
-    left: 330px;
-    width: calc(100% - 330px);
+#main {
+    left: 20%;
+    width: 80%;
+}
+
+.section {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+#main-logo {
+    width: 90%;
+    padding-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.buttons {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.buttons .btn {
+    width: 100%;
+    font-size: 15px;
+    outline: none;
+}
+
+@media only screen and (max-width: 991px) {
+    #main {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .buttons .btn {
+        font-size: 12.5px;
+    }
 }

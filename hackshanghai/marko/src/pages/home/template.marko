@@ -43,29 +43,13 @@
                     <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">ABOUT</a></li>
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">FAQ</a></li>
-                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">SCHEDULE</a></li>-->
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">SPONSOR</a></li>
-                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>-->
-                        <!--
-                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
-                        -->
-                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="#recruit" @click="scrollTo('#recruit')">RECRUIT</a></li>-->
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh">简体中文</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">关于我们</a></li>
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">常见问题</a></li>
-                        <!--><li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">日程安排</a></li>-->
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">合作伙伴</a></li>
-                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>-->
-                        <!--
-                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
-                        -->
-                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="#recruit" @click="scrollTo('#recruit')">团队招募</a></li>-->
                         <li><a data-toggle="collapse" data-target="#navbar.in" href="/">ENGLISH</a></li>
                     </ul>
                 </div>
@@ -74,237 +58,213 @@
         <!-- /HEADER -->
 
         <!-- MAIN -->
-        <div id="banner-container" class="container hackinit-logo-container full-width darkblue-background">
-            <div class="logo-background">
+        <div id="left-bar" class="col-xs-12 hidden-sm hidden-xs logo-background">
+            <img id="main-logo" alt="hackShanghai" src="//static.hackinit.org/img/hackshanghai/logo.png">
+            <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-en_US.pdf" class="btn btn-hacksh btn-lg" role="button" if(data.lang==="en")>Program Prospectus</a></div>
+            <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button" if(data.lang==="zh")>项目计划书</a></div>
+            <div class="horizontal-center buttons"><a id="wechat-btn" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.hackinit.org/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="right" if(data.lang==="en")>Follow us on WeChat <i class="fa fa-weixin"></i></a></div>
+        </div>
+        <div id="main" class="col-xs-12 full-width">
+            <div id="banner-container" class="container hackinit-logo-container full-width darkblue-background">
+                <div id="about" class="container-fluid darkblue-background">
+                    <div class="row">
+                        <div class="col-xs-12 about" if(data.lang==="en")>
+                            <h2><b>Hi, Welcome to hackShanghai!</b></h2>
+                            <p>HackShanghai is the first and largest college hackathon in China for the top hackers. 250 participating graduate and undergraduate students will be chosen from applications and join the 24-hour marathon event. Students work in teams to build a tech product within the time limit.</p>
+                            <p>HackShanghai have already had very successful events in 2014 and 2015. In 2014, 250 hackers were selected out of almost 1500 applications from top universities in China and around the globe. For 24 hours, they all worked together, in teams, to build products that accomplish their vision, and may change the future. In 2015, the 250 participating graduate and undergraduate students were chosen from applications from over 100 universities, including Harvard, Tsinghua U, Peking U, MIT, and CalTech. The 24-hour marathon event is sponsored by 21 companies, such as ICBC, Goldman Sachs, IBM, DBS. HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</p>
+                            <p>HackShanghai is a model of innovation and driving force of the current hackathon movement in Asia，which is designed to expand on the hackathon model born in the US and currently employed by universities such as MIT, Yale or Harvard. Our aims are to cross geographical and cultural boundaries and bring together a multitude of different innovators, each with their own view of the world we live in. With so many vastly different perspectives, we want to see how programming can display the very basics of what brings humans together and leave a positive mark on our rapidly advancing world.</p>
+                        </div>
+                        <div class="col-xs-12 about" if(data.lang==="zh")>
+                            <h2><b>Hi，欢迎来到hack.init()！</b></h2>
+                            <p>hackShanghai 是中国首个也是最大的大学生创客马拉松。250位本科生和研究生将被挑选参加这场持续24小时的创客盛宴。在有限的时间内，参赛者将以小组的形式当场设计创造科技产品。</p>
+                            <p>hackShanghai 在2014年和2015年举办了十分成功的创客马拉松活动。在2014年，250位来自中国和全球顶尖大学的创客从1500份申请中脱颖而出。在24个小时中，他们以小组的形式设计产品，实现构想，改变未来。在2015年，来自哈佛，清华，北大，麻省理工和加州理工等大学的250位创客参赛。赞助商包括ICBC, Goldman Sachs, IBM, DBS等21家公司。hackShanghai也支持并与其他创客马拉松赛合作，包括Unique Hack Day，HackNTU和THacks。</p>
+                            <p>HackShanghai堪称当前亚洲创客马拉松运动的创新和推动力的典范，旨在扩展这种在美国开始的创客马拉松模式。目前这种模式仍然被麻省理工学院，耶鲁大学或哈佛大学等大学采用。我们的目标是跨越地理和文化的界限，汇集来自各地的创新者，让每个人不同的见解得到交流。我们希望看到编程如何将人们聚集在一起，并在我们飞速发展的世界上留下印记。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="about" class="container-fluid darkblue-background">
+
+            <div id="faq" class="container section">
                 <div class="row">
-                    <div class="col-xs-12 about" if(data.lang==="en")>
-                        <h2><b>Hi, Welcome to hackShanghai!</b></h2>
-                        <p>HackShanghai is the first and largest college hackathon in China for the top hackers. 250 participating graduate and undergraduate students will be chosen from applications and join the 24-hour marathon event. Students work in teams to build a tech product within the time limit.</p>
-                        <p>HackShanghai have already had very successful events in 2014 and 2015. In 2014, 250 hackers were selected out of almost 1500 applications from top universities in China and around the globe. For 24 hours, they all worked together, in teams, to build products that accomplish their vision, and may change the future. In 2015, the 250 participating graduate and undergraduate students were chosen from applications from over 100 universities, including Harvard, Tsinghua U, Peking U, MIT, and CalTech. The 24-hour marathon event is sponsored by 21 companies, such as ICBC, Goldman Sachs, IBM, DBS. HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</p>
-                        <p>HackShanghai is a model of innovation and driving force of the current hackathon movement in Asia，which is designed to expand on the hackathon model born in the US and currently employed by universities such as MIT, Yale or Harvard. Our aims are to cross geographical and cultural boundaries and bring together a multitude of different innovators, each with their own view of the world we live in. With so many vastly different perspectives, we want to see how programming can display the very basics of what brings humans together and leave a positive mark on our rapidly advancing world.</p>
-                    </div>
-                    <div class="col-xs-12 about" if(data.lang==="zh")>
-                        <h2><b>Hi，欢迎来到hack.init()！</b></h2>
-                        <p>hackShanghai 是中国首个也是最大的大学生创客马拉松。250位本科生和研究生将被挑选参加这场持续24小时的创客盛宴。在有限的时间内，参赛者将以小组的形式当场设计创造科技产品。</p>
-                        <p>hackShanghai 在2014年和2015年举办了十分成功的创客马拉松活动。在2014年，250位来自中国和全球顶尖大学的创客从1500份申请中脱颖而出。在24个小时中，他们以小组的形式设计产品，实现构想，改变未来。在2015年，来自哈佛，清华，北大，麻省理工和加州理工等大学的250位创客参赛。赞助商包括ICBC, Goldman Sachs, IBM, DBS等21家公司。hackShanghai也支持并与其他创客马拉松赛合作，包括Unique Hack Day，HackNTU和THacks。</p>
-                        <p>HackShanghai堪称当前亚洲创客马拉松运动的创新和推动力的典范，旨在扩展这种在美国开始的创客马拉松模式。目前这种模式仍然被麻省理工学院，耶鲁大学或哈佛大学等大学采用。我们的目标是跨越地理和文化的界限，汇集来自各地的创新者，让每个人不同的见解得到交流。我们希望看到编程如何将人们聚集在一起，并在我们飞速发展的世界上留下印记。</p>
+                    <div class="col-xs-12">
+                        <h2 if(data.lang==="en")><b>Frequently Asked Questions</b></h2>
+                        <h2 if(data.lang==="zh")><b>常见问题</b></h2>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!--
-        <div class="container-fluid lightgrey-background">
-            <div class="row">
-                <div class="col-xs-12 col-sm-4 count-block">
-                    <div class="horizontal-center">
-                        <h1 id="hacker-number" class="count-number">300</h1>
-                        <h4 if(data.lang==="en")>Hackers</h4>
-                        <h4 if(data.lang==="zh")>创客</h4>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 count-block">
-                    <div class="horizontal-center">
-                        <span id="age-range-lower" class="count-number">16</span>
-                        <span class="count-number">-</span>
-                        <span id="age-range-upper" class="count-number">21</span>
-                        <h4 if(data.lang==="en")>Age Range</h4>
-                        <h4 if(data.lang==="zh")>年龄范围</h4>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 count-block">
-                    <div class="horizontal-center">
-                        <h1 id="hack-hours" class="count-number">24</h1>
-                        <h4 if(data.lang==="en")>Hours</h4>
-                        <h4 if(data.lang==="zh")>小时</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
-
-        <div id="faq" class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Frequently Asked Questions</b></h2>
-                    <h2 if(data.lang==="zh")><b>常见问题</b></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq1-collapse" aria-expanded="false" aria-controls="faq1">
-                                    <div class="panel-heading" role="tab" id="faq1">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What is hackShanghai?</span>
-                                        <span if(data.lang==="zh")>什么是hackShanghai（创客上海）？</span>
-                                    </div>
-                                </a>
-                                <div id="faq1-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq1">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>hackShanghai is the model of innovation and driving force of the current hackathon movement in Asia. Having already had very successful events in 2014 and 2015, HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</span>
-                                        <span if(data.lang==="zh")>hackShanghai（创客上海）是当今亚洲创客⻢拉松运动的创新典范及先驱。于2014及2015年成功举办两场活动，在过去两年中，hackShanghai 已经合作或⽀持了多场⼤型创客⻢拉松，包括 Unique Hack Day（华中科技⼤学）、HackNTU（国⽴⽴台湾⼤学）及THacks（清华⼤学）。</span>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq1-collapse" aria-expanded="false" aria-controls="faq1">
+                                        <div class="panel-heading" role="tab" id="faq1">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>What is hackShanghai?</span>
+                                            <span if(data.lang==="zh")>什么是hackShanghai（创客上海）？</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq1-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq1">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>hackShanghai is the model of innovation and driving force of the current hackathon movement in Asia. Having already had very successful events in 2014 and 2015, HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</span>
+                                            <span if(data.lang==="zh")>hackShanghai（创客上海）是当今亚洲创客⻢拉松运动的创新典范及先驱。于2014及2015年成功举办两场活动，在过去两年中，hackShanghai 已经合作或⽀持了多场⼤型创客⻢拉松，包括 Unique Hack Day（华中科技⼤学）、HackNTU（国⽴⽴台湾⼤学）及THacks（清华⼤学）。</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq2-collapse" aria-expanded="false" aria-controls="faq2">
-                                    <div class="panel-heading" role="tab" id="faq2">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>How much will this cost?</span>
-                                        <span if(data.lang==="zh")>参加活动需要缴费么？</span>
-                                    </div>
-                                </a>
-                                <div id="faq2-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq2">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>Nada. Zip. Zero. Zilch. We'll provide you with a weekend's worth of swag, meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, we'll even reimburse your travel.</span>
-                                        <span if(data.lang==="zh")>一点都不需要！创客马拉松是一个全免费活动，我们将会为你提供一整个周末的饮食、小吃、纪念品与休息区。我们还将报销你的路费！</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq3-collapse" aria-expanded="false" aria-controls="faq3">
-                                    <div class="panel-heading" role="tab" id="faq3">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>Who can participate?</span>
-                                        <span if(data.lang==="zh")>谁可以申请参加？</span>
-                                    </div>
-                                </a>
-                                <div id="faq3-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq3">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>Anyone is welcome to participate, whether you are currently enrolled in high school, university or dropped out.</span>
-                                        <span if(data.lang==="zh")>不管是高中生、大学生或已经辍学，你都可以报名参加我们的主活动。</span>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq2-collapse" aria-expanded="false" aria-controls="faq2">
+                                        <div class="panel-heading" role="tab" id="faq2">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>How much will this cost?</span>
+                                            <span if(data.lang==="zh")>参加活动需要缴费么？</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq2-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq2">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>Nada. Zip. Zero. Zilch. We'll provide you with a weekend's worth of swag, meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, we'll even reimburse your travel.</span>
+                                            <span if(data.lang==="zh")>一点都不需要！创客马拉松是一个全免费活动，我们将会为你提供一整个周末的饮食、小吃、纪念品与休息区。我们还将报销你的路费！</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq4-collapse" aria-expanded="false" aria-controls="faq4">
-                                    <div class="panel-heading" role="tab" id="faq4">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What if I am under 16 and I want to come?</span>
-                                        <span if(data.lang==="zh")>我小于16岁，但是我还是想来参加。</span>
-                                    </div>
-                                </a>
-                                <div id="faq4-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq4">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>Please <a href="mailto:minors@hackshanghai.com">send us an email</a> with your personal information. We may be able to invite you to our events, but the decision depends on your health and a permission from your guardian.</span>
-                                        <span if(data.lang==="zh")>请<a href="mailto:minors@hackshanghai.com">发送一封邮件给我们</a>，并说明你的情况。我们可能可以邀请你参加我们的活动，但仍然取决于你的健康状况及监护人许可。</span>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq3-collapse" aria-expanded="false" aria-controls="faq3">
+                                        <div class="panel-heading" role="tab" id="faq3">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>Who can participate?</span>
+                                            <span if(data.lang==="zh")>谁可以申请参加？</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq3-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq3">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>Anyone is welcome to participate, whether you are currently enrolled in high school, university or dropped out.</span>
+                                            <span if(data.lang==="zh")>不管是高中生、大学生或已经辍学，你都可以报名参加我们的主活动。</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq5-collapse" aria-expanded="false" aria-controls="faq5">
-                                    <div class="panel-heading" role="tab" id="faq5">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>I've never been to a hackathon and I'm nervous.</span>
-                                        <span if(data.lang==="zh")>我从未参加过创客马拉松，怎么办？</span>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq4-collapse" aria-expanded="false" aria-controls="faq4">
+                                        <div class="panel-heading" role="tab" id="faq4">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>What if I am under 16 and I want to come?</span>
+                                            <span if(data.lang==="zh")>我小于16岁，但是我还是想来参加。</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq4-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq4">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>Please <a href="mailto:minors@hackshanghai.com">send us an email</a> with your personal information. We may be able to invite you to our events, but the decision depends on your health and a permission from your guardian.</span>
+                                            <span if(data.lang==="zh")>请<a href="mailto:minors@hackshanghai.com">发送一封邮件给我们</a>，并说明你的情况。我们可能可以邀请你参加我们的活动，但仍然取决于你的健康状况及监护人许可。</span>
+                                        </div>
                                     </div>
-                                </a>
-                                <div id="faq5-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq5">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>Have no fear - <b>hack.init()</b> is, first and foremost, a fun learning experience! We will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to over 10 workshops before and at the hackathon to better prepare yourself.</span>
-                                        <span if(data.lang==="zh")>不要怕！hackShanghai的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq5-collapse" aria-expanded="false" aria-controls="faq5">
+                                        <div class="panel-heading" role="tab" id="faq5">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>I've never been to a hackathon and I'm nervous.</span>
+                                            <span if(data.lang==="zh")>我从未参加过创客马拉松，怎么办？</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq5-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq5">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>Have no fear - <b>hack.init()</b> is, first and foremost, a fun learning experience! We will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to over 10 workshops before and at the hackathon to better prepare yourself.</span>
+                                            <span if(data.lang==="zh")>不要怕！hackShanghai的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq6-collapse" aria-expanded="false" aria-controls="faq6">
-                                    <div class="panel-heading" role="tab" id="faq6">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>How will I get to <b>hack.init()</b>?</span>
-                                        <span if(data.lang==="zh")>我怎么抵达<b>hack.init()</b>活动现场？</span>
-                                    </div>
-                                </a>
-                                <div id="faq6-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq6">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>For Shanghai hackers, you can get to ShanghaiTech University easily by public transportation which will not be reimbursed. We do provide travel reimbursement to non-Shanghai hackers. More information will be available to you once accepted.</span>
-                                        <span if(data.lang==="zh")>上海本地参赛者可以通过轨道交通轻松到达上海科技大学活动现场。市内交通费用我们不会报销。对于非上海参赛者，我们将为你提供路费报销。更多关于报销的信息将在选手入选后发布。</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq7-collapse" aria-expanded="false" aria-controls="faq7">
-                                    <div class="panel-heading" role="tab" id="faq7">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What's the event schedule?</span>
-                                        <span if(data.lang==="zh")>日程安排是怎样的？</span>
-                                    </div>
-                                </a>
-                                <div id="faq7-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq7">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")><b>hack.init()</b> will commence at 8 am, July 8 and last until 4:30 pm, July 9. More detailed schedule will be available closer to event date.</span>
-                                        <span if(data.lang==="zh")><b>hack.init()</b>将在7月8日早上8点开始，7月9日下午4点30分结束。更详细的日程将在活动前发布。</span>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq6-collapse" aria-expanded="false" aria-controls="faq6">
+                                        <div class="panel-heading" role="tab" id="faq6">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>How will I get to <b>hack.init()</b>?</span>
+                                            <span if(data.lang==="zh")>我怎么抵达<b>hack.init()</b>活动现场？</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq6-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq6">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>For Shanghai hackers, you can get to ShanghaiTech University easily by public transportation which will not be reimbursed. We do provide travel reimbursement to non-Shanghai hackers. More information will be available to you once accepted.</span>
+                                            <span if(data.lang==="zh")>上海本地参赛者可以通过轨道交通轻松到达上海科技大学活动现场。市内交通费用我们不会报销。对于非上海参赛者，我们将为你提供路费报销。更多关于报销的信息将在选手入选后发布。</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq8-collapse" aria-expanded="false" aria-controls="faq8">
-                                    <div class="panel-heading" role="tab" id="faq8">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>Can I sleep, workout...?</span>
-                                        <span if(data.lang==="zh")>我可以睡觉、运动……嘛？</span>
-                                    </div>
-                                </a>
-                                <div id="faq8-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq8">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>Of course! We will have designated resting area during our event. You can also enjoy the clean air in Pudong Suburban area by jogging around the campus!</span>
-                                        <span if(data.lang==="zh")>当然可以！我们在活动期间设置了休息区域，你也可以在上海科技大学的校园中慢跑健身。</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq9-collapse" aria-expanded="false" aria-controls="faq9">
-                                    <div class="panel-heading" role="tab" id="faq9">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What should I bring?</span>
-                                        <span if(data.lang==="zh")>我需要带些什么？</span>
-                                    </div>
-                                </a>
-                                <div id="faq9-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq9">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>Bring your government-issued ID for entrance and to borrow hardware from our rental booth. You’ll also need your laptop and charger for hacking, a blanket or a sleeping bag for resting, and toiletries for hygiene.</span>
-                                        <span if(data.lang==="zh")>请注意携带好由政府颁发的身份证明文件（身份证、护照等）。你的身份证件将作为允许你进入活动现场与租赁器材的依据。你也需要携带便携式电脑、充电器、毛毯或睡袋、卫生用品等日常用品。</span>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq7-collapse" aria-expanded="false" aria-controls="faq7">
+                                        <div class="panel-heading" role="tab" id="faq7">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>What's the event schedule?</span>
+                                            <span if(data.lang==="zh")>日程安排是怎样的？</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq7-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq7">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")><b>hack.init()</b> will commence at 8 am, July 8 and last until 4:30 pm, July 9. More detailed schedule will be available closer to event date.</span>
+                                            <span if(data.lang==="zh")><b>hack.init()</b>将在7月8日早上8点开始，7月9日下午4点30分结束。更详细的日程将在活动前发布。</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="panel panel-hacksh">
-                                <a class="panel-title" role="button" data-toggle="collapse" href="#faq10-collapse" aria-expanded="false" aria-controls="faq10">
-                                    <div class="panel-heading" role="tab" id="faq10">
-                                        <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>I still have more questions!</span>
-                                        <span if(data.lang==="zh")>我还有别的问题！</span>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq8-collapse" aria-expanded="false" aria-controls="faq8">
+                                        <div class="panel-heading" role="tab" id="faq8">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>Can I sleep, workout...?</span>
+                                            <span if(data.lang==="zh")>我可以睡觉、运动……嘛？</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq8-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq8">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>Of course! We will have designated resting area during our event. You can also enjoy the clean air in Pudong Suburban area by jogging around the campus!</span>
+                                            <span if(data.lang==="zh")>当然可以！我们在活动期间设置了休息区域，你也可以在上海科技大学的校园中慢跑健身。</span>
+                                        </div>
                                     </div>
-                                </a>
-                                <div id="faq10-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq10">
-                                    <div class="panel-body">
-                                        <span if(data.lang==="en")>No problem! Email us anytime at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</span>
-                                        <span if(data.lang==="zh")>请随时发邮件到<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>，<b>hack.init()</b>团队非常乐意帮助你解决任何问题！</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq9-collapse" aria-expanded="false" aria-controls="faq9">
+                                        <div class="panel-heading" role="tab" id="faq9">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>What should I bring?</span>
+                                            <span if(data.lang==="zh")>我需要带些什么？</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq9-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq9">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>Bring your government-issued ID for entrance and to borrow hardware from our rental booth. You’ll also need your laptop and charger for hacking, a blanket or a sleeping bag for resting, and toiletries for hygiene.</span>
+                                            <span if(data.lang==="zh")>请注意携带好由政府颁发的身份证明文件（身份证、护照等）。你的身份证件将作为允许你进入活动现场与租赁器材的依据。你也需要携带便携式电脑、充电器、毛毯或睡袋、卫生用品等日常用品。</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="panel panel-hacksh">
+                                    <a class="panel-title" role="button" data-toggle="collapse" href="#faq10-collapse" aria-expanded="false" aria-controls="faq10">
+                                        <div class="panel-heading" role="tab" id="faq10">
+                                            <i class="fa fa-plus"></i>
+                                            <span if(data.lang==="en")>I still have more questions!</span>
+                                            <span if(data.lang==="zh")>我还有别的问题！</span>
+                                        </div>
+                                    </a>
+                                    <div id="faq10-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq10">
+                                        <div class="panel-body">
+                                            <span if(data.lang==="en")>No problem! Email us anytime at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</span>
+                                            <span if(data.lang==="zh")>请随时发邮件到<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>，<b>hack.init()</b>团队非常乐意帮助你解决任何问题！</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -312,560 +272,56 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--
-        <div id="schedule" class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 id="schedule-title">
-                        <b if(data.lang==="en")>Schedule</b>
-                        <b if(data.lang==="zh")>日程安排</b>
-                    </h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <table class="day-schedule">
-                        <tbody>
-                            <tr class="day">
-                                <th colspan="3" if(data.lang==="en")>Saturday</th>
-                                <th colspan="3" if(data.lang==="zh")>星期六</th>
-                            </tr>
-                            <tr>
-                                <th if(data.lang==="en")>Time</th>
-                                <th if(data.lang==="zh")>时间</th>
-                                <th colspan="2" if(data.lang==="en")>Event</th>
-                                <th colspan="2" if(data.lang==="zh")>活动</th>
-                            </tr>
-                            <tr>
-                                <td>8:00 - 9:30</td>
-                                <td colspan="2" if(data.lang==="en")>Participant Check-In</td>
-                                <td colspan="2" if(data.lang==="zh")>参赛者签到</td>
-                            </tr>
-                            <tr>
-                                <td>9:30 - 10:55</td>
-                                <td colspan="2" if(data.lang==="en")>Opening Ceremony</td>
-                                <td colspan="2" if(data.lang==="zh")>开幕式</td>
-                            </tr>
-                            <tr>
-                                <td>10:50 - 11:30</td>
-                                <td colspan="2" if(data.lang==="en")>Team Up Session & Ice Breaker</td>
-                                <td colspan="2" if(data.lang==="zh")>团队组建及破冰活动</td>
-                            </tr>
-                            <tr>
-                                <td>11:30 - </td>
-                                <td colspan="2" if(data.lang==="en")>Hacking On</td>
-                                <td colspan="2" if(data.lang==="zh")>开始开发</td>
-                            </tr>
-                            <tr>
-                                <td>12:00 - 14:00</td>
-                                <td if(data.lang==="en")>Intro to Project Management</td>
-                                <td if(data.lang==="zh")>项目管理入门</td>
-                                <td if(data.lang==="en")>Microchip Hardware Workshop</td>
-                                <td if(data.lang==="zh")>Microchip 硬件工作坊</td>
-                            </tr>
-                            <tr>
-                                <td>12:45 - 14:45</td>
-                                <td colspan="2" if(data.lang==="en")>Lunch Served</td>
-                                <td colspan="2" if(data.lang==="zh")>午餐供应</td>
-                            </tr>
-                            <tr>
-                                <td>14:15 - 16:15</td>
-                                <td if(data.lang==="en")>Intro to Web Front-End Dev</td>
-                                <td if(data.lang==="zh")>网站前端开发入门</td>
-                                <td if(data.lang==="en")>Intro to Google Cloud Platform</td>
-                                <td if(data.lang==="zh")>Google 云平台入门</td>
-                            </tr>
-                            <tr>
-                                <td>16:30 - 18:30</td>
-                                <td if(data.lang==="en")>Intro to Machine Learning</td>
-                                <td if(data.lang==="zh")>机器学习入门</td>
-                                <td if(data.lang==="en")>Intro to Django</td>
-                                <td if(data.lang==="zh")>Django 入门</td>
-                            </tr>
-                            <tr>
-                                <td>18:00 - 20:00</td>
-                                <td colspan="2" if(data.lang==="en")>Dinner Served</td>
-                                <td colspan="2" if(data.lang==="zh")>晚餐供应</td>
-                            </tr>
-                            <tr>
-                                <td>23:30 - </td>
-                                <td colspan="2" if(data.lang==="en")>Late Night Snacks</td>
-                                <td colspan="2" if(data.lang==="zh")>夜间零食供应</td>
-                            </tr>
-                            <tr>
-                                <td>23:00 - 6:00 (Sunday)</td>
-                                <td colspan="2" if(data.lang==="en")>Participants Are Not Allowed to Leave the Hacking Area</td>
-                                <td colspan="2" if(data.lang==="zh")>参赛者不允许离开开发场地</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <table class="day-schedule">
-                        <tbody>
-                            <tr class="day">
-                                <th colspan="3" if(data.lang==="en")>Sunday</th>
-                                <th colspan="3" if(data.lang==="zh")>星期日</th>
-                            </tr>
-                            <tr>
-                                <th if(data.lang==="en")>Time</th>
-                                <th if(data.lang==="zh")>时间</th>
-                                <th colspan="2" if(data.lang==="en")>Event</th>
-                                <th colspan="2" if(data.lang==="zh")>活动</th>
-                            </tr>
-                            <tr>
-                                <td>8:30 - 9:30</td>
-                                <td colspan="2" if(data.lang==="en")>Breakfast Served</td>
-                                <td colspan="2" if(data.lang==="zh")>早餐供应</td>
-                            </tr>
-                            <tr>
-                                <td>9:15 - 11:15</td>
-                                <td colspan="2" if(data.lang==="en")>Intro to HACKx Platform</td>
-                                <td colspan="2" if(data.lang==="zh")>HACKx 平台入门</td>
-                            </tr>
-                            <tr>
-                                <td>10:00 - 11:00</td>
-                                <td colspan="2" if(data.lang==="en")>Women Hacker Meetup</td>
-                                <td colspan="2" if(data.lang==="zh")>女性创客聚会</td>
-                            </tr>
-                            <tr>
-                                <td>12:00 - 13:30</td>
-                                <td colspan="2" if(data.lang==="en")>Lunch Served</td>
-                                <td colspan="2" if(data.lang==="zh")>午餐供应</td>
-                            </tr>
-                            <tr>
-                                <td>11:30 - </td>
-                                <td colspan="2" if(data.lang==="en")>Hacking Stop; Project Submission Due</td>
-                                <td colspan="2" if(data.lang==="zh")>停止开发；项目提交截止</td>
-                            </tr>
-                            <tr>
-                                <td>11:30 - 12:00</td>
-                                <td colspan="2" if(data.lang==="en")>Recession</td>
-                                <td colspan="2" if(data.lang==="zh")>休息</td>
-                            </tr>
-                            <tr>
-                                <td>12:00 - 12:40</td>
-                                <td colspan="2" if(data.lang==="en")>Expo Session 1</td>
-                                <td colspan="2" if(data.lang==="zh")>第一轮展示</td>
-                            </tr>
-                            <tr>
-                                <td>12:50 - 13:30</td>
-                                <td colspan="2" if(data.lang==="en")>Expo Session 2</td>
-                                <td colspan="2" if(data.lang==="zh")>第二轮展示</td>
-                            </tr>
-                            <tr>
-                                <td>14:00 - 15:30</td>
-                                <td colspan="2" if(data.lang==="en")>Top 10 Demo</td>
-                                <td colspan="2" if(data.lang==="zh")>前十名路演</td>
-                            </tr>
-                            <tr>
-                                <td>15:40 - 16:40</td>
-                                <td colspan="2" if(data.lang==="en")>Closing Ceremony</td>
-                                <td colspan="2" if(data.lang==="zh")>闭幕式</td>
-                            </tr>
-                            <tr>
-                                <td>16:30 - 18:00</td>
-                                <td colspan="2" if(data.lang==="en")>Clean-Up</td>
-                                <td colspan="2" if(data.lang==="zh")>清理</td>
-                            </tr>
-                            <tr>
-                                <td>17:00 - </td>
-                                <td colspan="2" if(data.lang==="en")>Non-ShanghaiTech Students Must Leave the Campus</td>
-                                <td colspan="2" if(data.lang==="zh")>非上海科技大学学生必须离开校园</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        -->
-
-        <div id="sponsor" class="container">
-            <div class="row">
-                <div class="col-xs-12 sponsorship" if(data.lang==="en")>
-                    <h2><b>Sponsorship</b></h2>
-                    <p>HackShanghai is a perfect place to feel the vibe of the newest generation. At <b>hack.init()</b>, you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.</p>
-                    <p>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href="mailto:sponsorship@hackshanghai.com">sponsorship@hackshanghai.com</a>.</p>
-                    <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-en_US.pdf" class="btn btn-hacksh btn-lg" role="button">Program Prospectus</a></div>
-                </div>
-                <div class="col-xs-12 sponsorship" if(data.lang==="zh")>
-                    <h2><b>与我们合作</b></h2>
-                    <p>hackShanghai是感受新一代青年人活力与能力的绝佳活动。在<b>hack.init()</b>中，你可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传你的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望你能参与到我们的伟大任务中来。</p>
-                    <p>有兴趣与我们合作？ 请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到<a href="mailto:sponsorship@hackshanghai.com">sponsorship@hackshanghai.com</a>与我们联系！</p>
-                    <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button">项目计划书</a></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="host-logos" class="container sponsor-partner">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Hosted by</b></h2>
-                    <h2 if(data.lang==="zh")><b>主办方</b></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor-1">
-                    <a target="_blank" href="http://thehack.io">
-                        <img alt="THE Hack" src="//static.hackinit.org/img/thehack/logo/th-1024px-c.png">
-                    </a>
-                    <a target="_blank" href="http://hackshanghai.com">
-                        <img alt="hackShanghai" src="//static.hackinit.org/img/hackshanghai/logo.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!--
-        <div id="cohost-logos" class="container sponsor-partner">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Co-hosted by</b></h2>
-                    <h2 if(data.lang==="zh")><b>共同主办方</b></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor-1">
-                    <a>
-                        <img alt="Techomedia" src="/s/img/Techo.png">
-                    </a>
-                    <a target="_blank" href="http://www.shanghaitech.edu.cn/">
-                        <img alt="ShanghaiTech University" src="/s/img/shtech.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div id="sponsor-logos" class="container sponsor-partner">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Sponsors</b></h2>
-                    <h2 if(data.lang==="zh")><b>赞助方</b></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor-2">
-                    <a>
-                        <img alt="Coleadffee" src="/s/img/coleadffee.png">
-                    </a>
-                    <a target="_blank" href="https://www.sogou.com/">
-                        <img alt="Sogou" src="/s/img/sogou.png">
-                    </a>
-                    <a target="_blank" href="https://www.leapmotion.com/">
-                        <img alt="Leap Motion" src="/s/img/leap-motion.png">
-                    </a>
-                    <a target="_blank" href="https://www.initialview.com/">
-                        <img alt="InitialView" src="/s/img/IV.png">
-                    </a>
-                    <a target="_blank" href="https://www.google.com/">
-                        <img alt="Google" src="/s/img/google.png">
-                    </a>
-                    <a>
-                        <img alt="Cisco" src="/s/img/cisco.png">
-                    </a>
-                    <a target="_blank" href="http://www.dreamt.cn/">
-                        <img alt="DreamT" src="/s/img/aws.png">
-                    </a>
-                    <a target="_blank" href="http://www.cccoach.cn/">
-                        <img alt="CCCoach" src="/s/img/cccoach.png">
-                    </a>
-                    <a target="_blank" href="http://www.makeblock.com/">
-                        <img alt="Makeblock" src="/s/img/makeblock.png">
-                    </a>
-                    <a target="_blank" href="http://www.wolfram.com/">
-                        <img alt="Wolfram" src="/s/img/wolfram.png">
-                    </a>
-                    <a target="_blank" href="https://ruff.io/">
-                        <img alt="Ruff" src="/s/img/Ruff.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor-3">
-                    <a target="_blank" href="https://www.lintcode.com/en/">
-                        <img alt="LintCode" src="/s/img/lintcode.jpeg">
-                    </a>
-                    <a target="_blank" href="http://www.ivymaker.com/">
-                        <img alt="Ivy Maker" src="/s/img/ivy-maker.png">
-                    </a>
-                    <a target="_blank" href="http://www.innospring.net/">
-                        <img alt="InnoSpring" src="/s/img/innospring.png">
-                    </a>
-                    <a target="_blank" href="https://indico.io/">
-                        <img alt="Indico" src="/s/img/Indico-Logo-Final-Black.png">
-                    </a>
-                    <a target="_blank" href="http://www.microchip.com/">
-                        <img alt="Microchip" src="/s/img/microchip.jpeg">
-                    </a>
-                    <a target="_blank" href="http://www.incake.net/">
-                        <img alt="InCake" src="/s/img/incake.png">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor-4">
-                    <a target="_blank" href="http://www.liulishuo.com/">
-                        <img alt="Yingyu Liulishuo" src="/s/img/liulishuo.png">
-                    </a>
-                    <a target="_blank" href="https://www.dfrobot.com/">
-                        <img alt="DFRobot" src="/s/img/dfrobot.png">
-                    </a>
-                    <a target="_blank" href="http://www.toutiao.com/">
-                        <img alt="Toutiao" src="/s/img/toutiao.png">
-                    </a>
-                    <a target="_blank" href="http://www.sujitech.com/">
-                        <img alt="Suji Tech" src="/s/img/sujitech_logo.png">
-                    </a>
-                    <a target="_blank" href="https://unity3d.com/">
-                        <img alt="Unity" src="/s/img/unity-logo-rgb.png">
-                    </a>
-                    <a target="_blank" href="http://www.inaservice.com.cn/">
-                        <img alt="InaService" src="/s/img/inaservice.png">
-                    </a>
-                    <a target="_blank" href="https://c.m.suning.com/sc1.html">
-                        <img alt="Suning" src="/s/img/suning.png">
-                    </a>
-                    <a target="_blank" href="http://nic.club/">
-                        <img alt=".club" src="/s/img/club.png">
-                    </a>
-                    <a target="_blank" href="http://get.tech/">
-                        <img alt=".tech" src="/s/img/tech.png">
-                    </a>
-                    <a target="_blank" href="https://www.lewagon.com/shanghai">
-                        <img alt="Le Wagon" src="/s/img/le-wagon.png">
-                    </a>
-                    <a target="_blank" href="http://thunkable.com/#/">
-                        <img alt="Thunkable" src="/s/img/thunkable.png">
-                    </a>
-                    <a target="_blank" href="https://www.digitalocean.com/">
-                        <img alt="DigitalOcean" src="/s/img/digitalocean.png">
-                    </a>
-                    <a>
-                        <img alt="Zhishu" src="/s/img/zs-steam.png">
-                    </a>
-                    <a>
-                        <img alt="Yershari" src="/s/img/yershari.png">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor-5">
-                    <a target="_blank" href="http://www.amaris.com/">
-                        <img alt="Amaris" src="/s/img/amaris.png">
-                    </a>
-                    <a target="_blank" href="https://gocn.io/">
-                        <img alt="GoCN" src="/s/img/gocn.png">
-                    </a>
-                    <a target="_blank" href="https://www.jetbrains.com/">
-                        <img alt="JetBrains" src="/s/img/JetBrains.png">
-                    </a>
-                    <a target="_blank" href="https://www.jisuanke.com/">
-                        <img alt="Jisuanke" src="/s/img/jisuanke.png">
-                    </a>
-                    <a target="_blank" href="https://www.thalmic.com/">
-                        <img alt="Thalmic Labs" src="/s/img/thalmic_labs.png">
-                    </a>
-                    <a target="_blank" href="http://www.choosemuse.com/">
-                        <img alt="Muse" src="/s/img/muse.png">
-                    </a>
-                    <a target="_blank" href="https://www.clarifai.com/">
-                        <img alt="Clarifai" src="/s/img/clarifai.png">
-                    </a>
-                    <a target="_blank" href="https://www.twilio.com/">
-                        <img alt="Twilio" src="/s/img/twilio.png">
-                    </a>
-                    <a target="_blank" href="http://codevs.cn/">
-                        <img alt="CodeVS" src="/s/img/codevs.jpg">
-                    </a>
-                    <a target="_blank" href="https://www.codingame.com/">
-                        <img alt="CodinGame" src="/s/img/codingame.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div id="investment-partner-logos" class="container sponsor-partner">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Investment Partners</b></h2>
-                    <h2 if(data.lang==="zh")><b>合作资方</b></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor-3">
-                    <a target="_blank" href="http://www.i-lab.sh.cn/">
-                        <img alt="i-lab" src="/s/img/ilab.png">
-                    </a>
-                    <a target="_blank" href="http://www.kfstartups.com/">
-                        <img alt="Kungfu" src="/s/img/kungfu.png">
-                    </a>
-                    <a target="_blank" href="http://www.tisiwi.com/">
-                        <img alt="Tisiwi" src="/s/img/tisiwi.png">
-                    </a>
-                    <a target="_blank" href="http://www.innospring.net/">
-                        <img alt="InnoSpring" src="/s/img/innospring.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div id="partner-logos" class="container sponsor-partner">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Partners</b></h2>
-                    <h2 if(data.lang==="zh")><b>合作伙伴</b></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor">
-                    <a target="_blank" href="http://english.cast.org.cn/">
-                        <img alt="China Association for Science and Technology" src="/s/img/cast.png">
-                    </a>
-                    <a>
-                        <img alt="CLH" src="/s/img/CLH_logo.png">
-                    </a>
-                    <a target="_blank" href="http://www.youthpowerchina.cn/">
-                        <img alt="Youth Power" src="/s/img/qingli.png">
-                    </a>
-                    <a>
-                        <img alt="Voyage" src="/s/img/voyage.jpeg">
-                    </a>
-                    <a>
-                        <img alt="Mushroom Cloud" src="/s/img/mushroom-cloud.png">
-                    </a>
-                    <a target="_blank" href="https://segmentfault.com/">
-                        <img alt="SegmentFault" src="/s/img/segmentfault.png">
-                    </a>
-                    <a target="_blank" href="http://www.maoyouhui.org/">
-                        <img alt="Maoyouhui" src="/s/img/myh.png">
-                    </a>
-                    <a target="_blank" href="https://www.womenwhocode.com/shanghai">
-                        <img alt="Women Who Code" src="/s/img/women-who-code.png">
-                    </a>
-                    <a target="_blank" href="https://www.teambition.com/">
-                        <img alt="Teambition" src="/s/img/teambition.png">
-                    </a>
-                    <a target="_blank" href="https://www.hackx.org/">
-                        <img alt="HACKx" src="/s/img/hackx.png">
-                    </a>
-                    <a target="_blank" href="https://jizhi.im/">
-                        <img alt="Jizhi" src="/s/img/jizhi.png">
-                    </a>
-                    <a target="_blank" href="http://technovationchallenge.org/">
-                        <img alt="Technovation" src="/s/img/technovation.png">
-                    </a>
-                    <a target="_blank" href="https://geekpie.org/zh/">
-                        <img alt="Geek Pie" src="/s/img/geekpie.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div id="hardware-provider-logos" class="container sponsor-partner">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Hardware Providers</b></h2>
-                    <h2 if(data.lang==="zh")><b>硬件提供方</b></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-hardware">
-                    <a target="_blank" href="http://www.makeblock.com/">
-                        <img alt="Makeblock" src="/s/img/makeblock.png">
-                    </a>
-                    <a target="_blank" href="https://www.dfrobot.com/">
-                        <img alt="DFRobot" src="/s/img/dfrobot.png">
-                    </a>
-                    <a target="_blank" href="https://www.leapmotion.com/">
-                        <img alt="Leap Motion" src="/s/img/leap-motion.png">
-                    </a>
-                    <a target="_blank" href="https://ruff.io/">
-                        <img alt="Ruff" src="/s/img/Ruff.jpg">
-                    </a>
-                    <a target="_blank" href="https://www.thalmic.com/">
-                        <img alt="Thalmic Labs" src="/s/img/thalmic_labs.png">
-                    </a>
-                    <a target="_blank" href="http://www.choosemuse.com/">
-                        <img alt="Muse" src="/s/img/muse.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div id="media-logos" class="container sponsor-partner">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Media Support</b></h2>
-                    <h2 if(data.lang==="zh")><b>媒体支持</b></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tier tier-sponsor-media">
-                    <a>
-                        <img alt="Chaping" src="/s/img/chaping.png">
-                    </a>
-                    <a target="_blank" href="http://36kr.com/">
-                        <img alt="36Kr" src="/s/img/36kr.png">
-                    </a>
-                    <a target="_blank" href="http://technode.com/">
-                        <img alt="TechNode" src="/s/img/technode.png">
-                    </a>
-                    <a target="_blank" href="https://juejin.im/">
-                        <img alt="Juejin" src="/s/img/juejin.png">
-                    </a>
-                    <a target="_blank" href="http://news.163.com/">
-                        <img alt="Netease News" src="/s/img/netease_news.png">
-                    </a>
-                    <a target="_blank" href="http://news.qq.com/">
-                        <img alt="Tencent News" src="/s/img/tencent_news.png">
-                    </a>
-                    <a target="_blank" href="http://sh.sina.com.cn/">
-                        <img alt="Sina Shanghai" src="/s/img/sina_shanghai.png">
-                    </a>
-                    <a target="_blank" href="http://www.sh.chinanews.com/">
-                        <img alt="China News Shanghai" src="/s/img/chinanews_shanghai.jpg">
-                    </a>
-                    <a target="_blank" href="http://www.eastday.com/">
-                        <img alt="Eastday" src="/s/img/eastday.gif">
-                    </a>
-                    <a>
-                        <img alt="Shanghai Television Station" src="/s/img/shanghai_tv_station.jpg">
-                    </a>
-                    <a target="_blank" href="http://www.shanghaidaily.com/">
-                        <img alt="ShanghaiDaily" src="/s/img/shanghai_daily.jpg">
-                    </a>
-                </div>
-            </div>
-        </div>
-        -->
-
-        <!--
-        <div id="recruit" class="container-fluid grey-background">
-            <div class="row">
-                <div class="col-xs-12 recruitment">
-                    <h2><b>Recruitment</b></h2>
-                    <p>We are a vibrant team. We pride ourselves in our diversity and open-mindedness. We have a great mission to accomplish. We want to break the age barrier.</p>
-                    <p>We want to have as much support as we can get. That includes you. We would love to see you in our team, and can't wait to see what we are going to make together.</p>
-                    <div class="horizontal-center"><a id="recruitment-btn" target="_blank" href="http://hackinit.mikecrm.com/b7EtqqX" class="btn btn-warning btn-lg" role="button">Join Us!</a></div>
-                </div>
-            </div>
-        </div>
-        -->
-
-        <div class="container-fluid darkred-background">
-            <div class="row">
-                <div class="col-xs-12 footer" if(data.lang==="en")>
-                    <div class="horizontal-center">
-                        <p>Copyright <i class="fa fa-copyright"></i> 2018 <a href>hackshanghai.com</a>. All Rights Reserved.</p>
-                        <p><a target="_blank" href="//static.hackinit.org/doc/shared/Code-of-Conduct.pdf">Code of Conduct</a></p>
+            <div id="sponsor" class="container section">
+                <div class="row">
+                    <div class="col-xs-12 sponsorship" if(data.lang==="en")>
+                        <h2><b>Sponsorship</b></h2>
+                        <p>HackShanghai is a perfect place to feel the vibe of the newest generation. At <b>hack.init()</b>, you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.</p>
+                        <p>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href="mailto:sponsorship@hackshanghai.com">sponsorship@hackshanghai.com</a>.</p>
+                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-en_US.pdf" class="btn btn-hacksh btn-lg" role="button">Program Prospectus</a></div>
+                    </div>
+                    <div class="col-xs-12 sponsorship" if(data.lang==="zh")>
+                        <h2><b>与我们合作</b></h2>
+                        <p>hackShanghai是感受新一代青年人活力与能力的绝佳活动。在<b>hack.init()</b>中，你可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传你的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望你能参与到我们的伟大任务中来。</p>
+                        <p>有兴趣与我们合作？ 请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到<a href="mailto:sponsorship@hackshanghai.com">sponsorship@hackshanghai.com</a>与我们联系！</p>
+                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button">项目计划书</a></div>
                     </div>
                 </div>
-                <div class="col-xs-12 footer" if(data.lang==="zh")>
-                    <div class="horizontal-center">
-                        <p>Copyright <i class="fa fa-copyright"></i> 2018 <a href>hackshanghai.com</a>. 版权所有。</p>
-                        <p><a target="_blank" href="//static.hackinit.org/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+            </div>
+
+            <div id="host-logos" class="container sponsor-partner section">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 if(data.lang==="en")><b>Hosted by</b></h2>
+                        <h2 if(data.lang==="zh")><b>主办方</b></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 tier tier-sponsor-1">
+                        <a target="_blank" href="http://thehack.io">
+                            <img alt="THE Hack" src="//static.hackinit.org/img/thehack/logo/th-1024px-c.png">
+                        </a>
+                        <a target="_blank" href="http://hackshanghai.com">
+                            <img alt="hackShanghai" src="//static.hackinit.org/img/hackshanghai/logo.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid darkred-background">
+                <div class="row">
+                    <div class="col-xs-12 footer" if(data.lang==="en")>
+                        <div class="horizontal-center">
+                            <p>Copyright <i class="fa fa-copyright"></i> 2018 <a href>hackshanghai.com</a>. All Rights Reserved.</p>
+                            <p><a target="_blank" href="//static.hackinit.org/doc/shared/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 footer" if(data.lang==="zh")>
+                        <div class="horizontal-center">
+                            <p>Copyright <i class="fa fa-copyright"></i> 2018 <a href>hackshanghai.com</a>. 版权所有。</p>
+                            <p><a target="_blank" href="//static.hackinit.org/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
