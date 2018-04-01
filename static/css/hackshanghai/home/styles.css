@@ -619,3 +619,7 @@ input:-webkit-autofill:active {
     padding-bottom: 60px;
     text-align: center;
 }
+
+#about {
+    min-height: 100vh;
+}
