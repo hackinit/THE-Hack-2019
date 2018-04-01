@@ -1,0 +1,621 @@
+body {
+    font-family: 'Lato';
+}
+
+.grey-background {
+    background-color: rgb(245, 245, 245);
+}
+
+.lightgrey-background {
+    background-color: #eef1f3;
+}
+
+.darkgrey-background {
+    background-color: #252525;
+}
+
+.horizontal-center {
+    text-align: center;
+}
+
+.navbar-brand-logo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar-brand-logo img {
+    height: 40px;
+}
+
+.navbar-brand-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: -15px;
+    line-height: 20px;
+}
+
+.hackinit-logo {
+    width: 80%;
+}
+
+.hackinit-logo-col {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-55%);
+}
+
+.subscription-row {
+    position: absolute;
+    top: 83%;
+    left: 41.5%;
+    width: 50%;
+}
+
+#hackinit-horizontal {
+    display: inline;
+}
+
+#hackinit-vertical {
+    display: none;
+}
+
+.about {
+    padding-bottom: 75px;
+}
+
+.about h2 {
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.about p {
+    padding-top: 20px;
+    font-size: 16px;
+    width: 525px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.count-block {
+    padding-top: 24px;
+    padding-bottom: 23px;
+}
+
+.count-number {
+    font-size: 5em;
+}
+
+#faq h2 {
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+#faq .panel-heading {
+    padding: 15px;
+}
+
+#faq .panel-title {
+    font-size: 18px;
+}
+
+#faq .panel-title, #faq .panel-title:hover, #faq .panel-title:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#faq .panel-title i {
+    margin-right: 10px;
+}
+
+#faq .panel-body {
+    font-size: 16px;
+}
+
+.sponsorship {
+    padding-bottom: 60px;
+}
+
+.sponsorship h2 {
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.sponsorship p {
+    padding-top: 20px;
+    font-size: 16px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#prospectus-btn {
+    margin-top: 30px;
+}
+
+#host-logos, #cohost-logos, #sponsor-logos, #investment-partner-logos, #partner-logos, #hardware-provider-logos {
+    padding-bottom: 60px;
+}
+
+#media-logos {
+    padding-bottom: 75px;
+}
+
+.sponsor-partner h2 {
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.sponsor-partner .tier {
+    text-align: center;
+}
+
+.sponsor-partner a {
+    opacity: .75;
+}
+
+.sponsor-partner a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.sponsor-partner a img {
+    vertical-align: middle;
+}
+
+.sponsor-partner .tier a img {
+    margin: 2em;
+}
+
+.sponsor-partner .tier-sponsor a img {
+    max-width: 170px;
+}
+
+@media only screen and (max-width: 247px) {
+    .sponsor-partner .tier-sponsor a img {
+        max-width: calc(100% - 72px);
+    }
+}
+
+.sponsor-partner .tier-sponsor-1 a img {
+    max-width: 250px;
+    max-height: 150px;
+}
+
+@media only screen and (max-width: 322px) {
+    .sponsor-partner .tier-sponsor-1 a img {
+        max-width: calc(100% - 72px);
+    }
+}
+
+.sponsor-partner .tier-sponsor-2 a img {
+    max-width: 320px;
+    max-height: 140px;
+}
+
+@media only screen and (max-width: 392px) {
+    .sponsor-partner .tier-sponsor-2 a img {
+        max-width: calc(100% - 72px);
+    }
+}
+
+.sponsor-partner .tier-sponsor-3 a img {
+    max-width: 200px;
+    max-height: 130px;
+}
+
+@media only screen and (max-width: 272px) {
+    .sponsor-partner .tier-sponsor-3 a img {
+        max-width: calc(100% - 72px);
+    }
+}
+
+.sponsor-partner .tier-sponsor-4 a img {
+    max-width: 145px;
+    max-height: 130px;
+}
+
+@media only screen and (max-width: 217px) {
+    .sponsor-partner .tier-sponsor-4 a img {
+        max-width: calc(100% - 72px);
+    }
+}
+
+.sponsor-partner .tier-sponsor-5 a img {
+    max-width: 120px;
+    max-height: 120px;
+}
+
+@media only screen and (max-width: 192px) {
+    .sponsor-partner .tier-sponsor-5 a img {
+        max-width: calc(100% - 72px);
+    }
+}
+
+.sponsor-partner .tier-hardware a img {
+    max-width: 120px;
+    max-height: 120px;
+}
+
+@media only screen and (max-width: 192px) {
+    .sponsor-partner .tier-hardware a img {
+        max-width: calc(100% - 72px);
+    }
+}
+
+.sponsor-partner .tier-sponsor-media a img {
+    max-width: 145px;
+}
+
+@media only screen and (max-width: 217px) {
+    .sponsor-partner .tier-sponsor-media a img {
+        max-width: calc(100% - 72px);
+    }
+}
+
+.recruitment {
+    padding-bottom: 75px;
+}
+
+.recruitment h2 {
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.recruitment p {
+    padding-top: 20px;
+    font-size: 16px;
+    width: 570px;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#recruitment-btn {
+    margin-top: 30px;
+}
+
+.fa-resource {
+    margin-right: 5px;
+}
+
+.intl-tel-input {
+    display: table-cell;
+}
+
+.intl-tel-input .selected-flag {
+    z-index: 4;
+    outline: none;
+}
+
+.intl-tel-input .iti-flag .arrow {
+    border: none;
+}
+
+#cellphone-input {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.caapp-btn-row {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.caapp-btn-sm-col {
+    padding-top: 5px;
+    display: none;
+}
+
+.caapp-btn-sm {
+    width: 100%;
+}
+
+.caapp-btn i {
+    margin-right: 10px;
+}
+
+.input-field {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.app-close-alert {
+    font-size: 16px;
+}
+
+#schedule-title {
+    text-align: center;
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+table.day-schedule {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+table.day-schedule tr:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+
+table.day-schedule tr:nth-child(even) {
+    background-color: #fefefe;
+}
+
+table.day-schedule tr td:nth-child(1) {
+    text-align: center;
+}
+
+table.day-schedule tr td, table.day-schedule tr th {
+    padding: 10px 10px;
+}
+
+table.day-schedule tr td {
+    font-size: 14px;
+}
+
+table.day-schedule tr th {
+    background-color: #e9e9e9;
+    text-align: center;
+    font-size: 16px;
+}
+
+table.day-schedule tr.day th {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .caapp-btn-sm {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #hackinit-horizontal {
+        display: none;
+    }
+
+    #hackinit-vertical {
+        display: inline;
+    }
+
+    .hackinit-logo {
+        width: 57.5%;
+    }
+
+    .hackinit-logo-col {
+        transform: translateY(-57.5%);
+    }
+
+    .subscription-row {
+        top: 107.5%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 57.5%;
+    }
+
+    .caapp-btn-row {
+        display: none;
+    }
+
+    .caapp-btn-sm-col {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    .hackinit-logo {
+        width: 75%;
+    }
+
+    .subscription-row {
+        width: 75%;
+    }
+
+    .hackinit-logo-col {
+        transform: translateY(-65%);
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 9999s ease-in-out 9999s;
+}
+
+/* hackShanghai 2018 new */
+.navbar-hacksh {
+    background-color: #a93535;
+    border-color: #a93535;
+}
+
+.navbar-hacksh .navbar-collapse, .navbar-hacksh .navbar-form {
+    border-color: #a93535;
+}
+
+.navbar-hacksh .navbar-toggle {
+    border-color: #6d2121;
+}
+
+.navbar-hacksh .navbar-toggle:focus, .navbar-hacksh .navbar-toggle:hover {
+    background-color: #6d2121;
+}
+
+.navbar-hacksh .navbar-nav>li>a {
+    color: lightgrey;
+}
+
+.darkred-background {
+    background-color: #a93535;
+}
+
+.footer {
+    color: lightgrey;
+    font-size: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+.footer p a, .footer p a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-hacksh {
+    color: #fff;
+    background-color: #a93535;
+    border-color: #6d2121;
+    background: #a93535;
+}
+
+.btn-hacksh:hover, .btn-hacksh:active, .btn-hacksh:focus {
+    color: #fff;
+    background-color: #6d2121;
+    border-color: #6d2121;
+}
+
+.darkblue-background {
+    background-color: #353b55;
+    color: white;
+}
+
+#faq .panel-hacksh .panel-title .panel-heading {
+    color: white;
+    background-color: #a93535;
+    border-color: #bd3b3b;
+}
+
+.panel-hacksh {
+    border-color: #6d2121;
+}
+
+.scroll-down-row {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.scroll-down-link, .scroll-down-link:hover, .scroll-down-link:focus {
+    color: white;
+}
+
+.hackinit-logo-container {
+    position: relative;
+}
+
+.logo-background {
+    background-color: #f8eed1;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+#main {
+    left: 20%;
+    width: 80%;
+}
+
+.section {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+#main-logo {
+    width: 90%;
+    padding-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.buttons {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.buttons .btn {
+    width: 100%;
+    font-size: 15px;
+    outline: none;
+}
+
+.first-screen {
+    position: relative;
+}
+
+#info {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+#info h1 {
+    text-align: right;
+    margin-top: 10px;
+}
+
+#date-text {
+    color: #a93535;
+    font-size: 40px;
+}
+
+#city-text, #location-text {
+    color: white;
+    font-size: 35px;
+}
+
+@media only screen and (max-width: 991px) {
+    #main {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .buttons .btn {
+        font-size: 12.5px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #info {
+        bottom: 25px;
+        right: 25px;
+    }
+
+    #info h1 {
+        font-size: 25px;
+    }
+}
