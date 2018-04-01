@@ -50,19 +50,6 @@ body {
     transform: translateY(-55%);
 }
 
-.scroll-down-row {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.scroll-down-link, .scroll-down-link:hover, .scroll-down-link:focus {
-    color: #333;
-}
-
 .subscription-row {
     position: absolute;
     top: 83%;
@@ -529,4 +516,17 @@ input:-webkit-autofill:active {
 
 .panel-hacksh {
     border-color: #6d2121;
+}
+
+.scroll-down-row {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.scroll-down-link, .scroll-down-link:hover, .scroll-down-link:focus {
+    color: white;
 }
