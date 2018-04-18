@@ -13,62 +13,10 @@ angular.module('reg')
       // Set up the user
       $scope.user = currentUser.data;
 
-      var dropzoneConfig = {
-        url: '/api/resume/upload',
-        previewTemplate: document.querySelector('#resume-dropzone-preview').innerHTML,
-        maxFiles: 1,
-        maxFilesize: 2, // MB
-        uploadMultiple: false,
-        acceptedFiles: 'application/pdf',
-        autoProcessQueue: false,
-        clickable: ['.resume-dropzone', '.resume-dropzone>span'],
-        headers: {
-          'x-access-token': Session.getToken()
-        }
-      };
-
-      $scope.showResumeDropzoneIcon = true;
-      $scope.resumeDropzoneErrorMessage = '';
-      $scope.showResumeDropzone = false;
-
-      $scope.resumeDropzone = new Dropzone('div#resume-upload', dropzoneConfig);
-
-      $scope.resumeDropzone.on("error", function(file, errorMessage) {
-        $scope.resumeDropzoneHasError = true;
-        $scope.resumeDropzoneErrorMessage = errorMessage;
-        $scope.$apply();
-      });
-
-      $scope.resumeDropzone.on("addedfile", function() {
-        if ($scope.resumeDropzone.files.length > 1) {
-          $scope.resumeDropzone.removeFile($scope.resumeDropzone.files[0]);
-        }
-
-        $scope.resumeDropzoneHasError = false;
-        $scope.resumeDropzoneErrorMessage = '';
-        $scope.showResumeDropzoneIcon = !!!$scope.resumeDropzone.files.length;
-        $scope.submitButtonDisabled = false;
-        $scope.$apply();
-      })
-
-      $scope.resumeDropzone.on("removedfile", function() {
-        $scope.resumeDropzoneHasError = false;
-        $scope.resumeDropzoneErrorMessage = '';
-        $scope.showResumeDropzoneIcon = !!!$scope.resumeDropzone.files.length;
-        $scope.$apply();
-      })
-
-      $scope.resumeDropzone.on("processing", function() {
-        $scope.resumeDropzoneIsUploading = true;
-      })
-
-      $scope.toggleResumeDropzone = function() {
-        $scope.showResumeDropzone = !$scope.showResumeDropzone;
-      }
-
-
       // Is the student from MIT?
       $scope.isMitStudent = $scope.user.email.split('@')[1] == 'mit.edu';
+
+      $scope.user.profile.adult = true;
 
       // If so, default them to adult: true
       if ($scope.isMitStudent){
@@ -126,8 +74,8 @@ angular.module('reg')
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .success(function(data){
             sweetAlert({
-              title: "Awesome!",
-              text: "Your application has been saved.",
+              title: "谢谢！",
+              text: "你的申请已被成功保存",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
@@ -135,7 +83,7 @@ angular.module('reg')
             });
           })
           .error(function(res){
-            sweetAlert("Uh oh!", "Something went wrong.", "error");
+            sweetAlert("Oops", "可能有哪里出错了", "error");
           });
       }
 
@@ -169,7 +117,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please enter your name.'
+                  prompt: '请输入你的姓名'
                 }
               ]
             },
@@ -178,7 +126,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please enter your school name.'
+                  prompt: '请输入你的学校全称'
                 }
               ]
             },
@@ -187,7 +135,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please select your graduation year.'
+                  prompt: '请选择你的毕业年份'
                 }
               ]
             },
@@ -196,19 +144,10 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please select a gender.'
+                  prompt: '请选择你的毕业年份'
                 }
               ]
             },
-            adult: {
-              identifier: 'adult',
-              rules: [
-                {
-                  type: 'allowMinors',
-                  prompt: 'You must be an adult, or an MIT student.'
-                }
-              ]
-            }
           }
         });
       }

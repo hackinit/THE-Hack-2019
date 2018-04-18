@@ -4,11 +4,11 @@
     "env": {
         "NODE_ENV": {
             "description": "dev or production",
-            "value": "production"
+            "value": "dev"
         },
         "JWT_SECRET": {
             "description": "Long random string used to verify JWT tokens for user authentication",
-            "generator": "ZZPUkLhXp1dk7lou7RFf"
+            "generator": "secret"
         },
         "ROOT_URL": {
             "description": "Root URL for your registration system",
@@ -16,14 +16,14 @@
         },
         "ADMIN_EMAIL": {
             "description": "Credentials for the admin user created at app initialization",
-            "value": "shaolin.zhang@hackinit.org"
+            "value": "admin@example.com"
         },
         "ADMIN_PASS": "party",
         "EMAIL_ADDRESS": {
             "description": "The email address that is included in the 'email us' link at the bottom of emails.",
-            "value": "contact@hackinit.org"
+            "value": "team@example.com"
         },
-        "HACKATHON_NAME": "hack.init() 2018",
+        "HACKATHON_NAME": "Hackathon",
         "TWITTER_HANDLE": {
             "description": "Everything after https://twitter.com/",
             "value": "hackathon"
