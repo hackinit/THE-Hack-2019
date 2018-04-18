@@ -1,189 +1,252 @@
 <div id="application" class="page">
   <div class="divided title">
-    校园大使申请
+    Application
   </div>
 
   <div class="ui stackable page grid">
     <div class="column">
-      <div class="ui form"
-            ng-class="{'loading': loading}">
+      <div class="ui form" ng-class="{'loading': loading}">
+        <div class="divided title">Basic Information</div>
+        <fieldset ng-disabled="regIsClosed">
+          <div class="field" required>
+            <label>Email</label>
+            <input type="email" name="email" disabled="disabled" ng-model="user.email">
+          </div>
 
-        <div class="divided title">准备好成为一名校园大使了吗？</div>
+          <div class="field" required>
+            <label>Full name</label>
+            <input type="text" name="name" ng-model="user.profile.name">
+          </div>
 
-        <div class="field">
-          <p>
-            作为学校里最有影响力的少数派，你将会担负起一份对我们来说万分重要的责任——帮助我们在同学和朋友中推广<b> THE Hack </b>。<br />
-            当然，这是一份轻松有趣，充满弹性的工作。如果你对即将到来的挑战充满信心，或是渴望历练一下自己的市场推广技能，那么我们诚挚欢迎你的加入。<br />
-            如果你有任何相关的问题，欢迎发送邮件到<a href="mailto:contact@thehack.io">contact@thehack.io</a>。<br />
-          </p>
-          <p>
-        </div>
+          <div class="field" required>
+            <label>Age at the time of the event</label>
+            <input type="text" name="age" placeholder="how old will you be on 2018-05-25?" ng-model="user.profile.age">
+          </div>
 
-        <div class="col-xs-12 col-md-4">
-            <h4><b>四个成为校园大使的理由</b></h4>
-            <ul class="list-group">
-                <li class="list-group-item">
-                  你将获得无与伦比的工作经验，和<b> THE Hack </b>组委会以及全国的校园学生领袖共同协作，收获广泛社交网络，为你所在的校园与社区推动了STEM教育并锻炼自己的市场营销与宣传能力
-                </li>
-                <li class="list-group-item">
-                    获得<b> THE Hack </b>官方校园大使<b>工作证书</b>和校园大使<b>专属礼品</b>
-                </li>
-                <li class="list-group-item">
-                    如果你所在的学校申请人数有显著提升，校园大使所在的队伍在申请参赛时会优先考虑，录取率大大提高
-                </li>
-                <li class="list-group-item">
-                    每位校园大使可指定1组队伍进入优先考虑行列，录取率显著提高
-                </li>
+          <div class="field" required>
+            <label>Gender</label>
+            <select name="gender" ng-model="user.profile.gender">
+              <option value="">-- Gender --</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other</option>
+              <option value="N">I prefer not to answer.</option>
+            </select>
+          </div>
+
+          <div class="field" required>
+            <label>Nationality</label>
+            <select name="nationality" ng-model="user.profile.nationality">
+              <option value="">-- Nationality --</option>
+              <option value="{{nation}}" ng-repeat="nation in nations">{{nation}}</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>City</label>
+            <input type="text" name="city" ng-model="user.profile.city">
+          </div>
+        </fieldset>
+
+        <div class="divided title">Profession</div>
+        <fieldset ng-disabled="regIsClosed">
+          <div class="field" required>
+            <label>Profession</label>
+
+            <div class="ui stackable grid">
+              <div class="four wide column">
+                <div class="ui radio checkbox">
+                  <input type="radio" id="profession-student" name="profession" ng-model="user.profile.profession" value="S">
+                  <label for="profession-student">I'm a student</label>
+                </div>
+              </div>
+
+              <div class="six wide column">
+                <div class="ui radio checkbox">
+                  <input type="radio" id="profession-work" name="profession" ng-model="user.profile.profession" value="W">
+                  <label for="profession-work">I have a job / I'm between jobs</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="user.profile.profession == 'S'">
+            <div class="field" ng-show="autoFilledSchool" required>
+              <label>School</label>
+              <input class="ui input" disabled="disabled" ng-show="autoFilledSchool" ng-model="user.profile.study.school">
+            </div>
+
+            <div class="field" ng-show="!autoFilledSchool" required>
+              <label>School</label>
+              <div id="school" class="ui search">
+                <div class="ui input">
+                  <input class="prompt" type="text" placeholder="the school or university you're visiting" name="school" ng-model="user.profile.study.school">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+
+            <div class="field" required>
+              <label>Subject of studies</label>
+              <input type="text" placeholder="e.g. Computer Science, UX Engineering, Awesomeness" name="subject-of-study" ng-model="user.profile.study.subject">
+            </div>
+
+            <div class="field" required>
+              <label>Year of studies</label>
+              <select name="year-of-studies" ng-model="user.profile.study.yearOfStudies">
+                <option value="">-- Year of studies --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
+
+            <div class="field" required>
+              <label>Expected graduation year</label>
+              <select name="graduation-year" ng-model="user.profile.study.graduationYear">
+                <option value="">-- Graduation year --</option>
+                <option value="{{year}}" ng-repeat="year in graduationYears">{{year}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div ng-show="user.profile.profession == 'W'">
+            <div class="field" required>
+              <label>Years of work experience</label>
+              <input name="work-experience" type="number" min="0" max="100" ng-model="user.profile.work.experience">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="divided title">About you</div>
+        <fieldset ng-disabled="regIsClosed">
+          <div class="field" required>
+            <label>Do you need travel reimbursement?</label>
+            <p>If you're coming from outside the Oberpfalz, it's possible to apply for reimbursement to cover some of your travel expenses. Depending on where you come from, the reimbursement can be up to:</p>
+            <ul>
+              <li>Bavaria (outside of the Oberpfalz): 25€</li>
+              <li>Germany: 40€</li>
+              <li>Rest of Europe (SEPA area): 75€</li>
             </ul>
-        </div>
+            <p>
+              <b>Important note:</b> We can only transfer money in the SEPA area! Thus, be ready to provide your travel receipts and bank address.
+            </p>
+            <div class="ui stackable grid">
+              <div class="two wide column">
+                <div class="ui radio checkbox">
+                  <input id="travel-reimbursement-y" name="travel-reimbursement" type="radio" value="Y" ng-model="user.profile.travelReimbursement">
+                  <label for="travel-reimbursement-y">Yes</label>
+                </div>
+              </div>
+              <div class="two wide column">
+                <div class="ui radio checkbox">
+                  <input id="travel-reimbursement-n" name="travel-reimbursement" type="radio" value="N" ng-model="user.profile.travelReimbursement">
+                  <label for="travel-reimbursement-n">No</label>
+                </div>
+              </div>
+            </div>
+            <div ng-show="user.profile.travelReimbursement == 'Y'">
+              <br>
+              <p>
+                As we're using a paper form to process the reimbursement requests, please also provide your reimbursement id: <b>{{travelFormId}}</b>
+              </p>
+            </div>
+            <br>
+            <p>Got more questions about our travel reimbursement process? Ping us your questions to <a href="mailto:applications@hackaburg.de">applications@hackaburg.de</a> and we'll look into it.</p>
+          </div>
 
+          <div class="field" required ng-show="user.profile.travelReimbursement == 'Y'">
+            <label>Travel reimbursement type</label>
+            <p>Where will your journey to Hackaburg begin?</p>
+
+            <select name="travel-reimbursement-type" ng-model="user.profile.travelReimbursementType">
+              <option value="">-- Type --</option>
+              <option value="B">Bavaria</option>
+              <option value="G">Germany</option>
+              <option value="E">Europe</option>
+            </select>
+          </div>
+
+          <br>
+
+          <div class="field">
+            <label>Link to LinkedIn / XING profile</label>
+            <input type="text" placeholder="https://[linkedin|xing]/profile" ng-model="user.profile.linkedin">
+          </div>
+
+          <div class="field">
+            <label>Link to GitHub profile or similar</label>
+            <input type="text" placeholder="https://[github|bitbucket|gitlab|.*]/profile" ng-model="user.profile.github">
+          </div>
+
+          <div class="field" required>
+            <label>I would describe myself as...</label>
+            <select name="description" ng-model="user.profile.description">
+              <option value="">-- Description? --</option>
+              <option value="Engineer">Engineer</option>
+              <option value="Designer">Designer</option>
+              <option value="Entrepreneur">Entrepreneur</option>
+            </select>
+          </div>
+
+          <div class="field" required>
+            <label>Do you have an idea, yet?</label>
+            <select name="idea" ng-model="user.profile.idea">
+              <option value="">-- Idea? --</option>
+              <option value="N">Not yet</option>
+              <option value="S">Somewhat, yes</option>
+              <option value="Y">Yes</option>
+            </select>
+          </div>
+
+          <div class="field" required>
+            <label>I'm interested in ...</label>
+            <div class="inline fields">
+              <div class="field" ng-repeat="(key, value) in tracks">
+                <div class="ui checkbox">
+                  <input type="checkbox" id="tracks-{{$index}}" ng-model="tracks[key]" />
+                  <label for="tracks-{{$index}}">{{key}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="divided title">Legal</div>
         <fieldset ng-disabled="regIsClosed">
 
-        <div class="field">
-          <label> 电子邮件 </label>
-          <input type="email"
-                 name="email"
-                 disabled="disabled"
-                 ng-model="user.email">
-        </div>
-
-        <div class="field">
-          <label> 全名 </label>
-          <input type="text"
-                 name="name"
-                 ng-model="user.profile.name">
-        </div>
-
-        <div class="field">
-          <label> 手机号码 </label>
-          <input type="text"
-                 name="phoneNum"
-                 ng-model="user.profile.phoneNum">
-        </div>
-
-        <div class="field">
-          <label> 学校 </label>
-          <input type="text"
-                 name="school"
-                 ng-model="user.profile.school">
-        </div>
-
-        <!--<div class="field">
-          <label> 学校 </label>
-          <input class="ui input"
-                 disabled="disabled"
-                 ng-model="user.profile.school">
-        </div>
-
-        <div class="field">
-          <label> 学校 </label>
-          <div id="school" class="ui search">
-            <div class="ui input">
-              <input class="prompt" type="text" placeholder="School" name="school" ng-model="user.profile.school">
+          <div class="field" required>
+            <label>Major League Hacking Code of Conduct</label>
+            <div class="ui checkbox">
+              <input type="checkbox" name="mlh-coc" value="Y" ng-model="user.profile.legal.mlh.coc">
+              <label>I have read and agree to the MLH <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">Code of Conduct</a>.</label>
             </div>
-            <div class="results"></div>
           </div>
-        </div>-->
 
-        <div class="field">
-          <label>毕业年份</label>
-          <select
-            name="year"
-            ng-model="user.profile.graduationYear">
-            <option value="">请选择...</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022+">2022及以后</option>
-          </select>
-        </div>
+          <div class="field" required>
+            <label>Major League Hacking Terms and Conditions</label>
+            <div class="ui checkbox">
+              <input type="checkbox" name="mlh-terms" value="Y" ng-model="user.profile.legal.mlh.terms">
+              <label>I agree to the terms of both the <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions" target="_blank">MLH Contest Terms and Conditions</a> and the <a href="https://mlh.io/privacy" target="_blank">MLH Privacy Policy</a>. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
+            </div>
+          </div>
 
-        <div class="field">
-          <label>性别</label>
-          <select
-            name="gender"
-            ng-model="user.profile.gender">
-            <option value="">请选择...</option>
-            <option value="M">男性</option>
-            <option value="F">女性</option>
-            <option value="O">其他</option>
-            <option value="N">我倾向于不回答</option>
-          </select>
-        </div>
+          <br>
 
-        <div class="field">
-          <label> 校内/社团/校外组织担任的职务（如果有） </label>
-          <input type="text"
-                 name="role"
-                 ng-model="user.profile.schoolRole">
-        </div>
-
-        <!--<div class="field">
-          <label>我认为自己是一个...的人</label>
-          <input type="text"
-                 placeholder="设计师、创客、产品管理者"
-                 ng-model="user.profile.description">
-        </div>
-
-        <div class="field">
-          <label>
-              What would you like to learn or get out of HackMIT? (optional)
-          </label>
-          <textarea ng-model="user.profile.essay">
-          </textarea>
-        </div>-->
-
-        <div class="field">
-          <label>
-              你是从哪里听说<b>THE Hack</b>创客马拉松的？
-          </label>
-          <textarea ng-model="user.profile.whereHeard">
-          </textarea>
-        </div>
-
-        <div class="field">
-          <label>
-              你过去是否有推广活动的经历？如有，请详述。
-          </label>
-          <textarea ng-model="user.profile.promoExperience">
-          </textarea>
-        </div>
-
-        <div class="field">
-          <label>
-              你是否参加过hackathon？请列出你参加过的hackathon。
-          </label>
-          <textarea ng-model="user.profile.isHacker">
-          </textarea>
-        </div>
-
-        <div class="field">
-          <label>
-              请简要描述你计划如何在你的学校推广<b>THE Hack</b>。
-          </label>
-          <textarea ng-model="user.profile.promoPlan">
-          </textarea>
-        </div>
-
-        <div class="field">
-          <p>
-            <b>THE Hack</b> 团队可能会在近期与你联系，请你提供一份个人简历。简历不需正式，但是需要能够让我们更好地了解你。我们非常希望邀请你加入我们的团队，请给我们一些时间审核你的申请。
-          </p>
-        </div>
-
-        <br>
-
-        <div class="field" ng-hide="regIsClosed">
-          <button type="submit"
-                  class="fluid ui purple button"
-                  ng-click="submitForm()">
-            提交申请
-          </button>
-        </div>
-
+          <div class="field" ng-hide="regIsClosed">
+            <button type="submit" class="fluid ui purple button" ng-click="submitForm()">Save Application</button>
+          </div>
         </fieldset>
+        <br>
+        <br>
       </div>
+      <small class="field" required>
+        <label></label> required fields
+      </small>
     </div>
   </div>
 </div>
