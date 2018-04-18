@@ -8,7 +8,7 @@
   <div ui-sref-active="active"
        ui-sref="app.dashboard"
        class="item">
-    Dashboard 控制面板
+    Dashboard
   </div>
 
   <div ng-show="currentUser.verified">
@@ -18,7 +18,7 @@
       ui-sref="app.application"
       ng-show="!currentUser.status.declined"
       class="item">
-      Application 申请
+      Application
     </div>
 
     <div
@@ -26,7 +26,7 @@
       ui-sref="app.confirmation"
       ng-show="!pastConfirmation && currentUser.status.admitted && !currentUser.status.declined"
       class="item">
-      Confirmation 确认
+      Confirmation
     </div>
 
     <div
@@ -34,7 +34,7 @@
       ui-sref="app.team"
       ng-show="!currentUser.status.declined"
       class="item">
-      Team 团队管理
+      Team
     </div>
 
     <div
@@ -42,18 +42,14 @@
       ui-sref="app.admin.stats"
       class="item"
       ng-show="currentUser.admin">
-      Admin 管理员
+      Admin
     </div>
 
   </div>
 
   <div class="item"
        ng-click="logout()">
-    Logout 登出
-  </div>
-
-  <div class="note">
-    {{ EVENT_INFO.NAME }}
+    Logout
   </div>
 
 </div>
@@ -63,3 +59,5 @@
   <img ng-show="!showSidebar" src="assets/images/logo.svg" />
   <span class="close" ng-show="showSidebar">&#x2715</span>
 </div>
+
+

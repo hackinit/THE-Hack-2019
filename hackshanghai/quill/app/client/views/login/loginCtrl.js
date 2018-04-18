@@ -27,13 +27,41 @@ angular.module('reg')
         $scope.error = null;
       }
 
+      function isFormValid() {
+        if (!$scope.email) {
+          onError({
+            message: "Please provide your mail address",
+          });
+
+          return false;
+        }
+
+        if (!$scope.password) {
+          onError({
+            message: "Please provide a password",
+          });
+
+          return false;
+        }
+
+        return true;
+      }
+
       $scope.login = function(){
+        if (!isFormValid()) {
+          return;
+        }
+
         resetError();
         AuthService.loginWithPassword(
           $scope.email, $scope.password, onSuccess, onError);
       };
 
       $scope.register = function(){
+        if (!isFormValid()) {
+          return;
+        }
+
         resetError();
         AuthService.register(
           $scope.email, $scope.password, onSuccess, onError);
@@ -47,10 +75,12 @@ angular.module('reg')
         var email = $scope.email;
         AuthService.sendResetEmail(email);
         sweetAlert({
-          title: "不用担心",
-          text: "密码重置邮件已发送到你的注册邮箱",
+          title: "Don't Sweat!",
+          text: "An email should be sent to you shortly.",
           type: "success",
           confirmButtonColor: "#e76482"
+        }, function () {
+          $scope.setLoginState("login");
         });
       };
 
