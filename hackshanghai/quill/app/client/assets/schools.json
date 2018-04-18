@@ -1,21 +1,5 @@
 
 {
-    "rwth-aachen.de": {
-        "school": "RWTH Aachen",
-        "state": "Nordrhein-Westfalen"
-    },
-    "tum.de": {
-        "school": "Technische Universität München",
-        "state": "Bayern"
-    },
-    "st.oth-regensburg.de": {
-        "school": "Ostbayerische Technische Hochschule Regensburg",
-        "state": "Bayern"
-    },
-    "stud.uni-regensburg.de": {
-        "school": "Universität Regensburg",
-        "state": "Bayern"
-    },
     "utdallas.edu": {
         "school": "The University of Texas at Dallas",
         "state": "Texas"

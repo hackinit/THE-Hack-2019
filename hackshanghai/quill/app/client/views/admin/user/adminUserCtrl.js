@@ -4,16 +4,8 @@ angular.module('reg')
     '$http',
     'user',
     'UserService',
-    'AutocompleteService',
-    function($scope, $http, User, UserService, AutocompleteService){
+    function($scope, $http, User, UserService){
       $scope.selectedUser = User.data;
-
-      var currentYear = new Date().getFullYear();
-      $scope.graduationYears = [];
-      for (var i = -1; i <= 10; i++) {
-        $scope.graduationYears.push(currentYear + i);
-      }
-
 
       // Populate the school dropdown
       populateSchools();
@@ -23,8 +15,8 @@ angular.module('reg')
        */
       function populateSchools(){
 
-        AutocompleteService
-          .getSchoolDomains()
+        $http
+          .get('/assets/schools.json')
           .then(function(res){
             var schools = res.data;
             var email = $scope.selectedUser.email.split('@')[1];

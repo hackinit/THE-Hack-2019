@@ -10,7 +10,7 @@
 
 </div>
 
-<div class="ui bottom attached segment">
+<div class="ui botom attached segment">
 
   <div>
     <p>
@@ -83,73 +83,39 @@
       </div>
 
       <div class="field">
-        <label> Full name </label>
+        <label> Full Name </label>
         <input type="text"
                name="name"
                ng-model="selectedUser.profile.name">
       </div>
 
-      <div class="field">
-        <label> Age at the time of the event </label>
-        <input type="text"
-               name="name"
-               ng-model="selectedUser.profile.age">
+      <div class="field" ng-show="autoFilledSchool">
+        <label> School </label>
+        <input class="ui input"
+               disabled="disabled"
+               ng-show="autoFilledSchool"
+               ng-model="selectedUser.profile.school">
+      </div>
+
+      <div class="field" ng-show="!autoFilledSchool">
+        <label> School </label>
+        <input class="ui input"
+               name="school"
+               ng-model="selectedUser.profile.school">
       </div>
 
       <div class="field">
-        <label> Nationality </label>
-        <input type="text"
-               name="name"
-               ng-model="selectedUser.profile.nationality">
-      </div>
-
-      <div class="field">
-        <label> City </label>
-        <input type="text"
-               name="name"
-               ng-model="selectedUser.profile.city">
-      </div>
-
-      <div class="field">
-        <label> Profession </label>
-        <select ng-model="selectedUser.profile.profession">
-          <option value="S">Student</option>
-          <option value="W">Working</option>
+        <label>Graduation Year</label>
+        <select
+          name="year"
+          ng-model="selectedUser.profile.graduationYear">
+          <option value="">请选择...</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022+">2022及以后</option>
         </select>
-      </div>
-
-      <div ng-show="selectedUser.profile.profession == 'S'">
-        <div class="field" ng-show="autoFilledSchool">
-          <label> School </label>
-          <input class="ui input"
-                disabled="disabled"
-                ng-show="autoFilledSchool"
-                ng-model="selectedUser.profile.study.school">
-        </div>
-
-        <div class="field" ng-show="!autoFilledSchool">
-          <label> School </label>
-          <input class="ui input"
-                name="school"
-                ng-model="selectedUser.profile.study.school">
-        </div>
-
-        <div class="field">
-          <label>Year of studies</label>
-          <input type="text" ng-model="selectedUser.profile.study.yearOfStudies">
-        </div>
-
-        <div class="field">
-          <label>Graduation year</label>
-          <input type="text" ng-model="selectedUser.profile.study.graduationYear">
-        </div>
-      </div>
-
-      <div ng-show="selectedUser.profile.profession == 'W'">
-        <div class="field">
-          <label>Work experience</label>
-          <input type="text" ng-model="selectedUser.profile.work.experience">
-        </div>
       </div>
 
       <div class="field">
@@ -157,46 +123,73 @@
         <select
           name="gender"
           ng-model="selectedUser.profile.gender">
-          <option value="">Gender</option>
-          <option value="M">Male</option>
-          <option value="F">Female</option>
-          <option value="O">Other</option>
-          <option value="N">I prefer not to answer.</option>
+          <option value="">请选择...</option>
+          <option value="M">男性</option>
+          <option value="F">女性</option>
+          <option value="O">其他</option>
+          <option value="N">我倾向于不回答</option>
         </select>
       </div>
 
       <div class="field">
-        <label>Travel reimbursement</label>
-        <select ng-model="selectedUser.profile.travelReimbursement">
-          <option value="Y">Yes</option>
-          <option value="N">No</option>
-        </select>
+        <label> 校内担任的职务（如果有） </label>
+        <input type="text"
+               name="role"
+               ng-model="selectedUser.profile.schoolRole">
       </div>
 
-      <div class="field">
-        <label>Idea?</label>
-        <select ng-model="selectedUser.profile.idea">
-          <option value="Y">Yes</option>
-          <option value="N">Not yet</option>
-          <option value="S">Somewhat, yes</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label> Github </label>
-        <input type="url" ng-model="selectedUser.profile.github" />
-      </div>
-
-      <div class="field">
-        <label> LinkedIn </label>
-        <input type="url" ng-model="selectedUser.profile.website" />
-      </div>
-
-      <div class="field">
+      <!--<div class="field">
         <label>I would describe myself as a...</label>
         <input type="text"
                placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
                ng-model="selectedUser.profile.description">
+      </div>
+
+      <div class="field">
+        <label>
+            What would you like to learn or get out of HackMIT? (optional)
+        </label>
+        <textarea ng-model="selectedUser.profile.essay">
+        </textarea>
+      </div>-->
+
+      <div class="field">
+        <label>
+            你是从哪里听说<b>THE Hack</b>创客马拉松的？
+        </label>
+        <textarea ng-model="selectedUser.profile.whereHeard">
+        </textarea>
+      </div>
+
+      <div class="field">
+        <label>
+            你过去是否有推广活动的经历？如有，请详述。
+        </label>
+        <textarea ng-model="selectedUser.profile.promoExperience">
+        </textarea>
+      </div>
+
+      <div class="field">
+        <label>
+            你是否参加过hackathon？请列出你参加过的hackathon。
+        </label>
+        <textarea ng-model="selectedUser.profile.isHacker">
+        </textarea>
+      </div>
+
+      <div class="field">
+        <label>
+            请简要描述你计划如何在你的学校推广<b>THE Hack</b>。
+        </label>
+        <textarea ng-model="selectedUser.profile.promoPlan">
+        </textarea>
+      </div>
+
+
+      <div class="field">
+        <p>
+          <b>THE Hack</b> 团队可能会在近期与你联系，请你提供一份个人简历。简历不需正式，但是需要能够让我们更好地了解你。我们非常希望邀请你加入我们的团队，请给我们一些时间审核你的申请。
+        </p>
       </div>
 
       <div class="field">
@@ -222,6 +215,11 @@
       </div>
 
       <div class="field">
+        <label> Phone </label>
+        <input type="tel" ng-model="selectedUser.confirmation.phoneNumber" />
+      </div>
+
+      <div class="field">
         <label> Dietary Restrictions </label>
         <input
           type="text" ng-model="selectedUser.confirmation.dietaryRestrictions" />
@@ -229,22 +227,27 @@
 
       <div class="field">
         <label> Shirt Size </label>
-        <select
-          ng-model="selectedUser.confirmation.shirtSize">
-          <option value="">Shirt Size</option>
-          <option value="XS">Unisex X-Small</option>
-          <option value="S">Unisex Small</option>
-          <option value="M">Unisex Medium</option>
-          <option value="L">Unisex Large</option>
-          <option value="XL">Unisex X-Large</option>
-          <option value="XXL">Unisex XX-Large</option>
-          <option value="WXS">Women's X-Small</option>
-          <option value="WS">Women's Small</option>
-          <option value="WM">Women's Medium</option>
-          <option value="WL">Women's Large</option>
-          <option value="WXL">Women's X-Large</option>
-          <option value="WXXL">Women's XX-Large</option>
-        </select>
+        <input type="text" ng-model="selectedUser.profile.shirtSize" />
+      </div>
+
+      <div class="field">
+        <label> Major </label>
+        <input type="text" ng-model="selectedUser.profile.major" />
+      </div>
+
+      <div class="field">
+        <label> Github </label>
+        <input type="url" ng-model="selectedUser.profile.github" />
+      </div>
+
+      <div class="field">
+        <label> Website </label>
+        <input type="url" ng-model="selectedUser.profile.website" />
+      </div>
+
+      <div class="field">
+        <label> Resume </label>
+        <input type="url" ng-model="selectedUser.profile.resume" />
       </div>
 
       <div class="ui divider"></div>
@@ -269,17 +272,88 @@
       <div class="ui divider"></div>
 
       <div class="ui header">
+        Hosting
+      </div>
+
+      <div class="field">
+        <strong> Needs Hosting Friday </strong>
+        <i
+          ng-if="selectedUser.confirmation.hostNeededFri"
+          class="green check circle icon">
+        </i>
+        <i
+          ng-if="!selectedUser.confirmation.hostNeededFri"
+          class="red remove circle icon">
+        </i>
+      </div>
+
+      <div class="field">
+        <strong> Needs Hosting Saturday </strong>
+        <i
+          ng-if="selectedUser.confirmation.hostNeededSat"
+          class="green check circle icon">
+        </i>
+        <i
+          ng-if="!selectedUser.confirmation.hostNeededSat"
+          class="red remove circle icon">
+        </i>
+      </div>
+
+      <div class="field">
+        <strong> Gender Neutral </strong>
+        <i
+          ng-if="selectedUser.confirmation.genderNeutral"
+          class="green check circle icon">
+        </i>
+        <i
+          ng-if="!selectedUser.confirmation.genderNeutral"
+          class="red remove circle icon">
+        </i>
+      </div>
+
+      <div class="field">
+        <strong> Cat Friendly </strong>
+        <i
+          ng-if="selectedUser.confirmation.catFriendly"
+          class="green check circle icon">
+        </i>
+        <i
+          ng-if="!selectedUser.confirmation.catFriendly"
+          class="red remove circle icon">
+        </i>
+      </div>
+
+      <div class="field">
+        <strong> Smoking Friendly </strong>
+        <i
+          ng-if="selectedUser.confirmation.smokingFriendly"
+          class="green check circle icon">
+        </i>
+        <i
+          ng-if="!selectedUser.confirmation.smokingFriendly"
+          class="red remove circle icon">
+        </i>
+      </div>
+
+      <div class="field">
+        <label> Hosting Notes </label>
+        <textarea ng-model="selectedUser.confirmation.hostNotes"></textarea>
+      </div>
+
+      <div class="ui divider"></div>
+
+      <div class="ui header">
         Travel
       </div>
 
       <div class="field">
         <strong> Needs Reimbursement</strong>
         <i
-          ng-if="selectedUser.profile.travelReimbursement"
+          ng-if="selectedUser.confirmation.needsReimbursement"
           class="green check circle icon">
         </i>
         <i
-          ng-if="!selectedUser.profile.travelReimbursement"
+          ng-if="!selectedUser.confirmation.needsReimbursement"
           class="red remove circle icon">
         </i>
       </div>

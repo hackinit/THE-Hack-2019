@@ -11,8 +11,6 @@ angular.module('reg')
       // Set up the user
       var user = currentUser.data;
       $scope.user = user;
-      $scope.askReimbursementType = !$scope.user.profile.travelReimbursementType;
-      $scope.askMlhTerms = !$scope.user.profile.legal.mlh.terms;
 
       $scope.pastConfirmation = Date.now() > user.status.confirmBy;
 
@@ -28,6 +26,9 @@ angular.module('reg')
       var dietaryRestrictions = {
         'Vegetarian': false,
         'Vegan': false,
+        'Halal': false,
+        'Kosher': false,
+        'Nut Allergy': false
       };
 
       if (user.confirmation.dietaryRestrictions){
@@ -42,21 +43,7 @@ angular.module('reg')
 
       // -------------------------------
 
-      function _updateUser(){
-        if ($scope.askReimbursementType || $scope.askMlhTerms) {
-          UserService.updateProfile(user._id, user.profile)
-            .success(function(data) {
-              _updateConfirmation();
-            })
-            .error(function (res) {
-              sweetAlert("Uh oh!", "Something went wrong.", "error");
-            });
-        } else {
-          _updateConfirmation();
-        }
-      }
-
-      function _updateConfirmation() {
+      function _updateUser(e){
         var confirmation = $scope.user.confirmation;
         // Get the dietary restrictions as an array
         var drs = [];
@@ -85,39 +72,51 @@ angular.module('reg')
       }
 
       function _setupForm(){
-        $.fn.form.settings.rules.travelReimbursementAndTypeProvided = function(value) {
-          return ($scope.user.profile.travelReimbursement == "Y" && $scope.user.profile.travelReimbursementType) || $scope.user.profile.travelReimbursement == "N";
-        };
-
         // Semantic-UI form validation
         $('.ui.form').form({
           fields: {
-            travelReimbursementType: {
-              identifier: 'travel-reimbursement-type',
-              rules: [
-                {
-                  type: 'travelReimbursementAndTypeProvided',
-                  prompt: 'Please provide which kind of reimbursement you will need.'
-                }
-              ]
-            },
-
-            mlhTerms: {
-              identifier: 'terms',
-              rules: [
-                {
-                  type: 'checked',
-                  prompt: 'Please accept the MLH terms.'
-                }
-              ]
-            },
-
             shirt: {
               identifier: 'shirt',
               rules: [
                 {
                   type: 'empty',
                   prompt: 'Please give us a shirt size!'
+                }
+              ]
+            },
+            phone: {
+              identifier: 'phone',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter a phone number.'
+                }
+              ]
+            },
+            signatureLiability: {
+              identifier: 'signatureLiabilityWaiver',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please type your digital signature.'
+                }
+              ]
+            },
+            signaturePhotoRelease: {
+              identifier: 'signaturePhotoRelease',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please type your digital signature.'
+                }
+              ]
+            },
+            signatureCodeOfConduct: {
+              identifier: 'signatureCodeOfConduct',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please type your digital signature.'
                 }
               ]
             },
@@ -128,8 +127,6 @@ angular.module('reg')
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
           _updateUser();
-        } else {
-          sweetAlert("Uh oh!", "Please Fill The Required Fields", "error");
         }
       };
 
