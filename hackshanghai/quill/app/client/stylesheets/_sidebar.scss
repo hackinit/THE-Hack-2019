@@ -7,6 +7,11 @@
   z-index: 999;
   overflow: auto;
 
+  img {
+    max-width:100%;
+    max-height:100%;
+  }
+
   @include transition-duration($sidebar-transition-time);
 
   .item {
@@ -15,10 +20,11 @@
     transition-duration: .1s;
     transition: border-left, .5s, linear;
     border-bottom: 1px solid lighten($sidebar-color, 3%);
+    opacity: .7;
     border-left: 0px solid transparent;
 
     &.active {
-      background: lighten($sidebar-color, 3%);
+      background: lighten($sidebar-color, 4%);
       opacity: 1;
       border-left: 8px solid lighten($sidebar-color, 10%);
     }
@@ -34,11 +40,7 @@
 
     &.logo {
       opacity: 1;
-      padding: 32px;
-
-      img{
-        width: 100%;
-      }      
+      padding: 48px;
     }
 
   }
@@ -64,25 +66,18 @@
 
     z-index: 9999;
 
-    display: none;
+    // Is not visible unless mobile.
+    visibility: 'hidden';
+    opacity: 0;
 
     @include transform(translate3d($sidebar-width, 0,0));
     @include transition-duration($sidebar-transition-time);
-
-    // Hack to get the X lined up
-    line-height: $sidebar-tab-size * 0.9;
-    text-align: center;
-    padding: 0;
 
     cursor: pointer;
 
     .close {
       color: white;
       font-size: 2em;
-    }
-
-    img {
-      width: 100%;
     }
   }
 
@@ -92,6 +87,11 @@
   #sidebar {
     @include transform(translate3d(-$sidebar-width, 0, 0));
 
+    .tab img {
+      max-width:100%;
+      max-height:100%;
+    }
+
     // When the sidebar is open
     &.open {
       // Transform the sidebar to original position
@@ -99,13 +99,24 @@
       +.tab {
         // Transform the tab to the side of the sidebar
         @include transform(translate3d($sidebar-width, 0, 0));
+
+        // Hack to get the X lined up
+        line-height: $sidebar-tab-size;
+        text-align: center;
+        padding: 0;
       }
     }
     // When the tab is closed.
     +.tab {
-      display: block;
+      visibility: 'visible';
+      opacity: 1;
       @include transform(translate3d(0,0,0));
-      padding: 4px;
+      padding: 12px;
+
+      img {
+        max-width:100%;
+        max-height:100%;
+      }
     }
     .note {
       display: none;

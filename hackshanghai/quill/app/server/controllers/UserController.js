@@ -26,7 +26,7 @@ function endsWith(s, test){
 function canRegister(email, password, callback){
 
   if (!password || password.length < 6){
-    return callback({ message: "Password must be 6 or more characters."}, false);
+    return callback({ message: "密码长度必须大于等于6个字符！\nPassword must be 6 or more characters."}, false);
   }
 
   // Check if its within the registration window.
@@ -45,7 +45,7 @@ function canRegister(email, password, callback){
 
     if (now > times.timeClose){
       return callback({
-        message: "Sorry, registration is closed."
+        message: "抱歉，注册系统已关闭。"
       });
     }
 
@@ -88,13 +88,13 @@ UserController.loginWithPassword = function(email, password, callback){
 
   if (!password || password.length === 0){
     return callback({
-      message: 'Please enter a password'
+      message: '请输入密码。\nPlease enter a password'
     });
   }
 
   if (!validator.isEmail(email)){
     return callback({
-      message: 'Invalid email'
+      message: '邮件格式有误。\nInvalid email'
     });
   }
 
@@ -107,12 +107,12 @@ UserController.loginWithPassword = function(email, password, callback){
       }
       if (!user) {
         return callback({
-          message: "We couldn't find you!"
+          message: "我们无法找到你，请检查你的邮件地址。\nWe couldn't find you!"
         });
       }
       if (!user.checkPassword(password)) {
         return callback({
-          message: "That's not the right password."
+          message: "输入密码有误。\nThat's not the right password."
         });
       }
 
@@ -137,7 +137,7 @@ UserController.createUser = function(email, password, callback) {
 
   if (typeof email !== "string"){
     return callback({
-      message: "Email must be a string."
+      message: "邮件地址必须是一个字符串\nEmail must be a string."
     });
   }
 
@@ -150,36 +150,48 @@ UserController.createUser = function(email, password, callback) {
       return callback(err);
     }
 
-    var u = new User();
-    u.email = email;
-    u.password = User.generateHash(password);
-    u.timestamp = Date.now();
-    u.save(function(err){
-      if (err){
-        // Duplicate key error codes
-        if (err.name === 'MongoError' && (err.code === 11000 || err.code === 11001)) {
-          return callback({
-            message: 'An account for this email already exists.'
-          });
+    User
+      .findOneByEmail(email)
+      .exec(function(err, user){
+
+        if (err) {
+          return callback(err);
         }
 
-        return callback(err);
-      } else {
-        // yay! success.
-        var token = u.generateAuthToken();
+        if (user) {
+          return callback({
+            message: '该邮件地址已被注册。\nAn account for this email already exists.'
+          });
+        } else {
 
-        // Send over a verification email
-        var verificationToken = u.generateEmailVerificationToken();
-        Mailer.sendVerificationEmail(email, verificationToken);
+          // Make a new user
+          var u = new User();
+          u.email = email;
+          u.password = User.generateHash(password);
+          u.admin = false;
+          u.save(function(err){
+            if (err){
+              return callback(err);
+            } else {
+              // yay! success.
+              var token = u.generateAuthToken();
 
-        return callback(
-          null,
-          {
-            token: token,
-            user: u
-          }
-        );
-      }
+              // Send over a verification email
+              var verificationToken = u.generateEmailVerificationToken();
+              Mailer.sendVerificationEmail(email, verificationToken);
+
+              return callback(
+                null,
+                {
+                  token: token,
+                  user: u
+                }
+              );
+            }
+
+          });
+
+        }
 
     });
   });
@@ -292,7 +304,7 @@ UserController.updateProfileById = function (id, profile, callback){
 
       if (now > times.timeClose){
         return callback({
-          message: "Sorry, registration is closed."
+          message: "很抱歉，申请已经截止。\nSorry, registration is closed."
         });
       }
     });
@@ -335,7 +347,7 @@ UserController.updateConfirmationById = function (id, confirmation, callback){
     // that's okay.
     if (Date.now() >= user.status.confirmBy && !user.status.confirmed){
       return callback({
-        message: "You've missed the confirmation deadline."
+        message: "你已错过确认期限。\nYou've missed the confirmation deadline."
       });
     }
 
@@ -384,10 +396,7 @@ UserController.declineById = function (id, callback){
     }, {
       new: true
     },
-    function (err, user) {
-      Mailer.sendDeclineEmail(user.email);
-      callback(err, user);
-    });
+    callback);
 };
 
 /**
@@ -398,7 +407,7 @@ UserController.declineById = function (id, callback){
 UserController.verifyByToken = function(token, callback){
   User.verifyEmailVerificationToken(token, function(err, email){
     User.findOneAndUpdate({
-      email: email.toLowerCase()
+      email: new RegExp('^' + email + '$', 'i')
     },{
       $set: {
         'verified': true
@@ -649,10 +658,7 @@ UserController.admitUser = function(id, user, callback){
       }, {
         new: true
       },
-      function (err, user) {
-        Mailer.sendAdmitEmail(user.email);
-        callback(err, user);
-      })
+      callback);
   });
 };
 
@@ -694,6 +700,50 @@ UserController.checkOutById = function(id, user, callback){
   },{
     $set: {
       'status.checkedIn': false
+    }
+  }, {
+    new: true
+  },
+  callback);
+};
+
+/**
+ * [ADMIN ONLY]
+ *
+ * Make user an admin
+ * @param  {String}   userId   User id of the user being made admin
+ * @param  {String}   user     User making this person admin
+ * @param  {Function} callback args(err, user)
+ */
+UserController.makeAdminById = function(id, user, callback){
+  User.findOneAndUpdate({
+    _id: id,
+    verified: true
+  },{
+    $set: {
+      'admin': true
+    }
+  }, {
+    new: true
+  },
+  callback);
+};
+
+/**
+ * [ADMIN ONLY]
+ *
+ * Remove user as admin
+ * @param  {String}   userId   User id of the user being made admin
+ * @param  {String}   user     User making this person admin
+ * @param  {Function} callback args(err, user)
+ */
+UserController.removeAdminById = function(id, user, callback){
+  User.findOneAndUpdate({
+    _id: id,
+    verified: true
+  },{
+    $set: {
+      'admin': false
     }
   }, {
     new: true

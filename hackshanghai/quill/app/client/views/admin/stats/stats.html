@@ -60,6 +60,16 @@
             {{stats.confirmed}}
           </div>
         </div>
+        <div
+          class="item">
+          <i class="green circle check icon"></i>
+          <div class="content">
+            <strong>
+              Confirmed (MIT)
+            </strong> :
+            {{stats.confirmedMit}}
+          </div>
+        </div>
         <div class="item">
           <i class="circle red icon"></i>
           <div class="content">
@@ -124,33 +134,6 @@
         </div>
 
         <div class="item">
-          <i class="right arrow icon"></i>
-          <div class="content">
-            <strong>
-              Reimbursement Types:
-            </strong>
-            <ul>
-              <li
-                ng-repeat="reimbursement in stats.reimbursementNeeds | orderBy: '-count'">
-                {{reimbursement.name}} ({{reimbursement.count}})
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="item">
-          <i class="dollar icon"></i>
-          <div class="content">
-            <strong>
-              Estimated reimbursement cost:
-            </strong>
-            {{estimatedReimbursementSum}}&euro;
-
-            <span ng-if="missingReimbursementTypes"> ({{missingReimbursementTypes}} didn't answer yet)</span>
-          </div>
-        </div>
-
-        <div class="item">
           <i class="frown icon"></i>
           <div class="content">
             <strong>
@@ -178,44 +161,10 @@
             <strong>
               Dietary Restrictions:
             </strong>
-            <ul>
-              <li
-                ng-repeat="restriction in stats.dietaryRestrictions | orderBy: '-count'">
-                {{restriction.name}} ({{restriction.count}})
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="ui divider"></div>
-
-        <div class="item">
-          <i class="compass icon"></i>
-          <div class="content">
-            <strong>
-              Tracks:
-            </strong>
-            <ul>
-              <li
-                ng-repeat="track in stats.selectedTracks | orderBy: '-count'">
-                {{track.name}} ({{track.count}})
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="item">
-          <i class="user icon"></i>
-          <div class="content">
-            <strong>
-              Descriptions:
-            </strong>
-            <ul>
-              <li
-                ng-repeat="track in stats.selectedDescriptions | orderBy: '-count'">
-                {{track.name}} ({{track.count}})
-              </li>
-            </ul>
+            <span
+              ng-repeat="restriction in stats.dietaryRestrictions | orderBy: '-count'">
+              {{restriction.name}} ({{restriction.count}})
+            </span>
           </div>
         </div>
 
@@ -262,6 +211,21 @@
       </div>
     </div>
     <div class="ui divider"></div>
+      <div class="ui list">
+        <div class="item">
+          <strong>Fresh:</strong> {{stats.demo.year['2019']}} ({{stats.demo.year['2019'] / stats.total * 100 | number: 1}}%)
+        </div>
+        <div class="item">
+          <strong>Soph:</strong> {{stats.demo.year['2018']}} ({{stats.demo.year['2018'] / stats.total * 100 | number: 1}}%)
+        </div>
+        <div class="item">
+         <strong>Junior:</strong> {{stats.demo.year['2017']}} ({{stats.demo.year['2017'] / stats.total * 100 | number: 1}}%)
+        </div>
+        <div class="item">
+          <strong>Senior:</strong> {{stats.demo.year['2016']}} ({{stats.demo.year['2016'] / stats.total * 100 | number: 1}}%)
+        </div>
+      </div>
+    <div class="ui divider"></div>
     <div class="ui list">
       <div
         class="item"
@@ -288,7 +252,7 @@
     </div>
   </div>
 
-  <div
+<!--   <div
     class="ui purple segment"
     ng-class="{'loading': loading}">
     <div class="ui header">
@@ -301,11 +265,9 @@
         <div class="header">
           {{team.name}}
         </div>
-        <ul>
-          <li ng-repeat="user in team.users">{{user}}</li>
-        </ul>
+        {{team.users.join(', ')}}
       </div>
     </div>
-  </div>
+  </div> -->
 
 </div>

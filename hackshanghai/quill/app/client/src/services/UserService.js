@@ -4,7 +4,7 @@ angular.module('reg')
   'Session',
   function($http, Session){
 
-    var users = '/apply/api/users';
+    var users = '/api/users';
     var base = users + '/';
 
     return {
@@ -29,7 +29,7 @@ angular.module('reg')
           {
             text: text,
             page: page ? page : 0,
-            size: size ? size : 9000
+            size: size ? size : 50
           })
         );
       },
@@ -85,6 +85,14 @@ angular.module('reg')
 
       checkOut: function(id){
         return $http.post(base + id + '/checkout');
+      },
+
+      makeAdmin: function(id){
+        return $http.post(base + id + '/makeadmin');
+      },
+
+      removeAdmin: function(id){
+        return $http.post(base + id + '/removeadmin');
       },
 
     };

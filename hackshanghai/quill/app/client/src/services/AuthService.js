@@ -7,7 +7,6 @@ angular.module('reg')
     'Session',
     function($http, $rootScope, $state, $window, Session) {
       var authService = {};
-      var base = '/apply/auth/'
 
       function loginSuccess(data, cb){
         // Winner winner you get a token
@@ -27,7 +26,7 @@ angular.module('reg')
 
       authService.loginWithPassword = function(email, password, onSuccess, onFailure) {
         return $http
-          .post(base + 'login', {
+          .post('/auth/login', {
             email: email,
             password: password
           })
@@ -41,7 +40,7 @@ angular.module('reg')
 
       authService.loginWithToken = function(token, onSuccess, onFailure){
         return $http
-          .post(base + 'login', {
+          .post('/auth/login', {
             token: token
           })
           .success(function(data){
@@ -62,7 +61,7 @@ angular.module('reg')
 
       authService.register = function(email, password, onSuccess, onFailure) {
         return $http
-          .post(base + 'register', {
+          .post('/auth/register', {
             email: email,
             password: password
           })
@@ -76,7 +75,7 @@ angular.module('reg')
 
       authService.verify = function(token, onSuccess, onFailure) {
         return $http
-          .get(base + 'verify/' + token)
+          .get('/auth/verify/' + token)
           .success(function(user){
             Session.setUser(user);
             if (onSuccess){
@@ -92,21 +91,21 @@ angular.module('reg')
 
       authService.resendVerificationEmail = function(onSuccess, onFailure){
         return $http
-          .post(base + 'verify/resend', {
+          .post('/auth/verify/resend', {
             id: Session.getUserId()
           });
       };
 
       authService.sendResetEmail = function(email){
         return $http
-          .post(base + 'reset', {
+          .post('/auth/reset', {
             email: email
           });
       };
 
       authService.resetPassword = function(token, pass, onSuccess, onFailure){
         return $http
-          .post(base + 'reset/password', {
+          .post('/auth/reset/password', {
             token: token,
             password: pass
           })
