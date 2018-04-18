@@ -45,7 +45,7 @@ function canRegister(email, password, callback){
 
     if (now > times.timeClose){
       return callback({
-        message: "抱歉，注册系统已关闭。"
+        message: "Sorry, registration is closed."
       });
     }
 

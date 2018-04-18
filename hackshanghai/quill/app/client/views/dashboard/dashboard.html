@@ -1,13 +1,13 @@
 <div id="dashboard" class="page">
   <div class="divided title">
-    控制面板
+    Dashboard
   </div>
 
   <div class="ui stackable centered page grid">
     <div class="column">
       <div class="ui status segment">
         <div class="small title">
-          你的当前状态：
+          Your Current Status 你的当前状态：
         </div>
         <br>
 
@@ -33,7 +33,7 @@
 
         <div class="ui divider"></div>
 
-        <!-- <div ng-if="user.profile.name.length > 0">
+        <div ng-if="user.profile.name.length > 0">
           <p>
             <strong>
               Welcome back 欢迎回来, {{user.profile.name}}!
@@ -41,21 +41,21 @@
           </p>
           <p>
           </p>
-        </div> -->
+        </div>
 
         <div
           ng-if="dashState('unverified')"
           class="description">
           <p>
             <strong>
-            你的账号 ({{user.email}}) 还未被验证。
+            Your account ({{user.email}}) has not been verified. <br>你的账号 ({{user.email}}) 还未被验证。
             </strong>
           </p>
           <p>
             {{ DASHBOARD.UNVERIFIED }}
           </p>
           <div class="ui purple button" ng-click="resendEmail()">
-            重新发送验证邮件
+            Resend Verification Email <br />重新发送验证邮件
           </div>
         </div>
 
@@ -63,26 +63,26 @@
           ng-class="settings.timeClose"
           ng-if="!dashState('admittedAndCanConfirm') || !dashState('admittedAndCannotConfirm') || !dashState('confirmed') || !dashState('declined')">
           <strong>
-            校园大使申请截止日期：
+            Application Deadline 参赛申请截止日期：
           </strong>
-          {{ timeClose }} <br />
+          {{ timeClose }}
         </div>
 
-        <!--<div
+        <div
           ng-class="settings.timeConfirm"
           ng-if="dashState('admittedAndCanConfirm') || dashState('admittedAndCannotConfirm') || dashState('confirmed') || dashState('declined')">
           <strong>
-            确认参赛截止日期：
+            Confirmation Deadline 确认参赛截止日期：
           </strong>
           {{ timeConfirm }}
-        </div>-->
+        </div>
 
         <div
           ng-if="dashState('openAndIncomplete')"
           class="description">
           <p>
             <strong>
-                <br />{{ DASHBOARD.INCOMPLETE_TITLE }}
+                {{ DASHBOARD.INCOMPLETE_TITLE }}
             </strong>
           </p>
           <p>
@@ -91,7 +91,7 @@
 
           <div class="ui purple button"
                ui-sref="app.application">
-            完成你的申请
+            Complete your Application <br />完成你的申请
           </div>
 
         </div>
@@ -109,22 +109,22 @@
           </p>
           <div class="ui purple button"
                ui-sref="app.application">
-            修改你的申请
+            Edit your Application <br />修改你的申请
           </div>
 
-          <!--<div
+          <div
             class="ui pink button"
             ng-show="!user.teamCode"
             ui-sref="app.team">
             Create or Join a Team <br /> 创建或加入一个团队
-          </div>-->
+          </div>
 
-          <!--<div
+          <div
             class="ui pink button"
             ng-show="user.teamCode"
             ui-sref="app.team">
             View your Team<br /> 查看你的团队
-          </div>-->
+          </div>
 
         </div>
 
@@ -154,15 +154,15 @@
             查看你的申请
           </div>
 
-          <!--<div
+          <div
             class="ui pink button"
             ng-show="user.teamCode"
             ui-sref="app.team">
             查看你的团队
           </div>
-        </div>-->
+        </div>
 
-        <!--<div
+        <div
           class="description"
           ng-if="dashState('admittedAndCanConfirm')">
 
@@ -247,9 +247,10 @@
           <p>
             {{ DASHBOARD.DECLINED }}
           </p>
-        </div>-->
+        </div>
 
       </div>
+
     </div>
   </div>
 </div>
