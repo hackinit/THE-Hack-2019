@@ -2,12 +2,12 @@
 require('dotenv').load({silent: true});
 
 var express         = require('express');
+var cors            = require("cors");
 
 // Middleware!
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 var morgan          = require('morgan');
-var cookieParser    = require('cookie-parser');
 
 var mongoose        = require('mongoose');
 var port            = process.env.PORT || 3000;
@@ -48,4 +48,3 @@ require('./app/server/routes')(app);
 // listen (start app with node server.js) ======================================
 app.listen(port);
 console.log("App listening on port " + port);
-
