@@ -7,11 +7,6 @@
   z-index: 999;
   overflow: auto;
 
-  img {
-    max-width:100%;
-    max-height:100%;
-  }
-
   @include transition-duration($sidebar-transition-time);
 
   .item {
@@ -87,11 +82,6 @@
   #sidebar {
     @include transform(translate3d(-$sidebar-width, 0, 0));
 
-    .tab img {
-      max-width:100%;
-      max-height:100%;
-    }
-
     // When the sidebar is open
     &.open {
       // Transform the sidebar to original position
@@ -112,11 +102,6 @@
       opacity: 1;
       @include transform(translate3d(0,0,0));
       padding: 12px;
-
-      img {
-        max-width:100%;
-        max-height:100%;
-      }
     }
     .note {
       display: none;
