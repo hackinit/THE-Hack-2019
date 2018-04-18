@@ -1,6 +1,7 @@
 # Docker
 secrets.env
-secrets.credentials
+**/secrets.aws/*
+!**/secrets.aws/*.example
 
 # Vim
 *.swp
