@@ -23,6 +23,9 @@ function calculateStats(){
         '2017': 0,
         '2018': 0,
         '2019': 0,
+        '2020': 0,
+        '2021': 0,
+        '2022': 0,
       }
     },
 
@@ -66,8 +69,18 @@ function calculateStats(){
     hostNeededOther: 0,
     hostNeededNone: 0,
 
+    selectedTracks: {},
+    selectedDescriptions: {},
+
     reimbursementTotal: 0,
     reimbursementMissing: 0,
+
+    reimbursementNeeds: {
+      "Bavaria": 0,
+      "Germany": 0,
+      "Europe": 0,
+      "not answered": 0,
+    },
 
     wantsHardware: 0,
 
@@ -115,7 +128,27 @@ function calculateStats(){
         newStats.declined += user.status.declined ? 1 : 0;
 
         // Count the number of people who need reimbursements
-        newStats.reimbursementTotal += user.confirmation.needsReimbursement ? 1 : 0;
+        newStats.reimbursementTotal += user.profile.travelReimbursement == "Y" ? 1 : 0;
+
+        if (user.profile.travelReimbursement == "Y") {
+          switch (user.profile.travelReimbursementType) {
+            case "B":
+              newStats.reimbursementNeeds.Bavaria++;
+              break;
+
+            case "G":
+              newStats.reimbursementNeeds.Germany++;
+              break;
+
+            case "E":
+              newStats.reimbursementNeeds.Europe++;
+              break;
+
+            default:
+              newStats.reimbursementNeeds["not answered"]++;
+              break;
+          }
+        }
 
         // Count the number of people who still need to be reimbursed
         newStats.reimbursementMissing += user.confirmation.needsReimbursement &&
@@ -144,12 +177,12 @@ function calculateStats(){
         }
 
         // Grab the team name if there is one
-        // if (user.teamCode && user.teamCode.length > 0){
-        //   if (!newStats.teams[user.teamCode]){
-        //     newStats.teams[user.teamCode] = [];
-        //   }
-        //   newStats.teams[user.teamCode].push(user.profile.name);
-        // }
+        if (user.teamCode && user.teamCode.length > 0){
+          if (!newStats.teams[user.teamCode]){
+            newStats.teams[user.teamCode] = [];
+          }
+          newStats.teams[user.teamCode].push(user.profile.name + " (" + user.email + ")");
+        }
 
         // Count shirt sizes
         if (user.confirmation.shirtSize in newStats.shirtSizes){
@@ -180,6 +213,26 @@ function calculateStats(){
           });
         }
 
+        if (user.profile.ideaTracks) {
+          user.profile.ideaTracks.forEach(function (track) {
+            if (!newStats.selectedTracks.hasOwnProperty(track)) {
+              newStats.selectedTracks[track] = 0;
+            }
+
+            newStats.selectedTracks[track]++;
+          });
+        }
+
+        if (user.profile.description) {
+          var description = user.profile.description;
+
+          if (!newStats.selectedDescriptions.hasOwnProperty(description)) {
+            newStats.selectedDescriptions[description] = 0;
+          }
+
+          newStats.selectedDescriptions[description]++;
+        }
+
         // Count checked in
         newStats.checkedIn += user.status.checkedIn ? 1 : 0;
 
@@ -196,6 +249,36 @@ function calculateStats(){
           });
         newStats.dietaryRestrictions = restrictions;
 
+        var tracks = [];
+        _.keys(newStats.selectedTracks)
+          .forEach(function (key){
+            tracks.push({
+              name: key,
+              count: newStats.selectedTracks[key],
+            });
+          });
+        newStats.selectedTracks = tracks;
+
+        var descriptions = [];
+        _.keys(newStats.selectedDescriptions)
+          .forEach(function (key){
+            descriptions.push({
+              name: key,
+              count: newStats.selectedDescriptions[key],
+            });
+          });
+        newStats.selectedDescriptions = descriptions;
+
+        var reimbursementNeeds = [];
+        _.keys(newStats.reimbursementNeeds)
+          .forEach(function (key){
+            reimbursementNeeds.push({
+              name: key,
+              count: newStats.reimbursementNeeds[key],
+            });
+          });
+        newStats.reimbursementNeeds = reimbursementNeeds;
+
         // Transform schools into an array of objects
         var schools = [];
         _.keys(newStats.demo.schools)
@@ -209,15 +292,15 @@ function calculateStats(){
         newStats.demo.schools = schools;
 
         // Likewise, transform the teams into an array of objects
-        // var teams = [];
-        // _.keys(newStats.teams)
-        //   .forEach(function(key){
-        //     teams.push({
-        //       name: key,
-        //       users: newStats.teams[key]
-        //     });
-        //   });
-        // newStats.teams = teams;
+        var teams = [];
+        _.keys(newStats.teams)
+          .forEach(function(key){
+            teams.push({
+              name: key,
+              users: newStats.teams[key]
+            });
+          });
+        newStats.teams = teams;
 
         console.log('Stats updated!');
         newStats.lastUpdated = new Date();
