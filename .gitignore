@@ -2,6 +2,7 @@
 secrets.env
 **/secrets.aws/*
 !**/secrets.aws/*.example
+db.sqlite3
 
 # Vim
 *.swp
