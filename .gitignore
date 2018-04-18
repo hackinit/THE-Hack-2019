@@ -1,5 +1,6 @@
 # Docker
 secrets.env
+secrets.credentials
 
 # Vim
 *.swp
