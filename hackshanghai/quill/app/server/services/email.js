@@ -18,6 +18,8 @@ var EMAIL_PASS = process.env.EMAIL_PASS;
 var EMAIL_PORT = process.env.EMAIL_PORT;
 var EMAIL_CONTACT = process.env.EMAIL_CONTACT;
 var EMAIL_HEADER_IMAGE = process.env.EMAIL_HEADER_IMAGE;
+var EMAIL_DEV = process.env.EMAIL_DEV == "true";
+
 if(EMAIL_HEADER_IMAGE.indexOf("https") == -1){
   EMAIL_HEADER_IMAGE = ROOT_URL + EMAIL_HEADER_IMAGE;
 }
@@ -33,6 +35,12 @@ var options = {
     pass: EMAIL_PASS
   }
 };
+
+if (EMAIL_DEV) {
+  delete options.auth;
+  options.secure = false;
+  options.ignoreTLS = true;
+}
 
 var transporter = nodemailer.createTransport(smtpTransport(options));
 
@@ -92,16 +100,13 @@ controller.sendVerificationEmail = function(email, token, callback) {
   };
 
   var locals = {
-    verifyUrl: ROOT_URL + '/verify/' + token
+    title: "Hooray, our signup form worked!",
+    message: "To make sure it's really you, we need you to verify your email address:",
+    actionText: "VERIFY ME",
+    actionUrl: ROOT_URL + '/verify/' + token
   };
 
-  /**
-   * Eamil-verify takes a few template values:
-   * {
-   *   verifyUrl: the url that the user must visit to verify their account
-   * }
-   */
-  sendOne('email-verify', options, locals, function(err, info){
+  sendOne('email-link-action', options, locals, function(err, info){
     if (err){
       console.log(err);
     }
@@ -129,20 +134,13 @@ controller.sendPasswordResetEmail = function(email, token, callback) {
   };
 
   var locals = {
-    title: 'Password Reset Request',
-    subtitle: '',
-    description: 'Somebody (hopefully you!) has requested that your password be reset. If ' +
+    title: 'Reset your password',
+    message: 'Somebody (hopefully you!) has requested that your password be reset. If ' +
       'this was not you, feel free to disregard this email. This link will expire in one hour.',
     actionUrl: ROOT_URL + '/reset/' + token,
-    actionName: "Reset Password"
+    actionText: "RESET PASSWORD"
   };
 
-  /**
-   * Eamil-verify takes a few template values:
-   * {
-   *   verifyUrl: the url that the user must visit to verify their account
-   * }
-   */
   sendOne('email-link-action', options, locals, function(err, info){
     if (err){
       console.log(err);
@@ -170,16 +168,10 @@ controller.sendPasswordChangedEmail = function(email, callback){
   };
 
   var locals = {
-    title: 'Password Updated',
-    body: 'Somebody (hopefully you!) has successfully changed your password.',
+    title: 'Password updated',
+    message: 'Somebody (hopefully you!) has successfully changed your password.',
   };
 
-  /**
-   * Eamil-verify takes a few template values:
-   * {
-   *   verifyUrl: the url that the user must visit to verify their account
-   * }
-   */
   sendOne('email-basic', options, locals, function(err, info){
     if (err){
       console.log(err);
@@ -192,6 +184,68 @@ controller.sendPasswordChangedEmail = function(email, callback){
     }
   });
 
+};
+
+/**
+ * Send a "you're admitted" email
+ * @param  {[type]}   email    [description]
+ * @param  {Function} callback [description]
+ */
+controller.sendAdmitEmail = function(email, callback){
+
+  var options = {
+    to: email,
+    subject: "["+HACKATHON_NAME+"] - You're in"
+  };
+
+  var locals = {
+    title: "You're in!",
+    message: "We accepted your application! After receiving this email, you have 1 week to confirm that you are coming. After that, your place on Hackaburg 2018 expires.",
+    actionUrl: ROOT_URL,
+    actionText: "OPEN DASHBOARD"
+  };
+
+  sendOne('email-link-action', options, locals, function(err, info){
+    if (err){
+      console.log(err);
+    }
+    if (info){
+      console.log(info.message);
+    }
+    if (callback){
+      callback(err, info);
+    }
+  });
+};
+
+/**
+ * Send a "sorry you couldn't make it" email
+ * @param  {[type]}   email    [description]
+ * @param  {Function} callback [description]
+ */
+controller.sendDeclineEmail = function(email, callback){
+
+  var options = {
+    to: email,
+    subject: "["+HACKATHON_NAME+"] - You declined your place"
+  };
+
+  var locals = {
+    title: "Bummer!",
+    message: "We're sorry you can't make it. Maybe next year then!"
+  };
+
+  sendOne('email-basic', options, locals, function(err, info){
+    if (err){
+      console.log(err);
+    }
+    if (info){
+      console.log(info.message);
+    }
+    if (callback){
+      callback(err, info);
+    }
+  });
 };
 
 module.exports = controller;
