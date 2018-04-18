@@ -26,6 +26,10 @@
     }
   }
 
+  fieldset + .title {
+    margin-top: 3rem;
+  }
+
   .form {
     .title {
       font-size: 1em;
@@ -36,11 +40,16 @@
     }
   }
 
+  .field[required] > label:after {
+    content: "*";
+    display: inline-block;
+    color: red;
+  }
+
   .subheader {
     font-size: 1.2em;
     text-align: center;
   }
-
 }
 
 @media only screen and (max-width: 768px) {
