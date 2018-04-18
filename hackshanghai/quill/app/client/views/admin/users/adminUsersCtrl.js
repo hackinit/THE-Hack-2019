@@ -22,6 +22,8 @@ angular.module('reg')
 
       function updatePage(data){
         $scope.users = data.users;
+        updateTables();
+
         $scope.currentPage = data.page;
         $scope.pageSize = data.size;
 
@@ -30,6 +32,33 @@ angular.module('reg')
           p.push(i);
         }
         $scope.pages = p;
+      }
+
+      function updateTables() {
+        $scope.studentUsers = $scope.users.filter(function (user) {
+          return user.profile.profession == "S";
+        });
+
+        $scope.workerUsers = $scope.users.filter(function (user) {
+          return user.profile.profession == "W";
+        });
+
+        $scope.otherUsers = $scope.users.filter(function (user) {
+          return user.profile.profession != "S" && user.profile.profession != "W";
+        });
+      }
+
+      function updateUser(user) {
+        for (var i = 0; i < $scope.users.length; i++) {
+          var scopeUser = $scope.users[i];
+
+          if (scopeUser._id == user._id) {
+            $scope.users[i] = user;
+            break;
+          }
+        }
+
+        updateTables();
       }
 
       UserService
@@ -49,7 +78,7 @@ angular.module('reg')
       $scope.goToPage = function(page){
         $state.go('app.admin.users', {
           page: page,
-          size: $stateParams.size || 50
+          size: $stateParams.size || 9000
         });
       };
 
@@ -78,7 +107,7 @@ angular.module('reg')
               UserService
                 .checkIn(user._id)
                 .success(function(user){
-                  $scope.users[index] = user;
+                  updateUser(user);
                   swal("Accepted", user.profile.name + ' has been checked in.', "success");
                 });
             }
@@ -87,7 +116,7 @@ angular.module('reg')
           UserService
             .checkOut(user._id)
             .success(function(user){
-              $scope.users[index] = user;
+              updateUser(user);
               swal("Accepted", user.profile.name + ' has been checked out.', "success");
             });
         }
@@ -120,7 +149,7 @@ angular.module('reg')
                 UserService
                   .admitUser(user._id)
                   .success(function(user){
-                    $scope.users[index] = user;
+                    updateUser(user);
                     swal("Accepted", user.profile.name + ' has been admitted.', "success");
                   });
 
@@ -130,38 +159,73 @@ angular.module('reg')
 
       };
 
-      $scope.toggleAdmin = function($event, user, index) {
-        $event.stopPropagation();
+      $scope.exportCsv = function($event) {
+        var users = $scope.users.map(flattenObject);
+        var columns = users.map(Object.keys)
+                           .reduce(mergeArrays, [])
+                           .filter(function (column) {
+                             return column.indexOf("$") == -1;
+                           });
 
-        if (!user.admin){
-          swal({
-            title: "Whoa, wait a minute!",
-            text: "You are about make " + user.profile.name + " and admin!",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, make them an admin.",
-            closeOnConfirm: false
-            },
-            function(){
-              UserService
-                .makeAdmin(user._id)
-                .success(function(user){
-                  $scope.users[index] = user;
-                  swal("Made", user.profile.name + ' an admin.', "success");
-                });
-            }
-          );
-        } else {
-          UserService
-            .removeAdmin(user._id)
-            .success(function(user){
-              $scope.users[index] = user;
-              swal("Removed", user.profile.name + ' as admin', "success");
-            });
-        }
+        var userRows = users.map(function (user) {
+          return columns.map(function (column) {
+            var value = (user[column] || "").toString().replace(/"/g, "");
+
+            return "\"" + value + "\"";
+          });
+        });
+
+        var table = [columns].concat(userRows);
+        var csv = table.map(function (row) {
+                          return row.join(",");
+                        })
+                        .join("\n");
+        
+        var url = "data:text/csv;charset=utf-8," + escape(csv);
+        var link = document.querySelector("#download-link");
+
+        link.href = url;
+        link.download = "users.csv";
       };
 
+      function mergeArrays(a, b) {
+        var aClone = [].concat(a);
+
+        for (var i = 0; i < b.length; i++) {
+          var item = b[i];
+
+          if (!aClone.includes(item)) {
+            aClone.push(item);
+          }
+        }
+
+        return aClone;
+      }
+
+      function flattenObject(obj) {
+        var clone = Object.assign({}, obj);
+        var properties = Object.keys(clone);
+
+        for (var i = 0; i < properties.length; i++) {
+          var propertyName = properties[i];
+          var propertyValue = clone[propertyName];
+
+          if (Array.isArray(propertyValue)) {
+            clone[propertyName] = propertyValue.join(", ");
+          } else if (typeof propertyValue == "object") {
+            delete clone[propertyName];
+
+            var flattenedChild = flattenObject(propertyValue);
+            
+            Object.keys(flattenedChild)
+                  .forEach(function (name) {
+                    clone[propertyName + "_" + name] = flattenedChild[name];
+                  });
+          }
+        }
+
+        return clone;
+      }
 
       function formatTime(time){
         if (time) {
@@ -170,9 +234,6 @@ angular.module('reg')
       }
 
       $scope.rowClass = function(user) {
-        if (user.admin){
-          return 'admin';
-        }
         if (user.status.confirmed) {
           return 'positive';
         }
@@ -189,6 +250,36 @@ angular.module('reg')
       }
 
       function generateSections(user){
+        var professionFields = [];
+
+        if (user.profile.profession == "S") {
+          professionFields = [
+            {
+              name: "School",
+              value: user.profile.study.school,
+            },
+            {
+              name: "Subject",
+              value: user.profile.study.subject,
+            },
+            {
+              name: "Year of studies",
+              value: user.profile.study.yearOfStudies,
+            },
+            {
+              name: "Graduation year",
+              value: user.profile.study.graduationYear,
+            },
+          ];
+        } else if (user.profile.profession == "W") {
+          professionFields = [
+            {
+              name: "Work experience",
+              value: user.profile.work.experience + "y",
+            },
+          ];
+        }
+
         return [
           {
             name: 'Basic Info',
@@ -221,42 +312,68 @@ angular.module('reg')
                 value: user.profile.name
               },{
                 name: 'Gender',
-                value: user.profile.gender
+                value: user.profile.gender,
+                type: "enum",
+                enum: {
+                  "M": "Male",
+                  "F": "Female",
+                  "O": "Other",
+                  "N": "Didn't answer",
+                },
               },{
-                name: 'School',
-                value: user.profile.school
+                name: 'Age',
+                value: user.profile.age
               },{
-                name: 'Graduation Year',
-                value: user.profile.graduationYear
+                name: 'Nationality',
+                value: user.profile.nationality
+              },{
+                name: 'City',
+                value: user.profile.city
               },{
                 name: 'Description',
                 value: user.profile.description
               },{
-                name: 'Essay',
-                value: user.profile.essay
-              }
+                name: 'LinkedIn',
+                value: user.profile.linkedin,
+                type: "url",
+              },{
+                name: 'Github or similar',
+                value: user.profile.github,
+                type: "url",
+              },{
+                name: 'Has idea',
+                value: user.profile.idea,
+                type: "enum",
+                enum: {
+                  "Y": "Yes",
+                  "S": "Somewhat, yes",
+                  "N": "No, not yet",
+                }
+              },{
+                name: 'Interested in',
+                value: (user.profile.ideaTracks || []).join(", "),
+              },{
+                name: 'Profession',
+                value: user.profile.profession,
+                type: "enum",
+                enum: {
+                  "W": "Working",
+                  "S": "Student",
+                }
+              },
             ]
+          },{
+            name: "Profession",
+            fields: professionFields,
           },{
             name: 'Confirmation',
             fields: [
               {
-                name: 'Phone Number',
-                value: user.confirmation.phoneNumber
-              },{
                 name: 'Dietary Restrictions',
                 value: user.confirmation.dietaryRestrictions.join(', ')
               },{
                 name: 'Shirt Size',
                 value: user.confirmation.shirtSize
-              },{
-                name: 'Major',
-                value: user.confirmation.major
-              },{
-                name: 'Github',
-                value: user.confirmation.github
-              },{
-                name: 'Website',
-                value: user.confirmation.website
               },{
                 name: 'Needs Hardware',
                 value: user.confirmation.wantsHardware,
@@ -267,43 +384,15 @@ angular.module('reg')
               }
             ]
           },{
-            name: 'Hosting',
-            fields: [
-              {
-                name: 'Needs Hosting Friday',
-                value: user.confirmation.hostNeededFri,
-                type: 'boolean'
-              },{
-                name: 'Needs Hosting Saturday',
-                value: user.confirmation.hostNeededSat,
-                type: 'boolean'
-              },{
-                name: 'Gender Neutral',
-                value: user.confirmation.genderNeutral,
-                type: 'boolean'
-              },{
-                name: 'Cat Friendly',
-                value: user.confirmation.catFriendly,
-                type: 'boolean'
-              },{
-                name: 'Smoking Friendly',
-                value: user.confirmation.smokingFriendly,
-                type: 'boolean'
-              },{
-                name: 'Hosting Notes',
-                value: user.confirmation.hostNotes
-              }
-            ]
-          },{
             name: 'Travel',
             fields: [
               {
                 name: 'Needs Reimbursement',
-                value: user.confirmation.needsReimbursement,
+                value: user.profile.travelReimbursement == "Y",
                 type: 'boolean'
               },{
                 name: 'Received Reimbursement',
-                value: user.confirmation.needsReimbursement && user.status.reimbursementGiven
+                value: user.profile.travelReimbursement == "Y" && user.status.reimbursementGiven
               },{
                 name: 'Address',
                 value: user.confirmation.address ? [
@@ -328,3 +417,46 @@ angular.module('reg')
       $scope.selectUser = selectUser;
 
     }]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

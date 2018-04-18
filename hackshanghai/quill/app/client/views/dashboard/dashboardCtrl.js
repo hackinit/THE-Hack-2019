@@ -71,7 +71,7 @@ angular.module('reg')
         AuthService
           .resendVerificationEmail()
           .then(function(){
-            sweetAlert('验证邮件已发送');
+            sweetAlert('Your email has been sent.');
           });
       };
 
@@ -87,12 +87,12 @@ angular.module('reg')
       $scope.declineAdmission = function(){
 
         swal({
-          title: "确认放弃参赛",
-          text: "你确定自愿放弃参赛资格吗？ \n\n 一旦放弃，我们无法取消这一操作。",
+          title: "Whoa!",
+          text: "Are you sure you would like to decline your admission? \n\n You can't go back!",
           type: "warning",
           showCancelButton: true,
           confirmButtonColor: "#DD6B55",
-          confirmButtonText: "是的，我确认放弃参赛资格",
+          confirmButtonText: "Yes, I can't make it.",
           closeOnConfirm: true
           }, function(){
 
