@@ -7,13 +7,13 @@ def s3(filename, file_obj):
     s3 = boto3.resource('s3')
     s3.Bucket('thehack').put_object(Key='upload/{}'.format(filename), Body=file_obj)
 
-def upload(filename, file_obj):
-    db_queue = redis.StrictRedis(host='localhost', port=6379, db=2)
+def upload(token, filename, file_obj):
+    db_status = redis.StrictRedis(host='redis', port=6379, db=3)
     try:
         s3(filename, file_obj)
-        db_queue.publish("result-success", token)
+        db_status.set(token, 'success')
     except Exception:
-        db_queue.publish("result-failed", token)
+        db_status.set(token, 'failed')
     finally:
         file_obj.close()
 
@@ -33,5 +33,5 @@ if __name__ == '__main__':
         file_obj = StringIO.StringIO(content)
         file_obj.seek(0)
 
-        p = Process(target=upload, args=(filename, file_obj))
+        p = Process(target=upload, args=(token, filename, file_obj))
         p.start()
