@@ -81,6 +81,12 @@ services:
             - "8000"
         env_file: ./django/secrets.env
 
+    redis:
+        restart: always
+        image: redis:3.2.11
+        expose:
+            - "6379"
+
     ambassador_mongo:
         restart: always
         image: mongo:3.0.15-wheezy
