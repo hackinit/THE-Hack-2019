@@ -19,6 +19,7 @@ class S3Middleware(APIView):
         db_filename = redis.StrictRedis(host='redis', port=6379, db=0)
         db_content = redis.StrictRedis(host='redis', port=6379, db=1)
         db_queue = redis.StrictRedis(host='redis', port=6379, db=2)
+        db_status = redis.StrictRedis(host='redis', port=6379, db=3)
 
         random.shuffle(ALPHABET)
         token = ''.join(ALPHABET[:8])
@@ -26,6 +27,7 @@ class S3Middleware(APIView):
         db_content.set(token, content)
 
         db_queue.publish('upload-channel', token)
+        db_status.set(token, 'pending')
 
         return Response({
             'token': token,
