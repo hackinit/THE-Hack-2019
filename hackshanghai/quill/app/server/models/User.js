@@ -244,7 +244,7 @@ var schema = new mongoose.Schema({
       type: String,
     },
 
-    interested-field: {
+    interestedField: {
       type: String,
     },
 
