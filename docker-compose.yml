@@ -85,6 +85,13 @@ services:
         expose:
             - "6379"
 
+    s3:
+        restart: always
+        build: s3
+        command: python listen.py
+        links:
+            - redis
+
     ambassador_mongo:
         restart: always
         image: mongo:3.0.15-wheezy
