@@ -10,16 +10,18 @@ ALPHABET = [chr(ord('0') + i) for i in range(10)] \
     + [chr(ord('a') + i) for i in range(26)] \
     + [chr(ord('A') + i) for i in range(26)]
 
+REDIS_HOST = 'redis'
+
 class S3Middleware(APIView):
     parser_classes = (MultiPartParser, FormParser,)
 
     def put(self, request, filename, format=None):
         content = self.__extract_file(request)
 
-        db_filename = redis.StrictRedis(host='redis', port=6379, db=0)
-        db_content = redis.StrictRedis(host='redis', port=6379, db=1)
-        db_queue = redis.StrictRedis(host='redis', port=6379, db=2)
-        db_status = redis.StrictRedis(host='redis', port=6379, db=3)
+        db_filename = redis.StrictRedis(host=REDIS_HOST, port=6379, db=0)
+        db_content = redis.StrictRedis(host=REDIS_HOST, port=6379, db=1)
+        db_queue = redis.StrictRedis(host=REDIS_HOST, port=6379, db=2)
+        db_status = redis.StrictRedis(host=REDIS_HOST, port=6379, db=3)
 
         random.shuffle(ALPHABET)
         token = ''.join(ALPHABET[:8])
@@ -40,3 +42,12 @@ class S3Middleware(APIView):
         for chunk in upload.chunks():
             content += chunk
         return content
+
+class S3StatusQuery(APIView):
+    def get(self, request, token, format=None):
+        db_status = redis.StrictRedis(host=REDIS_HOST, port=6379, db=3)
+        status = db_status.get(token)
+        return Response({
+            'result': 'null' if status is None else status,
+            'status': 200,
+        })

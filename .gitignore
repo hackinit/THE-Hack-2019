@@ -3,6 +3,7 @@ secrets.env
 **/secrets.aws/*
 !**/secrets.aws/*.example
 db.sqlite3
+dump.rdb
 
 # Vim
 *.swp
