@@ -401,7 +401,6 @@ schema.statics.validateProfile = function(profile, cb){
     profile.name.length > 0 &&
     profile.age > 0 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
-    profile.nationality.length > 0 &&
     (
       (
         profile.profession == "S" &&
@@ -418,8 +417,8 @@ schema.statics.validateProfile = function(profile, cb){
     ["Y", "N"].includes(profile.travelReimbursement) &&
     profile.description.length > 0 &&
     ["Y", "N", "S"].includes(profile.idea) &&
-    profile.legal.mlh.terms &&
-    profile.legal.mlh.coc
+    profile.legal.terms &&
+    profile.legal.cocRead
   ));
 };
 
