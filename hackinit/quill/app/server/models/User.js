@@ -4,56 +4,6 @@ var mongoose   = require('mongoose'),
     jwt        = require('jsonwebtoken');
     JWT_SECRET = process.env.JWT_SECRET;
 
-var profile = {
-
-  // Basic info
-  name: {
-    type: String,
-    min: 1,
-    max: 100,
-  },
-
-  adult: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
-
-  school: {
-    type: String,
-    min: 1,
-    max: 150,
-  },
-
-  graduationYear: {
-    type: String,
-    enum: {
-      values: '2016 2017 2018 2019'.split(' '),
-    }
-  },
-
-  description: {
-    type: String,
-    min: 0,
-    max: 300
-  },
-
-  essay: {
-    type: String,
-    min: 0,
-    max: 1500
-  },
-
-  // Optional info for demographics
-  gender: {
-    type: String,
-    enum : {
-      values: 'M F O N'.split(' ')
-    }
-  },
-
-};
-
 // Only after confirmed
 var confirmation = {
   phoneNumber: String,
@@ -67,13 +17,6 @@ var confirmation = {
   wantsHardware: Boolean,
   hardware: String,
 
-  major: String,
-  github: String,
-  twitter: String,
-  website: String,
-  resume: String,
-
-  needsReimbursement: Boolean,
   address: {
     name: String,
     line1: String,
@@ -85,18 +28,7 @@ var confirmation = {
   },
   receipt: String,
 
-  hostNeededFri: Boolean,
-  hostNeededSat: Boolean,
-  genderNeutral: Boolean,
-  catFriendly: Boolean,
-  smokingFriendly: Boolean,
-  hostNotes: String,
-
   notes: String,
-
-  signatureLiability: String,
-  signaturePhotoRelease: String,
-  signatureCodeOfConduct: String,
 };
 
 var status = {
@@ -155,6 +87,7 @@ var schema = new mongoose.Schema({
   email: {
       type: String,
       required: true,
+      unique: true,
       validate: [
         validator.isEmail,
         'Invalid Email',
@@ -210,7 +143,141 @@ var schema = new mongoose.Schema({
    *
    * Profile validation will exist here.
    */
-  profile: profile,
+  profile: {
+    name: {
+      type: String,
+      min: 1,
+      max: 100,
+    },
+
+    age: {
+      type: Number,
+    },
+
+    gender: {
+      type: String,
+      enum : {
+        values: 'M F O N'.split(' ')
+      },
+    },
+
+    phoneNum: {
+      type: String,
+    },
+
+    city: {
+      type: String,
+      min: 1,
+      max: 200,
+    },
+
+    profession: {
+      type: String,
+      enum: {
+        values: [
+          "W",
+          "S",
+        ]
+      },
+    },
+
+    study: {
+      school: {
+        type: String,
+        min: 1,
+        max: 150,
+      },
+
+      subject: {
+        type: String,
+      },
+
+      yearOfStudies: {
+        type: String,
+      },
+
+      graduationYear: {
+        type: String,
+      },
+
+      techStack: {
+        type: String,
+      },
+    },
+
+    work: {
+      experience: {
+        type: Number,
+      },
+
+      techStack: {
+        type: String,
+      },
+    },
+
+    travelReimbursement: {
+      type: String,
+      enum: {
+        values: [
+          "Y",
+          "N"
+        ]
+      },
+    },
+
+    travelReimbursementType: {
+      type: String,
+      enum: {
+        values: [
+          "S",
+          "T",
+          "O",
+        ],
+      },
+    },
+
+    github: {
+      type: String,
+    },
+
+    linkedin: {
+      type: String,
+    },
+
+    interestedField: {
+      type: String,
+    },
+
+    description: {
+      type: String,
+      min: 0,
+      max: 300
+    },
+
+    idea: {
+      type: String,
+      enum: {
+        values: [
+          "Y",
+          "N",
+          "S",
+        ],
+      },
+    },
+
+    ideaTracks: [String],
+
+    legal: {
+      cocRead: {
+        type: Boolean,
+        default: false,
+      },
+      terms: {
+        type: Boolean,
+        default: false,
+      }
+    }
+  },
 
   /**
    * Confirmation information
@@ -309,7 +376,7 @@ schema.statics.verifyTempAuthToken = function(token, callback){
 
 schema.statics.findOneByEmail = function(email){
   return this.findOne({
-    email: new RegExp('^' + email + '$', 'i')
+    email: email.toLowerCase()
   });
 };
 
@@ -328,13 +395,32 @@ schema.statics.getByToken = function(token, callback){
 };
 
 schema.statics.validateProfile = function(profile, cb){
+  var currentYear = new Date().getFullYear();
+
   return cb(!(
     profile.name.length > 0 &&
-    profile.adult &&
-    profile.school.length > 0 &&
-    ['2016', '2017', '2018', '2019'].indexOf(profile.graduationYear) > -1 &&
-    ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
-    ));
+    profile.age > 0 &&
+    ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
+    profile.nationality.length > 0 &&
+    (
+      (
+        profile.profession == "S" &&
+        profile.study.school.length > 0 &&
+        profile.study.graduationYear >= (currentYear - 1) &&
+        profile.study.graduationYear <= (currentYear + 10) &&
+        profile.study.subject.length > 0
+      ) ||
+      (
+        profile.profession == "W" &&
+        profile.work.experience >= 0
+      )
+    ) &&
+    ["Y", "N"].includes(profile.travelReimbursement) &&
+    profile.description.length > 0 &&
+    ["Y", "N", "S"].includes(profile.idea) &&
+    profile.legal.mlh.terms &&
+    profile.legal.mlh.coc
+  ));
 };
 
 //=========================================
