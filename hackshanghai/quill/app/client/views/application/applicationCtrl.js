@@ -376,12 +376,15 @@ angular.module('reg')
           formData.append('upload', resume, resume.name);
           $.ajax({
             type: 'PUT',
-            url: '/s3/upload/resume/' + $scope.user._id + '_resume',
+            url: 'http://api.thehack.io/s3/upload/resume/' + $scope.user._id + '_resume' + _getExtension(resume.name),
             data: formData,
             processData: false,
             contentType: false,
           }).done(function(result) {
-            _updateUser();
+            var token = result.token;
+            _waitForSuccess(token, _updateUser, function() {
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            });
           }).fail(function(result) {
             if (result.status == 413) {
               sweetAlert("Uh oh!", "Please reduce file size.", "error");
@@ -390,6 +393,24 @@ angular.module('reg')
             }
           });
         }
+      }
+
+      function _getExtension(filename) {
+        return filename.match(/\.\w+/)[0];
+      }
+
+      function _waitForSuccess(token, success, failed) {
+        $http.get('http://api.thehack.io/s3/status/' + token).then(function(response) {
+          if (response.data.result === 'success') {
+            success();
+          } else if (response.data.result === 'failed' || response.data.result === 'null') {
+            failed();
+          } else {
+            setTimeout(function() {
+              _waitForSuccess(token, success, failed);
+            }, 100);
+          }
+        });
       }
 
     }]);
