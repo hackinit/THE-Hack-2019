@@ -302,6 +302,16 @@ angular.module('reg')
               ]
             },
 
+            resume: {
+              identifier: 'resume',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请上传你的简历'
+                }
+              ]
+            },
+
             interestedField: {
               identifier: 'interestedField',
               rules: [
@@ -349,11 +359,37 @@ angular.module('reg')
 
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
-          _updateUser();
+          _uploadResume();
         }
         else{
           sweetAlert("Uh oh!", "Please Fill The Required Fields", "error");
         }
       };
+
+      function _uploadResume() {
+        let files = $('#resume')[0].files;
+        if (files.length == 0) {
+          sweetAlert("Uh oh!", "Please Upload Your Resume", "error");
+        } else {
+          let resume = files[0];
+          let formData = new FormData();
+          formData.append('upload', resume, resume.name);
+          $.ajax({
+            type: 'PUT',
+            url: '/s3/upload/resume/' + $scope.user._id + '_resume',
+            data: formData,
+            processData: false,
+            contentType: false,
+          }).done(function(result) {
+            _updateUser();
+          }).fail(function(result) {
+            if (result.status == 413) {
+              sweetAlert("Uh oh!", "Please reduce file size.", "error");
+            } else {
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            }
+          });
+        }
+      }
 
     }]);
