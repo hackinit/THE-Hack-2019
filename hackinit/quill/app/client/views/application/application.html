@@ -243,6 +243,38 @@
             </div>
           </div>
 
+          <div class="field">
+            <label>
+                你是否参加过 Hackathon ？请列出你参加过的 Hackathon。
+            </label>
+            <textarea ng-model="user.profile.pastExperience">
+            </textarea>
+          </div>
+
+          <div class="field" required>
+            <label>
+              你为何对科学、技术、工程、艺术或数学感兴趣？ *
+            </label>
+            <textarea ng-model="user.profile.stemInterest">
+            </textarea>
+          </div>
+
+          <div class="field" required>
+            <label>
+                请简述你所做过的最满意的一个项目或产品，可以是任何你所感兴趣的领域，并描述你是如何对其付出精力和时间的。 *
+            </label>
+            <textarea ng-model="user.profile.projExp">
+            </textarea>
+          </div>
+
+          <div class="field" required>
+            <label>
+                请分享一个当下你碰到的问题，并描述它可以如何被科技解决或改善。 *
+            </label>
+            <textarea ng-model="user.profile.currentIssue">
+            </textarea>
+          </div>
+
         </fieldset>
 
         <div class="divided title">法务提示</div>

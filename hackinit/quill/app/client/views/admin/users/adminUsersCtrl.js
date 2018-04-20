@@ -300,6 +300,18 @@ angular.module('reg')
                 value: user.profile.github,
                 type: "url",
               },{
+                name: 'Past Experience',
+                value: user.profile.pastExperience,
+              },{
+                name: 'STEM Interest',
+                value: user.profile.stemInterest,
+              },{
+                name: 'Project Experience',
+                value: user.profile.projExp,
+              },{
+                name: 'Current Real-world Issue',
+                value: user.profile.currentIssue,
+              },{
                 name: 'Has idea',
                 value: user.profile.idea,
                 type: "enum",
