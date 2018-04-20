@@ -24,11 +24,13 @@ angular.module('reg')
 
       // <tracks>
       var tracks = [
-        "Digital Journalism",
-        "Security",
-        "Smart Society",
-        "E-Health",
-        "Free Choice",
+        "人工智能",
+        "物联网",
+        "教育",
+        "区块链",
+        "金融",
+        "虚拟现实",
+        "自由发挥"
       ];
 
       $scope.tracks = {};
@@ -100,11 +102,13 @@ angular.module('reg')
       function _updateUser(e){
         // <tracks>
         $scope.user.profile.ideaTracks = [
-          "Digital Journalism",
-          "Security",
-          "Smart Society",
-          "E-Health",
-          "Free Choice",
+          "人工智能",
+          "物联网",
+          "教育",
+          "区块链",
+          "金融",
+          "虚拟现实",
+          "自由发挥",
         ].filter(function (track) {
           return $scope.tracks[track];
         });
