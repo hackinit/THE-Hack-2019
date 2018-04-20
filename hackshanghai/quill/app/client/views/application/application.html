@@ -83,7 +83,7 @@
               <label>在读学校*</label>
               <div id="school" class="ui search">
                 <div class="ui input">
-                  <input class="prompt" type="text" placeholder="the school or university you're visiting" name="school" ng-model="user.profile.study.school">
+                  <input class="prompt" type="text" name="school" ng-model="user.profile.study.school">
                 </div>
                 <div class="results"></div>
               </div>
@@ -194,13 +194,28 @@
             <input type="text" placeholder="https://github.com/yourname" ng-model="user.profile.github">
           </div>
 
+          <div class="field">
+            <label>你的微信ID</label>
+            <input type="text" ng-model="user.profile.wechat">
+          </div>
+
+          <div class="field">
+            <label>你的个人网站</label>
+            <input type="text" ng-model="user.profile.website">
+          </div>
+
+          <div class="field">
+            <label>你的 DevPost 主页</label>
+            <input type="text" ng-model="user.profile.devpost">
+          </div>
+
           <div class="field" required>
             <label>你的简历*</label>
             <input type="file" id="resume">
           </div>
 
           <div class="field" required>
-            <label>请列举你有特别兴趣的产业、领域</label>
+            <label>请列举你有特别兴趣的产业、领域*</label>
             <input name="interestedField" ng-model="user.profile.interestedField" placeholder="例如：人工智能、医疗科技、金融科技">
           </div>
 

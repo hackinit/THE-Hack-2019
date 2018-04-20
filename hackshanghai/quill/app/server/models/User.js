@@ -244,6 +244,18 @@ var schema = new mongoose.Schema({
       type: String,
     },
 
+    wechat: {
+      type: String,
+    },
+
+    devpost: {
+      type: String,
+    },
+
+    website: {
+      type: String,
+    },
+
     interestedField: {
       type: String,
     },

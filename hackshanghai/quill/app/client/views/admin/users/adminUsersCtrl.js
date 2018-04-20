@@ -189,6 +189,44 @@ angular.module('reg')
       }
 
       function generateSections(user){
+        var professionFields = [];
+
+        if (user.profile.profession == "S") {
+          professionFields = [
+            {
+              name: "School",
+              value: user.profile.study.school,
+            },
+            {
+              name: "Subject",
+              value: user.profile.study.subject,
+            },
+            {
+              name: "Year of studies",
+              value: user.profile.study.yearOfStudies,
+            },
+            {
+              name: "Graduation year",
+              value: user.profile.study.graduationYear,
+            },
+            {
+              name: "Tech Stack",
+              value: user.profile.study.techStack,
+            },
+          ];
+        } else if (user.profile.profession == "W") {
+          professionFields = [
+            {
+              name: "Work experience",
+              value: user.profile.work.experience + "y",
+            },
+            {
+              name: "Tech Stack",
+              value: user.profile.work.techStack,
+            },
+          ];
+        }
+
         return [
           {
             name: 'Basic Info',
@@ -221,39 +259,76 @@ angular.module('reg')
                 value: user.profile.name
               },{
                 name: 'Gender',
-                value: user.profile.gender
+                value: user.profile.gender,
+                type: "enum",
+                enum: {
+                  "M": "Male",
+                  "F": "Female",
+                  "O": "Other",
+                  "N": "Didn't answer",
+                },
               },{
                 name: 'Phone Number',
                 value: user.profile.phoneNum
               },{
-                name: 'School',
-                value: user.profile.school
+                name: 'Age',
+                value: user.profile.age
               },{
-                name: 'Graduation Year',
-                value: user.profile.graduationYear
-              }
+                name: 'City',
+                value: user.profile.city
+              },{
+                name: 'Description',
+                value: user.profile.description
+              },{
+                name: 'WeChat',
+                value: user.profile.wechat,
+                type: "url",
+              },{
+                name: 'LinkedIn',
+                value: user.profile.linkedin,
+                type: "url",
+              },{
+                name: 'Website',
+                value: user.profile.website,
+                type: "url",
+              },{
+                name: 'Github',
+                value: user.profile.github,
+                type: "url",
+              },{
+                name: 'Has idea',
+                value: user.profile.idea,
+                type: "enum",
+                enum: {
+                  "Y": "Yes",
+                  "S": "Somewhat, yes",
+                  "N": "No, not yet",
+                }
+              },{
+                name: 'Interested in',
+                value: (user.profile.ideaTracks || []).join(", "),
+              },{
+                name: 'Profession',
+                value: user.profile.profession,
+                type: "enum",
+                enum: {
+                  "W": "Working",
+                  "S": "Student",
+                }
+              },
             ]
+          },{
+            name: "Profession",
+            fields: professionFields,
           },{
             name: 'Confirmation',
             fields: [
               {
-                name: 'Phone Number',
-                value: user.confirmation.phoneNumber
-              },{
                 name: 'Dietary Restrictions',
                 value: user.confirmation.dietaryRestrictions.join(', ')
               },{
                 name: 'Shirt Size',
                 value: user.confirmation.shirtSize
-              },{
-                name: 'Major',
-                value: user.confirmation.major
-              },{
-                name: 'Github',
-                value: user.confirmation.github
-              },{
-                name: 'Website',
-                value: user.confirmation.website
               },{
                 name: 'Needs Hardware',
                 value: user.confirmation.wantsHardware,
@@ -264,43 +339,15 @@ angular.module('reg')
               }
             ]
           },{
-            name: 'Hosting',
-            fields: [
-              {
-                name: 'Needs Hosting Friday',
-                value: user.confirmation.hostNeededFri,
-                type: 'boolean'
-              },{
-                name: 'Needs Hosting Saturday',
-                value: user.confirmation.hostNeededSat,
-                type: 'boolean'
-              },{
-                name: 'Gender Neutral',
-                value: user.confirmation.genderNeutral,
-                type: 'boolean'
-              },{
-                name: 'Cat Friendly',
-                value: user.confirmation.catFriendly,
-                type: 'boolean'
-              },{
-                name: 'Smoking Friendly',
-                value: user.confirmation.smokingFriendly,
-                type: 'boolean'
-              },{
-                name: 'Hosting Notes',
-                value: user.confirmation.hostNotes
-              }
-            ]
-          },{
             name: 'Travel',
             fields: [
               {
                 name: 'Needs Reimbursement',
-                value: user.confirmation.needsReimbursement,
+                value: user.profile.travelReimbursement == "Y",
                 type: 'boolean'
               },{
                 name: 'Received Reimbursement',
-                value: user.confirmation.needsReimbursement && user.status.reimbursementGiven
+                value: user.profile.travelReimbursement == "Y" && user.status.reimbursementGiven
               },{
                 name: 'Address',
                 value: user.confirmation.address ? [
