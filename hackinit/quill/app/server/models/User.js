@@ -256,6 +256,22 @@ var schema = new mongoose.Schema({
       type: String,
     },
 
+    pastExperience: {
+      type: String,
+    },
+
+    stemInterest: {
+      type: String,
+    },
+
+    projExp: {
+      type: String,
+    },
+
+    currentIssue: {
+      type: String,
+    },
+
     description: {
       type: String,
       min: 0,
