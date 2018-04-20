@@ -2,7 +2,7 @@
      ng-class="{open: showSidebar}">
   <div ui-sref="app.dashboard"
        class="logo item">
-    <img src="assets/images/logo.svg">
+    <img src="assets/images/logo-w.svg">
   </div>
 
   <div ui-sref-active="active"
@@ -21,7 +21,7 @@
       Application 申请
     </div>
 
-    <div
+    <!--<div
       ui-sref-active="active"
       ui-sref="app.confirmation"
       ng-show="!pastConfirmation && currentUser.status.admitted && !currentUser.status.declined"
@@ -35,7 +35,7 @@
       ng-show="!currentUser.status.declined"
       class="item">
       Team 团队管理
-    </div>
+    </div>-->
 
     <div
       ui-sref-active="active"
@@ -60,6 +60,6 @@
 
 <div class="tab"
   ng-click="toggleSidebar()">
-  <img ng-show="!showSidebar" src="assets/images/logo.svg" />
+  <img ng-show="!showSidebar" src="assets/images/logo-w.svg" />
   <span class="close" ng-show="showSidebar">&#x2715</span>
 </div>
