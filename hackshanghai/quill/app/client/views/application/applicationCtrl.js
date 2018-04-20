@@ -117,6 +117,7 @@ angular.module('reg')
         UserService
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .success(function(data){
+            $('#uploading-loader').removeClass('active');
             sweetAlert({
               title: "恭喜你！",
               text: "你的申请已经成功提交",
@@ -128,6 +129,8 @@ angular.module('reg')
           })
           .error(function(res){
             sweetAlert("请检查你的信息", "提交遇到了问题。如果这一问题持续，请联络我们。", "error");
+            $('#uploading-loader').removeClass('active');
+            sweetAlert("Uh oh!", "Something went wrong.", "error");
           });
       }
 
@@ -378,18 +381,21 @@ angular.module('reg')
           var resume = files[0];
           var formData = new FormData();
           formData.append('upload', resume, resume.name);
+          $('#uploading-loader').addClass('active');
           $.ajax({
             type: 'PUT',
-            url: 'http://api.thehack.io/s3/upload/resume/' + $scope.user._id + '_resume' + _getExtension(resume.name),
+            url: 'http://api.thehack.io/s3/upload/resume/hackshanghai/' + $scope.user._id + '_resume' + _getExtension(resume.name),
             data: formData,
             processData: false,
             contentType: false,
           }).done(function(result) {
             var token = result.token;
             _waitForSuccess(token, _updateUser, function() {
+              $('#uploading-loader').removeClass('active');
               sweetAlert("Uh oh!", "Something went wrong.", "error");
             });
           }).fail(function(result) {
+            $('#uploading-loader').removeClass('active');
             if (result.status == 413) {
               sweetAlert("请检查你的信息", "请缩小文件大小", "error");
             } else {
@@ -400,7 +406,7 @@ angular.module('reg')
       }
 
       function _getExtension(filename) {
-        return filename.match(/\.\w+/)[0];
+        return filename.match(/\.\w+$/)[0];
       }
 
       function _waitForSuccess(token, success, failed) {
