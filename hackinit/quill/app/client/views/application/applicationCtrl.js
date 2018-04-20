@@ -216,7 +216,7 @@ angular.module('reg')
               identifier: 'school',
               rules: [
                 {
-                  type: 'schoolSelectedAndEmpty',
+                  type: 'empty',
                   prompt: '请输入你的学校名称'
                 }
               ]
@@ -226,7 +226,7 @@ angular.module('reg')
               identifier: 'subject-of-study',
               rules: [
                 {
-                  type: 'schoolSelectedAndEmpty',
+                  type: 'empty',
                   prompt: '请输入你的专业'
                 }
               ]
@@ -236,7 +236,7 @@ angular.module('reg')
               identifier: 'graduation-year',
               rules: [
                 {
-                  type: 'schoolSelectedAndEmpty',
+                  type: 'empty',
                   prompt: '请选择你的毕业年份'
                 }
               ]
