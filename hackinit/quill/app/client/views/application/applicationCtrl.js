@@ -113,6 +113,7 @@ angular.module('reg')
         UserService
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .success(function(data){
+            $('#uploading-loader').removeClass('active');
             sweetAlert({
               title: "Awesome!",
               text: "Your application has been saved.",
@@ -123,8 +124,10 @@ angular.module('reg')
             });
           })
           .error(function(res){
+            $('#uploading-loader').removeClass('active');
             sweetAlert("Uh oh!", "Something went wrong.", "error");
           });
+
       }
 
       function _setupForm(){
@@ -302,6 +305,16 @@ angular.module('reg')
               ]
             },
 
+            resume: {
+              identifier: 'resume',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请上传你的简历'
+                }
+              ]
+            },
+
             cocRead: {
               identifier: 'cocRead',
               rules: [
@@ -329,11 +342,61 @@ angular.module('reg')
 
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
-          _updateUser();
+          _uploadResume();
         }
         else{
           sweetAlert("Uh oh!", "Please Fill The Required Fields", "error");
         }
       };
+
+      function _uploadResume() {
+        var files = $('#resume')[0].files;
+        if (files.length == 0) {
+          sweetAlert("Uh oh!", "Please Upload Your Resume", "error");
+        } else {
+          var resume = files[0];
+          var formData = new FormData();
+          formData.append('upload', resume, resume.name);
+          $('#uploading-loader').addClass('active');
+          $.ajax({
+            type: 'PUT',
+            url: 'http://api.thehack.io/s3/upload/resume/hackshanghai/' + $scope.user._id + '_resume' + _getExtension(resume.name),
+            data: formData,
+            processData: false,
+            contentType: false,
+          }).done(function(result) {
+            var token = result.token;
+            _waitForSuccess(token, _updateUser, function() {
+              $('#uploading-loader').removeClass('active');
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            });
+          }).fail(function(result) {
+            $('#uploading-loader').removeClass('active');
+            if (result.status == 413) {
+              sweetAlert("Uh oh!", "Please reduce file size.", "error");
+            } else {
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            }
+          });
+        }
+      }
+
+      function _getExtension(filename) {
+        return filename.match(/\.\w+$/)[0];
+      }
+
+      function _waitForSuccess(token, success, failed) {
+        $http.get('http://api.thehack.io/s3/status/' + token).then(function(response) {
+          if (response.data.result === 'success') {
+            success();
+          } else if (response.data.result === 'failed' || response.data.result === 'null') {
+            failed();
+          } else {
+            setTimeout(function() {
+              _waitForSuccess(token, success, failed);
+            }, 100);
+          }
+        });
+      }
 
     }]);
