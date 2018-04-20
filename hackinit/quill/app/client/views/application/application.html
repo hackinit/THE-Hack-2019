@@ -1,4 +1,7 @@
 <div id="application" class="page">
+  <div class="ui page dimmer" id="uploading-loader" style="z-index:10000;">
+    <div class="ui text loader">Uploading...</div>
+  </div>
   <div class="divided title">
     参赛申请
   </div>
@@ -144,6 +147,11 @@
           <div class="field">
             <label>你的个人网站</label>
             <input type="text" ng-model="user.profile.website">
+          </div>
+
+          <div class="field" required>
+            <label>你的简历*</label>
+            <input type="file" id="resume">
           </div>
 
           <br>
