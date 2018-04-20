@@ -231,21 +231,6 @@ angular.module('reg')
               },{
                 name: 'Graduation Year',
                 value: user.profile.graduationYear
-              },{
-                name: 'Leadership Roles',
-                value: user.profile.schoolRole
-              },{
-                name: 'Where heard THE Hack',
-                value: user.profile.whereHeard
-              },{
-                name: 'Previous Promotional Experience',
-                value: user.profile.promoExperience
-              },{
-                name: 'Hacker Experience?',
-                value: user.profile.isHacker
-              },{
-                name: 'Promotional Plan',
-                value: user.profile.promoPlan
               }
             ]
           },{
