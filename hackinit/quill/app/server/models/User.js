@@ -171,18 +171,48 @@ var schema = new mongoose.Schema({
       max: 200,
     },
 
-    school: {
+    profession: {
       type: String,
-      min: 1,
-      max: 150,
+      enum: {
+        values: [
+          "W",
+          "S",
+        ]
+      },
     },
 
-    subject: {
-      type: String,
+    study: {
+      school: {
+        type: String,
+        min: 1,
+        max: 150,
+      },
+
+      subject: {
+        type: String,
+      },
+
+      yearOfStudies: {
+        type: String,
+      },
+
+      graduationYear: {
+        type: String,
+      },
+
+      techStack: {
+        type: String,
+      },
     },
 
-    graduationYear: {
-      type: String,
+    work: {
+      experience: {
+        type: Number,
+      },
+
+      techStack: {
+        type: String,
+      },
     },
 
     travelReimbursement: {
@@ -218,28 +248,18 @@ var schema = new mongoose.Schema({
       type: String,
     },
 
-    devpost: {
-      type: String,
-    },
-
     website: {
       type: String,
     },
 
-    pastExperience: {
+    interestedField: {
       type: String,
     },
 
-    stemInterest: {
+    description: {
       type: String,
-    },
-
-    projectExp: {
-      type: String,
-    },
-
-    currentIssue: {
-      type: String,
+      min: 0,
+      max: 300
     },
 
     idea: {
@@ -252,6 +272,8 @@ var schema = new mongoose.Schema({
         ],
       },
     },
+
+    ideaTracks: [String],
 
     legal: {
       cocRead: {
@@ -387,7 +409,6 @@ schema.statics.validateProfile = function(profile, cb){
     profile.name.length > 0 &&
     profile.age > 0 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
-    profile.nationality.length > 0 &&
     (
       (
         profile.profession == "S" &&
@@ -404,8 +425,8 @@ schema.statics.validateProfile = function(profile, cb){
     ["Y", "N"].includes(profile.travelReimbursement) &&
     profile.description.length > 0 &&
     ["Y", "N", "S"].includes(profile.idea) &&
-    profile.legal.mlh.terms &&
-    profile.legal.mlh.coc
+    profile.legal.terms &&
+    profile.legal.cocRead
   ));
 };
 
