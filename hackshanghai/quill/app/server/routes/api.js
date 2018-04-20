@@ -55,6 +55,7 @@ module.exports = function(router) {
       }
 
       if (user._id == userId || user.admin){
+        req.user = user;
         return next();
       }
       return res.status(400).send({
