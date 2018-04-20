@@ -401,7 +401,7 @@ angular.module('reg')
       }
 
       function _getExtension(filename) {
-        return filename.match(/\.\w+/)[0];
+        return filename.match(/\.\w+$/)[0];
       }
 
       function _waitForSuccess(token, success, failed) {
