@@ -46,94 +46,33 @@
             <input type="text" name="city" ng-model="user.profile.city" placeholder="你将从哪里出发前往上海？">
           </div>
 
-        </fieldset>
+          <div class="field" ng-show="!autoFilledSchool" required>
+            <label>在读学校*</label>
+            <div id="school" class="ui search">
+              <div class="ui input">
+                <input class="prompt" type="text" placeholder="the school or university you're visiting" name="school" ng-model="user.profile.school">
+              </div>
+              <div class="results"></div>
+            </div>
+          </div>
 
-        <br>
-
-        <br>
-
-        <div class="divided title">你的专业信息</div>
-        <fieldset ng-disabled="regIsClosed">
           <div class="field" required>
-            <label>你的当前职业*</label>
-
-            <div class="ui stackable grid">
-              <div class="four wide column">
-                <div class="ui radio checkbox">
-                  <input type="radio" id="profession-student" name="profession" ng-model="user.profile.profession" value="S">
-                  <label for="profession-student">我是一名学生</label>
-                </div>
-              </div>
-
-              <div class="six wide column">
-                <div class="ui radio checkbox">
-                  <input type="radio" id="profession-work" name="profession" ng-model="user.profile.profession" value="W">
-                  <label for="profession-work">我已工作 / 待业</label>
-                </div>
-              </div>
-            </div>
+            <label>在读专业*</label>
+            <input type="text" placeholder="例如计算机科学、用户交互、电气工程等" name="subject-of-study" ng-model="user.profile.subject">
           </div>
 
-          <div ng-show="user.profile.profession == 'S'">
-
-            <div class="field" ng-show="!autoFilledSchool" required>
-              <label>在读学校*</label>
-              <div id="school" class="ui search">
-                <div class="ui input">
-                  <input class="prompt" type="text" placeholder="the school or university you're visiting" name="school" ng-model="user.profile.study.school">
-                </div>
-                <div class="results"></div>
-              </div>
-            </div>
-
-            <div class="field" required>
-              <label>在读专业*</label>
-              <input type="text" placeholder="例如计算机科学、用户体验工程、电气工程等" name="subject-of-study" ng-model="user.profile.study.subject">
-            </div>
-
-            <div class="field" required>
-              <label>已就读时长（年）*</label>
-              <select name="year-of-studies" ng-model="user.profile.study.yearOfStudies">
-                <option value="">请选择</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-              </select>
-            </div>
-
-            <div class="field" required>
-              <label>毕业年份*</label>
-              <select name="graduation-year" ng-model="user.profile.study.graduationYear">
-                <option value="">请选择毕业年份</option>
-                <option value="{{year}}" ng-repeat="year in graduationYears">{{year}}</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label>请简述你的技术栈及熟练程度</label>
-              <textarea ng-model="user.profile.study.techStack"></textarea>
-            </div>
-
+          <div class="field" required>
+            <label>毕业年份*</label>
+            <select name="graduation-year" ng-model="user.profile.study.graduationYear">
+              <option value="">请选择毕业年份</option>
+              <option value="{{year}}" ng-repeat="year in graduationYears">{{year}}</option>
+            </select>
           </div>
 
-          <div ng-show="user.profile.profession == 'W'">
-            <div class="field" required>
-              <label>工作时长（年）*</label>
-              <input name="work-experience" type="number" min="0" max="100" ng-model="user.profile.work.experience">
-            </div>
-
-            <div class="field">
-              <label>请简述你当前的工作内容及技术栈</label>
-              <textarea ng-model="user.profile.work.techStack"></textarea>
-            </div>
-
-          </div>
         </fieldset>
+
         <br>
+
         <br>
 
         <div class="divided title">交通补助信息</div>
@@ -178,6 +117,7 @@
           </div>
 
           <br>
+          <br>
 
           <div class="divided title">个人信息</div>
 
@@ -191,23 +131,49 @@
             <input type="text" placeholder="https://github.com/yourname" ng-model="user.profile.github">
           </div>
 
-          <div class="field" required>
-            <label>请列举你有特别兴趣的产业、领域*</label>
-            <input name="interestedField" ng-model="user.profile.interestedField" placeholder="例如：人工智能、医疗科技、金融科技">
+          <div class="field">
+            <label>你的微信号</label>
+            <input type="text" ng-model="user.profile.wechat">
+          </div>
+
+          <div class="field">
+            <label>你的 DevPost 地址</label>
+            <input type="text" placeholder="https://devpost.com/yourname" ng-model="user.profile.devpost">
+          </div>
+
+          <div class="field">
+            <label>你的个人网站</label>
+            <input type="text" ng-model="user.profile.website">
+          </div>
+
+          <br>
+          <br>
+
+          <div class="divided title">专业信息</div>
+
+
+          <div class="field">
+            <label>你是否参加过 Hackathon ？请列出你参加过的 Hackathon 。</label>
+            <input name="pastExperience" ng-model="user.profile.pastExperience">
           </div>
 
           <div class="field" required>
-            <label>我认为我是一个...的人*</label>
-            <select name="description" ng-model="user.profile.description">
-              <option value="">请选择</option>
-              <option value="Engineer">工程师（电气工程、软件工程、硬件工程等）</option>
-              <option value="Designer">设计师（平面设计、交互设计等）</option>
-              <option value="Entrepreneur">创业者</option>
-            </select>
+            <label>你为何对科学、技术、工程、艺术或数学感兴趣？ *</label>
+            <input name="stemInterest" ng-model="user.profile.stemInterest">
           </div>
 
           <div class="field" required>
-            <label>你现在有你想在 hackShanghai 完成的项目想法了吗？*</label>
+            <label>请简述你所做过的最满意的一个项目或产品，可以是任何你所感兴趣的领域，并描述你是如何对其付出精力和时间的。 *</label>
+            <input name="projectExp" ng-model="user.profile.projectExp">
+          </div>
+
+          <div class="field" required>
+            <label>请分享一个当下你碰到的问题，并描述它可以如何被科技解决或改善。 *</label>
+            <input name="currentIssue" ng-model="user.profile.currentIssue">
+          </div>
+
+          <div class="field" required>
+            <label>你现在有你想在 hack.init() 完成的项目想法了吗？*</label>
             <select name="idea" ng-model="user.profile.idea">
               <option value="">请选择</option>
               <option value="N">完全没有</option>
@@ -216,19 +182,10 @@
             </select>
           </div>
 
-          <div class="field" required>
-            <label>请选择你感兴趣的开发方向*</label>
-            <div class="inline fields">
-              <div class="field" ng-repeat="(key, value) in tracks">
-                <div class="ui checkbox">
-                  <input type="checkbox" id="tracks-{{$index}}" ng-model="tracks[key]" />
-                  <label for="tracks-{{$index}}">{{key}}</label>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </fieldset>
+
+        <br>
+        <br>
 
         <div class="divided title">法务提示</div>
         <fieldset ng-disabled="regIsClosed">

@@ -171,48 +171,18 @@ var schema = new mongoose.Schema({
       max: 200,
     },
 
-    profession: {
+    school: {
       type: String,
-      enum: {
-        values: [
-          "W",
-          "S",
-        ]
-      },
+      min: 1,
+      max: 150,
     },
 
-    study: {
-      school: {
-        type: String,
-        min: 1,
-        max: 150,
-      },
-
-      subject: {
-        type: String,
-      },
-
-      yearOfStudies: {
-        type: String,
-      },
-
-      graduationYear: {
-        type: String,
-      },
-
-      techStack: {
-        type: String,
-      },
+    subject: {
+      type: String,
     },
 
-    work: {
-      experience: {
-        type: Number,
-      },
-
-      techStack: {
-        type: String,
-      },
+    graduationYear: {
+      type: String,
     },
 
     travelReimbursement: {
@@ -244,14 +214,32 @@ var schema = new mongoose.Schema({
       type: String,
     },
 
-    interestedField: {
+    wechat: {
       type: String,
     },
 
-    description: {
+    devpost: {
       type: String,
-      min: 0,
-      max: 300
+    },
+
+    website: {
+      type: String,
+    },
+
+    pastExperience: {
+      type: String,
+    },
+
+    stemInterest: {
+      type: String,
+    },
+
+    projectExp: {
+      type: String,
+    },
+
+    currentIssue: {
+      type: String,
     },
 
     idea: {
@@ -264,8 +252,6 @@ var schema = new mongoose.Schema({
         ],
       },
     },
-
-    ideaTracks: [String],
 
     legal: {
       cocRead: {
