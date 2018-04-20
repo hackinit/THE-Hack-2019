@@ -71,10 +71,6 @@
           </div>
 
           <div ng-show="user.profile.profession == 'S'">
-            <div class="field" ng-show="autoFilledSchool" required>
-              <label>在读学校</label>
-              <input class="ui input" disabled="disabled" ng-show="autoFilledSchool" ng-model="user.profile.study.school">
-            </div>
 
             <div class="field" ng-show="!autoFilledSchool" required>
               <label>在读学校</label>
@@ -151,21 +147,15 @@
               <div class="two wide column">
                 <div class="ui radio checkbox">
                   <input id="travel-reimbursement-y" name="travel-reimbursement" type="radio" value="Y" ng-model="user.profile.travelReimbursement">
-                  <label for="travel-reimbursement-y">我需要交通补助</label>
+                  <label for="travel-reimbursement-y">需要</label>
                 </div>
               </div>
               <div class="two wide column">
                 <div class="ui radio checkbox">
                   <input id="travel-reimbursement-n" name="travel-reimbursement" type="radio" value="N" ng-model="user.profile.travelReimbursement">
-                  <label for="travel-reimbursement-n">我不需要交通补助</label>
+                  <label for="travel-reimbursement-n">不需要</label>
                 </div>
               </div>
-            </div>
-            <div ng-show="user.profile.travelReimbursement == 'Y'">
-              <br>
-              <p>
-                请记住你的交通补助申请码：<b>{{travelFormId}}</b>。如果你通过申请审查，你需要使用这一编码获得你的交通补贴。
-              </p>
             </div>
           </div>
 
