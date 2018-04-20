@@ -76,14 +76,9 @@
 
           <div ng-show="user.profile.profession == 'S'">
 
-            <div class="field" ng-show="!autoFilledSchool" required>
+            <div class="field" required>
               <label>在读学校*</label>
-              <div id="school" class="ui search">
-                <div class="ui input">
-                  <input class="prompt" type="text" name="school" ng-model="user.profile.study.school">
-                </div>
-                <div class="results"></div>
-              </div>
+              <input type="text" name="school" ng-model="user.profile.study.school">
             </div>
 
             <div class="field" required>
@@ -257,7 +252,7 @@
             <label>《选手行为守则》*</label>
             <div class="ui checkbox">
               <input type="checkbox" name="cocRead" value="Y" ng-model="user.profile.legal.cocRead">
-              <label>我已阅读并同意<a href="http://static.hackinit.org/doc/Code-of-Conduct.pdf" target="_blank">《选手行为守则》</a>。</label>
+              <label>我已阅读并同意<a href="http://static.hackinit.org/doc/shared/Code-of-Conduct.pdf" target="_blank">《选手行为守则》</a>。</label>
             </div>
           </div>
 
@@ -265,7 +260,7 @@
             <label>《竞赛规则》*</label>
             <div class="ui checkbox">
               <input type="checkbox" name="mlh-terms" value="Y" ng-model="user.profile.legal.terms">
-              <label>我已阅读并同意 <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions" target="_blank">《竞赛规则》</a>。</label>
+              <label>我已阅读并同意 <a href="http://static.hackinit.org/doc/shared/Hackathon-Official-Rule-zh.pdf" target="_blank">《竞赛规则》</a>。</label>
             </div>
           </div>
 
