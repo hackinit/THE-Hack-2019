@@ -212,11 +212,21 @@ angular.module('reg')
               ]
             },
 
+            profession: {
+              identifier: 'profession',
+              rules: [
+                {
+                  type: 'professionSelected',
+                  prompt: '请选择你的身份'
+                }
+              ]
+            },
+
             school: {
               identifier: 'school',
               rules: [
                 {
-                  type: 'empty',
+                  type: 'schoolSelectedAndEmpty',
                   prompt: '请输入你的学校名称'
                 }
               ]
@@ -226,8 +236,18 @@ angular.module('reg')
               identifier: 'subject-of-study',
               rules: [
                 {
-                  type: 'empty',
+                  type: 'schoolSelectedAndEmpty',
                   prompt: '请输入你的专业'
+                }
+              ]
+            },
+
+            yearOfStudies: {
+              identifier: 'year-of-studies',
+              rules: [
+                {
+                  type: 'schoolSelectedAndEmpty',
+                  prompt: '请输入你的就读时长'
                 }
               ]
             },
@@ -236,8 +256,18 @@ angular.module('reg')
               identifier: 'graduation-year',
               rules: [
                 {
-                  type: 'empty',
+                  type: 'schoolSelectedAndEmpty',
                   prompt: '请选择你的毕业年份'
+                }
+              ]
+            },
+
+            workExperience: {
+              identifier: 'work-experience',
+              rules: [
+                {
+                  type: 'workSelectedAndIntegerBetween1And100',
+                  prompt: '请输入你的工作经验'
                 }
               ]
             },
@@ -262,6 +292,46 @@ angular.module('reg')
               ]
             },
 
+            description: {
+              identifier: 'description',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请选择你的团队角色'
+                }
+              ]
+            },
+
+            resume: {
+              identifier: 'resume',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请上传你的简历'
+                }
+              ]
+            },
+
+            interestedField: {
+              identifier: 'interestedField',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请输入你感兴趣的产业'
+                }
+              ]
+            },
+
+            pastExperience: {
+              identifier: 'pastExperience',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请回答本问题'
+                }
+              ]
+            },
+
             stemInterest: {
               identifier: 'stemInterest',
               rules: [
@@ -272,8 +342,8 @@ angular.module('reg')
               ]
             },
 
-            projectExp: {
-              identifier: 'projectExp',
+            projExp: {
+              identifier: 'projExp',
               rules: [
                 {
                   type: 'empty',
@@ -329,11 +399,58 @@ angular.module('reg')
 
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
-          _updateUser();
+          _uploadResume();
         }
         else{
           sweetAlert("Uh oh!", "Please Fill The Required Fields", "error");
         }
       };
+
+      function _uploadResume() {
+        var files = $('#resume')[0].files;
+        if (files.length == 0) {
+          sweetAlert("Uh oh!", "Please Upload Your Resume", "error");
+        } else {
+          var resume = files[0];
+          var formData = new FormData();
+          formData.append('upload', resume, resume.name);
+          $.ajax({
+            type: 'PUT',
+            url: 'http://api.thehack.io/s3/upload/resume/' + $scope.user._id + '_resume' + _getExtension(resume.name),
+            data: formData,
+            processData: false,
+            contentType: false,
+          }).done(function(result) {
+            var token = result.token;
+            _waitForSuccess(token, _updateUser, function() {
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            });
+          }).fail(function(result) {
+            if (result.status == 413) {
+              sweetAlert("Uh oh!", "Please reduce file size.", "error");
+            } else {
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            }
+          });
+        }
+      }
+
+      function _getExtension(filename) {
+        return filename.match(/\.\w+/)[0];
+      }
+
+      function _waitForSuccess(token, success, failed) {
+        $http.get('http://api.thehack.io/s3/status/' + token).then(function(response) {
+          if (response.data.result === 'success') {
+            success();
+          } else if (response.data.result === 'failed' || response.data.result === 'null') {
+            failed();
+          } else {
+            setTimeout(function() {
+              _waitForSuccess(token, success, failed);
+            }, 100);
+          }
+        });
+      }
 
     }]);
