@@ -322,6 +322,46 @@ angular.module('reg')
               ]
             },
 
+            pastExperience: {
+              identifier: 'pastExperience',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请回答本问题'
+                }
+              ]
+            },
+
+            stemInterest: {
+              identifier: 'stemInterest',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请回答本问题'
+                }
+              ]
+            },
+
+            projExp: {
+              identifier: 'projExp',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请回答本问题'
+                }
+              ]
+            },
+
+            currentIssue: {
+              identifier: 'currentIssue',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请回答本问题'
+                }
+              ]
+            },
+
             idea: {
               identifier: 'idea',
               rules: [
