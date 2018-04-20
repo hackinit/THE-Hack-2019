@@ -1,6 +1,6 @@
 angular.module('reg')
     .constant('EVENT_INFO', {
-        NAME: 'THE Hack 2018',
+        NAME: 'hackShanghai 2018',
     })
     .constant('DASHBOARD', {
         UNVERIFIED: '我们已经向你的注册邮箱发送了验证邮件。完成验证后，申请通道将开放。',
