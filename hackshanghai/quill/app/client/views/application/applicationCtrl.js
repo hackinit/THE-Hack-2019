@@ -113,6 +113,7 @@ angular.module('reg')
         UserService
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .success(function(data){
+            $('#uploading-loader').removeClass('active');
             sweetAlert({
               title: "Awesome!",
               text: "Your application has been saved.",
@@ -123,6 +124,7 @@ angular.module('reg')
             });
           })
           .error(function(res){
+            $('#uploading-loader').removeClass('active');
             sweetAlert("Uh oh!", "Something went wrong.", "error");
           });
       }
@@ -374,6 +376,7 @@ angular.module('reg')
           var resume = files[0];
           var formData = new FormData();
           formData.append('upload', resume, resume.name);
+          $('#uploading-loader').addClass('active');
           $.ajax({
             type: 'PUT',
             url: 'http://api.thehack.io/s3/upload/resume/' + $scope.user._id + '_resume' + _getExtension(resume.name),
@@ -383,9 +386,11 @@ angular.module('reg')
           }).done(function(result) {
             var token = result.token;
             _waitForSuccess(token, _updateUser, function() {
+              $('#uploading-loader').removeClass('active');
               sweetAlert("Uh oh!", "Something went wrong.", "error");
             });
           }).fail(function(result) {
+            $('#uploading-loader').removeClass('active');
             if (result.status == 413) {
               sweetAlert("Uh oh!", "Please reduce file size.", "error");
             } else {
