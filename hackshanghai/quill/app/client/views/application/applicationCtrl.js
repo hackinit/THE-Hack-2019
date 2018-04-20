@@ -367,12 +367,12 @@ angular.module('reg')
       };
 
       function _uploadResume() {
-        let files = $('#resume')[0].files;
+        var files = $('#resume')[0].files;
         if (files.length == 0) {
           sweetAlert("Uh oh!", "Please Upload Your Resume", "error");
         } else {
-          let resume = files[0];
-          let formData = new FormData();
+          var resume = files[0];
+          var formData = new FormData();
           formData.append('upload', resume, resume.name);
           $.ajax({
             type: 'PUT',
