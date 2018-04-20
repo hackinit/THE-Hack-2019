@@ -302,8 +302,8 @@ angular.module('reg')
               ]
             },
 
-            interested-field: {
-              identifier: 'interested-field',
+            interestedField: {
+              identifier: 'interestedField',
               rules: [
                 {
                   type: 'empty',
