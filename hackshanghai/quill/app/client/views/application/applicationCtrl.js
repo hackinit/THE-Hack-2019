@@ -323,7 +323,7 @@ angular.module('reg')
             },
 
             cocRead: {
-              identifier: 'coc-read',
+              identifier: 'cocRead',
               rules: [
                 {
                   type: 'checked',
