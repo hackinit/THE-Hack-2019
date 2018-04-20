@@ -268,11 +268,10 @@ var schema = new mongoose.Schema({
     ideaTracks: [String],
 
     legal: {
-      coc-read: {
+      cocRead: {
         type: Boolean,
         default: false,
       },
-s
       terms: {
         type: Boolean,
         default: false,
