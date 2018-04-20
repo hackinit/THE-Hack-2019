@@ -24,11 +24,13 @@ angular.module('reg')
 
       // <tracks>
       var tracks = [
-        "Digital Journalism",
-        "Security",
-        "Smart Society",
-        "E-Health",
-        "Free Choice",
+        "人工智能",
+        "物联网",
+        "教育",
+        "区块链",
+        "金融",
+        "虚拟现实",
+        "自由发挥"
       ];
 
       $scope.tracks = {};
@@ -100,11 +102,13 @@ angular.module('reg')
       function _updateUser(e){
         // <tracks>
         $scope.user.profile.ideaTracks = [
-          "Digital Journalism",
-          "Security",
-          "Smart Society",
-          "E-Health",
-          "Free Choice",
+          "人工智能",
+          "物联网",
+          "教育",
+          "区块链",
+          "金融",
+          "虚拟现实",
+          "自由发挥",
         ].filter(function (track) {
           return $scope.tracks[track];
         });
@@ -215,11 +219,21 @@ angular.module('reg')
               ]
             },
 
+            profession: {
+              identifier: 'profession',
+              rules: [
+                {
+                  type: 'professionSelected',
+                  prompt: '请选择你的身份'
+                }
+              ]
+            },
+
             school: {
               identifier: 'school',
               rules: [
                 {
-                  type: 'empty',
+                  type: 'schoolSelectedAndEmpty',
                   prompt: '请输入你的学校名称'
                 }
               ]
@@ -229,8 +243,18 @@ angular.module('reg')
               identifier: 'subject-of-study',
               rules: [
                 {
-                  type: 'empty',
+                  type: 'schoolSelectedAndEmpty',
                   prompt: '请输入你的专业'
+                }
+              ]
+            },
+
+            yearOfStudies: {
+              identifier: 'year-of-studies',
+              rules: [
+                {
+                  type: 'schoolSelectedAndEmpty',
+                  prompt: '请输入你的就读时长'
                 }
               ]
             },
@@ -239,8 +263,18 @@ angular.module('reg')
               identifier: 'graduation-year',
               rules: [
                 {
-                  type: 'empty',
+                  type: 'schoolSelectedAndEmpty',
                   prompt: '请选择你的毕业年份'
+                }
+              ]
+            },
+
+            workExperience: {
+              identifier: 'work-experience',
+              rules: [
+                {
+                  type: 'workSelectedAndIntegerBetween1And100',
+                  prompt: '请输入你的工作经验'
                 }
               ]
             },
@@ -265,6 +299,46 @@ angular.module('reg')
               ]
             },
 
+            description: {
+              identifier: 'description',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请选择你的团队角色'
+                }
+              ]
+            },
+
+            resume: {
+              identifier: 'resume',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请上传你的简历'
+                }
+              ]
+            },
+
+            interestedField: {
+              identifier: 'interestedField',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请输入你感兴趣的产业'
+                }
+              ]
+            },
+
+            pastExperience: {
+              identifier: 'pastExperience',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请回答本问题'
+                }
+              ]
+            },
+
             stemInterest: {
               identifier: 'stemInterest',
               rules: [
@@ -275,8 +349,8 @@ angular.module('reg')
               ]
             },
 
-            projectExp: {
-              identifier: 'projectExp',
+            projExp: {
+              identifier: 'projExp',
               rules: [
                 {
                   type: 'empty',
@@ -360,7 +434,7 @@ angular.module('reg')
           $('#uploading-loader').addClass('active');
           $.ajax({
             type: 'PUT',
-            url: 'http://api.thehack.io/s3/upload/resume/hackshanghai/' + $scope.user._id + '_resume' + _getExtension(resume.name),
+            url: 'http://api.thehack.io/s3/upload/resume/hackinit/' + $scope.user._id + '_resume' + _getExtension(resume.name),
             data: formData,
             processData: false,
             contentType: false,
