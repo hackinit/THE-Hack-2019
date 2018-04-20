@@ -118,8 +118,8 @@ angular.module('reg')
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .success(function(data){
             sweetAlert({
-              title: "Awesome!",
-              text: "Your application has been saved.",
+              title: "恭喜你！",
+              text: "你的申请已经成功提交",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
@@ -127,7 +127,7 @@ angular.module('reg')
             });
           })
           .error(function(res){
-            sweetAlert("Uh oh!", "Something went wrong.", "error");
+            sweetAlert("请检查你的信息", "提交遇到了问题。如果这一问题持续，请联络我们。", "error");
           });
       }
 
@@ -391,7 +391,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'checked',
-                  prompt: 'Please accept the MLH terms.'
+                  prompt: '请阅读并同意《竞赛规则》'
                 }
               ]
             },
@@ -406,14 +406,14 @@ angular.module('reg')
           _uploadResume();
         }
         else{
-          sweetAlert("Uh oh!", "Please Fill The Required Fields", "error");
+          sweetAlert("请检查你的信息", "请填写所有必填项", "error");
         }
       };
 
       function _uploadResume() {
         var files = $('#resume')[0].files;
         if (files.length == 0) {
-          sweetAlert("Uh oh!", "Please Upload Your Resume", "error");
+          sweetAlert("请检查你的信息", "请上传你的简历", "error");
         } else {
           var resume = files[0];
           var formData = new FormData();
@@ -431,7 +431,7 @@ angular.module('reg')
             });
           }).fail(function(result) {
             if (result.status == 413) {
-              sweetAlert("Uh oh!", "Please reduce file size.", "error");
+              sweetAlert("请检查你的信息", "请缩小文件大小", "error");
             } else {
               sweetAlert("Uh oh!", "Something went wrong.", "error");
             }
