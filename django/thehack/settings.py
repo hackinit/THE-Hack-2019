@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from corsheaders.defaults import default_headers
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -112,4 +113,8 @@ CORS_ORIGIN_WHITELIST = (
     'hackinit.io',
     'hackshanghai.com',
     'thehack.io',
+)
+
+CORS_ALLOW_HEADERS = default_headers + (
+    'x-access-token',
 )
