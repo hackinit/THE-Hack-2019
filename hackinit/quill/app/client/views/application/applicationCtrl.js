@@ -212,16 +212,6 @@ angular.module('reg')
               ]
             },
 
-            profession: {
-              identifier: 'profession',
-              rules: [
-                {
-                  type: 'professionSelected',
-                  prompt: '请选择你的身份'
-                }
-              ]
-            },
-
             school: {
               identifier: 'school',
               rules: [
@@ -242,32 +232,12 @@ angular.module('reg')
               ]
             },
 
-            yearOfStudies: {
-              identifier: 'year-of-studies',
-              rules: [
-                {
-                  type: 'schoolSelectedAndEmpty',
-                  prompt: '请输入你的就读时长'
-                }
-              ]
-            },
-
             graduationYear: {
               identifier: 'graduation-year',
               rules: [
                 {
                   type: 'schoolSelectedAndEmpty',
                   prompt: '请选择你的毕业年份'
-                }
-              ]
-            },
-
-            workExperience: {
-              identifier: 'work-experience',
-              rules: [
-                {
-                  type: 'workSelectedAndIntegerBetween1And100',
-                  prompt: '请输入你的工作经验'
                 }
               ]
             },
@@ -292,22 +262,32 @@ angular.module('reg')
               ]
             },
 
-            description: {
-              identifier: 'description',
+            stemInterest: {
+              identifier: 'stemInterest',
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请选择你的团队角色'
+                  prompt: '请回答本问题'
                 }
               ]
             },
 
-            interestedField: {
-              identifier: 'interestedField',
+            projectExp: {
+              identifier: 'projectExp',
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请输入你感兴趣的产业'
+                  prompt: '请回答本问题'
+                }
+              ]
+            },
+
+            currentIssue: {
+              identifier: 'currentIssue',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请回答本问题'
                 }
               ]
             },
