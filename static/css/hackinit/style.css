@@ -5472,7 +5472,7 @@ p.intro {
 	top: 0;
 }
 .overlay-bg.t50{
-	background: rgba(20, 20, 20, .5);
+	background: radial-gradient(rgba(200,200,200,.1),rgba(200,200,200,.2),rgba(150,150,150,.3));
 }
 .overlay-bg.c1 {
 	background: rgba(20, 20, 20, .8);
