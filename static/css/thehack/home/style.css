@@ -376,7 +376,7 @@ table.day-schedule tr.day th {
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
     .caapp-btn-sm {
-        font-size: 14px;
+        font-size: 30px;
         padding: 10px;
     }
 }
@@ -415,7 +415,7 @@ table.day-schedule tr.day th {
     }
 }
 
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: 650px) {
     .hackinit-logo {
         width: 75%;
     }
@@ -439,12 +439,12 @@ input:-webkit-autofill:active {
 
 /* hackShanghai 2018 new */
 .navbar-hacksh {
-    background-color: #a93535;
-    border-color: #a93535;
+    background-color: #2E4245;
+    border-color: #2E4245;
 }
 
 .navbar-hacksh .navbar-collapse, .navbar-hacksh .navbar-form {
-    border-color: #a93535;
+    border-color: #71BFB9;
 }
 
 .navbar-hacksh .navbar-toggle {
@@ -456,7 +456,7 @@ input:-webkit-autofill:active {
 }
 
 .navbar-hacksh .navbar-nav>li>a {
-    color: lightgrey;
+    color: #6ebfba;
 }
 
 .darkred-background {
@@ -481,9 +481,9 @@ input:-webkit-autofill:active {
 
 .btn-hacksh {
     color: #fff;
-    background-color: #a93535;
-    border-color: #6d2121;
-    background: #a93535;
+    background-color: #2e4245;
+    border-color: #2e4245;
+    background: #2e4245;
 }
 
 .btn-hacksh:hover, .btn-hacksh:active, .btn-hacksh:focus {
@@ -493,7 +493,7 @@ input:-webkit-autofill:active {
 }
 
 .darkblue-background {
-    background-color: #353b55;
+    background-color: #000;
     color: white;
 }
 
@@ -525,7 +525,7 @@ input:-webkit-autofill:active {
 }
 
 .logo-background {
-    background-color: #a93535;
+    background-color: #fff;
     width: 20%;
     height: 100%;
     position: fixed;
@@ -580,8 +580,8 @@ input:-webkit-autofill:active {
 }
 
 #date-text {
-    color: #a93535;
-    font-size: 40px;
+    color: #6ebfba;
+    font-size: 35px;
 }
 
 #city-text, #location-text {
@@ -602,14 +602,33 @@ input:-webkit-autofill:active {
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
     #info {
         bottom: 25px;
         right: 25px;
     }
 
     #info h1 {
-        font-size: 25px;
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #info {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    #info h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #info h1 {
+        font-size: 20px;
+        text-align: center;
     }
 }
 
@@ -622,4 +641,122 @@ input:-webkit-autofill:active {
 
 #about {
     min-height: 100vh;
+}
+
+#disk {
+    position: absolute;
+    top: 100px;
+    border-radius: 50%;
+    height: 300px;
+    max-height:100%;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 50000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: spin;
+    -moz-animation-duration: 50000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -ms-animation-name: spin;
+    -ms-animation-duration: 50000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: spin;
+    animation-duration: 50000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@-ms-keyframes spin {
+    from {
+        -ms-transform: rotate(0deg);
+    } to {
+        -ms-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    } to {
+        -moz-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    } to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #disk {
+        left: 15%;
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #disk {
+        max-width: 90%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #disk {
+        display: none;
+    }
+}
+
+#mobile-logo {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50vh;
+    transform: translateY(-67.5%);
+}
+
+#mobile-logo #white-logo {
+    width: 300px;
+    max-width: 85%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.mobile-buttons {
+    margin-top: -30px;
+}
+
+.mobile-buttons .buttons {
+    width: 70%;
+}
+
+.mobile-buttons .buttons .btn {
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 650px) {
+    #mobile-logo {
+        display: block;
+    }
 }
