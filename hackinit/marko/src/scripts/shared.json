@@ -1,0 +1,22 @@
+{
+    "about": {
+        "en": "ABOUT",
+        "zh": "关于我们"
+    },
+    "faq": {
+        "en": "FAQ",
+        "zh": "常见问题"
+    },
+    "sponsor": {
+        "en": "SPONSOR",
+        "zh": "合作伙伴"
+    },
+    "alt": {
+        "en": "简体中文",
+        "zh": "ENGLISH"
+    },
+    "altLink": {
+        "en": "/zh",
+        "zh": "/"
+    }
+}
