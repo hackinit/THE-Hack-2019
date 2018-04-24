@@ -602,7 +602,7 @@ input:-webkit-autofill:active {
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
     #info {
         bottom: 25px;
         right: 25px;
@@ -626,10 +626,10 @@ input:-webkit-autofill:active {
 
 #disk {
     position: absolute;
-    top: 80px;
-    left: 90px;
+    top: 100px;
+    left: 130px;
     border-radius: 50%;
-    height: 320px;
+    height: 420px;
     max-height:100%;
 
     -webkit-animation-name: spin;
@@ -679,6 +679,22 @@ input:-webkit-autofill:active {
         transform: rotate(0deg); 
     } to { 
         transform: rotate(360deg); 
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #disk {
+        left: 15%;
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    #disk {
+        max-width: 90%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
     }
 }
 
