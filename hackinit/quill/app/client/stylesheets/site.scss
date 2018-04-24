@@ -89,7 +89,7 @@ input {
 .ui.button {
   border-radius: 0;
   &.primary {
-    background: $primary;
+    background: $primary !important;
     &:hover {
       background: lighten($primary, 3%);
     }
