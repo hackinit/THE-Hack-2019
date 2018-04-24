@@ -1,25 +1,59 @@
 <include("./../../components/layout.marko", data)>
 
+<@css>
+    <link rel="stylesheet" href="//static.hackinit.org/lib/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="//static.hackinit.org/css/hackinit/home/styles.css">
+    <link rel="stylesheet" href="//static.hackinit.org/css/hackinit/home/banner.css">
+    <link rel="stylesheet" href="//static.hackinit.org/css/hackinit/home/about.css">
+</@css>
+
 <@body>
-<div class="full-width">
-  <include("./../../components/header.marko", data)></include>
-
-  <div id="content" class="no-bottom no-top">
-
-    <include("./../../components/cover.marko", data)></include>
-    <include("./../../components/about.marko", data)></include>
-    <!--<include("./../../components/fun-facts.marko", data)></include>-->
-    <include("./../../components/faq.marko", data)></include>
-    <include("./../../components/sponsor.marko", data)></include>
-    <!--<include("./../../components/sponsor-list.marko", data)></include>-->
-    <include("./../../components/footer.marko", data)></include>
-
-
-  </div>
-
-
-</div>
-
+    <div id="banner" class="container-fluid full-width full-height bg-black">
+        <img id="main-logo" alt="hack.init()" src="//static.hackinit.org/img/hackinit/main-logo.png">
+        <div id="buttons">
+            <a target="_blank" href="//my.hackinit.org">
+                <h1>&lt; ${data.apply} /&gt;</h1>
+            </a>
+            <a target="_blank" href="#qr-modal" data-toggle="modal">
+                <h1>&lt; ${data.wechat} /&gt;</h1>
+            </a>
+            <a target="_blank" href="${data.prospectusLink}">
+                <h1>&lt; ${data.prospectus} /&gt;</h1>
+            </a>
+        </div>
+        <div id="qr-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                    <img id="wechat-qr" alt="THE Hack WeChat QR Code" src="//static.hackinit.org/img/shared/wechat.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="about" class="container full-width bg-black">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div id="info">
+                    <h1 class="color-orange">${data.date}</h1>
+                    <h1 class="color-white">${data.city}</h1>
+                    <h1 class="color-white">${data.location}</h1>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="row">
+                    <for(i from 0 to data.highlights.length - 1)>
+                        <div class="col-6">
+                            <div class="highlight">
+                                <div class="horizontal-center">
+                                    <i class="fa-inverse fas fa-3x fa-${data.highlightIcons[i]}"></i>
+                                    <h2 class="title">${data.highlights[i]}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </for>
+                </div>
+            </div>
+        </div>
+    </div>
 </@body>
 
 </include>

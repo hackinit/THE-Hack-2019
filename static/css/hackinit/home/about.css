@@ -1,0 +1,70 @@
+#about {
+    color: rgba(255, 255, 255, .75);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#about .row {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#info {
+    margin-top: 30px;
+}
+
+#info h1 {
+    font-family: 'FZXS12';
+    font-size: 30px;
+}
+
+.color-white {
+    color: rgba(255, 255, 255, .75);
+}
+
+.color-orange {
+    color: rgb(232, 88, 39);
+}
+
+.highlight {
+    margin: 0 auto;
+    color: #ccc;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.highlight .title {
+    font-size: 30px;
+    font-family: 'FZXS12';
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+    .highlight .title {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #info {
+        left: 0;
+        right: 0;
+        margin: 30px auto;
+    }
+
+    #info h1 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    #info h1 {
+        font-size: 25px;
+    }
+
+    .highlight .title {
+    }
+}
