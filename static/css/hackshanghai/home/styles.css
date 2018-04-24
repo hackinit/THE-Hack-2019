@@ -633,22 +633,22 @@ input:-webkit-autofill:active {
     max-height:100%;
 
     -webkit-animation-name: spin;
-    -webkit-animation-duration: 30000ms;
+    -webkit-animation-duration: 50000ms;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
 
     -moz-animation-name: spin;
-    -moz-animation-duration: 30000ms;
+    -moz-animation-duration: 50000ms;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
 
     -ms-animation-name: spin;
-    -ms-animation-duration: 30000ms;
+    -ms-animation-duration: 50000ms;
     -ms-animation-iteration-count: infinite;
     -ms-animation-timing-function: linear;
 
     animation-name: spin;
-    animation-duration: 30000ms;
+    animation-duration: 50000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
