@@ -10,7 +10,7 @@
     right: 0;
     margin: 0 auto;
     width: 550px;
-    max-width: 90%;
+    max-width: 85%;
     top: 50%;
     transform: translateY(-55%);
 }
@@ -18,20 +18,59 @@
 #info {
     position: absolute;
     bottom: 50px;
-    right: 50px;
+    left: 50px;
+}
+
+#info h1, #buttons h1 {
+    text-align: left;
+    font-size: 30px;
 }
 
 #info h1 {
-    text-align: right;
     line-height: 35px;
-}
-
-#date-text {
-    color: rgb(232, 88, 39);
-    font-size: 40px;
-}
-
-#city-text, #location-text {
     color: white;
-    font-size: 35px;
+}
+
+#buttons {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
+
+#buttons h1 {
+    color: #ccc;
+}
+
+.orange-color {
+    color: rgb(232, 88, 39) !important;
+}
+
+#buttons a, #buttons a:hover, #buttons a:focus, #buttons a:active {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 991px) {
+    #main-logo {
+        width: 500px;
+        transform: translateY(-65%);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #main-logo {
+        width: 450px;
+        transform: translateY(-70%);
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    #buttons {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    #buttons h1 {
+        text-align: center;
+    }
 }
