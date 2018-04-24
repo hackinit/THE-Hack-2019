@@ -525,7 +525,7 @@ input:-webkit-autofill:active {
 }
 
 .logo-background {
-    background-color: #a93535;
+    background-color: rgb(248, 238, 209);
     width: 20%;
     height: 100%;
     position: fixed;
@@ -622,4 +622,13 @@ input:-webkit-autofill:active {
 
 #about {
     min-height: 100vh;
+}
+
+#disk {
+    position: absolute;
+    top: 80px;
+    left: 90px;
+    border-radius: 50%;
+    height: 320px;
+    max-height:100%;
 }
