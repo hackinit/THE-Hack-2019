@@ -448,11 +448,11 @@ input:-webkit-autofill:active {
 }
 
 .navbar-hacksh .navbar-toggle {
-    border-color: #6d2121;
+    border-color: #1e2b2d;
 }
 
 .navbar-hacksh .navbar-toggle:focus, .navbar-hacksh .navbar-toggle:hover {
-    background-color: #6d2121;
+    background-color: #1e2b2d;
 }
 
 .navbar-hacksh .navbar-nav>li>a {
@@ -460,7 +460,7 @@ input:-webkit-autofill:active {
 }
 
 .darkred-background {
-    background-color: #a93535;
+    background-color: #2E4245;
 }
 
 .footer {
@@ -488,8 +488,8 @@ input:-webkit-autofill:active {
 
 .btn-hacksh:hover, .btn-hacksh:active, .btn-hacksh:focus {
     color: #fff;
-    background-color: #6d2121;
-    border-color: #6d2121;
+    background-color: #1e2b2d;
+    border-color: #1e2b2d;
 }
 
 .darkblue-background {
@@ -499,12 +499,12 @@ input:-webkit-autofill:active {
 
 #faq .panel-hacksh .panel-title .panel-heading {
     color: white;
-    background-color: #a93535;
-    border-color: #bd3b3b;
+    background-color: #2E4245;
+    border-color: #2E4245;
 }
 
 .panel-hacksh {
-    border-color: #6d2121;
+    border-color: #2E4245;
 }
 
 .scroll-down-row {
@@ -525,7 +525,7 @@ input:-webkit-autofill:active {
 }
 
 .logo-background {
-    background-color: #fff;
+    background-color: #b8d8d2;
     width: 20%;
     height: 100%;
     position: fixed;
