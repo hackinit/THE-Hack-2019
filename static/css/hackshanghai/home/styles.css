@@ -525,7 +525,7 @@ input:-webkit-autofill:active {
 }
 
 .logo-background {
-    background-color: #a93535;
+    background-color: rgb(248, 238, 209);
     width: 20%;
     height: 100%;
     position: fixed;
@@ -602,7 +602,7 @@ input:-webkit-autofill:active {
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
     #info {
         bottom: 25px;
         right: 25px;
@@ -610,6 +610,18 @@ input:-webkit-autofill:active {
 
     #info h1 {
         font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    #info {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    #info h1 {
+        font-size: 20px;
+        text-align: center;
     }
 }
 
@@ -622,4 +634,120 @@ input:-webkit-autofill:active {
 
 #about {
     min-height: 100vh;
+}
+
+#disk {
+    position: absolute;
+    top: 100px;
+    left: 130px;
+    border-radius: 50%;
+    height: 420px;
+    max-height:100%;
+
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 50000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: spin;
+    -moz-animation-duration: 50000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -ms-animation-name: spin;
+    -ms-animation-duration: 50000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: spin;
+    animation-duration: 50000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@-ms-keyframes spin { 
+    from { 
+        -ms-transform: rotate(0deg); 
+    } to { 
+        -ms-transform: rotate(360deg); 
+    }
+}
+@-moz-keyframes spin { 
+    from { 
+        -moz-transform: rotate(0deg); 
+    } to { 
+        -moz-transform: rotate(360deg); 
+    }
+}
+@-webkit-keyframes spin { 
+    from { 
+        -webkit-transform: rotate(0deg); 
+    } to { 
+        -webkit-transform: rotate(360deg); 
+    }
+}
+@keyframes spin { 
+    from { 
+        transform: rotate(0deg); 
+    } to { 
+        transform: rotate(360deg); 
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #disk {
+        left: 15%;
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    #disk {
+        max-width: 90%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    #disk {
+        display: none;
+    }
+}
+
+#mobile-logo {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50vh;
+    transform: translateY(-67.5%);
+}
+
+#mobile-logo #white-logo {
+    width: 300px;
+    max-width: 85%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.mobile-buttons {
+    margin-top: -30px;
+}
+
+.mobile-buttons .buttons {
+    width: 70%;
+}
+
+.mobile-buttons .buttons .btn {
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 499px) {
+    #mobile-logo {
+        display: block;
+    }
 }
