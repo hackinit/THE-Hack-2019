@@ -35,33 +35,16 @@
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col">
-                        <div class="highlight">
-                            <div class="horizontal-center">
-                                <i class="fa-inverse fas fa-cogs fa-3x"></i>
-                                <h2 class="title">${data.workshops}</h2>
+                    <for(i from 0 to data.highlights.length - 1)>
+                        <div class="col-6">
+                            <div class="highlight">
+                                <div class="horizontal-center">
+                                    <i class="fa-inverse fas fa-3x fa-${data.highlightIcons[i]}"></i>
+                                    <h2 class="title">${data.highlights[i]}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="highlight horizontal-center">
-                            <i class="fa-inverse fas fa-gift fa-3x"></i>
-                            <h2 class="title">${data.resources}</h2>
-                        </div>
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col">
-                        <div class="highlight horizontal-center">
-                            <i class="fa-inverse fas fa-utensils fa-3x"></i>
-                            <h2 class="title">${data.food}</h2>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="highlight horizontal-center">
-                            <i class="fa-inverse fas fa-trophy fa-3x"></i>
-                            <h2 class="title">${data.prizes}</h2>
-                        </div>
-                    </div>
+                    </for>
                 </div>
             </div>
         </div>
