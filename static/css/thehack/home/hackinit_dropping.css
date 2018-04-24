@@ -4,10 +4,11 @@
 === */
 
 .hackinit-drop-container {
-	position: relative;
-	height: 475px;
-	width: 800px;
-	margin: 100px auto 0 auto;
+	position: absolute;
+	height: 100px;
+	width: 550px;
+	top: 400px;
+    left: 80px;
 }
 
 /* === START WORDS === */
@@ -71,7 +72,7 @@
 
 .h-all {
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 80px;
 	width: 10px;
 }
@@ -79,7 +80,7 @@
 .h-all:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 30px;
 	left: 10px;
@@ -89,7 +90,7 @@
 .h-all:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 80px;
 	width: 10px;
 	left: 40px;
@@ -98,7 +99,7 @@
 .a-top {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 10px;
 	left: 80px;
@@ -108,7 +109,7 @@
 .a-top:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: -10px;
@@ -118,7 +119,7 @@
 .a-top:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: 10px;
@@ -128,7 +129,7 @@
 .a-bottom {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 50px;
 	width: 10px;
 	left: 60px;
@@ -138,7 +139,7 @@
 .a-bottom:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 30px;
 	left: 10px;
@@ -148,7 +149,7 @@
 .a-bottom:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 50px;
 	width: 10px;
 	left: 40px;
@@ -157,7 +158,7 @@
 .c-top {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 30px;
 	top: -140px;
@@ -167,7 +168,7 @@
 .c-top:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 30px;
 	width: 10px;
 	top: 10px;
@@ -177,7 +178,7 @@
 .c-top:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 10px;
 	top: 10px;
@@ -187,7 +188,7 @@
 .c-bottom {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 30px;
 	width: 10px;
 	top: -110px;
@@ -197,7 +198,7 @@
 .c-bottom:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 30px;
 	top: 30px;
@@ -207,7 +208,7 @@
 .c-bottom:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 10px;
 	top: 20px;
@@ -217,7 +218,7 @@
 .k-top {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 80px;
 	width: 10px;
 	left: 180px;
@@ -227,7 +228,7 @@
 .k-top:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: 30px;
@@ -236,7 +237,7 @@
 .k-top:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 10px;
 	left: 20px;
@@ -246,7 +247,7 @@
 .k-bottom {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: 190px;
@@ -256,7 +257,7 @@
 .k-bottom:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 10px;
 	left: 10px;
@@ -266,7 +267,7 @@
 .k-bottom:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: 20px;
@@ -276,7 +277,7 @@
 .i-all {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 50px;
 	left: 240px;
@@ -286,7 +287,7 @@
 .i-all:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 60px;
 	width: 10px;
 	left: 20px;
@@ -296,7 +297,7 @@
 .i-all:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 50px;
 	top: 70px;
@@ -305,7 +306,7 @@
 .n-top {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 80px;
 	width: 10px;
 	left: 300px;
@@ -315,7 +316,7 @@
 .n-top:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: 10px;
@@ -324,7 +325,7 @@
 .n-top:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: 20px;
@@ -334,7 +335,7 @@
 .n-bottom {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: 320px;
@@ -344,7 +345,7 @@
 .n-bottom:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 20px;
 	width: 10px;
 	left: 10px;
@@ -354,7 +355,7 @@
 .n-bottom:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 80px;
 	width: 10px;
 	left: 20px;
@@ -364,7 +365,7 @@
 .ii-all {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 50px;
 	left: 360px;
@@ -374,7 +375,7 @@
 .ii-all:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 60px;
 	width: 10px;
 	left: 20px;
@@ -384,7 +385,7 @@
 .ii-all:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 50px;
 	top: 70px;
@@ -393,7 +394,7 @@
 .t-all {
 	content: "";
 	position: relative;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 10px;
 	width: 50px;
 	left: 420px;
@@ -403,7 +404,7 @@
 .t-all:before {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 30px;
 	width: 10px;
 	left: 20px;
@@ -413,7 +414,7 @@
 .t-all:after {
 	content: "";
 	position: absolute;
-	background: rgb(232, 88, 39);
+	background: rgb(209,226,236);
 	height: 40px;
 	width: 10px;
 	left: 20px;
@@ -891,4 +892,10 @@
 	0% {opacity: 0;}
 	50% {opacity: 1;}
 	100% {opacity: 0;}
+}
+
+@media only screen and (max-width: 650px) {
+    .hackinit-drop-container {
+        display: none;
+    }
 }
