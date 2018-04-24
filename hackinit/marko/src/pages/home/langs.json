@@ -13,5 +13,21 @@
     "location": {
         "en": "ShanghaiTech University",
         "zh": "上海科技大学"
+    },
+    "apply": {
+        "en": "Apply",
+        "zh": "参赛申请"
+    },
+    "prospectus": {
+        "en": "Prospectus",
+        "zh": "项目计划书"
+    },
+    "prospectusLink": {
+        "en": "http://static.hackinit.org/doc/shared/Prospectus-en_US.pdf",
+        "zh": "http://static.hackinit.org/doc/shared/Prospectus-zh_CN.pdf"
+    },
+    "wechat": {
+        "en": "Follow Us",
+        "zh": "关注我们"
     }
 }
