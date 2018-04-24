@@ -281,40 +281,25 @@ angular.module('reg')
                 value: user.profile.description
               },{
                 name: 'WeChat',
-                value: user.profile.wechat,
-                type: "url",
+                value: user.profile.wechat
               },{
                 name: 'LinkedIn',
-                value: user.profile.linkedin,
-                type: "url",
+                value: user.profile.linkedin
               },{
                 name: 'Website',
-                value: user.profile.website,
-                type: "url",
+                value: user.profile.website
               },{
                 name: 'Github',
-                value: user.profile.github,
-                type: "url",
+                value: user.profile.github
               },{
                 name: 'Has idea',
-                value: user.profile.idea,
-                type: "enum",
-                enum: {
-                  "Y": "Yes",
-                  "S": "Somewhat, yes",
-                  "N": "No, not yet",
-                }
+                value: user.profile.idea
               },{
                 name: 'Interested in',
                 value: (user.profile.ideaTracks || []).join(", "),
               },{
                 name: 'Profession',
-                value: user.profile.profession,
-                type: "enum",
-                enum: {
-                  "W": "Working",
-                  "S": "Student",
-                }
+                value: user.profile.profession
               },
             ]
           },{
