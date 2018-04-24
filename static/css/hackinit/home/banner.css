@@ -54,6 +54,11 @@
 }
 
 @media only screen and (max-width: 499px) {
+    #main-logo {
+        width: 400px;
+        transform: translateY(-75%);
+    }
+
     #buttons {
         left: 0;
         right: 0;
