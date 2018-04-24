@@ -1,7 +1,19 @@
-var dataAll = require("./langs.json");
 var template = require("./template.marko");
-var render = require("./../../scripts/render.js");
+
+var supportLangs = ["zh"];
+
+function getLang(req, res) {
+    if (req.params.lang && supportLangs.indexOf(req.params.lang) != -1) {
+        return req.params.lang;
+    } else if (req.path === "/") {
+        return "en";
+    } else {
+        res.redirect("/");
+    }
+}
 
 module.exports = function(req, res) {
-    render(req, res, dataAll, template, "/");
+    res.marko(template, {
+        lang: getLang(req, res)
+    });
 };
