@@ -30,20 +30,11 @@
         "en": "Follow Us",
         "zh": "关注我们"
     },
-    "workshops": {
-        "en": "Workshops",
-        "zh": "工作坊"
+    "highlights": {
+        "en": ["Workshops", "Resources", "Food", "Prizes"],
+        "zh": ["工作坊", "资源", "食物", "奖品"]
     },
-    "resources": {
-        "en": "Resources",
-        "zh": "资源"
-    },
-    "food": {
-        "en": "Food",
-        "zh": "食物"
-    },
-    "prizes": {
-        "en": "Prizes",
-        "zh": "奖品"
+    "highlightIcons": {
+        "default": ["cogs", "gift", "utensils", "trophy"]
     }
 }
