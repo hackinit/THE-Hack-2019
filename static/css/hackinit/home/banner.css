@@ -23,6 +23,7 @@
 
 #info h1 {
     text-align: right;
+    line-height: 35px;
 }
 
 #date-text {
@@ -33,5 +34,4 @@
 #city-text, #location-text {
     color: white;
     font-size: 35px;
-}
 }
