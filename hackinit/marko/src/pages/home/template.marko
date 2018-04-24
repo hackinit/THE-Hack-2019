@@ -31,9 +31,14 @@
     </div>
     <div id="about" class="container full-width bg-black">
         <div class="row">
-            <div class="col">
+            <div class="col-xs-12 col-md-6">
+                <div id="info">
+                    <h1 class="color-orange">${data.date}</h1>
+                    <h1 class="color-white">${data.city}</h1>
+                    <h1 class="color-white">${data.location}</h1>
+                </div>
             </div>
-            <div class="col">
+            <div class="col-xs-12 col-md-6">
                 <div class="row">
                     <for(i from 0 to data.highlights.length - 1)>
                         <div class="col-6">
