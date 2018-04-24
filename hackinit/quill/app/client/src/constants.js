@@ -6,7 +6,6 @@ angular.module('reg')
         UNVERIFIED: '我们已经向你的注册邮箱发送了验证邮件。完成验证后，申请通道将开放。',
         INCOMPLETE_TITLE: '你的申请仍未完成',
         INCOMPLETE: '如果你在 [APP_DEADLINE] 前无法完成申请，你将无法被组委会审查参赛资格。请尽快完成你的申请。',
-        SUBMITTED_TITLE: '你的申请已提交',
         SUBMITTED: '我们欢迎你随时修改你的申请。但是，一旦申请结束，你将无法进一步编辑你的申请内容。\n 我们的申请将完全基于你提交的信息，请确保你提交的所有信息真实有效。',
         CLOSED_AND_INCOMPLETE_TITLE: '很抱歉，申请已经结束。',
         CLOSED_AND_INCOMPLETE: 'Since you have not completed your profile in time, your application will not be eligible for review.',
