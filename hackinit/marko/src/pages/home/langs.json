@@ -31,10 +31,10 @@
         "zh": "关注我们"
     },
     "highlights": {
-        "en": ["Workshops", "Resources", "Food", "Prizes"],
-        "zh": ["工作坊", "资源", "食物", "奖品"]
+        "en": ["Collaboration", "Workshops", "Resources", "Food", "Prizes", "Free Travel"],
+        "zh": ["合作", "工作坊", "资源", "食物", "奖品", "旅费报销"]
     },
     "highlightIcons": {
-        "default": ["cogs", "gift", "utensils", "trophy"]
+        "default": ["handshake", "cogs", "code", "utensils", "trophy", "plane"]
     }
 }
