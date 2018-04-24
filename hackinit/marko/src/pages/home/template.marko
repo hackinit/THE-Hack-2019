@@ -9,22 +9,29 @@
     <div id="banner" class="container-fluid full-width full-height bg-black">
         <img id="main-logo" alt="hack.init()" src="//static.hackinit.org/img/hackinit/main-logo.png">
         <!--
-        <div id="info">
+            <div id="info">
             <h1 class="orange-color">${data.date}</h1>
             <h1>${data.city}</h1>
             <h1>${data.location}</h1>
-        </div>
+            </div>
         -->
         <div id="buttons">
             <a target="_blank" href="//my.hackinit.org">
                 <h1>&lt; ${data.apply} /&gt;</h1>
             </a>
-            <a target="_blank" href="#">
+            <a target="_blank" href="#qr-modal" data-toggle="modal">
                 <h1>&lt; ${data.wechat} /&gt;</h1>
             </a>
             <a target="_blank" href="${data.prospectusLink}">
                 <h1>&lt; ${data.prospectus} /&gt;</h1>
             </a>
+        </div>
+        <div id="qr-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                    <img id="wechat-qr" alt="THE Hack WeChat QR Code" src="//static.hackinit.org/img/shared/wechat.jpg">
+                </div>
+            </div>
         </div>
     </div>
 </@body>

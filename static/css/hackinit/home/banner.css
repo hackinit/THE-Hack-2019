@@ -47,6 +47,11 @@
 
 #buttons a, #buttons a:hover, #buttons a:focus, #buttons a:active {
     text-decoration: none;
+    outline: none;
+}
+
+#wechat-qr {
+    width: 300px;
 }
 
 @media only screen and (max-width: 991px) {
