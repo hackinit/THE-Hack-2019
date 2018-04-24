@@ -664,6 +664,10 @@ img .logo-header {
 	max-width: 20%;
 	max-height: 20%;
 }
+.logo-header {
+    width: 300px;
+    max-width: 90%;
+}
 
 /* ================================================== */
 
