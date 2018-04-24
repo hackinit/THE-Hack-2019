@@ -1,5 +1,17 @@
 {
     "title": {
         "default": "July 21 - 22, 2018"
+    },
+    "date": {
+        "en": "July 21 - 22, 2018",
+        "zh": "2018年7月21-22日"
+    },
+    "city": {
+        "en": "Shanghai, China",
+        "zh": "中国，上海"
+    },
+    "location": {
+        "en": "ShanghaiTech University",
+        "zh": "上海科技大学"
     }
 }
