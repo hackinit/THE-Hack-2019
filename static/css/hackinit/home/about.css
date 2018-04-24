@@ -1,0 +1,18 @@
+#about {
+    color: rgba(255, 255, 255, .75);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.highlight {
+    margin: 0 auto;
+    color: #ccc;
+    margin: 50px;
+}
+
+.highlight .title {
+    font-size: 35px;
+    font-family: 'FZXS12';
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

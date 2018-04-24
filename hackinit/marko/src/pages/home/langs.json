@@ -29,5 +29,21 @@
     "wechat": {
         "en": "Follow Us",
         "zh": "关注我们"
+    },
+    "workshops": {
+        "en": "Workshops",
+        "zh": "工作坊"
+    },
+    "resources": {
+        "en": "Resources",
+        "zh": "资源"
+    },
+    "food": {
+        "en": "Food",
+        "zh": "食物"
+    },
+    "prizes": {
+        "en": "Prizes",
+        "zh": "奖品"
     }
 }

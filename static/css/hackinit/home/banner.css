@@ -15,20 +15,9 @@
     transform: translateY(-55%);
 }
 
-#info {
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-}
-
-#info h1, #buttons h1 {
+#buttons h1 {
     text-align: left;
     font-size: 30px;
-}
-
-#info h1 {
-    line-height: 35px;
-    color: white;
 }
 
 #buttons {
@@ -39,10 +28,6 @@
 
 #buttons h1 {
     color: #ccc;
-}
-
-.orange-color {
-    color: rgb(232, 88, 39) !important;
 }
 
 #buttons a, #buttons a:hover, #buttons a:focus, #buttons a:active {

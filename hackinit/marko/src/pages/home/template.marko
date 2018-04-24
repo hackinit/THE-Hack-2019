@@ -1,20 +1,15 @@
 <include("./../../components/layout.marko", data)>
 
 <@css>
+    <link rel="stylesheet" href="//static.hackinit.org/lib/font-awesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="//static.hackinit.org/css/hackinit/home/styles.css">
     <link rel="stylesheet" href="//static.hackinit.org/css/hackinit/home/banner.css">
+    <link rel="stylesheet" href="//static.hackinit.org/css/hackinit/home/about.css">
 </@css>
 
 <@body>
     <div id="banner" class="container-fluid full-width full-height bg-black">
         <img id="main-logo" alt="hack.init()" src="//static.hackinit.org/img/hackinit/main-logo.png">
-        <!--
-            <div id="info">
-            <h1 class="orange-color">${data.date}</h1>
-            <h1>${data.city}</h1>
-            <h1>${data.location}</h1>
-            </div>
-        -->
         <div id="buttons">
             <a target="_blank" href="//my.hackinit.org">
                 <h1>&lt; ${data.apply} /&gt;</h1>
@@ -30,6 +25,43 @@
             <div class="modal-dialog modal-sm modal-dialog-centered">
                 <div class="modal-content">
                     <img id="wechat-qr" alt="THE Hack WeChat QR Code" src="//static.hackinit.org/img/shared/wechat.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="about" class="container full-width bg-black">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="highlight">
+                            <div class="horizontal-center">
+                                <i class="fa-inverse fas fa-cogs fa-3x"></i>
+                                <h2 class="title">${data.workshops}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="highlight horizontal-center">
+                            <i class="fa-inverse fas fa-gift fa-3x"></i>
+                            <h2 class="title">${data.resources}</h2>
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <div class="highlight horizontal-center">
+                            <i class="fa-inverse fas fa-utensils fa-3x"></i>
+                            <h2 class="title">${data.food}</h2>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="highlight horizontal-center">
+                            <i class="fa-inverse fas fa-trophy fa-3x"></i>
+                            <h2 class="title">${data.prizes}</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
