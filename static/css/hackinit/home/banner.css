@@ -1,0 +1,16 @@
+#banner {
+    position: relative;
+}
+
+#main-logo {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    max-width: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+}
