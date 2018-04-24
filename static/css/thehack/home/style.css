@@ -737,14 +737,14 @@ input:-webkit-autofill:active {
 
 #mobile-logo #white-logo {
     width: 300px;
-    max-width: 85%;
+    max-width: 50%;
     display: block;
     margin: 0 auto;
     margin-top: 40px;
 }
 
 .mobile-buttons {
-    margin-top: -30px;
+    margin-top: 35px;
 }
 
 .mobile-buttons .buttons {
