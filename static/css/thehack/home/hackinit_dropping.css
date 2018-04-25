@@ -23,51 +23,51 @@
 }
 
 .H {
-	-webkit-animation: h-fall 1s ease;
-	-moz-animation: h-fall 1s ease;
-	animation: h-fall 1s ease;
+	-webkit-animation: h-fall 4s ease;
+	-moz-animation: h-fall 4s ease;
+	animation: h-fall 4s ease;
 }
 
 .A {
-	-webkit-animation: a-fall 1s ease;
-	-moz-animation: a-fall 1s ease;
-	animation: a-fall 1s ease;
+	-webkit-animation: a-fall 5s ease;
+	-moz-animation: a-fall 5s ease;
+	animation: a-fall 5s ease;
 }
 
 .C {
-	-webkit-animation: c-fall 1.5s ease;
-	-moz-animation: c-fall 2s ease;
-	animation: c-fall 2s ease;
+	-webkit-animation: c-fall 4s ease;
+	-moz-animation: c-fall 4s ease;
+	animation: c-fall 4s ease;
 }
 
 .K {
-	-webkit-animation: k-fall 1.5s ease;
-	-moz-animation: k-fall 2s ease;
-	animation: k-fall 2s ease;
+	-webkit-animation: k-fall 6s ease;
+	-moz-animation: k-fall 6s ease;
+	animation: k-fall 6s ease;
 }
 
 .I {
-	-webkit-animation: i-fall 2s ease;
-	-moz-animation: i-fall 3s ease;
-	animation: i-fall 3s ease;
+	-webkit-animation: i-fall 5s ease;
+	-moz-animation: i-fall 5s ease;
+	animation: i-fall 5s ease;
 }
 
 .N {
-	-webkit-animation: n-fall 2s ease;
-	-moz-animation: n-fall 3s ease;
-	animation: n-fall 3s ease;
+	-webkit-animation: n-fall 7s ease;
+	-moz-animation: n-fall 7s ease;
+	animation: n-fall 7s ease;
 }
 
 .II {
-	-webkit-animation: ii-fall 2.5s ease;
-	-moz-animation: ii-fall 4s ease;
-	animation: ii-fall 4s ease;
+	-webkit-animation: ii-fall 5s ease;
+	-moz-animation: ii-fall 5s ease;
+	animation: ii-fall 5s ease;
 }
 
 .T {
-	-webkit-animation: t-fall 2.5s ease;
-	-moz-animation: t-fall 4s ease;
-	animation: t-fall 4s ease;
+	-webkit-animation: t-fall 6s ease;
+	-moz-animation: t-fall 6s ease;
+	animation: t-fall 6s ease;
 }
 
 .h-all {
@@ -436,9 +436,9 @@
 	width: 50px;
 	top: -250px;
 	left: 480px;
-	-webkit-animation: to-right 3.75s ease;
-	-moz-animation: to-right 3.75s ease;
-	animation: to-right 3.75s ease;
+	-webkit-animation: to-right 4s ease;
+	-moz-animation: to-right 4s ease;
+	animation: to-right 4s ease;
 
 }
 
