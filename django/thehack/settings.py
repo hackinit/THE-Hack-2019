@@ -26,7 +26,7 @@ SECRET_KEY = '4&@pdwl9@*5$g)al@exxi2c4sib2usf12wg=o42hcvuq+4grd3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if "DEBUG" not in os.environ or os.environ["DEBUG"] == "true" else False
 
-ALLOWED_HOSTS = ["api.thehack.org.cn"] if not DEBUG else ["0.0.0.0", "api.thehack.org.cn"]
+ALLOWED_HOSTS = ["api.thehack.org.cn", "api.thehack.io"] if not DEBUG else ["0.0.0.0", "api.thehack.org.cn", "api.thehack.io"]
 
 
 # Application definition
