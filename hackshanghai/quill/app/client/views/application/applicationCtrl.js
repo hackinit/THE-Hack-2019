@@ -384,7 +384,7 @@ angular.module('reg')
           $('#uploading-loader').addClass('active');
           $.ajax({
             type: 'PUT',
-            url: 'http://api.thehack.io/s3/upload/resume/hackshanghai/' + $scope.user._id + '_resume' + _getExtension(resume.name),
+            url: 'http://api.thehack.org.cn/s3/upload/resume/' + $scope.user._id + '_resume' + _getExtension(resume.name),
             data: formData,
             processData: false,
             contentType: false,
