@@ -433,7 +433,7 @@ angular.module('reg')
           $('#uploading-loader').addClass('active');
           $.ajax({
             type: 'PUT',
-            url: 'http://api.thehack.io/s3/upload/resume/hackinit/' + $scope.user._id + '_resume' + _getExtension(resume.name),
+            url: 'http://api.thehack.org.cn/s3/upload/resume/hackinit/' + $scope.user._id + '_resume' + _getExtension(resume.name),
             data: formData,
             processData: false,
             contentType: false,
@@ -459,7 +459,7 @@ angular.module('reg')
       }
 
       function _waitForSuccess(token, success, failed) {
-        $http.get('http://api.thehack.io/s3/status/' + token).then(function(response) {
+        $http.get('http://api.thehack.org.cn/s3/status/' + token).then(function(response) {
           if (response.data.result === 'success') {
             success();
           } else if (response.data.result === 'failed' || response.data.result === 'null') {
