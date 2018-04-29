@@ -75,3 +75,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Vim Swap Files
+*.swp
+*~

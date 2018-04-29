@@ -24,11 +24,13 @@ angular.module('reg')
 
       // <tracks>
       var tracks = [
-        "Digital Journalism",
-        "Security",
-        "Smart Society",
-        "E-Health",
-        "Free Choice",
+        "人工智能",
+        "物联网",
+        "教育",
+        "区块链",
+        "金融",
+        "虚拟现实",
+        "自由发挥"
       ];
 
       $scope.tracks = {};
@@ -100,11 +102,13 @@ angular.module('reg')
       function _updateUser(e){
         // <tracks>
         $scope.user.profile.ideaTracks = [
-          "Digital Journalism",
-          "Security",
-          "Smart Society",
-          "E-Health",
-          "Free Choice",
+          "人工智能",
+          "物联网",
+          "教育",
+          "区块链",
+          "金融",
+          "虚拟现实",
+          "自由发挥",
         ].filter(function (track) {
           return $scope.tracks[track];
         });
@@ -113,9 +117,10 @@ angular.module('reg')
         UserService
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .success(function(data){
+            $('#uploading-loader').removeClass('active');
             sweetAlert({
-              title: "Awesome!",
-              text: "Your application has been saved.",
+              title: "恭喜你！",
+              text: "你的申请已经成功提交",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
@@ -123,8 +128,9 @@ angular.module('reg')
             });
           })
           .error(function(res){
-            sweetAlert("Uh oh!", "Something went wrong.", "error");
+            sweetAlert("请检查你的信息", "提交遇到了问题。如果这一问题持续，请联络我们。", "error");
           });
+
       }
 
       function _setupForm(){
@@ -212,6 +218,16 @@ angular.module('reg')
               ]
             },
 
+            profession: {
+              identifier: 'profession',
+              rules: [
+                {
+                  type: 'professionSelected',
+                  prompt: '请选择你的身份'
+                }
+              ]
+            },
+
             school: {
               identifier: 'school',
               rules: [
@@ -232,12 +248,32 @@ angular.module('reg')
               ]
             },
 
+            yearOfStudies: {
+              identifier: 'year-of-studies',
+              rules: [
+                {
+                  type: 'schoolSelectedAndEmpty',
+                  prompt: '请输入你的就读时长'
+                }
+              ]
+            },
+
             graduationYear: {
               identifier: 'graduation-year',
               rules: [
                 {
                   type: 'schoolSelectedAndEmpty',
                   prompt: '请选择你的毕业年份'
+                }
+              ]
+            },
+
+            workExperience: {
+              identifier: 'work-experience',
+              rules: [
+                {
+                  type: 'workSelectedAndIntegerBetween1And100',
+                  prompt: '请输入你的工作经验'
                 }
               ]
             },
@@ -262,6 +298,46 @@ angular.module('reg')
               ]
             },
 
+            description: {
+              identifier: 'description',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请选择你的团队角色'
+                }
+              ]
+            },
+
+            resume: {
+              identifier: 'resume',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请上传你的简历'
+                }
+              ]
+            },
+
+            interestedField: {
+              identifier: 'interestedField',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请输入你感兴趣的产业'
+                }
+              ]
+            },
+
+            pastExperience: {
+              identifier: 'pastExperience',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请回答本问题'
+                }
+              ]
+            },
+
             stemInterest: {
               identifier: 'stemInterest',
               rules: [
@@ -272,8 +348,8 @@ angular.module('reg')
               ]
             },
 
-            projectExp: {
-              identifier: 'projectExp',
+            projExp: {
+              identifier: 'projExp',
               rules: [
                 {
                   type: 'empty',
@@ -302,6 +378,16 @@ angular.module('reg')
               ]
             },
 
+            resume: {
+              identifier: 'resume',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: '请上传你的简历'
+                }
+              ]
+            },
+
             cocRead: {
               identifier: 'cocRead',
               rules: [
@@ -317,7 +403,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'checked',
-                  prompt: 'Please accept the MLH terms.'
+                  prompt: '请阅读并同意《竞赛规则》'
                 }
               ]
             },
@@ -329,11 +415,61 @@ angular.module('reg')
 
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
-          _updateUser();
+          _uploadResume();
         }
         else{
-          sweetAlert("Uh oh!", "Please Fill The Required Fields", "error");
+          sweetAlert("请检查你的信息", "请填写所有必填项", "error");
         }
       };
+
+      function _uploadResume() {
+        var files = $('#resume')[0].files;
+        if (files.length == 0) {
+          sweetAlert("请检查你的信息", "请上传你的简历", "error");
+        } else {
+          var resume = files[0];
+          var formData = new FormData();
+          formData.append('upload', resume, resume.name);
+          $('#uploading-loader').addClass('active');
+          $.ajax({
+            type: 'PUT',
+            url: 'http://api.thehack.io/s3/upload/resume/hackinit/' + $scope.user._id + '_resume' + _getExtension(resume.name),
+            data: formData,
+            processData: false,
+            contentType: false,
+          }).done(function(result) {
+            var token = result.token;
+            _waitForSuccess(token, _updateUser, function() {
+              $('#uploading-loader').removeClass('active');
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            });
+          }).fail(function(result) {
+            $('#uploading-loader').removeClass('active');
+            if (result.status == 413) {
+              sweetAlert("请检查你的信息", "请缩小文件大小", "error");
+            } else {
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            }
+          });
+        }
+      }
+
+      function _getExtension(filename) {
+        return filename.match(/\.\w+$/)[0];
+      }
+
+      function _waitForSuccess(token, success, failed) {
+        $http.get('http://api.thehack.io/s3/status/' + token).then(function(response) {
+          if (response.data.result === 'success') {
+            success();
+          } else if (response.data.result === 'failed' || response.data.result === 'null') {
+            failed();
+          } else {
+            setTimeout(function() {
+              _waitForSuccess(token, success, failed);
+            }, 100);
+          }
+        });
+      }
 
     }]);
