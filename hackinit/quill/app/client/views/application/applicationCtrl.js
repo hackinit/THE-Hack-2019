@@ -456,6 +456,8 @@ angular.module('reg')
 
       function _getExtension(filename) {
         return filename.match(/\.\w+$/)[0];
+        var matches = filename.match(/\.\w+$/);
+        return (matches === null) ? '' : matches[0];
       }
 
       function _waitForSuccess(token, success, failed) {
