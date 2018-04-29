@@ -1,4 +1,7 @@
 <div id="application" class="page">
+  <div class="ui page dimmer" id="uploading-loader" style="z-index:10000;">
+    <div class="ui text loader">Uploading...</div>
+  </div>
   <div class="divided title">
     参赛申请
   </div>
@@ -76,14 +79,9 @@
 
           <div ng-show="user.profile.profession == 'S'">
 
-            <div class="field" ng-show="!autoFilledSchool" required>
+            <div class="field" required>
               <label>在读学校*</label>
-              <div id="school" class="ui search">
-                <div class="ui input">
-                  <input class="prompt" type="text" placeholder="the school or university you're visiting" name="school" ng-model="user.profile.study.school">
-                </div>
-                <div class="results"></div>
-              </div>
+              <input type="text" name="school" ng-model="user.profile.study.school">
             </div>
 
             <div class="field" required>
@@ -191,13 +189,28 @@
             <input type="text" placeholder="https://github.com/yourname" ng-model="user.profile.github">
           </div>
 
+          <div class="field">
+            <label>你的微信ID</label>
+            <input type="text" ng-model="user.profile.wechat">
+          </div>
+
+          <div class="field">
+            <label>你的个人网站</label>
+            <input type="text" ng-model="user.profile.website">
+          </div>
+
+          <div class="field">
+            <label>你的 DevPost 主页</label>
+            <input type="text" ng-model="user.profile.devpost">
+          </div>
+
           <div class="field" required>
-            <label>你的简历</label>
+            <label>你的简历*</label>
             <input type="file" id="resume">
           </div>
 
           <div class="field" required>
-            <label>请列举你有特别兴趣的产业、领域</label>
+            <label>请列举你有特别兴趣的产业、领域*</label>
             <input name="interestedField" ng-model="user.profile.interestedField" placeholder="例如：人工智能、医疗科技、金融科技">
           </div>
 
@@ -242,7 +255,7 @@
             <label>《选手行为守则》*</label>
             <div class="ui checkbox">
               <input type="checkbox" name="cocRead" value="Y" ng-model="user.profile.legal.cocRead">
-              <label>我已阅读并同意<a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">《选手行为守则》</a>。</label>
+              <label>我已阅读并同意<a href="http://static.hackinit.org/doc/shared/Code-of-Conduct.pdf" target="_blank">《选手行为守则》</a>。</label>
             </div>
           </div>
 
@@ -250,7 +263,7 @@
             <label>《竞赛规则》*</label>
             <div class="ui checkbox">
               <input type="checkbox" name="mlh-terms" value="Y" ng-model="user.profile.legal.terms">
-              <label>我已阅读并同意 <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions" target="_blank">《竞赛规则》</a>。</label>
+              <label>我已阅读并同意 <a href="http://static.hackinit.org/doc/shared/Hackathon-Official-Rule-zh.pdf" target="_blank">《竞赛规则》</a>。</label>
             </div>
           </div>
 

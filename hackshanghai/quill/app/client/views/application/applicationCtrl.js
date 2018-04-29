@@ -24,11 +24,13 @@ angular.module('reg')
 
       // <tracks>
       var tracks = [
-        "Digital Journalism",
-        "Security",
-        "Smart Society",
-        "E-Health",
-        "Free Choice",
+        "人工智能",
+        "物联网",
+        "教育",
+        "区块链",
+        "金融",
+        "虚拟现实",
+        "自由发挥"
       ];
 
       $scope.tracks = {};
@@ -100,11 +102,13 @@ angular.module('reg')
       function _updateUser(e){
         // <tracks>
         $scope.user.profile.ideaTracks = [
-          "Digital Journalism",
-          "Security",
-          "Smart Society",
-          "E-Health",
-          "Free Choice",
+          "人工智能",
+          "物联网",
+          "教育",
+          "区块链",
+          "金融",
+          "虚拟现实",
+          "自由发挥",
         ].filter(function (track) {
           return $scope.tracks[track];
         });
@@ -113,9 +117,10 @@ angular.module('reg')
         UserService
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .success(function(data){
+            $('#uploading-loader').removeClass('active');
             sweetAlert({
-              title: "Awesome!",
-              text: "Your application has been saved.",
+              title: "恭喜你！",
+              text: "你的申请已经成功提交",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
@@ -123,6 +128,8 @@ angular.module('reg')
             });
           })
           .error(function(res){
+            sweetAlert("请检查你的信息", "提交遇到了问题。如果这一问题持续，请联络我们。", "error");
+            $('#uploading-loader').removeClass('active');
             sweetAlert("Uh oh!", "Something went wrong.", "error");
           });
       }
@@ -347,7 +354,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'checked',
-                  prompt: 'Please accept the MLH terms.'
+                  prompt: '请阅读并同意《竞赛规则》'
                 }
               ]
             },
@@ -362,18 +369,19 @@ angular.module('reg')
           _uploadResume();
         }
         else{
-          sweetAlert("Uh oh!", "Please Fill The Required Fields", "error");
+          sweetAlert("请检查你的信息", "请填写所有必填项", "error");
         }
       };
 
       function _uploadResume() {
         var files = $('#resume')[0].files;
         if (files.length == 0) {
-          sweetAlert("Uh oh!", "Please Upload Your Resume", "error");
+          sweetAlert("请检查你的信息", "请上传你的简历", "error");
         } else {
           var resume = files[0];
           var formData = new FormData();
           formData.append('upload', resume, resume.name);
+          $('#uploading-loader').addClass('active');
           $.ajax({
             type: 'PUT',
             url: 'http://api.thehack.org.cn/s3/upload/resume/' + $scope.user._id + '_resume' + _getExtension(resume.name),
@@ -383,11 +391,13 @@ angular.module('reg')
           }).done(function(result) {
             var token = result.token;
             _waitForSuccess(token, _updateUser, function() {
+              $('#uploading-loader').removeClass('active');
               sweetAlert("Uh oh!", "Something went wrong.", "error");
             });
           }).fail(function(result) {
+            $('#uploading-loader').removeClass('active');
             if (result.status == 413) {
-              sweetAlert("Uh oh!", "Please reduce file size.", "error");
+              sweetAlert("请检查你的信息", "请缩小文件大小", "error");
             } else {
               sweetAlert("Uh oh!", "Something went wrong.", "error");
             }
@@ -396,7 +406,7 @@ angular.module('reg')
       }
 
       function _getExtension(filename) {
-        return filename.match(/\.\w+/)[0];
+        return filename.match(/\.\w+$/)[0];
       }
 
       function _waitForSuccess(token, success, failed) {

@@ -1,26 +1,40 @@
 {
     "title": {
-        "default": "2018年7月21日至22日"
+        "default": "July 21 - 22, 2018"
     },
-    "navbarTheHack": {
-        "default": "THE Hack"
+    "date": {
+        "en": "July 21 - 22, 2018",
+        "zh": "2018年7月21-22日"
     },
-    "navbarHome": {
-        "default": "Home"
+    "city": {
+        "en": "Shanghai, China",
+        "zh": "中国，上海"
     },
-    "navbarAbout": {
-        "default": "关于我们"
+    "location": {
+        "en": "ShanghaiTech University",
+        "zh": "上海科技大学"
     },
-    "navbarFaq": {
-        "default": "常见问题"
+    "apply": {
+        "en": "Apply",
+        "zh": "参赛申请"
     },
-    "navbarAgenda": {
-        "default": "日程安排"
+    "prospectus": {
+        "en": "Prospectus",
+        "zh": "项目计划书"
     },
-    "navbarSponsor": {
-        "default": "合作伙伴"
+    "prospectusLink": {
+        "en": "http://static.hackinit.org/doc/shared/Prospectus-en_US.pdf",
+        "zh": "http://static.hackinit.org/doc/shared/Prospectus-zh_CN.pdf"
     },
-    "navbarOurTeam": {
-        "default": "我们的团队"
+    "wechat": {
+        "en": "Follow Us",
+        "zh": "关注我们"
+    },
+    "highlights": {
+        "en": ["Collaboration", "Workshops", "Resources", "Food", "Prizes", "Free Travel"],
+        "zh": ["合作", "工作坊", "资源", "食物", "奖品", "旅费报销"]
+    },
+    "highlightIcons": {
+        "default": ["handshake", "cogs", "code", "utensils", "trophy", "plane"]
     }
 }

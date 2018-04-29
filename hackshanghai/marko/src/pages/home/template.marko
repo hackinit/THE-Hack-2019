@@ -71,21 +71,31 @@
                     <div id="info" if(data.lang==="en")>
                         <h1 id="date-text">July 21-22, 2018</h1>
                         <h1 id="city-text">Shanghai, China</h1>
-                        <!--<h1 id="location-text">ShanghaiTech University</h1>-->
+                        <h1 id="location-text">ShanghaiTech University</h1>
                     </div>
                     <div id="info" if(data.lang==="zh")>
                         <h1 id="date-text">7月21-22日, 2018</h1>
                         <h1 id="city-text">中国，上海</h1>
-                        <!--<h1 id="location-text">上海科技大学</h1>-->
+                        <h1 id="location-text">上海科技大学</h1>
+                    </div>
+                    <img id="disk" alt="THE Hack Disk" src="//static.hackinit.org/img/hackshanghai/disk.png">
+                </div>
+                <div id="mobile-logo">
+                    <img id="white-logo" alt="hackShanghai" src="//static.hackinit.org/img/hackshanghai/white-logo.svg">
+                    <div class="mobile-buttons">
+                        <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-en_US.pdf" class="btn btn-hacksh btn-lg" role="button" if(data.lang==="en")>Program Prospectus</a></div>
+                        <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="//static.hackinit.org/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button" if(data.lang==="zh")>项目计划书</a></div>
+                        <div class="horizontal-center buttons"><a id="wechat-btn" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.hackinit.org/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="top" if(data.lang==="en")>Follow us on WeChat <i class="fa fa-weixin"></i></a></div>
+                        <div class="horizontal-center buttons"><a id="wechat-btn" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.hackinit.org/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="top" if(data.lang==="zh")>关注我们的公众号 <i class="fa fa-weixin"></i></a></div>
                     </div>
                 </div>
                 <div id="about" class="container-fluid darkblue-background">
                     <div class="row">
                         <div class="col-xs-12 about" if(data.lang==="en")>
                             <h2><b>Hi, Welcome to hackShanghai!</b></h2>
-                            <p>HackShanghai is the first and largest college hackathon in China for the top hackers. 250 participating graduate and undergraduate students will be chosen from applications and join the 24-hour marathon event. Students work in teams to build a tech product within the time limit.</p>
-                            <p>HackShanghai have already had very successful events in 2014 and 2015. In 2014, 250 hackers were selected out of almost 1500 applications from top universities in China and around the globe. For 24 hours, they all worked together, in teams, to build products that accomplish their vision, and may change the future. In 2015, the 250 participating graduate and undergraduate students were chosen from applications from over 100 universities, including Harvard, Tsinghua U, Peking U, MIT, and CalTech. The 24-hour marathon event is sponsored by 21 companies, such as ICBC, Goldman Sachs, IBM, DBS. HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</p>
-                            <p>HackShanghai is a model of innovation and driving force of the current hackathon movement in Asia，which is designed to expand on the hackathon model born in the US and currently employed by universities such as MIT, Yale or Harvard. Our aims are to cross geographical and cultural boundaries and bring together a multitude of different innovators, each with their own view of the world we live in. With so many vastly different perspectives, we want to see how programming can display the very basics of what brings humans together and leave a positive mark on our rapidly advancing world.</p>
+                            <p>HackShanghai is the first and largest college hackathon in China. 250 participating graduate and undergraduate students will be accepted to join this 24-hour carnival of innovation. With their own team, each will build tech products within the time limit.</p>
+                            <p>In 2014 and 2015, we invited 250 hackers out of 1500 applications each year from over 100 top universities in China and around the globe, including Harvard, Tsinghua U, Peking U, MIT, and Caltech. And our past sponsors include ICBC, Goldman Sachs, IBM, DBS, and more.</p>
+                            <p>HackShanghai adopted the same mission and model currently employed by universities such as MIT, Yale or Harvard. We aim to bring together different innovators, each with their own views of the world. With vastly different perspectives, we want to see how technologies can strive to bridge the gap between humans and leave a positive impact in the world.</p>
                         </div>
                         <div class="col-xs-12 about" if(data.lang==="zh")>
                             <h2><b>Hi，欢迎来到hackShanghai！</b></h2>
@@ -333,7 +343,7 @@
                     <div class="col-xs-12 footer" if(data.lang==="zh")>
                         <div class="horizontal-center">
                             <p><i class="fa fa-copyright"></i> 2018 <a href="http://hackshanghai.com">上海创喵信息科技有限公司</a>。版权所有。</p>
-                            <p><a target="_blank" href="//static.hackinit.org/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                            <p><a target="_blank" href="//static.hackinit.org/doc/shared/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
                         </div>
                     </div>
                 </div>
