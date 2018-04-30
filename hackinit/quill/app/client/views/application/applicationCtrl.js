@@ -460,7 +460,7 @@ angular.module('reg')
       }
 
       function _waitForSuccess(token, success, failed) {
-        $http.get('http://api.thehack.org.cn/s3/status/' + token).then(function(response) {
+        $http.get('https://api.thehack.org.cn/s3/status/' + token).then(function(response) {
           if (response.data.result === 'success') {
             success();
           } else if (response.data.result === 'failed' || response.data.result === 'null') {
