@@ -1,2 +1,2 @@
-# hackinit.io
-A Dockerized implementation of hack.init()'s tech stack. For hack.init() 2018 🚀!
+# thehack.io
+A Dockerized implementation of THE Hack's tech stack. For THE Hack 2018 🚀!
