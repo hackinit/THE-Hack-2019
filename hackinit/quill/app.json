@@ -12,7 +12,7 @@
         },
         "ROOT_URL": {
             "description": "Root URL for your registration system",
-            "value": "http://localhost:3000"
+            "value": "//localhost:3000"
         },
         "ADMIN_EMAIL": {
             "description": "Credentials for the admin user created at app initialization",
