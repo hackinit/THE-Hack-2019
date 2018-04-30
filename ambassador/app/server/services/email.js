@@ -131,7 +131,7 @@ controller.sendPasswordResetEmail = function(email, token, callback) {
   var locals = {
     title: '我们收到了你的密码重置请求',
     subtitle: '',
-    description: '有人在 //ambassador.hackinit.org/ 请求重置本账号的密码。如果非本人操作，请忽视此邮件。请点击如下按钮重置密码，有效期为一小时。',
+    description: '有人在 http://ambassador.hackinit.org/ 请求重置本账号的密码。如果非本人操作，请忽视此邮件。请点击如下按钮重置密码，有效期为一小时。',
     actionUrl: ROOT_URL + '/reset/' + token,
     actionName: "重置密码"
   };

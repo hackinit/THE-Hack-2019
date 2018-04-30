@@ -60,5 +60,5 @@ If you have any questions about anything, feel free to [ask][email]!
 [issues]: https://github.com/techx/quill/issues
 [fork]: https://github.com/techx/quill/fork
 [email]: mailto:quill@hackmit.org
-[commit-messages]: //tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [gavel]: https://github.com/anishathalye/gavel
