@@ -23,8 +23,8 @@
         "zh": "项目计划书"
     },
     "prospectusLink": {
-        "en": "http://static.hackinit.org/doc/shared/Prospectus-en_US.pdf",
-        "zh": "http://static.hackinit.org/doc/shared/Prospectus-zh_CN.pdf"
+        "en": "//static.thehack.org.cn/doc/shared/Prospectus-en_US.pdf",
+        "zh": "//static.thehack.org.cn/doc/shared/Prospectus-zh_CN.pdf"
     },
     "wechat": {
         "en": "Follow Us",
