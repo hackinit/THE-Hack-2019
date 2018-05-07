@@ -20,6 +20,18 @@
     color: rgb(232, 88, 39);
 }
 
-#become-sponsor a, #become-sponsor a:hover, #become-sponsor a:focus, #become-sponsor a:visited, #become-sponsor:active {
+#become-sponsor a, #become-sponsor a:hover, #become-sponsor a:focus, #become-sponsor a:visited {
     color: lightskyblue;
+}
+
+#sponsor-button h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #ccc;
+    margin-top: 50px;
+}
+
+#sponsor-button a, #sponsor-button a:hover, #sponsor-button a:focus {
+    text-decoration: none;
+    outline: none;
 }
