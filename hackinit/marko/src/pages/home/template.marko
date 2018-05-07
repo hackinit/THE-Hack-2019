@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="//static.thehack.org.cn/css/hackinit/home/banner.css">
     <link rel="stylesheet" href="//static.thehack.org.cn/css/hackinit/home/about.css">
     <link rel="stylesheet" href="//static.thehack.org.cn/css/hackinit/home/faqs.css">
+    <link rel="stylesheet" href="//static.thehack.org.cn/css/hackinit/home/sponsor.css">
 </@css>
 
 <@body>
@@ -58,7 +59,7 @@
     <div id="faq" class="container full-width bg-block">
         <div class="row">
             <div class="col">
-                <h1 id="faqs-title" class="color-white pixel-font">${data.faqTitle}</h1>
+                <h1 class="color-white pixel-font title">${data.faqTitle}</h1>
             </div>
         </div>
         <div class="row">
@@ -74,6 +75,18 @@
                     </div>
                 </div>
             </for>
+        </div>
+    </div>
+    <div id="sponsor" class="container bg-black">
+        <div class="row">
+            <div class="col">
+                <h1 class="color-white pixel-font title">${data.sponsorTitle}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p id="become-sponsor">$!{data.becomeSponsor}</p>
+            </div>
         </div>
     </div>
 </@body>
