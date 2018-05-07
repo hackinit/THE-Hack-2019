@@ -57,6 +57,11 @@
     </div>
     <div id="faq" class="container full-width bg-block">
         <div class="row">
+            <div class="col">
+                <h1 id="faqs-title" class="color-white pixel-font">${data.faqTitle}</h1>
+            </div>
+        </div>
+        <div class="row">
             <for(i from 0 to data.faqs.length - 1)>
                 <div class="col-xs-12 col-md-6 faq">
                     <a class="btn btn-light btn-lg btn-block faq-question" data-toggle="collapse" href="#faq${i}" role="button" aria-expanded="false" aria-controls="faq${i}">

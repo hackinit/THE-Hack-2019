@@ -72,5 +72,9 @@
             "question": "我还有别的问题！",
             "answer": "请随时发邮件到<a href=\"mailto:contact@hackinit.org\">contact@hackinit.org</a>，hack.init()团队非常乐意帮助你解决任何问题！"
         }]
+    },
+    "faqTitle": {
+        "en": "Frequently Asked Questions",
+        "zh": "常见问题"
     }
 }
