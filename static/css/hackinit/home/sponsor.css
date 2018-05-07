@@ -1,0 +1,21 @@
+#sponsor {
+    max-width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#become-sponsor {
+    font-size: 18px;
+    width: 800px;
+    max-width: 90%;
+    margin: 0 auto;
+    color: #e2e6ea;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#become-sponsor:first-letter {
+    font-size: 200%;
+    font-family: fantasy;
+    line-height: 27px;
+}
