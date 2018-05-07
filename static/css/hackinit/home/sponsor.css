@@ -11,11 +11,15 @@
     margin: 0 auto;
     color: #e2e6ea;
     text-align: center;
-    font-weight: bolder;
 }
 
-#become-sponsor:first-letter {
-    font-size: 200%;
-    font-family: fantasy;
+#become-sponsor #first-word {
+    font-size: 36px;
+    font-family: 'FZXS12';
     line-height: 27px;
+    color: rgb(232, 88, 39);
+}
+
+#become-sponsor a, #become-sponsor a:hover, #become-sponsor a:focus, #become-sponsor a:visited, #become-sponsor:active {
+    color: lightskyblue;
 }
