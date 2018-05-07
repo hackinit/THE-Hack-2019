@@ -1,0 +1,13 @@
+#faq {
+    max-width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.faq {
+    margin: 10px auto;
+}
+
+.faq-question {
+    padding: 15px 25px;
+}
