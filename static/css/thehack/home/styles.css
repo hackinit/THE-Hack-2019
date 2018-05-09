@@ -1,0 +1,22 @@
+.main-btn {
+    margin: 5px;
+    width: 150px;
+}
+
+.sub-btn {
+    width: 300px;
+}
+
+#footer {
+    text-align: center;
+}
+
+#footer img {
+    margin: 5px;
+}
+
+.sub-logo {
+    height: 240px;
+    max-width: 80%;
+    margin-bottom: 50px;
+}
