@@ -12,3 +12,7 @@
     font-size: 16px;
     padding: 15px 10px;
 }
+
+.faq-answer a {
+    display: inline;
+}
