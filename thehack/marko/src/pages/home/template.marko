@@ -3,209 +3,87 @@
     EMAIL:      panyuchong@gmail.com
 -->
 
-<!DOCTYPE HTML>
-<html>
+
+<!doctype html>
+<html lang="en">
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115957013-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-115957013-1');
-        </script>
-
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="referrer" content="unsafe-url">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="https://static.thehack.org.cn/img/thehack/favicon.ico">
 
-        <title>THE Hack | July 21 - 22, 2018</title>
-        <link rel="icon" href="//static.thehack.org.cn/img/thehack/favicon.ico">
+        <title if(data.lang==="en")>THE Hack | July 21 - 22, 2018</title>
+        <title if(data.lang==="zh")>德·创客马拉松 | 2018年7月21-22日</title>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="//static.thehack.org.cn/lib/bootstrap-v3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/lib/font-awesome-v4/css/font-awesome.min.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/lib/font-awesome-animation/font-awesome-animation.min.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/lib/alertify/css/alertify.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/lib/intl-tel-input/css/intlTelInput.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/css/shared/styles.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/css/thehack/home/style.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/css/shared/font.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/css/thehack/home/hackinit_dropping.css">
-        <!-- /CSS -->
+        <!-- Bootstrap core CSS -->
+        <link href="https://static.thehack.org.cn/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="https://getbootstrap.com/docs/4.1/examples/product/product.css" rel="stylesheet">
+        <link href="https://static.thehack.org.cn/css/thehack/home/styles.css" rel="stylesheet">
     </head>
 
     <body>
-        <!-- HEADER -->
-        <nav id="navbar-container" class="navbar navbar-inverse navbar-hacksh navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand navbar-brand-logo" href>
-                        <img alt="THE Hack" src="//static.thehack.org.cn/img/thehack/text-logo-thehack.png">
-                    </a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">ABOUT</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">FAQ</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">SPONSOR</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh">简体中文</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">关于我们</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">常见问题</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">合作伙伴</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/">ENGLISH</a></li>
-                    </ul>
-                </div>
+
+        <nav class="site-header sticky-top py-1">
+            <div class="container d-flex justify-content-center">
+                <a class="py-2 d-inline-block" href="#">
+                    <img width="30" height="30" src="https://static.thehack.org.cn/img/thehack/logo/th-256px-w.png">
+                </a>
             </div>
         </nav>
-        <!-- /HEADER -->
 
-        <!-- MAIN -->
-        <div id="left-bar" class="col-xs-12 hidden-sm hidden-xs logo-background">
-            <img id="main-logo" alt="THE Hack" src="//static.thehack.org.cn/img/thehack/logo/th-1024px-c.png">
-            <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="//static.thehack.org.cn/doc/shared/Prospectus-en_US.pdf" class="btn btn-hacksh btn-lg" role="button" if(data.lang==="en")>Program Prospectus</a></div>
-            <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="//static.thehack.org.cn/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button" if(data.lang==="zh")>项目计划书</a></div>
-            <div class="horizontal-center buttons"><a id="wechat-btn" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.thehack.org.cn/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="right" if(data.lang==="en")>Follow us on WeChat <i class="fa fa-weixin"></i></a></div>
-            <div class="horizontal-center buttons"><a id="wechat-btn" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.thehack.org.cn/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="right" if(data.lang==="zh")>关注我们的公众号 <i class="fa fa-weixin"></i></a></div>
-        </div>
-        <div id="main" class="col-xs-12 full-width">
-            <div id="banner-container" class="container hackinit-logo-container full-width darkblue-background">
-                <div class="full-height first-screen">
-                    <div id="info" if(data.lang==="en")>
-                        <h1 id="date-text">July 21-22, 2018</h1>
-                        <h1 id="city-text">Shanghai, China</h1>
-                        <h1 id="location-text">ShanghaiTech University</h1>
-                    </div>
-                    <div id="info" if(data.lang==="zh")>
-                        <h1 id="date-text">7月21-22日, 2018</h1>
-                        <h1 id="city-text">中国，上海</h1>
-                        <h1 id="location-text">上海科技大学</h1>
-                    </div>
-                    <a target="_blank" href="http://hackshanghai.com">
-                    <img id="disk" alt="THE Hack Disk" src="//static.thehack.org.cn/img/thehack/thehack-disk.png">
-                    </a>
-                </div>
-                <a target="_blank" href="http://hackinit.io">
-                    <div class="hackinit-drop-container">
-            			<div class="word">
-            				<div class="H">
-            					<div class="h-all"></div>
-            				</div>
-            				<div class="A">
-            					<div class="a-top"></div>
-            					<div class="a-bottom"></div>
-            				</div>
-            				<div class="C">
-            					<div class="c-top"></div>
-            					<div class="c-bottom"></div>
-            				</div>
-            				<div class="K">
-            					<div class="k-top"></div>
-                                <div class="k-bottom"></div>
-            				</div>
-                            <div class="I">
-            					<div class="i-all"></div>
-            				</div>
-                            <div class="N">
-            					<div class="n-top"></div>
-                                <div class="n-bottom"></div>
-            				</div>
-                            <div class="II">
-            					<div class="ii-all"></div>
-            				</div>
-                            <div class="T">
-            					<div class="t-all"></div>
-            				</div>
-            			</div>
-            			<div class="blink">
-            				<div class="cursor to-right"></div>
-            			</div>
-            		</div>
-                </a>
-                <div id="mobile-logo">
-                    <img id="white-logo" alt="hackShanghai" src="//static.thehack.org.cn/img/thehack/logo/th-1024px-w.png">
-                    <div class="mobile-buttons">
-                        <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="//static.thehack.org.cn/doc/shared/Prospectus-en_US.pdf" class="btn btn-hacksh btn-lg" role="button" if(data.lang==="en")>Program Prospectus</a></div>
-                        <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="//static.thehack.org.cn/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button" if(data.lang==="zh")>项目计划书</a></div>
-                        <div class="horizontal-center buttons"><a id="wechat-btn" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.thehack.org.cn/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="top" if(data.lang==="en")>Follow us on WeChat <i class="fa fa-weixin"></i></a></div>
-                        <div class="horizontal-center buttons"><a id="wechat-btn" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.thehack.org.cn/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="top" if(data.lang==="zh")>关注我们的公众号 <i class="fa fa-weixin"></i></a></div>
-                    </div>
-                </div>
-                <div id="about" class="container-fluid darkblue-background">
-                    <div class="row">
-                        <div class="col-xs-12 about" if(data.lang==="en")>
-                            <h2><b>Hi, Welcome to THE Hack!</b></h2>
-                            <p>THE Hack is China's premier hackathon league that promotes innovation and spreads social awareness. Parent event of hack.init() and hackShanghai, THE Hack aims to bring together the brightest minds from across the country to Shanghai for a 24-hour, non-stop hackathon where they collaborate intensively and create feasible solutions.
-</p>
-                            <p>THE Hack puts its emphasis on <b>“Enlightenment”</b> and encourages participants to seek solutions for societal needs. From young high-schoolers to experts in industry, all are inspired to transform their wildest dreams into reality, and experienced hackers are provided a mature breeding ground for their developing projects and products.
-</p>
-                        </div>
-                        <div class="col-xs-12 about" if(data.lang==="zh")>
-                            <h2><b>Hi，欢迎来到 THE Hack！</b></h2>
-                            <p>THE Hack 是中国青年创客马拉松的先驱者，致力于推动中国青年人的创新意识和社会责任。作为 hack.init() 和 hackShanghai 的母活动， THE Hack 邀请国内最有才干的年轻头脑云集上海，共同协作、创造解决方案，呈现一场24小时不间断的创客盛宴。</p>
-                            <p>THE Hack 的核心在于”启发(Enlightenment)”。我们致力于寻找启迪和开始的力量，鼓励参与者找出合理的解决方案以满足社会需求。在这里，年轻的高中生和大学生创客用情怀和实干引路，将最疯狂的梦想变为现实；而这里也为更富经验的创客们提供了发展项目，孵化未来的无限机会。
-</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="sponsor" class="container section">
-                <div class="row">
-                    <div class="col-xs-12 sponsorship" if(data.lang==="en")>
-                        <h2><b>Sponsorship</b></h2>
-                        <p>hackShanghai and hack.init() are perfect places to feel the vibe of the newest generation. At these two hackathons, you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.</p>
-                        <p>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href="mailto:sponsorship@hackshanghai.com">sponsorship@hackshanghai.com</a>.</p>
-                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="//static.thehack.org.cn/doc/shared/Prospectus-en_US.pdf" class="btn btn-hacksh btn-lg" role="button">Program Prospectus</a></div>
-                    </div>
-                    <div class="col-xs-12 sponsorship" if(data.lang==="zh")>
-                        <h2><b>与我们合作</b></h2>
-                        <p>hackShanghai 与 hack.init() 是感受新一代青年人活力与能力的绝佳活动。在这样两个创客马拉松中，您可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传你的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望你能参与到我们的伟大任务中来。</p>
-                        <p>有兴趣与我们合作？ 请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到<a href="mailto:sponsorship@hackshanghai.com">sponsorship@hackshanghai.com</a>与我们联系！</p>
-                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="//static.thehack.org.cn/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button">项目计划书</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid darkred-background">
-                <div class="row">
-                    <div class="col-xs-12 footer" if(data.lang==="en")>
-                        <div class="horizontal-center">
-                            <p>Copyright <i class="fa fa-copyright"></i> 2018 <a href="http://hackshanghai.com">Shanghai InnoCat Information Technology Co., Ltd</a>. All Rights Reserved.</p>
-                            <p><a target="_blank" href="//static.thehack.org.cn/doc/shared/Code-of-Conduct.pdf">Code of Conduct</a></p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 footer" if(data.lang==="zh")>
-                        <div class="horizontal-center">
-                            <p><i class="fa fa-copyright"></i> 2018 <a href="http://hackshanghai.com">上海创喵信息科技有限公司</a>。版权所有。</p>
-                            <p><a target="_blank" href="//static.thehack.org.cn/doc/shared/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
-                        </div>
-                    </div>
-                </div>
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 class="display-4 font-weight-normal" if(data.lang==="en")>THE Hack</h1>
+                <h1 class="display-4 font-weight-normal" if(data.lang==="zh")>德·创客马拉松</h1>
+                <p class="lead font-weight-normal" if(data.lang==="en")>Technology · Harvests · Enlightenment</p>
+                <p class="lead font-weight-normal" if(data.lang==="zh")>科技·收获·启蒙</p>
+                <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary main-btn" href="https://static.thehack.org.cn/doc/shared/Prospectus-en_US.pdf" if(data.lang==="en")>Prospectus</a>
+                <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary main-btn" href="https://static.thehack.org.cn/doc/shared/Prospectus-zh_CN.pdf" if(data.lang==="zh")>项目计划书</a>
+                <a role="button" class="btn btn-lg btn-outline-secondary main-btn" href="#hackathons" if(data.lang==="en")>Events</a>
+                <a role="button" class="btn btn-lg btn-outline-secondary main-btn" href="#hackathons" if(data.lang==="zh")>活动</a>
             </div>
         </div>
-        <!-- /MAIN -->
 
-        <!-- JAVASCRIPT -->
-        <script src="//static.thehack.org.cn/lib/jquery/jquery-3.1.1.min.js"></script>
-        <script src="//static.thehack.org.cn/lib/vue/vue.min.js"></script>
-        <script src="//static.thehack.org.cn/lib/vue/vue-resource.min.js"></script>
-        <script src="//static.thehack.org.cn/lib/bootstrap-v3/js/bootstrap.min.js"></script>
-        <script src="//static.thehack.org.cn/lib/waypoints/jquery.waypoints.min.js"></script>
-        <script src="//static.thehack.org.cn/lib/countUp/countUp.min.js"></script>
-        <script src="//static.thehack.org.cn/lib/alertify/js/alertify.js"></script>
-        <script src="//static.thehack.org.cn/lib/intl-tel-input/js/intlTelInput.min.js"></script>
-        <script src="//static.thehack.org.cn/js/hackshanghai/home/controller.js"></script>
-        <!-- /JAVASCRIPT -->
+        <div id="hackathons" class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+            <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                <div class="my-3 py-3">
+                    <h2 class="display-5" if(data.lang==="en")>hack.init() 2018 - Enlightenment</h2>
+                    <h2 class="display-5" if(data.lang==="zh")>hack.init() 2018 - 启迪</h2>
+                    <p class="lead" if(data.lang==="en")>hack.init() is the premier youth hackathon in China. With a mission to build up the hacker culture in China, hack.init() adopted a tutorial approach that hosted over 20 workshops preevent and at-event, allowing teenagers from age 14 to 20 to get exposed to the latest technology and utilize them during their innovation.</p>
+                    <p class="lead" if(data.lang==="zh")>hack.init() 是中国顶尖的⻘年创客⻢拉松。以构建中国创客⽂化为使命，hack.init() 采⽤了基于教程的⽅式，在赛前与赛中举办了超过20场⼯作坊活动，让更多14⾄20岁间的⻘少年了解并应⽤业内先进技术于他们的创意中。</p>
+                    <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackinit.org" if(data.lang==="en")>Visit hack.init() 2018</a>
+                    <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackinit.org/zh" if(data.lang==="zh")>访问hack.init() 2018</a>
+                </div>
+                <img class="sub-logo" src="https://static.thehack.org.cn/img/hackinit/logo/hi-1024px-c.png">
+            </div>
+            <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 p-3">
+                    <h2 class="display-5" if(data.lang==="en")>hackShanghai 2018 - Retro</h2>
+                    <h2 class="display-5" if(data.lang==="zh")>hackShanghai 2018 - 回归</h2>
+                    <p class="lead" if(data.lang==="en")>hackShanghai is the model of innovation and driving force of the current hackathon movement in Asia. Having already had very successful events in 2014 and 2015, HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</p>
+                    <p class="lead" if(data.lang==="zh")>hackShanghai（创客上海）是当今亚洲创客⻢拉松运动的创新典范及先驱。于2014及2015年成功举办两场活动，在过去两年中，hackShanghai 已经合作或⽀持了多场⼤型创客⻢拉松，包括 Unique Hack Day（华中科技⼤学）、HackNTU（国⽴⽴台湾⼤学）及THacks（清华⼤学）。</p>
+                    <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackshanghai.com" if(data.lang==="en")>Visit hackShanghai 2018</a>
+                    <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackshanghai.com/zh" if(data.lang==="zh")>访问hackShanghai 2018</a>
+                </div>
+                <img class="sub-logo" src="https://static.thehack.org.cn/img/hackshanghai/logo.png">
+            </div>
+        </div>
+
+        <footer id="footer" class="container py-5">
+            <div class="row">
+                <div class="col-12">
+                    <img src="https://static.thehack.org.cn/img/thehack/logo/th-256px-c.png" width="30" height="30">
+                    <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="//static.thehack.org.cn/lib/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
