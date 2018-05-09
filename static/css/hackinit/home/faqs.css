@@ -14,5 +14,5 @@
 }
 
 .faq-answer a {
-    display: inline;
+    display: contents;
 }
