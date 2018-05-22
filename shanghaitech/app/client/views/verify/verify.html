@@ -1,0 +1,24 @@
+<div class="verify page">
+  <div class="divided title">
+    邮件验证
+  </div>
+  <div class="ui segment">
+    <div ng-show="success">
+      <i class="green check circle icon"></i>
+      <p>
+        你的电子邮件地址已验证成功
+      </p>
+      <br>
+      <div class="ui fluid pink button"
+           ui-sref="app.dashboard">
+        进入控制面板
+      </div>
+    </div>
+    <div ng-show="!success">
+      <i class="red circle remove icon"></i>
+      <p>
+        该口令不正确
+      </p>
+    </div>
+  </div>
+</div>
