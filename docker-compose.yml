@@ -109,22 +109,22 @@ services:
         links:
             - ambassador_mongo
 
-    shanghaitech_mongo:
-        restart: always
-        image: mongo:3.0.15-wheezy
-        expose:
-            - "27017"
-        volumes:
-            - ../db/shanghaitech:/data/db
+#    shanghaitech_mongo:
+#        restart: always
+#        image: mongo:3.0.15-wheezy
+#        expose:
+#            - "27017"
+#        volumes:
+#            - ../db/shanghaitech:/data/db
 
-    shanghaitech_quill:
-        restart: always
-        build: ./shanghaitech
-        command: gulp server
-        expose:
-            - "3000"
-        links:
-            - shanghaitech_mongo
+#   shanghaitech_quill:
+#        restart: always
+#        build: ./shanghaitech
+#        command: gulp server
+#        expose:
+#            - "3000"
+#        links:
+#            - shanghaitech_mongo
 
     nginx:
         restart: always
@@ -141,6 +141,6 @@ services:
             - thehack_marko
             - 2017_marko
             - ambassador_quill
-            - shanghaitech_quill
+#            - shanghaitech_quill
         volumes_from:
             - 2017_static
