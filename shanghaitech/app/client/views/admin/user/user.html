@@ -74,41 +74,31 @@
        用户信息
       </div>
 
-      <div class="field">
-        <label> 邮件地址 </label>
-        <input type="email"
-               name="email"
-               disabled="disabled"
-               ng-model="selectedUser.email">
+      <div class="field" required>
+        <label>邮件地址*</label>
+        <input type="email" name="email" disabled="disabled" ng-model="user.email">
       </div>
 
-      <div class="field">
-        <label> 全名 </label>
+      <div class="field" required>
+        <label>全名*</label>
+        <input type="text" name="name" ng-model="user.profile.name" placeholder="请填写你的法定全名">
+      </div>
+
+      <div class="field" required>
+        <label>手机号码*</label>
         <input type="text"
-               name="name"
-               ng-model="selectedUser.profile.name">
+        name="phoneNum"
+        ng-model="user.profile.phoneNum">
       </div>
 
-      <div class="field">
-        <label> 手机号码 </label>
-        <input type="text"
-               name="name"
-               ng-model="selectedUser.profile.phoneNum">
+      <div class="field" required>
+        <label>活动当天的年龄*</label>
+        <input type="text" name="age" ng-model="user.profile.age">
       </div>
 
-
-      <div class="field">
-        <label> 活动当天的年龄 </label>
-        <input type="text"
-               name="name"
-               ng-model="selectedUser.profile.age">
-      </div>
-
-      <div class="field">
-        <label>性别</label>
-        <select
-          name="gender"
-          ng-model="selectedUser.profile.gender">
+      <div class="field" required>
+        <label>性别*</label>
+        <select name="gender" ng-model="user.profile.gender">
           <option value="">请选择</option>
           <option value="M">男性</option>
           <option value="F">女性</option>
@@ -117,103 +107,218 @@
         </select>
       </div>
 
+    </fieldset>
+
+    <br>
+
+    <br>
+
+    <div class="divided title">参赛信息</div>
+    <fieldset ng-disabled="regIsClosed">
+      <div class="field" required>
+        <label>参赛组别选择</label>
+
+        <div class="ui stackable grid">
+          <div class="four wide column">
+            <div class="ui radio checkbox">
+              <input type="radio" id="group-hackinit" name="group" ng-model="user.profile.group" value="I">
+              <label for="group-hackinit">hack.init()</label>
+            </div>
+          </div>
+
+          <div class="six wide column">
+            <div class="ui radio checkbox">
+              <input type="radio" id="group-hackshanghai" name="group" ng-model="user.profile.group" value="S">
+              <label for="group-hackshanghai">hackShanghai</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div ng-show="user.profile.group == 'S'">
+
+        <div class="field" required>
+          <label>在读专业*</label>
+          <input type="text" placeholder="例如计算机科学、用户体验工程、电气工程等" name="subject-of-study" ng-model="user.profile.hackshanghai.subject">
+        </div>
+
+        <div class="field" required>
+          <label>已就读时长（年）*</label>
+          <select name="year-of-studies" ng-model="user.profile.hackshanghai.yearOfStudies">
+            <option value="">请选择</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+
+        <div class="field" required>
+          <label>毕业年份*</label>
+          <select name="graduation-year" ng-model="user.profile.hackshanghai.graduationYear">
+            <option value="">请选择毕业年份</option>
+            <option value="{{year}}" ng-repeat="year in graduationYears">{{year}}</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>请简述你的技术栈及熟练程度</label>
+          <textarea ng-model="user.profile.hackshanghai.techStack"></textarea>
+        </div>
+
+      </div>
+
+      <div ng-show="user.profile.group == 'I'">
+        <div class="field">
+          <label>
+              你是否参加过 Hackathon？请列出你参加过的 Hackathon。
+          </label>
+          <textarea ng-model="user.profile.hackinit.pastExperience">
+          </textarea>
+        </div>
+
+        <div class="field" required>
+          <label>
+            你为何对科学、技术、工程、艺术或数学感兴趣？ *
+          </label>
+          <textarea ng-model="user.profile.hackinit.stemInterest">
+          </textarea>
+        </div>
+
+        <div class="field" required>
+          <label>
+              请简述你所做过的最满意的一个项目或产品，可以是任何你所感兴趣的领域，并描述你是如何对其付出精力和时间的。 *
+          </label>
+          <textarea ng-model="user.profile.hackinit.projExp">
+          </textarea>
+        </div>
+
+        <div class="field" required>
+          <label>
+              请分享一个当下你碰到的问题，并描述它可以如何被科技解决或改善。 *
+          </label>
+          <textarea ng-model="user.profile.hackinit.currentIssue">
+          </textarea>
+        </div>
+
+      </div>
+    </fieldset>
+    <br>
+    <br>
+
+    <!--<div class="divided title">交通补助信息</div>
+    <fieldset ng-disabled="regIsClosed">
+      <div class="field" required>
+        <label>你是否需要交通补助？*</label>
+        <p>如果你从其他地方出发来到上海，hackShanghai 组委会将为你提供部分至全额的交通补贴。交通补贴将以转账的形式，在活动结束后30天内下发。符合补助条件的出行方式如下：</p>
+        <ul>
+          <li>上海市内：不提供交通补贴</li>
+          <li>江浙沪地区：火车（G/D/C或其他，二等座）、汽车</li>
+          <li>其他地区：火车（G/D/C或其他，二等座）、汽车、飞机</li>
+        </ul>
+        <p>
+          <b>重要提示：</b> 为获得交通补助，你必须在活动现场的交通补助登记中心提交你的出行凭证原件。我们将会留存你的身份证复印件以完成可能的报税工作。
+        </p>
+        <div class="ui stackable grid">
+          <div class="two wide column">
+            <div class="ui radio checkbox">
+              <input id="travel-reimbursement-y" name="travel-reimbursement" type="radio" value="Y" ng-model="user.profile.travelReimbursement">
+              <label for="travel-reimbursement-y">需要</label>
+            </div>
+          </div>
+          <div class="two wide column">
+            <div class="ui radio checkbox">
+              <input id="travel-reimbursement-n" name="travel-reimbursement" type="radio" value="N" ng-model="user.profile.travelReimbursement">
+              <label for="travel-reimbursement-n">不需要</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field" required ng-show="user.profile.travelReimbursement == 'Y'">
+        <label>交通补助种类*</label>
+        <p>你将从哪个区域出发来到 hackShanghai ？</p>
+
+        <select name="travel-reimbursement-type" ng-model="user.profile.travelReimbursementType">
+          <option value="">请选择</option>
+          <option value="S">上海</option>
+          <option value="T">江浙沪地区</option>
+          <option value="O">其他</option>
+        </select>
+      </div>-->
+
+      <br>
+
+      <div class="divided title">个人信息</div>
+
       <div class="field">
-        <label> 所在城市 </label>
-        <input type="text"
-               name="name"
-               ng-model="selectedUser.profile.city">
+        <label>你的领英（LinkedIn）地址</label>
+        <input type="text" placeholder="https://linkedin.com/in/yourname" ng-model="user.profile.linkedin">
       </div>
 
       <div class="field">
-        <label> 专业信息 </label>
-        <select ng-model="selectedUser.profile.profession">
-          <option value="S">学生</option>
-          <option value="W">已工作</option>
+        <label>你的 GitHub 地址</label>
+        <input type="text" placeholder="https://github.com/yourname" ng-model="user.profile.github">
+      </div>
+
+      <div class="field">
+        <label>你的微信ID</label>
+        <input type="text" ng-model="user.profile.wechat">
+      </div>
+
+      <div class="field">
+        <label>你的个人网站</label>
+        <input type="text" ng-model="user.profile.website">
+      </div>
+
+      <div class="field">
+        <label>你的 DevPost 主页</label>
+        <input type="text" ng-model="user.profile.devpost">
+      </div>
+
+      <div class="field" required>
+        <label>你的简历*</label>
+        <input type="file" id="resume">
+      </div>
+
+      <div class="field" required>
+        <label>请列举你有特别兴趣的产业、领域*</label>
+        <input name="interestedField" ng-model="user.profile.interestedField" placeholder="例如：人工智能、医疗科技、金融科技">
+      </div>
+
+      <div class="field" required>
+        <label>我认为我是一个...的人*</label>
+        <select name="description" ng-model="user.profile.description">
+          <option value="">请选择</option>
+          <option value="Engineer">工程师（电气工程、软件工程、硬件工程等）</option>
+          <option value="Designer">设计师（平面设计、交互设计等）</option>
+          <option value="Entrepreneur">创业者</option>
         </select>
       </div>
 
-      <div ng-show="selectedUser.profile.profession == 'S'">
-        <div class="field" ng-show="autoFilledSchool">
-          <label> 在读学校 </label>
-          <input class="ui input"
-                disabled="disabled"
-                ng-show="autoFilledSchool"
-                ng-model="selectedUser.profile.study.school">
-        </div>
-
-        <div class="field" ng-show="!autoFilledSchool">
-          <label> 在读学校 </label>
-          <input class="ui input"
-                name="school"
-                ng-model="selectedUser.profile.study.school">
-        </div>
-
-        <div class="field">
-          <label>在读专业</label>
-          <input type="text" ng-model="selectedUser.profile.study.subject">
-        </div>
-
-        <div class="field">
-          <label>已就读时长（年）</label>
-          <input type="text" ng-model="selectedUser.profile.study.yearOfStudies">
-        </div>
-
-        <div class="field">
-          <label>毕业年份</label>
-          <input type="text" ng-model="selectedUser.profile.study.graduationYear">
-        </div>
-
-        <div class="field">
-          <label>技术栈</label>
-          <input type="text" ng-model="selectedUser.profile.study.techStack">
-        </div>
-      </div>
-
-      <div ng-show="selectedUser.profile.profession == 'W'">
-        <div class="field">
-          <label>工作时长（年）</label>
-          <input type="text" ng-model="selectedUser.profile.work.experience">
-        </div>
-
-        <div class="field">
-          <label>技术栈</label>
-          <input type="text" ng-model="selectedUser.profile.work.techStack">
-        </div>
-      </div>
-
-      <div class="field">
-        <label>交通补助</label>
-        <select ng-model="selectedUser.profile.travelReimbursement">
-          <option value="Y">需要</option>
-          <option value="N">不需要</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label> Github </label>
-        <input type="url" ng-model="selectedUser.profile.github" />
-      </div>
-
-      <div class="field">
-        <label> LinkedIn </label>
-        <input type="url" ng-model="selectedUser.profile.linkedin" />
-      </div>
-
-
-      <div class="field">
-        <label>Idea?</label>
-        <select ng-model="selectedUser.profile.idea">
+      <div class="field" required>
+        <label>你现在有你想在 hackShanghai 完成的项目想法了吗？*</label>
+        <select name="idea" ng-model="user.profile.idea">
+          <option value="">请选择</option>
           <option value="N">完全没有</option>
           <option value="S">有一些想法</option>
           <option value="Y">有非常确定的想法</option>
         </select>
       </div>
 
-      <div class="field">
-        <label>我认为我是一个...的人</label>
-        <input type="text"
-               placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
-               ng-model="selectedUser.profile.description">
+      <div class="field" required>
+        <label>请选择你感兴趣的开发方向*</label>
+        <div class="inline fields">
+          <div class="field" ng-repeat="(key, value) in tracks">
+            <div class="ui checkbox">
+              <input type="checkbox" id="tracks-{{$index}}" ng-model="tracks[key]" />
+              <label for="tracks-{{$index}}">{{key}}</label>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="field">
