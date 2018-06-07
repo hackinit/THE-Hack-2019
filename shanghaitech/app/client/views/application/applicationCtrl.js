@@ -135,38 +135,28 @@ angular.module('reg')
       }
 
       function _setupForm(){
-        $.fn.form.settings.rules.professionSelected = function(value) {
-          var profession = $("input[name='profession']:checked").val();
+        $.fn.form.settings.rules.groupSelected = function(value) {
+          var group = $("input[name='group']:checked").val();
 
-          return profession == "W" || profession == "S";
+          return group == "S" || group == "I";
         };
 
         $.fn.form.settings.rules.schoolSelectedAndEmpty = function(value) {
-          var profession = $("input[name='profession']:checked").val();
+          var group = $("input[name='group']:checked").val();
 
-          return (profession == "S" && value.length > 0) || profession == "W";
+          return (group == "I" && value.length > 0) || group == "S";
         };
 
         $.fn.form.settings.rules.workSelectedAndEmpty = function(value) {
-          var profession = $("input[name='profession']:checked").val();
+          var group = $("input[name='group']:checked").val();
 
-          return (profession == "W" && value.length > 0) || profession == "S";
+          return (group == "S" && value.length > 0) || group == "I";
         };
 
         $.fn.form.settings.rules.workSelectedAndIntegerBetween1And100 = function(value) {
-          var profession = $("input[name='profession']:checked").val();
+          var group = $("input[name='group']:checked").val();
 
-          return (profession == "W" && value >= 1 && value <= 100) || profession == "S";
-        };
-
-        $.fn.form.settings.rules.travelReimbursementSelected = function(value) {
-          var travelReimbursement = $("input[name='travel-reimbursement']:checked").val();
-
-          return travelReimbursement == "Y" || travelReimbursement == "N";
-        };
-
-        $.fn.form.settings.rules.travelReimbursementAndTypeProvided = function(value) {
-          return ($scope.user.profile.travelReimbursement == "Y" && $scope.user.profile.travelReimbursementType) || $scope.user.profile.travelReimbursement == "N";
+          return (group == "S" && value >= 1 && value <= 100) || group == "I";
         };
 
         // Semantic-UI form validation
@@ -219,11 +209,11 @@ angular.module('reg')
               ]
             },
 
-            profession: {
-              identifier: 'profession',
+            group: {
+              identifier: 'group',
               rules: [
                 {
-                  type: 'professionSelected',
+                  type: 'groupSelected',
                   prompt: '请选择你的身份'
                 }
               ]
@@ -275,26 +265,6 @@ angular.module('reg')
                 {
                   type: 'workSelectedAndIntegerBetween1And100',
                   prompt: '请输入你的工作经验'
-                }
-              ]
-            },
-
-            travelReimbursement: {
-              identifier: 'travel-reimbursement',
-              rules: [
-                {
-                  type: 'travelReimbursementSelected',
-                  prompt: '请选择你是否需要交通补助'
-                }
-              ]
-            },
-
-            travelReimbursementType: {
-              identifier: 'travel-reimbursement-type',
-              rules: [
-                {
-                  type: 'travelReimbursementAndTypeProvided',
-                  prompt: '请选择你的出发区域'
                 }
               ]
             },
