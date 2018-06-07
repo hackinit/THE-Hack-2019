@@ -171,23 +171,17 @@ var schema = new mongoose.Schema({
       max: 200,
     },
 
-    profession: {
+    group: {
       type: String,
       enum: {
         values: [
-          "W",
+          "I",
           "S",
         ]
       },
     },
 
-    study: {
-      school: {
-        type: String,
-        min: 1,
-        max: 150,
-      },
-
+    hackshanghai: {
       subject: {
         type: String,
       },
@@ -205,12 +199,20 @@ var schema = new mongoose.Schema({
       },
     },
 
-    work: {
-      experience: {
-        type: Number,
+    hackinit: {
+      pastExperience: {
+        type: String,
       },
 
-      techStack: {
+      stemInterest: {
+        type: String,
+      },
+
+      projExp: {
+        type: String,
+      },
+
+      currentIssue: {
         type: String,
       },
     },
