@@ -18,6 +18,15 @@ services:
         links:
             - hackinit_mongo
 
+    hackinit_quill_en:
+        restart: always
+        build: ./hackinit/quill_en
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - hackinit_mongo
+
     hackinit_marko:
         restart: always
         build: ./hackinit/marko
@@ -36,6 +45,15 @@ services:
     hackshanghai_quill:
         restart: always
         build: ./hackshanghai/quill
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - hackshanghai_mongo
+
+    hackshanghai_quill_en:
+        restart: always
+        build: ./hackshanghai/quill_en
         command: gulp server
         expose:
             - "3000"
@@ -135,8 +153,10 @@ services:
         links:
             - django
             - hackinit_quill
+            - hackinit_quill_en
             - hackinit_marko
             - hackshanghai_quill
+            - hackshanghai_quill_en
             - hackshanghai_marko
             - thehack_marko
             - 2017_marko
