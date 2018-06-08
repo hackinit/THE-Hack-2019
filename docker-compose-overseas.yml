@@ -20,6 +20,15 @@ services:
         links:
             - hackinit_mongo
 
+    hackinit_quill_en:
+        restart: always
+        build: ./hackinit/quill_en
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - hackinit_mongo
+
     hackinit_marko:
         restart: always
         build: ./hackinit/marko
@@ -40,6 +49,15 @@ services:
         build:
             context: ./hackshanghai/quill
             dockerfile: Dockerfile-overseas
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - hackshanghai_mongo
+
+    hackshanghai_quill_en:
+        restart: always
+        build: ./hackshanghai/quill_en
         command: gulp server
         expose:
             - "3000"
@@ -79,6 +97,8 @@ services:
         command: python manage.py runserver 0.0.0.0:8000
         expose:
             - "8000"
+        links:
+            - redis
         env_file: ./django/secrets.env
 
     redis:
@@ -86,6 +106,13 @@ services:
         image: redis:3.2.11
         expose:
             - "6379"
+
+    s3:
+        restart: always
+        build: s3
+        command: python listen.py
+        links:
+            - redis
 
     ambassador_mongo:
         restart: always
@@ -106,6 +133,23 @@ services:
         links:
             - ambassador_mongo
 
+    shanghaitech_mongo:
+        restart: always
+        image: mongo:3.0.15-wheezy
+        expose:
+            - "27017"
+        volumes:
+            - ../db/shanghaitech:/data/db
+
+    shanghaitech_quill:
+        restart: always
+        build: ./shanghaitech
+        command: gulp server
+        expose:
+            - "3000"
+        links:
+            - shanghaitech_mongo
+
     nginx:
         restart: always
         build: ./nginx
@@ -115,11 +159,14 @@ services:
         links:
             - django
             - hackinit_quill
+            - hackinit_quill_en
             - hackinit_marko
             - hackshanghai_quill
+            - hackshanghai_quill_en
             - hackshanghai_marko
             - thehack_marko
             - 2017_marko
             - ambassador_quill
+            - shanghaitech_quill
         volumes_from:
             - 2017_static
