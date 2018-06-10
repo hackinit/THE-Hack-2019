@@ -137,8 +137,8 @@
         <div class="divided title">Travel Reimbursement</div>
         <fieldset ng-disabled="regIsClosed">
           <div class="field" required>
-            <label>Will you need travel reimbursement to come to hack.init()?*</label>
-            <p>If you are traveling to hack.init() from other places, the Organizing Committee will provide travel grant up to full amount of trip fare. Travel grant will be reimbursed through bank transfer within 30 days after completion of hack.init(). Eligible travel methods are listed below:</p>
+            <label>Will you need travel reimbursement to come to hackShanghai?*</label>
+            <p>If you are traveling to hackShanghai from other places, the Organizing Committee will provide travel grant up to full amount of trip fare. Travel grant will be reimbursed through bank transfer within 30 days after completion of hackShanghai. Eligible travel methods are listed below:</p>
             <ul>
               <li>Within Shanghai: No reimbursement</li>
               <li>Zhejiang and Jiangsu: Train (G/D/C or other, Coach) or by Car</li>
@@ -165,7 +165,7 @@
 
           <div class="field" required ng-show="user.profile.travelReimbursement == 'Y'">
             <label>Category of Reimbursement*</label>
-            <p>From where will you travel to hack.init()?</p>
+            <p>From where will you travel to hackShanghai?</p>
 
             <select name="travel-reimbursement-type" ng-model="user.profile.travelReimbursementType">
               <option value="">Please select...</option>
@@ -220,7 +220,7 @@
           </div>
 
           <div class="field" required>
-            <label>Do you have some idea about what you will do at hack.init()? *</label>
+            <label>Do you have some idea about what you will do at hackShanghai? *</label>
             <select name="idea" ng-model="user.profile.idea">
               <option value="">Please select...</option>
               <option value="N">None</option>
