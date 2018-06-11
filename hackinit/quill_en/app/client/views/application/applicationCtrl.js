@@ -24,13 +24,13 @@ angular.module('reg')
 
       // <tracks>
       var tracks = [
-        "人工智能",
-        "物联网",
-        "教育",
-        "区块链",
-        "金融",
-        "虚拟现实",
-        "自由发挥"
+        "Artificial Intelligence",
+        "Internet-of-Things",
+        "Education",
+        "Blockchain",
+        "Finance",
+        "VR/AR",
+        "Freestyle!"
       ];
 
       $scope.tracks = {};
@@ -119,8 +119,8 @@ angular.module('reg')
           .success(function(data){
             $('#uploading-loader').removeClass('active');
             sweetAlert({
-              title: "恭喜你！",
-              text: "你的申请已经成功提交",
+              title: "Success!",
+              text: "We have saved your application.",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
@@ -177,7 +177,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请填写你的法定全名'
+                  prompt: 'Please enter your name'
                 }
               ]
             },
@@ -186,7 +186,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'integer[1..150]',
-                  prompt: '请输入你的年龄'
+                  prompt: 'Please enter your age'
                 }
               ]
             },
@@ -195,7 +195,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请选择你的性别'
+                  prompt: 'Please select your gender'
                 }
               ]
             },
@@ -204,7 +204,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请输入你的手机号码'
+                  prompt: 'Please enter your phone number'
                 }
               ]
             },
@@ -213,7 +213,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请输入你的所在城市'
+                  prompt: 'Please enter your city'
                 }
               ]
             },
@@ -223,7 +223,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'professionSelected',
-                  prompt: '请选择你的身份'
+                  prompt: 'Please select your profession'
                 }
               ]
             },
@@ -233,7 +233,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'schoolSelectedAndEmpty',
-                  prompt: '请输入你的学校名称'
+                  prompt: 'Please enter your school name'
                 }
               ]
             },
@@ -243,7 +243,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'schoolSelectedAndEmpty',
-                  prompt: '请输入你的专业'
+                  prompt: 'Please enter your subject of study'
                 }
               ]
             },
@@ -253,7 +253,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'schoolSelectedAndEmpty',
-                  prompt: '请输入你的就读时长'
+                  prompt: 'Please enter your year of studies'
                 }
               ]
             },
@@ -263,7 +263,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'schoolSelectedAndEmpty',
-                  prompt: '请选择你的毕业年份'
+                  prompt: 'Please enter your graduation year'
                 }
               ]
             },
@@ -273,7 +273,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'workSelectedAndIntegerBetween1And100',
-                  prompt: '请输入你的工作经验'
+                  prompt: 'Please tell us about your work experience'
                 }
               ]
             },
@@ -283,7 +283,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'travelReimbursementSelected',
-                  prompt: '请选择你是否需要交通补助'
+                  prompt: 'Please select your reimbursement option'
                 }
               ]
             },
@@ -293,7 +293,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'travelReimbursementAndTypeProvided',
-                  prompt: '请选择你的出发区域'
+                  prompt: 'Please specify your departing area'
                 }
               ]
             },
@@ -303,7 +303,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请选择你的团队角色'
+                  prompt: 'Please select your team role'
                 }
               ]
             },
@@ -313,7 +313,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请上传你的简历'
+                  prompt: 'Please upload your resume'
                 }
               ]
             },
@@ -323,7 +323,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请输入你感兴趣的产业'
+                  prompt: 'Please tell us about your interested field'
                 }
               ]
             },
@@ -333,7 +333,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请回答本问题'
+                  prompt: 'Please respond to your previous experience'
                 }
               ]
             },
@@ -343,7 +343,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请回答本问题'
+                  prompt: 'Please respond to this question'
                 }
               ]
             },
@@ -353,7 +353,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请回答本问题'
+                  prompt: 'Please respond to this question'
                 }
               ]
             },
@@ -363,7 +363,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请回答本问题'
+                  prompt: 'Please respond to this question'
                 }
               ]
             },
@@ -373,7 +373,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请选择你的项目想法'
+                  prompt: 'Please select your idea phase'
                 }
               ]
             },
@@ -383,7 +383,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: '请上传你的简历'
+                  prompt: 'Please upload your resume'
                 }
               ]
             },
@@ -393,7 +393,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'checked',
-                  prompt: '请阅读并同意《选手行为守则》'
+                  prompt: 'Please read and agree to the Code of Conduct'
                 }
               ]
             },
@@ -403,7 +403,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'checked',
-                  prompt: '请阅读并同意《竞赛规则》'
+                  prompt: 'Please read and agree to the Official Rule'
                 }
               ]
             },
@@ -418,14 +418,14 @@ angular.module('reg')
           _uploadResume();
         }
         else{
-          sweetAlert("请检查你的信息", "请填写所有必填项", "error");
+          sweetAlert("Please check your information", "Fill in all required fields!", "error");
         }
       };
 
       function _uploadResume() {
         var files = $('#resume')[0].files;
         if (files.length == 0) {
-          sweetAlert("请检查你的信息", "请上传你的简历", "error");
+          sweetAlert("Please check your information", "Please upload your resume!", "error");
         } else {
           var resume = files[0];
           var formData = new FormData();
@@ -446,7 +446,7 @@ angular.module('reg')
           }).fail(function(result) {
             $('#uploading-loader').removeClass('active');
             if (result.status == 413) {
-              sweetAlert("请检查你的信息", "请缩小文件大小", "error");
+              sweetAlert("Please check your information", "Please compress your file!", "error");
             } else {
               sweetAlert("Uh oh!", "Something went wrong.", "error");
             }
