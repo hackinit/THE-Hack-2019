@@ -83,6 +83,13 @@
           </a>
         </div>
 
+        <div ng-show="loginState === 'login'" class="forgot">
+          <a href="https://my-en.hackshanghai.com/" >
+             English Version
+          </a>
+        </div>
+
+
         <div ng-show="loginState === 'forgot'" class="forgot">
           <a href="#" ng-click="setLoginState('login')">
             {{regIsOpen ? '登录或注册' : '登录'}}
