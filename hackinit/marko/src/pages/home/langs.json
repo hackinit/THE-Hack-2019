@@ -116,5 +116,13 @@
     "becomeSponsor": {
         "en": "<span id=\"first-word\">hack.init()</span> is a perfect place to feel the vibe of the newest generation. At hack.init(), you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.<br><br>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href=\"mailto:sponsorship@hackinit.org\">sponsorship@hackinit.org</a>.",
         "zh": "<span id=\"first-word\">hack.init()</span>是感受新一代青年人活力与能力的绝佳活动。在hack.init()中，您可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传您的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望您能参与到我们的伟大任务中来。<br><br>请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到 <a href=\"mailto:sponsorship@hackinit.org\">sponsorship@hackinit.org</a> 与我们联系！"
+    },
+    "hostTitle": {
+        "en": "Hosted by",
+        "zh": "主办方"
+    },
+    "communityTitle": {
+        "en": "Strategic Partner Communities",
+        "zh": "战略合作社区"
     }
 }
