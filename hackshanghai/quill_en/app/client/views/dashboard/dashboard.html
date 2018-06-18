@@ -1,13 +1,13 @@
 <div id="dashboard" class="page">
   <div class="divided title">
-    控制面板
+    Dashboard
   </div>
 
   <div class="ui stackable centered page grid">
     <div class="column">
       <div class="ui status segment">
         <div class="small title">
-          你的当前状态：
+          Your Current Status
         </div>
         <br>
 
@@ -21,14 +21,14 @@
         <div
           class="declined state"
           ng-if="dashState('admittedAndCannotConfirm')">
-          Expired Admission 邀请已过期
+          Expired Admission
         </div>
 
 
         <div
           ng-if="showWaitlist"
           class="waitlist state">
-          On waitlist 等待名单
+          On waitlist
         </div>
 
         <div class="ui divider"></div>
@@ -48,14 +48,14 @@
           class="description">
           <p>
             <strong>
-            你的账号 ({{user.email}}) 还未被验证。
+            Your email ({{user.email}}) has not been verified.
             </strong>
           </p>
           <p>
             {{ DASHBOARD.UNVERIFIED }}
           </p>
           <div class="ui purple button" ng-click="resendEmail()">
-            重新发送验证邮件
+            Resend verification email
           </div>
         </div>
 
@@ -63,7 +63,7 @@
           ng-class="settings.timeClose"
           ng-if="!dashState('admittedAndCanConfirm') || !dashState('admittedAndCannotConfirm') || !dashState('confirmed') || !dashState('declined')">
           <strong>
-            参赛申请截止日期：
+            Application Deadline:
           </strong>
           {{ timeClose }} <br />
         </div>
@@ -91,7 +91,7 @@
 
           <div class="ui purple button"
                ui-sref="app.application">
-            完成你的申请
+            Complete your application
           </div>
 
         </div>
@@ -100,16 +100,11 @@
           ng-if="dashState('openAndSubmitted')"
           class="description">
           <p>
-            <strong>
-                {{ DASHBOARD.SUBMITTED_TITLE }}
-            </strong>
-          </p>
-          <p>
             {{ DASHBOARD.SUBMITTED }}
           </p>
           <div class="ui purple button"
                ui-sref="app.application">
-            修改你的申请
+            Change your application
           </div>
 
           <!--<div
@@ -151,7 +146,7 @@
 
           <div class="ui purple button"
                ui-sref="app.application">
-            查看你的申请
+            View your application
           </div>
 
           <!--<div
