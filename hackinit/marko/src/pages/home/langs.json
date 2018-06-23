@@ -125,6 +125,18 @@
         "en": "Co-hosted by",
         "zh": "联合主办方"
     },
+    "gigaTitle": {
+        "en": "Giga Sponsor",
+        "zh": "白金赞助商"
+    },
+    "megaTitle": {
+        "en": "Mega Sponsor",
+        "zh": "黄金赞助商"
+    },
+    "kiloTitle": {
+        "en": "Kilo Sponsor",
+        "zh": "白银赞助商"
+    },
     "communityTitle": {
         "en": "Strategic Partner Communities",
         "zh": "战略合作社区"
