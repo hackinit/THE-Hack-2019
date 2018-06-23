@@ -121,6 +121,10 @@
         "en": "Hosted by",
         "zh": "主办方"
     },
+    "cohostTitle": {
+        "en": "Co-hosted by",
+        "zh": "联合主办方"
+    },
     "communityTitle": {
         "en": "Strategic Partner Communities",
         "zh": "战略合作社区"
