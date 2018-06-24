@@ -116,6 +116,7 @@ CORS_ORIGIN_WHITELIST = (
     'thehack.org.cn',
     'my-en.hackinit.org',
     'my-en.hackshanghai.com',
+    'shanghaitech.thehack.org.cn',
 )
 
 CORS_ALLOW_HEADERS = default_headers + (
