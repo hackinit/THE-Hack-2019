@@ -219,56 +219,6 @@ angular.module('reg')
               ]
             },
 
-            school: {
-              identifier: 'school',
-              rules: [
-                {
-                  type: 'schoolSelectedAndEmpty',
-                  prompt: '请输入你的学校名称'
-                }
-              ]
-            },
-
-            subjectOfStudy: {
-              identifier: 'subject-of-study',
-              rules: [
-                {
-                  type: 'schoolSelectedAndEmpty',
-                  prompt: '请输入你的专业'
-                }
-              ]
-            },
-
-            yearOfStudies: {
-              identifier: 'year-of-studies',
-              rules: [
-                {
-                  type: 'schoolSelectedAndEmpty',
-                  prompt: '请输入你的就读时长'
-                }
-              ]
-            },
-
-            graduationYear: {
-              identifier: 'graduation-year',
-              rules: [
-                {
-                  type: 'schoolSelectedAndEmpty',
-                  prompt: '请选择你的毕业年份'
-                }
-              ]
-            },
-
-            workExperience: {
-              identifier: 'work-experience',
-              rules: [
-                {
-                  type: 'workSelectedAndIntegerBetween1And100',
-                  prompt: '请输入你的工作经验'
-                }
-              ]
-            },
-
             description: {
               identifier: 'description',
               rules: [
