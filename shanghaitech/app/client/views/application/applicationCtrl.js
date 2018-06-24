@@ -335,13 +335,15 @@ angular.module('reg')
 
 
       $scope.submitForm = function(){
-        $('.ng-hide [required]').removeAttr('required');
+        var required = $('.ng-hide [required]');
+        required.removeAttr('required');
         if ($('.ui.form').form('is valid')){
           _uploadResume();
         }
         else{
           sweetAlert("请检查你的信息", "请填写所有必填项", "error");
         }
+        required.addAttr('required');
       };
 
       function _uploadResume() {
