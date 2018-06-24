@@ -191,38 +191,34 @@ angular.module('reg')
       function generateSections(user){
         var professionFields = [];
 
-        if (user.profile.profession == "S") {
+        if (user.profile.group == "S") {
           professionFields = [
             {
-              name: "School",
-              value: user.profile.study.school,
-            },
-            {
               name: "Subject",
-              value: user.profile.study.subject,
+              value: user.profile.hackshanghai.subject,
             },
             {
               name: "Year of studies",
-              value: user.profile.study.yearOfStudies,
+              value: user.profile.hackshanghai.yearOfStudies,
             },
             {
               name: "Graduation year",
-              value: user.profile.study.graduationYear,
+              value: user.profile.hackshanghai.graduationYear,
             },
             {
               name: "Tech Stack",
-              value: user.profile.study.techStack,
+              value: user.profile.hackshanghai.techStack,
             },
           ];
-        } else if (user.profile.profession == "W") {
+        } else if (user.profile.group == "I") {
           professionFields = [
             {
               name: "Work experience",
-              value: user.profile.work.experience + "y",
+              value: user.profile.hackinit.pastExperience,
             },
             {
               name: "Tech Stack",
-              value: user.profile.work.techStack,
+              value: user.profile.hackinit.currentIssue,
             },
           ];
         }
@@ -299,7 +295,7 @@ angular.module('reg')
                 value: (user.profile.ideaTracks || []).join(", "),
               },{
                 name: 'Profession',
-                value: user.profile.profession
+                value: user.profile.group
               },
             ]
           },{
