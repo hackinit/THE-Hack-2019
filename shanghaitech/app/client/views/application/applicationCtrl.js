@@ -343,7 +343,7 @@ angular.module('reg')
         else{
           sweetAlert("请检查你的信息", "请填写所有必填项", "error");
         }
-        required.addAttr('required');
+        required.attr('required');
       };
 
       function _uploadResume() {
