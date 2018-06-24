@@ -335,6 +335,7 @@ angular.module('reg')
 
 
       $scope.submitForm = function(){
+        $('.ng-hide [required]').removeAttr('required');
         if ($('.ui.form').form('is valid')){
           _uploadResume();
         }
