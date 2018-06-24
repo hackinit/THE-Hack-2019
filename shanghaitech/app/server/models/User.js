@@ -423,7 +423,6 @@ schema.statics.validateProfile = function(profile, cb){
         profile.group == "I"
       )
     ) &&
-    ["Y", "N"].includes(profile.travelReimbursement) &&
     profile.description.length > 0 &&
     ["Y", "N", "S"].includes(profile.idea) &&
     profile.legal.terms &&
