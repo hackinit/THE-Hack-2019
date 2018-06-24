@@ -12,7 +12,7 @@ ALPHABET = [chr(ord('0') + i) for i in range(10)] \
 
 REDIS_HOST = 'redis'
 
-class S3UploadMiddleware(APIView):
+class S3Middleware(APIView):
     parser_classes = (MultiPartParser, FormParser,)
 
     def put(self, request, filename, format=None):
@@ -22,7 +22,6 @@ class S3UploadMiddleware(APIView):
         db_content = redis.StrictRedis(host=REDIS_HOST, port=6379, db=1)
         db_queue = redis.StrictRedis(host=REDIS_HOST, port=6379, db=2)
         db_status = redis.StrictRedis(host=REDIS_HOST, port=6379, db=3)
-        db_operation = redis.StrictRedis(host=REDIS_HOST, port=6379, db=4)
 
         random.shuffle(ALPHABET)
         token = ''.join(ALPHABET[:8])
@@ -31,7 +30,6 @@ class S3UploadMiddleware(APIView):
 
         db_queue.publish('upload-channel', token)
         db_status.set(token, 'pending')
-        db_operation.set(token, 'upload')
 
         return Response({
             'token': token,
@@ -51,33 +49,5 @@ class S3StatusQuery(APIView):
         status = db_status.get(token)
         return Response({
             'result': 'null' if status is None else status,
-            'status': 200,
-        })
-
-class S3PrefixMiddleware(APIView):
-    def get(self, request, filename, format=None):
-        db_queue = redis.StrictRedis(host=REDIS_HOST, port=6379, db=2)
-        db_operation = redis.StrictRedis(host=REDIS_HOST, port=6379, db=4)
-        db_prefix = redis.StrictRedis(host=REDIS_HOST, port=6379, db=5)
-        db_result = redis.StrictRedis(host=REDIS_HOST, port=6379, db=6)
-
-        p = db_queue.pubsub()
-        p.subscribe('download-channel')
-
-        random.shuffle(ALPHABET)
-        token = ''.join(ALPHABET[:8])
-        db_prefix.set(token, filename)
-        db_operation.set(token, 'prefix')
-
-        db_queue.publish('upload-channel', token)
-
-        for message in p.listen():
-            result_token = message['data']
-            if result_token == token:
-                result = db_result.get(token)
-                break
-
-        return Response({
-            'result': result,
             'status': 200,
         })
