@@ -417,18 +417,12 @@ schema.statics.validateProfile = function(profile, cb){
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
     (
       (
-        profile.profession == "S" &&
-        profile.study.school.length > 0 &&
-        profile.study.graduationYear >= (currentYear - 1) &&
-        profile.study.graduationYear <= (currentYear + 10) &&
-        profile.study.subject.length > 0
+        profile.group == "S"
       ) ||
       (
-        profile.profession == "W" &&
-        profile.work.experience >= 0
+        profile.group == "I"
       )
     ) &&
-    ["Y", "N"].includes(profile.travelReimbursement) &&
     profile.description.length > 0 &&
     ["Y", "N", "S"].includes(profile.idea) &&
     profile.legal.terms &&
