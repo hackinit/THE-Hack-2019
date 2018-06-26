@@ -33,7 +33,7 @@ angular.module('reg')
 
       function getUserResume() {
         var id = $scope.selectedUser._id;
-        var prefix = 'upload/resume/hackinit/' + id + '_resume';
+        var prefix = 'upload/resume/shanghaitech/' + id + '_resume';
         $http
           .get('https://api.thehack.org.cn/s3/prefix/' + prefix)
           .then(function(res) {
