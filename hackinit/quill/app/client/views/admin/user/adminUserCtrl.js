@@ -34,11 +34,10 @@ angular.module('reg')
       function getUserResume() {
         var id = $scope.selectedUser._id;
         var prefix = 'upload/resume/hackinit/' + id + '_resume';
-        console.log(prefix);
         $http
           .get('https://api.thehack.org.cn/s3/prefix/' + prefix)
           .then(function(res) {
-            var url = res.data.result;
+            var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
             $scope.selectedUser.profile.resume = url;
           });
       }
