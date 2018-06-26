@@ -279,9 +279,9 @@
         <input type="text" ng-model="user.profile.devpost">
       </div>
 
-      <div class="field" required>
-        <label>你的简历*</label>
-        <input type="file" id="resume">
+      <div class="field">
+          <label> 简历</label>
+          <a target="_blank" href="{{ selectedUser.profile.resume }}">{{selectedUser.profile.resume}}</a>
       </div>
 
       <div class="field" required>
