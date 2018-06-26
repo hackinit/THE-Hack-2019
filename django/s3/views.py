@@ -29,9 +29,9 @@ class S3UploadMiddleware(APIView):
         db_filename.set(token, filename)
         db_content.set(token, content)
 
-        db_queue.publish('upload-channel', token)
         db_status.set(token, 'pending')
         db_operation.set(token, 'upload')
+        db_queue.publish('upload-channel', token)
 
         return Response({
             'token': token,
