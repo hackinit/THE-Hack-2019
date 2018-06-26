@@ -10,6 +10,8 @@ angular.module('reg')
       // Populate the school dropdown
       populateSchools();
 
+      getUserResume();
+
       /**
        * TODO: JANK WARNING
        */
@@ -29,6 +31,16 @@ angular.module('reg')
           });
       }
 
+      function getUserResume() {
+        var id = $scope.selectedUser._id;
+        var prefix = 'upload/resume/hackinit/' + id + '_resume';
+        $http
+          .get('https://api.thehack.org.cn/s3/prefix/' + prefix)
+          .then(function(res) {
+            var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
+            $scope.selectedUser.profile.resume = url;
+          });
+      }
 
       $scope.updateProfile = function(){
         UserService
