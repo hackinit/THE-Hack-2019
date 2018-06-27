@@ -417,7 +417,8 @@ angular.module('reg')
 
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
-          _uploadResume();
+          //_uploadResume();
+          _updateUser();
         }
         else{
           sweetAlert("请检查你的信息", "请填写所有必填项", "error");
