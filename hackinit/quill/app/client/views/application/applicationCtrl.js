@@ -112,6 +112,8 @@ angular.module('reg')
         ].filter(function (track) {
           return $scope.tracks[track];
         });
+
+        $scope.user.profile.testField = true;
         // </tracks>
 
         UserService
