@@ -300,6 +300,11 @@ var schema = new mongoose.Schema({
         type: Boolean,
         default: false,
       }
+    },
+
+    testField: {
+      type: Boolean,
+      default: false,
     }
   },
 
