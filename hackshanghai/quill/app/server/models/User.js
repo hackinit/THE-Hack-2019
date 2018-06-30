@@ -6,6 +6,24 @@ var mongoose   = require('mongoose'),
 
 // Only after confirmed
 var confirmation = {
+  idType: {
+    type: String,
+    enum: {
+      values: 'N P O'.split(' ')
+    },
+    default: '',
+  },
+
+  idNumber: {
+    type: String,
+    default: '',
+  },
+
+  reimbursementAmount: {
+    type: Number,
+    default: 0,
+  },
+
   phoneNumber: String,
   dietaryRestrictions: [String],
   shirtSize: {
@@ -14,6 +32,44 @@ var confirmation = {
       values: 'XS S M L XL XXL WXS WS WM WL WXL WXXL'.split(' ')
     }
   },
+
+  healthConsent: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+
+  ruleConsent: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+
+  cocConsent: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+
+  knownAllergy: {
+    type: String,
+    default: '',
+  },
+
+  knownCondition: {
+    type: String,
+    default: '',
+  },
+
+  currentMed: {
+    type: String,
+    default: '',
+  },
+
+  devTrack: {
+
+  }
+
   wantsHardware: Boolean,
   hardware: String,
 
@@ -29,6 +85,8 @@ var confirmation = {
   receipt: String,
 
   notes: String,
+
+
 };
 
 var status = {

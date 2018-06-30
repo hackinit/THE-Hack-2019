@@ -1,6 +1,6 @@
 <div class="page">
   <div class="divided title">
-    Confirmation
+    确认参赛
   </div>
 
   <div class="ui stackable page grid">
@@ -8,30 +8,64 @@
 
       <div class="ui form">
 
-        <div class="divided title">Basic Details</div>
+        <div class="divided title">身份信息</div>
 
         <fieldset ng-disabled="pastConfirmation">
 
           <div class="field">
-            <label> What's your phone number? (required) </label>
+            <label> 请选择你的身份证件类型 * </label>
             <p>
-              We need this in case we need to get ahold of you!
+              我们需要为你购买保险。
             </p>
-            <input type="tel"
-                   name="phone"
-                   ng-model="user.confirmation.phoneNumber"
-                   placeholder="(123) - 555 - 1234"
+            <select
+              name="idtype"
+              ng-model="user.confirmation.idType"
+              required>
+              <option value="">请选择...</option>
+              <option value="N">中华人民共和国身份证</option>
+              <option value="P">护照</option>
+              <option value="O">其他</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label> 请填写你的身份证件号码 * </label>
+            <input type="text"
+                   name="idnum"
+                   ng-model="user.confirmation.idNumber"
                    required>
           </div>
 
           <div class="field">
-            <label> Dietary Restrictions </label>
+            <label> 请填写你的手机号码 * </label>
+            <input type="tel"
+                   name="phone"
+                   ng-model="user.confirmation.phoneNumber"
+                   required>
+          </div>
+
+          <div class="divided title">健康及安全信息</div>
+
+          <p>请如实、完整填写以下信息。竞赛主体及被免责方（定义见<a target="_blank" href="/s/doc/Hackathon-Official-Rule-zh.pdf">参赛规则</a>）对因您信息遗漏造成的任何后果不承担任何形式的民事及刑事责任，并保留在法律许可范围内最大限度追究因您信息遗漏造成的任何后果的赔偿。</p>
+
+          <div class="field" required>
+            <label>你是否足够健康以参与本次24小时活动？ *</label>
+            <select
+              name="idtype"
+              ng-model="user.confirmation.healthConsent"
+              required>
+              <option value=null>请选择...</option>
+              <option value=true>是</option>
+              <option value=false>否（你将无法参赛）</option>
+            </select>
+
+          </div>
+
+          <div class="field">
+            <label> 饮食限制 </label>
 
             <p>
-              If your restriction is not included here, please let us know in the additional notes at the bottom.
-            </p>
-            <p>
-              We'll make sure you get fed :)
+              如果如下的饮食限制未包含你的饮食限制，请在下方更多信息中提出。
             </p>
 
           </div>
@@ -49,86 +83,87 @@
           </div>
 
           <div class="field">
-            <label> Shirt Size (required) </label>
-            <p>
-              Let's get you some swag!
-            </p>
+            <label> 你是否有已知过敏源？如果有，请完整列出。 </label>
+            <input type="text"
+                   name="allergy"
+                   ng-model="user.confirmation.knownAllergy">
+          </div>
+
+          <div class="field">
+            <label> 你是否有任何过往病史或目前拥有的疾病状况？如果有，请完整列出。 </label>
+            <input type="text"
+                   name="medical-condition-addon"
+                   ng-model="user.confirmation.knownCondition">
+          </div>
+
+          <div class="field">
+            <label> 你是否目前正在摄入任何可能影响你安全参与活动的药物？如果有，请完整列出。 </label>
+            <input type="text"
+                   name="medicine"
+                   ng-model="user.confirmation.currentMed">
+          </div>
+
+          <div class="divided title">纪念品信息</div>
+
+          <div class="field">
+            <label> 请选择你的T恤大小 * </label>
             <select
               name="shirt"
               ng-model="user.confirmation.shirtSize"
               required>
-              <option value="">Shirt Size</option>
-              <option value="XS">Unisex X-Small</option>
-              <option value="S">Unisex Small</option>
-              <option value="M">Unisex Medium</option>
-              <option value="L">Unisex Large</option>
-              <option value="XL">Unisex X-Large</option>
-              <option value="XXL">Unisex XX-Large</option>
-              <option value="WXS">Women's X-Small</option>
-              <option value="WS">Women's Small</option>
-              <option value="WM">Women's Medium</option>
-              <option value="WL">Women's Large</option>
-              <option value="WXL">Women's X-Large</option>
-              <option value="WXXL">Women's XX-Large</option>
+              <option value="">请选择...</option>
+              <option value="XS">通用 XS</option>
+              <option value="S">通用 S</option>
+              <option value="M">通用 M</option>
+              <option value="L">通用 L</option>
+              <option value="XL">通用 XL</option>
+              <option value="XXL">通用 XXL</option>
+              <option value="WXS">女款 XS</option>
+              <option value="WS">女款 S</option>
+              <option value="WM">女款 M</option>
+              <option value="WL">女款 L</option>
+              <option value="WXL">女款 XL</option>
+              <option value="WXXL">女款 XXL</option>
             </select>
           </div>
 
+          <div class="divided title">交通补助信息</div>
+
           <div class="field">
-            <label>
-              Will you be needing hardware?
-            </label>
+            <p>
+              THE Hack 组委会将为你参与本次活动提供总额为 {{reimbursementAcc}} 人民币的交通补助。<b>我们不会为上海市内的参赛者提供交通补助。</b>如果你对交通问题有任何疑问，请发送邮件至<a href="mailto:travel@thehack.io">travel@thehack.io</a>。
+            </p>
+
+            <p>THE Hack 组委会提供的交通补助将仅被用作前往活动现场的交通费用合理使用。我认可所有超出限额的支出将不会被报销，并认可将在活动现场提交可被接受的报销凭证以获得报销。可被接受的报销凭证包括发票、火车票（原件）、汽车票（原件）及注明票价的航空运输电子客票行程单。请注意如下交通要求：
+            </p>
+
+            <ul>
+              <li>上海市内：不提供交通补贴</li>
+              <li>江浙沪地区：火车（G/D/C或其他，二等座）、汽车</li>
+              <li>其他地区：火车（G/D/C或其他，二等座）、汽车、飞机</li>
+            </ul>
+            <p>
+              <b>重要提示：</b> 为获得交通补助，你必须在活动现场的交通补助登记中心提交你的出行凭证原件。我们将会留存你的身份证复印件以完成可能的报税工作。
+            </p>
+          </div>
+
+          <div class="field">
+            <label> 你是否需要交通补助（不选择即表示不需要）？ </label>
             <div class="ui checkbox">
-              <input type="checkbox" ng-model="user.confirmation.wantsHardware">
-              <label> Yes, I would like to use hardware in my hack. </label>
+              <input type="checkbox" ng-model="user.confirmation.needsReimbursement">
+              <label> 我需要交通补助，并将于2018年7月21日前往上海参加活动。 </label>
             </div>
           </div>
 
-          <div
-            class="field"
-            ng-show="user.confirmation.wantsHardware">
-            <label>
-              What kind of hardware would be useful for you?
-            </label>
-            <p>
-              We will have a hardware checkout, and we'll try our best to provide things that would be useful to you - however, we can't guarantee everything. We will publish a list of available hardware closer to the day of the event.
-            </p>
-            <input type="text" ng-model="user.confirmation.hardware">
-          </div>
-
-
           <br>
           <br>
 
-          <div class="divided title"> Skills & Accomplishments </div>
+          <div class="divided title"> 专业信息 </div>
 
           <div class="field">
-            <label> What are you studying? </label>
-            <input type="text"
-                   name="study"
-                   placeholder="Computer Science, Product Design, Basket Weaving, etc."
-                   ng-model="user.confirmation.major">
-          </div>
-
-          <div class="field">
-            <label> Github </label>
-            <input type="text"
-                   name="github"
-                   placeholder="https://github.com/foobar"
-                   ng-model="user.confirmation.github">
-          </div>
-
-          <div class="field">
-            <label> Twitter </label>
-            <input type="text"
-                   name="twitter"
-                   placeholder="https://twitter.com/foobar"
-                   ng-model="user.confirmation.twitter">
-          </div>
-
-          <div class="field">
-            <label> Skill Sheet (required) </label>
+            <label> 简历（最新版） </label>
             <p>
-              Upload a document outlining any skills or experience you'd like to share (ex. resume). PDF preferred!
+              简历将被共享至竞赛合作方以被考虑潜在实习或全职工作机会。
             </p>
             <a
               target="_blank"
@@ -141,182 +176,7 @@
           <br>
           <br>
 
-          <div class="divided title">Hosting Details</div>
-
-          <p>
-            Would you like us to find you a host? We can match you with someone so you can catch some zzz's the night before and/or the night of the event!
-          </p>
-
-          <div class="field">
-            <div class="ui checkbox">
-              <input type="checkbox" ng-model="user.confirmation.hostNeededFri">
-              <label>
-                <strong>
-                  I would like a host for Friday, Sept. 18th.
-                </strong>
-              </label>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="ui checkbox">
-              <input type="checkbox" ng-model="user.confirmation.hostNeededSat">
-              <label>
-                <strong>
-                I would like a host for Saturday, Sept. 19th.
-                </strong>
-              </label>
-            </div>
-          </div>
-
-          <div
-            ng-show="user.confirmation.hostNeededFri || user.confirmation.hostNeededSat">
-
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" ng-model="user.confirmation.genderNeutral">
-                <label> I would be okay with gender neutral housing. </label>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" ng-model="user.confirmation.smokingFriendly">
-                <label> I would be okay in housing with smoking-friendly policies. </label>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" ng-model="user.confirmation.catFriendly">
-                <label> I would be okay in housing that has cats. Meow! </label>
-              </div>
-            </div>
-
-
-            <div class="field">
-              <label>
-                Let us know if there's anything else we should know about matching you with a host.
-              </label>
-              <textarea
-                name="hostNotes"
-                ng-model="user.confirmation.hostNotes">
-              </textarea>
-            </div>
-
-          </div>
-
-          <br>
-          <br>
-
-          <div class="divided title">Travel</div>
-
-          <div class="field">
-            <p>
-              As a reminder, our reimbursement policy is as follows:
-            </p>
-            <ul>
-              <li> Up to $100 from within Massachusetts </li>
-              <li> Up to $200 from anywhere else in North America </li>
-              <li> Up to $500 from outside North America </li>
-            </ul>
-            <p>
-              We’ll also be sending buses free of charge to Princeton, NJ; New York, NY; New Haven, CT; and Providence, RI. Again, we only reimburse the minimum-cost travel path. Head back to the dashboard to read our full travel policy.
-            </p>
-          </div>
-
-          <div class="field">
-            <label> Will you be needing travel reimbursement? </label>
-            <div class="ui checkbox">
-              <input type="checkbox" ng-model="user.confirmation.needsReimbursement">
-              <label> I will be needing travel reimbursement. </label>
-            </div>
-          </div>
-
-          <div
-            ng-show="user.confirmation.needsReimbursement">
-
-            <div class="ui header">
-              Mailing Address
-            </div>
-
-            <p>
-              Travel reimbursement is processed and sent by check after the event. To expedite the reimbursement process and ensure that you receive your reimbursement as quickly as possible, make sure that your mailing address is accurate and you upload your receipts.
-            </p>
-
-            <div class="field">
-              <label>Full Name</label>
-              <input type="text"
-                     name="name"
-                     ng-model="user.confirmation.address.name">
-            </div>
-
-            <div class="field">
-              <label> Address Line 1 - Street address, P.O. box, company name, c/o </label>
-              <input
-                type="text"
-                name="addressLine1"
-                ng-model="user.confirmation.address.line1">
-            </div>
-
-            <div class="field">
-              <label> Address Line 2 - Apartment, suite, unit, building, floor, etc. </label>
-              <input
-                type="text"
-                name="addressLine2"
-                ng-model="user.confirmation.address.line2">
-            </div>
-
-            <div class="four fields">
-              <div class="field">
-                <label> City </label>
-                <input
-                  type="text"
-                  name="city"
-                  ng-model="user.confirmation.address.city">
-              </div>
-              <div class="field">
-                <label> State/Province/Region </label>
-                <input
-                  type="text"
-                  name="state"
-                  ng-model="user.confirmation.address.state">
-              </div>
-              <div class="field">
-                <label> ZIP </label>
-                <input
-                  type="text"
-                  name="zip"
-                  ng-model="user.confirmation.address.zip">
-              </div>
-              <div class="field">
-                <label> Country </label>
-                <input
-                  type="text"
-                  name="country"
-                  ng-model="user.confirmation.address.country">
-              </div>
-            </div>
-
-            <div class="field">
-              <label> Travel Receipt </label>
-              <p>
-                So that we can process your reimbursement faster, please name your receipt: <strong>{{fileName}}</strong>
-              </p>
-              <a
-                target="_blank"
-                href="https://go.hackmit.org/travel-receipts"
-                class="ui pink button">
-                Upload Receipt
-              </a>
-            </div>
-
-          </div>
-
-          <br>
-          <br>
-
-          <div class="divided title">Legal</div>
+          <div class="divided title">法律信息</div>
 
           <div class="field">
             <label> Liability Waiver </label>
@@ -384,15 +244,12 @@
           <br>
           <br>
 
-          <div class="divided title">everything else</div>
+          <div class="divided title">其他信息</div>
 
           <div class="field">
             <label>
-              Additional Notes
+              如果有任何需要我们知道的，请在这里提出。
             </label>
-            <p>
-              If there's anything else you need to let us know, tell us here!
-            </p>
             <textarea
               ng-model="user.confirmation.notes"></textarea>
           </div>
@@ -401,7 +258,7 @@
             <button type="submit"
                     class="fluid ui purple button"
                     ng-click="submitForm()">
-              Submit
+              提交
             </button>
           </div>
 
