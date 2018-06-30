@@ -214,7 +214,13 @@ angular.module('reg')
           .modal('show');
       }
 
-      async function generateSections(user){
+      function generateSections(user) {
+        getUserResume(user).then(function(resumeLink) {
+          generateSections_(user, resumeLink);
+        });
+      }
+
+      function generateSections_(user, resumeLink){
         var professionFields = [];
 
         if (user.profile.profession == "S") {
@@ -325,7 +331,7 @@ angular.module('reg')
                 value: (user.profile.ideaTracks || []).join(", "),
               },{
                 name: 'Resume',
-                value: await getUserResume(user),
+                value: ResumeLink,
               },{
                 name: 'Profession',
                 value: user.profile.profession
