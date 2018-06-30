@@ -4,7 +4,8 @@ angular.module('reg')
     '$state',
     '$stateParams',
     'UserService',
-    function($scope, $state, $stateParams, UserService){
+    '$http',
+    function($scope, $state, $stateParams, UserService, $http){
 
       $scope.pages = [];
       $scope.users = [];
