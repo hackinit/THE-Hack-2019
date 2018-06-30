@@ -301,11 +301,6 @@ var schema = new mongoose.Schema({
         default: false,
       }
     },
-
-    testField: {
-      type: Boolean,
-      default: false,
-    }
   },
 
   /**
