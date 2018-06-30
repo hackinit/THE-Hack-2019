@@ -222,10 +222,10 @@ angular.module('reg')
         var promise = getUserResume(user);
 
         if (promise == undefined) {
-          generateSections_(user, "");
+          return generateSections_(user, "");
         } else {
           then(function(resumeLink) {
-            generateSections_(user, resumeLink);
+            return generateSections_(user, resumeLink);
           });
         }
       }
