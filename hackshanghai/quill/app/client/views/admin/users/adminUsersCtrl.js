@@ -217,8 +217,8 @@ angular.module('reg')
         //$scope.selectedUser.sections = generateSections(user);
         generateSections(user).then(function(sections) {
           $scope.selectedUser.sections = sections;
+          console.log($scope.selectedUser.sections);
         });
-        console.log($scope.selectedUser.sections);
         $('.long.user.modal')
           .modal('show');
       }
