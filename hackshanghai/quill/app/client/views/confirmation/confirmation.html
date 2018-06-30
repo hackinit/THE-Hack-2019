@@ -1,4 +1,7 @@
 <div class="page">
+  <div class="ui page dimmer" id="uploading-loader" style="z-index:10000;">
+    <div class="ui text loader">Uploading...</div>
+  </div>
   <div class="divided title">
     确认参赛
   </div>
@@ -6,7 +9,7 @@
   <div class="ui stackable page grid">
     <div class="column">
 
-      <div class="ui form">
+      <div class="ui form" ng-class="{'loading': loading}">
 
         <div class="divided title">身份信息</div>
 
