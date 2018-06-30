@@ -221,6 +221,8 @@ angular.module('reg')
       function generateSections(user) {
         var promise = getUserResume(user);
 
+        console.log(promise);
+
         if (promise == undefined) {
           return generateSections_(user, "");
         } else {
