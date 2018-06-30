@@ -66,24 +66,6 @@ var confirmation = {
     default: '',
   },
 
-  devTrack: {
-
-  }
-
-  wantsHardware: Boolean,
-  hardware: String,
-
-  address: {
-    name: String,
-    line1: String,
-    line2: String,
-    city: String,
-    state: String,
-    zip: String,
-    country: String
-  },
-  receipt: String,
-
   notes: String,
 
 
