@@ -340,7 +340,7 @@ angular.module('reg')
                 value: (user.profile.ideaTracks || []).join(", "),
               },{
                 name: 'Resume',
-                value: ResumeLink,
+                value: resumeLink,
               },{
                 name: 'Profession',
                 value: user.profile.profession
