@@ -32,7 +32,7 @@ angular.module('reg')
         $scope.pages = p;
       }
 
-      function getUserResume() {
+      function getUserResume(user) {
         var id = user._id;
         var prefix = 'upload/resume/' + id + '_resume';
         $http
@@ -40,7 +40,9 @@ angular.module('reg')
           .then(function(res) {
             if (res.data.result != "None") {
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
-              user.profile.resume = url;
+              return new Promise(resolve => {
+                resolve(url);
+              });
             }
           });
         var prefix2 = 'upload/resume/hackshanghai/' + id + '_resume';
@@ -49,7 +51,9 @@ angular.module('reg')
           .then(function(res) {
             if (res.data.result != "None") {
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
-              user.profile.resume = url;
+              return new Promise(resolve => {
+                resolve(url);
+              });
             }
           });
       }
@@ -210,7 +214,7 @@ angular.module('reg')
           .modal('show');
       }
 
-      function generateSections(user){
+      async function generateSections(user){
         var professionFields = [];
 
         if (user.profile.profession == "S") {
@@ -321,7 +325,7 @@ angular.module('reg')
                 value: (user.profile.ideaTracks || []).join(", "),
               },{
                 name: 'Resume',
-                value: user.profile.resume
+                value: await getUserResume(user),
               },{
                 name: 'Profession',
                 value: user.profile.profession
