@@ -234,7 +234,7 @@ angular.module('reg')
         } catch (e) {
           return promise2.then(function(link) {
             return generateSections_(user, link);
-          }
+          });
         }
       }
 
