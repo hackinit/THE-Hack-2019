@@ -43,7 +43,7 @@ angular.module('reg')
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
               return url;
             } else {
-              throw new Error();
+              throw "err";
             }
           });
       }
@@ -59,7 +59,7 @@ angular.module('reg')
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
               return url;
             } else {
-              throw new Error();
+              throw "err";
             }
           });
       }
