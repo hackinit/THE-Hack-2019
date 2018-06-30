@@ -44,7 +44,7 @@ angular.module('reg')
               console.log(user);
               return url;
             } else {
-              throw "err1";
+              return "";
             }
           });
       }
@@ -61,7 +61,7 @@ angular.module('reg')
               console.log(url);
               return url;
             } else {
-              throw "err2";
+              return "";
             }
           });
       }
@@ -218,10 +218,7 @@ angular.module('reg')
       function selectUser(user){
         $scope.selectedUser = user;
         //$scope.selectedUser.sections = generateSections(user);
-        generateSections(user).then(function(sections) {
-          $scope.selectedUser.sections = sections;
-          console.log($scope.selectedUser.sections);
-        });
+        generateSections(user);
         $('.long.user.modal')
           .modal('show');
       }
@@ -230,18 +227,20 @@ angular.module('reg')
         var promise = getUserResume(user);
         var promise2 = getUserResume2(user);
 
-        try {
-          return promise.then(function(link) {
-            console.log(link);
-            return generateSections_(user, link);
-          });
-        } catch (e) {
-          console.log(e);
-          return promise2.then(function(link) {
-            console.log(link);
-            return generateSections_(user, link);
-          });
-        }
+        promise.then(function(link) {
+          console.log(link);
+          if (link != "") {
+            var sections = generateSections_(user, link);
+            $scope.selectedUser.sections = sections;
+          }
+        });
+        promise2.then(function(link) {
+          console.log(link);
+          if (link != "") {
+            var sections = generateSections_(user, link);
+            $scope.selectedUser.sections = sections;
+          }
+        });
       }
 
       function generateSections_(user, resumeLink){
