@@ -112,6 +112,7 @@ angular.module('reg')
         ].filter(function (track) {
           return $scope.tracks[track];
         });
+
         // </tracks>
 
         UserService
