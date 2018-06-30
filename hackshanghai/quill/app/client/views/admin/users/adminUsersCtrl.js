@@ -40,7 +40,7 @@ angular.module('reg')
           .then(function(res) {
             if (res.data.result != "None") {
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
-              return new Promise(resolve => {
+              return new Promise(function(resolve){
                 resolve(url);
               });
             }
@@ -51,7 +51,7 @@ angular.module('reg')
           .then(function(res) {
             if (res.data.result != "None") {
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
-              return new Promise(resolve => {
+              return new Promise(function(resolve){
                 resolve(url);
               });
             }
