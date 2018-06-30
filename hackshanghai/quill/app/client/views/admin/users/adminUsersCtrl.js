@@ -340,6 +340,9 @@ angular.module('reg')
                 name: 'Description',
                 value: user.profile.description
               },{
+                name: 'Need Reimbursement',
+                value: user.profile.travelReimbursement
+              },{
                 name: 'WeChat',
                 value: user.profile.wechat
               },{
