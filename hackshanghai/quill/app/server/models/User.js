@@ -66,7 +66,10 @@ var confirmation = {
     default: '',
   },
 
-  notes: String,
+  notes: {
+    type: String,
+    default: '',
+  }
 
 
 };
