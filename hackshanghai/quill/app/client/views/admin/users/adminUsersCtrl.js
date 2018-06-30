@@ -35,6 +35,7 @@ angular.module('reg')
 
       function getUserResume(user) {
         var id = user._id;
+        console.log(user);
         var prefix = 'upload/resume/' + id + '_resume';
         console.log(prefix);
         $http
