@@ -153,6 +153,7 @@ angular.module('reg')
 
                 UserService
                   .admitUser(user._id)
+                  .updateReimbursement(user._id, user.confirmation.reimbursementAmount)
                   .success(function(user){
                     $scope.users[index] = user;
                     swal("Accepted", user.profile.name + ' has been admitted.', "success");
