@@ -20,15 +20,17 @@ angular.module('reg')
 
       $scope.fileName = user._id + "_" + user.profile.name.split(" ").join("_");
 
+      $scope.reimbursementAcc = user.confirmation.reimbursementAmount;
+
       // -------------------------------
       // All this just for dietary restriction checkboxes fml
 
       var dietaryRestrictions = {
-        'Vegetarian': false,
-        'Vegan': false,
-        'Halal': false,
-        'Kosher': false,
-        'Nut Allergy': false
+        '素食者': false,
+        '素食主义者': false,
+        '清真': false,
+        '洁食': false,
+        '坚果过敏': false
       };
 
       if (user.confirmation.dietaryRestrictions){
@@ -58,8 +60,8 @@ angular.module('reg')
           .updateConfirmation(user._id, confirmation)
           .success(function(data){
             sweetAlert({
-              title: "Woo!",
-              text: "You're confirmed!",
+              title: "欢迎参赛！",
+              text: "我们等不及在7月见到你",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
@@ -80,7 +82,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please give us a shirt size!'
+                  prompt: '请告知我们你的衣服大小'
                 }
               ]
             },
@@ -89,34 +91,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please enter a phone number.'
-                }
-              ]
-            },
-            signatureLiability: {
-              identifier: 'signatureLiabilityWaiver',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please type your digital signature.'
-                }
-              ]
-            },
-            signaturePhotoRelease: {
-              identifier: 'signaturePhotoRelease',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please type your digital signature.'
-                }
-              ]
-            },
-            signatureCodeOfConduct: {
-              identifier: 'signatureCodeOfConduct',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please type your digital signature.'
+                  prompt: '请输入你的手机号码'
                 }
               ]
             },
