@@ -230,10 +230,13 @@ angular.module('reg')
 
         try {
           return promise.then(function(link) {
+            console.log(link);
             return generateSections_(user, link);
           });
         } catch (e) {
+          console.log(e);
           return promise2.then(function(link) {
+            console.log(link);
             return generateSections_(user, link);
           });
         }
