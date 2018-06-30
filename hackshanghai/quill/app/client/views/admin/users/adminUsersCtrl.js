@@ -43,7 +43,7 @@ angular.module('reg')
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
               return url;
             } else {
-              return "";
+              throw new Error();
             }
           });
       }
@@ -58,7 +58,7 @@ angular.module('reg')
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
               return url;
             } else {
-              return "";
+              throw new Error();
             }
           });
       }
@@ -227,15 +227,15 @@ angular.module('reg')
         var promise = getUserResume(user);
         var promise2 = getUserResume2(user);
 
-        return promise.then(function(link) {
-          if (link !== "") {
+        try {
+          return promise.then(function(link) {
             return generateSections_(user, link);
-          } else {
-            promise2.then(function(link) {
-              return generateSections_(user, link);
-            });
+          });
+        } catch (e) {
+          return promise2.then(function(link) {
+            return generateSections_(user, link);
           }
-        });
+        }
       }
 
       function generateSections_(user, resumeLink){
