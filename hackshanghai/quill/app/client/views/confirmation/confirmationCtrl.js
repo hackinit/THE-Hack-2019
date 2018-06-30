@@ -6,6 +6,7 @@ angular.module('reg')
     'currentUser',
     'Utils',
     'UserService',
+    '$http',
     function($scope, $rootScope, $state, currentUser, Utils, UserService){
 
       // Set up the user
