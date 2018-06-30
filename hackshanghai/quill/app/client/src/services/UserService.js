@@ -79,6 +79,10 @@ angular.module('reg')
         return $http.post(base + id + '/admit');
       },
 
+      updateReimbursement: function(id, amount) {
+        return $http.post(base + id + '/updatereimburse/' + amount);
+      },
+
       checkIn: function(id){
         return $http.post(base + id + '/checkin');
       },
