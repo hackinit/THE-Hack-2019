@@ -218,9 +218,15 @@ angular.module('reg')
       }
 
       function generateSections(user) {
-        getUserResume(user).then(function(resumeLink) {
-          generateSections_(user, resumeLink);
-        });
+        var promise = getUserResume(user);
+
+        if (promise == undefined) {
+          generateSections_(user, "");
+        } else {
+          then(function(resumeLink) {
+            generateSections_(user, resumeLink);
+          });
+        }
       }
 
       function generateSections_(user, resumeLink){
