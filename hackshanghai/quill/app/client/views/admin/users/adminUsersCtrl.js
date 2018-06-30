@@ -54,6 +54,7 @@ angular.module('reg')
         return $http
           .get('https://api.thehack.org.cn/s3/prefix/' + prefix2)
           .then(function(res) {
+            console.log(res);
             if (res.data.result != "None") {
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
               return url;
