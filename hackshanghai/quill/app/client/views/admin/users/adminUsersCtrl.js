@@ -35,28 +35,30 @@ angular.module('reg')
 
       function getUserResume(user) {
         var id = user._id;
-        console.log(user);
         var prefix = 'upload/resume/' + id + '_resume';
-        console.log(prefix);
-        $http
+        return $http
           .get('https://api.thehack.org.cn/s3/prefix/' + prefix)
           .then(function(res) {
             if (res.data.result != "None") {
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
-              return new Promise(function(resolve){
-                resolve(url);
-              });
+              return url;
+            } else {
+              return "";
             }
           });
+      }
+
+      function getUserResume2(user) {
+        var id = user._id;
         var prefix2 = 'upload/resume/hackshanghai/' + id + '_resume';
-        $http
+        return $http
           .get('https://api.thehack.org.cn/s3/prefix/' + prefix2)
           .then(function(res) {
             if (res.data.result != "None") {
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
-              return new Promise(function(resolve){
-                resolve(url);
-              });
+              return url;
+            } else {
+              return "";
             }
           });
       }
@@ -220,16 +222,17 @@ angular.module('reg')
 
       function generateSections(user) {
         var promise = getUserResume(user);
+        var promise2 = getUserResume2(user);
 
-        console.log(promise);
-
-        if (promise == undefined) {
-          return generateSections_(user, "");
-        } else {
-          then(function(resumeLink) {
-            return generateSections_(user, resumeLink);
-          });
-        }
+        promise.then(function(link) {
+          if (link !== "") {
+            generateSections_(user, link);
+          } else {
+            promise2.then(function(link) {
+              generateSections_(user, link);
+            });
+          }
+        });
       }
 
       function generateSections_(user, resumeLink){
