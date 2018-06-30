@@ -11,7 +11,7 @@ var confirmation = {
     enum: {
       values: 'N P O'.split(' ')
     },
-    default: '',
+    default: 'O',
   },
 
   idNumber: {
