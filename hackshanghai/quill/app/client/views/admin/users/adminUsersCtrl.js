@@ -214,7 +214,10 @@ angular.module('reg')
 
       function selectUser(user){
         $scope.selectedUser = user;
-        $scope.selectedUser.sections = generateSections(user);
+        //$scope.selectedUser.sections = generateSections(user);
+        generateSections(user).then(function(sections) {
+          $scope.selectedUser.sections = sections;
+        });
         console.log($scope.selectedUser.sections);
         $('.long.user.modal')
           .modal('show');
@@ -224,12 +227,12 @@ angular.module('reg')
         var promise = getUserResume(user);
         var promise2 = getUserResume2(user);
 
-        promise.then(function(link) {
+        return promise.then(function(link) {
           if (link !== "") {
-            generateSections_(user, link);
+            return generateSections_(user, link);
           } else {
             promise2.then(function(link) {
-              generateSections_(user, link);
+              return generateSections_(user, link);
             });
           }
         });
