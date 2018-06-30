@@ -101,8 +101,60 @@ angular.module('reg')
 
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
-          _updateUser();
+          // _updateUser();
+          _uploadResume();
         }
       };
+
+      function _uploadResume() {
+        var files = $('#resume')[0].files;
+        if (files.length == 0) {
+          sweetAlert("请检查你的信息", "请上传你的简历", "error");
+        } else {
+          var resume = files[0];
+          var formData = new FormData();
+          formData.append('upload', resume, resume.name);
+          $('#uploading-loader').addClass('active');
+          $.ajax({
+            type: 'PUT',
+            url: 'https://api.thehack.org.cn/s3/upload/confirmation/hackshanghai/' + $scope.user._id + '_resume' + _getExtension(resume.name),
+            data: formData,
+            processData: false,
+            contentType: false,
+          }).done(function(result) {
+            var token = result.token;
+            _waitForSuccess(token, _updateUser, function() {
+              $('#uploading-loader').removeClass('active');
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            });
+          }).fail(function(result) {
+            $('#uploading-loader').removeClass('active');
+            if (result.status == 413) {
+              sweetAlert("请检查你的信息", "请缩小文件大小", "error");
+            } else {
+              sweetAlert("Uh oh!", "Something went wrong.", "error");
+            }
+          });
+        }
+      }
+
+      function _getExtension(filename) {
+        var matches = filename.match(/\.\w+$/);
+        return (matches === null) ? '' : matches[0];
+      }
+
+      function _waitForSuccess(token, success, failed) {
+        $http.get('https://api.thehack.org.cn/s3/status/' + token).then(function(response) {
+          if (response.data.result === 'success') {
+            success();
+          } else if (response.data.result === 'failed' || response.data.result === 'null') {
+            failed();
+          } else {
+            setTimeout(function() {
+              _waitForSuccess(token, success, failed);
+            }, 100);
+          }
+        });
+      }
 
     }]);
