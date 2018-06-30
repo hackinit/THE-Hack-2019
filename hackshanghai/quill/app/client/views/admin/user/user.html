@@ -239,134 +239,249 @@
     <fieldset ng-disabled="false">
 
       <div class="ui header">
-        Confirmation
+        确认参赛
       </div>
 
       <div class="field">
-        <label> Dietary Restrictions </label>
-        <input
-          type="text" ng-model="selectedUser.confirmation.dietaryRestrictions" />
-      </div>
-
-      <div class="field">
-        <label> Shirt Size </label>
+        <label> 请选择你的身份证件类型 * </label>
+        <p>
+          我们需要为你购买保险。
+        </p>
         <select
-          ng-model="selectedUser.confirmation.shirtSize">
-          <option value="">Shirt Size</option>
-          <option value="XS">Unisex X-Small</option>
-          <option value="S">Unisex Small</option>
-          <option value="M">Unisex Medium</option>
-          <option value="L">Unisex Large</option>
-          <option value="XL">Unisex X-Large</option>
-          <option value="XXL">Unisex XX-Large</option>
-          <option value="WXS">Women's X-Small</option>
-          <option value="WS">Women's Small</option>
-          <option value="WM">Women's Medium</option>
-          <option value="WL">Women's Large</option>
-          <option value="WXL">Women's X-Large</option>
-          <option value="WXXL">Women's XX-Large</option>
+          name="idtype"
+          ng-model="user.confirmation.idType"
+          required>
+          <option value="">请选择...</option>
+          <option value="N">中华人民共和国身份证</option>
+          <option value="P">护照</option>
+          <option value="O">其他</option>
         </select>
       </div>
 
-      <div class="ui divider"></div>
-
       <div class="field">
-        <label>
-          Needs Hardware
-        </label>
-        <div class="ui checkbox">
-          <input type="checkbox" ng-model="selectedUser.confirmation.wantsHardware">
-          <label> Yup, I need hardware </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>
-        Hardware
-        </label>
-        <input type="text" ng-model="selectedUser.confirmation.hardware">
-      </div>
-
-      <div class="ui divider"></div>
-
-      <div class="ui header">
-        Travel
-      </div>
-
-      <div class="field">
-        <strong> Needs Reimbursement</strong>
-        <i
-          ng-if="selectedUser.profile.travelReimbursement"
-          class="green check circle icon">
-        </i>
-        <i
-          ng-if="!selectedUser.profile.travelReimbursement"
-          class="red remove circle icon">
-        </i>
-      </div>
-
-      <div class="field">
-        <label>Full Name</label>
+        <label> 请填写你的身份证件号码 * </label>
         <input type="text"
-               name="name"
-               ng-model="selectedUser.confirmation.address.name">
+               name="idnum"
+               ng-model="user.confirmation.idNumber"
+               required>
       </div>
 
       <div class="field">
-        <label> Address Line 1 - Street address, P.O. box, company name, c/o </label>
-        <input
-          type="text"
-          name="addressLine1"
-          ng-model="selectedUser.confirmation.address.line1">
+        <label> 请填写你的手机号码 * </label>
+        <input type="tel"
+               name="phone"
+               ng-model="user.confirmation.phoneNumber"
+               required>
+      </div>
+
+      <div class="divided title">健康及安全信息</div>
+
+      <p>请如实、完整填写以下信息。竞赛主体及被免责方（定义见<a target="_blank" href="/s/doc/Hackathon-Official-Rule-zh.pdf">参赛规则</a>）对因您信息遗漏造成的任何后果不承担任何形式的民事及刑事责任，并保留在法律许可范围内最大限度追究因您信息遗漏造成的任何后果的赔偿。</p>
+
+      <div class="field" required>
+        <label>你是否足够健康以参与本次24小时活动？ *</label>
+        <select
+          name="idtype"
+          ng-model="user.confirmation.healthConsent"
+          required>
+          <option value=null>请选择...</option>
+          <option value=true>是</option>
+          <option value=false>否（你将无法参赛）</option>
+        </select>
+
       </div>
 
       <div class="field">
-        <label> Address Line 2 - Apartment, suite, unit, building, floor, etc. </label>
-        <input
-          type="text"
-          name="addressLine2"
-          ng-model="selectedUser.confirmation.address.line2">
+        <label> 饮食限制 </label>
+
+        <p>
+          如果如下的饮食限制未包含你的饮食限制，请在下方更多信息中提出。
+        </p>
+
       </div>
 
-      <div class="four fields">
-        <div class="field">
-          <label> City </label>
-          <input
-            type="text"
-            name="city"
-            ng-model="selectedUser.confirmation.address.city">
-        </div>
-        <div class="field">
-          <label> State/Province/Region </label>
-          <input
-            type="text"
-            name="state"
-            ng-model="selectedUser.confirmation.address.state">
-        </div>
-        <div class="field">
-          <label> ZIP </label>
-          <input
-            type="text"
-            name="zip"
-            ng-model="selectedUser.confirmation.address.zip">
-        </div>
-        <div class="field">
-          <label> Country </label>
-          <input
-            type="text"
-            name="country"
-            ng-model="selectedUser.confirmation.address.country">
+      <div class="inline fields">
+        <div class="field"
+          ng-repeat="(key, value) in dietaryRestrictions">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="dietaryRestrictions[key]" />
+            <label>{{key}}</label>
+          </div>
+
         </div>
       </div>
 
       <div class="field">
-        <label> Receipt </label>
-        <input type="url" ng-model="selectedUser.confirmation.receipt" />
+        <label> 你是否有已知过敏源？如果有，请完整列出。 </label>
+        <input type="text"
+               name="allergy"
+               ng-model="user.confirmation.knownAllergy">
       </div>
 
       <div class="field">
-        <label> Additional Notes </label>
-        <textarea ng-model="selectedUser.confirmation.notes"></textarea>
+        <label> 你是否有任何过往病史或目前拥有的疾病状况？如果有，请完整列出。 </label>
+        <input type="text"
+               name="medical-condition-addon"
+               ng-model="user.confirmation.knownCondition">
+      </div>
+
+      <div class="field">
+        <label> 你是否目前正在摄入任何可能影响你安全参与活动的药物？如果有，请完整列出。 </label>
+        <input type="text"
+               name="medicine"
+               ng-model="user.confirmation.currentMed">
+      </div>
+
+      <div class="divided title">纪念品信息</div>
+
+      <div class="field">
+        <label> 请选择你的T恤大小 * </label>
+        <select
+          name="shirt"
+          ng-model="user.confirmation.shirtSize"
+          required>
+          <option value="">请选择...</option>
+          <option value="XS">通用 XS</option>
+          <option value="S">通用 S</option>
+          <option value="M">通用 M</option>
+          <option value="L">通用 L</option>
+          <option value="XL">通用 XL</option>
+          <option value="XXL">通用 XXL</option>
+          <option value="WXS">女款 XS</option>
+          <option value="WS">女款 S</option>
+          <option value="WM">女款 M</option>
+          <option value="WL">女款 L</option>
+          <option value="WXL">女款 XL</option>
+          <option value="WXXL">女款 XXL</option>
+        </select>
+      </div>
+
+      <div class="divided title">交通补助信息</div>
+
+      <div class="field">
+        <p>
+          THE Hack 组委会将为你参与本次活动提供总额为 {{reimbursementAcc}} 人民币的交通补助。<b>我们不会为上海市内的参赛者提供交通补助。</b>如果你对交通问题有任何疑问，请发送邮件至<a href="mailto:travel@thehack.io">travel@thehack.io</a>。
+        </p>
+
+        <p>THE Hack 组委会提供的交通补助将仅被用作前往活动现场的交通费用合理使用。我认可所有超出限额的支出将不会被报销，并认可将在活动现场提交可被接受的报销凭证以获得报销。可被接受的报销凭证包括发票、火车票（原件）、汽车票（原件）及注明票价的航空运输电子客票行程单。请注意如下交通要求：
+        </p>
+
+        <ul>
+          <li>上海市内：不提供交通补贴</li>
+          <li>江浙沪地区：火车（G/D/C或其他，二等座）、汽车</li>
+          <li>其他地区：火车（G/D/C或其他，二等座）、汽车、飞机</li>
+        </ul>
+        <p>
+          <b>重要提示：</b> 为获得交通补助，你必须在活动现场的交通补助登记中心提交你的出行凭证原件。我们将会留存你的身份证复印件以完成可能的报税工作。
+        </p>
+      </div>
+
+      <div class="field">
+        <label> 你是否需要交通补助（不选择即表示不需要）？ </label>
+        <div class="ui checkbox">
+          <input type="checkbox" ng-model="user.confirmation.needsReimbursement">
+          <label> 我需要交通补助，并将于2018年7月21日前往上海参加活动。 </label>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="divided title"> 专业信息 </div>
+
+      <div class="field">
+        <label> 简历（最新版） </label>
+        <p>
+          简历将被共享至竞赛合作方以被考虑潜在实习或全职工作机会。
+        </p>
+        <a
+          target="_blank"
+          href="https://go.hackmit.org/skill-sheets"
+          class="ui pink button">
+          Upload
+        </a>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="divided title">法律信息</div>
+
+      <div class="field">
+        <label> Liability Waiver </label>
+        <p>
+          <a
+            target="_blank"
+            href="https://go.hackmit.org/liability-waiver">
+            Liability Waiver
+          </a>
+        </p>
+        <p>
+          For legal reasons, our university asks that you read and accept the terms of our liability waiver. Again, as we mentioned in the original lottery application - you <strong> must </strong> be 18 years or older or an MIT undergraduate by the day of the event, or <strong> we will refuse you admission at the door. We will be checking ID. </strong>
+        </p>
+        <p>
+          By writing my name below, I affirm that I have read and accepted the terms of the liability waiver above, and will be either an MIT undergraduate or 18 years or older at the time of the event.
+        </p>
+        <input type="text"
+               name="signatureLiabilityWaiver"
+               placeholder="Your Full Legal Name"
+               ng-model="user.confirmation.signatureLiability">
+      </div>
+
+      <div class="field">
+        <label> Photo Release </label>
+        <p>
+          <a
+            target="_blank"
+            href="https://go.hackmit.org/photo-release">
+            Photo Release
+          </a>
+        </p>
+        <p>
+          Signing this photo release means if we take photos or photos of you, we can share it with the world.
+        </p>
+        <p>
+          By writing my name below, I affirm that I have read and accepted the terms of the photo release above.
+        </p>
+        <input type="text"
+               name="signaturePhotoRelease"
+               placeholder="Your Full Legal Name"
+               ng-model="user.confirmation.signaturePhotoRelease">
+      </div>
+
+      <div class="field">
+        <label> Code of Conduct </label>
+        <p>
+          <a
+            target="_blank"
+            href="https://go.hackmit.org/code-of-conduct">
+            Hacker Code of Conduct
+          </a>
+        </p>
+        <p>
+          It is extremely important to us that attendees follow a set of guidelines to make the event fun for everyone involved. Please read through and make sure you understand what we will be expecting of you.
+        </p>
+        <p>
+          By writing my name below, I affirm that I have read and will abide by the code of conduct detailed above.
+        </p>
+        <input type="text"
+               name="signatureCodeOfConduct"
+               placeholder="Your Full Legal Name"
+               ng-model="user.confirmation.signatureCodeOfConduct">
+      </div>
+
+      <br>
+      <br>
+
+      <div class="divided title">其他信息</div>
+
+      <div class="field">
+        <label>
+          如果有任何需要我们知道的，请在这里提出。
+        </label>
+        <textarea
+          ng-model="user.confirmation.notes"></textarea>
       </div>
 
     </fieldset>

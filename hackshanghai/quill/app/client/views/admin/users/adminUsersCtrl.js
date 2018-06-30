@@ -32,6 +32,28 @@ angular.module('reg')
         $scope.pages = p;
       }
 
+      function getUserResume() {
+        var id = user._id;
+        var prefix = 'upload/resume/' + id + '_resume';
+        $http
+          .get('https://api.thehack.org.cn/s3/prefix/' + prefix)
+          .then(function(res) {
+            if (res.data.result != "None") {
+              var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
+              user.profile.resume = url;
+            }
+          });
+        var prefix2 = 'upload/resume/hackshanghai/' + id + '_resume';
+        $http
+          .get('https://api.thehack.org.cn/s3/prefix/' + prefix2)
+          .then(function(res) {
+            if (res.data.result != "None") {
+              var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
+              user.profile.resume = url;
+            }
+          });
+      }
+
       UserService
         .getPage($stateParams.page, $stateParams.size, $stateParams.query)
         .success(function(data){
@@ -298,6 +320,9 @@ angular.module('reg')
                 name: 'Interested in',
                 value: (user.profile.ideaTracks || []).join(", "),
               },{
+                name: 'Resume',
+                value: user.profile.resume
+              },{
                 name: 'Profession',
                 value: user.profile.profession
               },
@@ -309,42 +334,37 @@ angular.module('reg')
             name: 'Confirmation',
             fields: [
               {
+                name: 'ID Type',
+                value: user.confirmation.idType
+              },{
+                name: 'ID Numebr',
+                value: user.confirmation.idNumber
+              },{
+                name: 'Phone Number',
+                value: user.confirmation.phoneNumber
+              },{
+                name: 'Healthy Enough?',
+                value: user.confirmation.healthConsent
+              },{
                 name: 'Dietary Restrictions',
                 value: user.confirmation.dietaryRestrictions.join(', ')
               },{
+                name: 'Current Medicine',
+                value: user.confirmation.currentMed
+              },{
                 name: 'Shirt Size',
                 value: user.confirmation.shirtSize
-              },{
-                name: 'Needs Hardware',
-                value: user.confirmation.wantsHardware,
-                type: 'boolean'
-              },{
-                name: 'Hardware Requested',
-                value: user.confirmation.hardware
-              }
+              },
             ]
           },{
             name: 'Travel',
             fields: [
               {
                 name: 'Needs Reimbursement',
-                value: user.profile.travelReimbursement == "Y",
-                type: 'boolean'
+                value: user.confirmation.needsReimbursement
               },{
-                name: 'Received Reimbursement',
-                value: user.profile.travelReimbursement == "Y" && user.status.reimbursementGiven
-              },{
-                name: 'Address',
-                value: user.confirmation.address ? [
-                  user.confirmation.address.line1,
-                  user.confirmation.address.line2,
-                  user.confirmation.address.city,
-                  ',',
-                  user.confirmation.address.state,
-                  user.confirmation.address.zip,
-                  ',',
-                  user.confirmation.address.country,
-                ].join(' ') : ''
+                name: 'Reimbursement Amount',
+                value: user.confirmation.reimbursementAmount
               },{
                 name: 'Additional Notes',
                 value: user.confirmation.notes
