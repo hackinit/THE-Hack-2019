@@ -165,12 +165,7 @@
             <p>
               简历将被共享至竞赛合作方以被考虑潜在实习或全职工作机会。
             </p>
-            <a
-              target="_blank"
-              href="https://go.hackmit.org/skill-sheets"
-              class="ui pink button">
-              Upload
-            </a>
+            <input type="file" id="resume">
           </div>
 
           <br>
@@ -179,66 +174,47 @@
           <div class="divided title">法律信息</div>
 
           <div class="field">
-            <label> Liability Waiver </label>
+            <label> 《竞赛规则》 * </label>
             <p>
               <a
                 target="_blank"
-                href="https://go.hackmit.org/liability-waiver">
-                Liability Waiver
+                href="https://static.thehack.org.cn/doc/shared/Hackathon-Official-Rule.pdf">
+                点击阅读《竞赛规则》
               </a>
             </p>
             <p>
-              For legal reasons, our university asks that you read and accept the terms of our liability waiver. Again, as we mentioned in the original lottery application - you <strong> must </strong> be 18 years or older or an MIT undergraduate by the day of the event, or <strong> we will refuse you admission at the door. We will be checking ID. </strong>
+              请仔细阅读《竞赛规则》，并声明同意。
             </p>
-            <p>
-              By writing my name below, I affirm that I have read and accepted the terms of the liability waiver above, and will be either an MIT undergraduate or 18 years or older at the time of the event.
-            </p>
-            <input type="text"
-                   name="signatureLiabilityWaiver"
-                   placeholder="Your Full Legal Name"
-                   ng-model="user.confirmation.signatureLiability">
+            <select
+              name="rule"
+              ng-model="user.confirmation.ruleConsent"
+              required>
+              <option value=null>请选择...</option>
+              <option value=true>我同意《竞赛规则》</option>
+              <option value=false>我不同意《竞赛规则》（你将无法参赛）</option>
+            </select>
           </div>
 
           <div class="field">
-            <label> Photo Release </label>
+            <label> 《选手行为守则》 *</label>
             <p>
               <a
                 target="_blank"
-                href="https://go.hackmit.org/photo-release">
-                Photo Release
+                href="https://static.thehack.org.cn/doc/shared/Code-of-Conduct.pdf">
+                点击阅读《选手行为守则》
               </a>
             </p>
             <p>
-              Signing this photo release means if we take photos or photos of you, we can share it with the world.
+              请仔细阅读《选手行为守则》，并声明同意。
             </p>
-            <p>
-              By writing my name below, I affirm that I have read and accepted the terms of the photo release above.
-            </p>
-            <input type="text"
-                   name="signaturePhotoRelease"
-                   placeholder="Your Full Legal Name"
-                   ng-model="user.confirmation.signaturePhotoRelease">
-          </div>
-
-          <div class="field">
-            <label> Code of Conduct </label>
-            <p>
-              <a
-                target="_blank"
-                href="https://go.hackmit.org/code-of-conduct">
-                Hacker Code of Conduct
-              </a>
-            </p>
-            <p>
-              It is extremely important to us that attendees follow a set of guidelines to make the event fun for everyone involved. Please read through and make sure you understand what we will be expecting of you.
-            </p>
-            <p>
-              By writing my name below, I affirm that I have read and will abide by the code of conduct detailed above.
-            </p>
-            <input type="text"
-                   name="signatureCodeOfConduct"
-                   placeholder="Your Full Legal Name"
-                   ng-model="user.confirmation.signatureCodeOfConduct">
+            <select
+              name="coc"
+              ng-model="user.confirmation.cocConsent"
+              required>
+              <option value=null>请选择...</option>
+              <option value=true>我同意《选手行为守则》</option>
+              <option value=false>我不同意《选手行为守则》（你将无法参赛）</option>
+            </select>
           </div>
 
           <br>
