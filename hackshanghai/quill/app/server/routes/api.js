@@ -259,7 +259,7 @@ module.exports = function(router) {
     var amount = req.params.amount;
     var user = req.user;
 
-    UserController.updateReimburseById(id, amount, user, defaultRresponse(req, res));
+    UserController.updateReimburseById(id, amount, user, defaultResponse(req, res));
   });
 
   /**
