@@ -96,8 +96,9 @@
             <th>School</th>
             <th>Grad</th>
             <th>V/S/A/C</th>
-            <th>Host</th>
+            <th>City</th>
             <th>$</th>
+            <th></th>
             <th></th>
             <th></th>
           </tr>
@@ -115,10 +116,10 @@
               </strong>
             </td>
             <td>{{user.email}}</td>
-            <td>{{user.profile.school}}</td>
+            <td>{{user.profile.study.school}}</td>
             <td
               class="collapsing">
-              {{user.profile.graduationYear}}
+              {{user.profile.study.graduationYear}}
             </td>
             <td
               class="collapsing">
@@ -177,20 +178,7 @@
             <td
               class="collapsing">
 
-              <span ng-if="user.status.confirmed">
-                <i
-                  ng-if="user.confirmation.hostNeededFri"
-                  class="home icon">
-                </i>
-                <i
-                  ng-if="!user.confirmation.hostNeededFri && user.confirmation.hostNeededSat"
-                  class="no icon">
-                </i>
-                <i
-                  ng-if="user.confirmation.hostNeededSat"
-                  class="home icon">
-                </i>
-              </span>
+              {{user.profile.city}}
 
             </td>
 
@@ -206,6 +194,13 @@
                   class="green money icon">
                 </i>
               </span>
+            </td>
+
+            <td
+              class="collapsing">
+              <div class="field">
+                <input type="text" name="reimbursementAmount" ng-model="user.confirmation.reimbursementAmount">
+              </div>
             </td>
 
             <td

@@ -4,7 +4,8 @@ angular.module('reg')
     '$state',
     '$stateParams',
     'UserService',
-    function($scope, $state, $stateParams, UserService){
+    '$http',
+    function($scope, $state, $stateParams, UserService, $http){
 
       $scope.pages = [];
       $scope.users = [];
@@ -30,6 +31,39 @@ angular.module('reg')
           p.push(i);
         }
         $scope.pages = p;
+      }
+
+      function getUserResume(user) {
+        var id = user._id;
+        var prefix = 'upload/resume/' + id + '_resume';
+        return $http
+          .get('https://api.thehack.org.cn/s3/prefix/' + prefix)
+          .then(function(res) {
+            if (res.data.result != "None") {
+              var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
+              console.log(user);
+              return url;
+            } else {
+              return "";
+            }
+          });
+      }
+
+      function getUserResume2(user) {
+        var id = user._id;
+        var prefix2 = 'upload/resume/hackinit/' + id + '_resume';
+        return $http
+          .get('https://api.thehack.org.cn/s3/prefix/' + prefix2)
+          .then(function(res) {
+            console.log(res);
+            if (res.data.result != "None") {
+              var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
+              console.log(url);
+              return url;
+            } else {
+              return "";
+            }
+          });
       }
 
       UserService
@@ -118,10 +152,15 @@ angular.module('reg')
               }, function(){
 
                 UserService
-                  .admitUser(user._id)
-                  .success(function(user){
-                    $scope.users[index] = user;
-                    swal("Accepted", user.profile.name + ' has been admitted.', "success");
+                  .updateReimbursement(user._id, user.confirmation.reimbursementAmount)
+                  .success(function() {
+
+                    UserService
+                      .admitUser(user._id)
+                      .success(function(user){
+                        $scope.users[index] = user;
+                        swal("Accepted", user.profile.name + ' has been admitted.', "success");
+                      });
                   });
 
               });
@@ -183,12 +222,33 @@ angular.module('reg')
 
       function selectUser(user){
         $scope.selectedUser = user;
-        $scope.selectedUser.sections = generateSections(user);
+        //$scope.selectedUser.sections = generateSections(user);
+        generateSections(user);
         $('.long.user.modal')
           .modal('show');
       }
 
-      function generateSections(user){
+      function generateSections(user) {
+        var promise = getUserResume(user);
+        var promise2 = getUserResume2(user);
+
+        promise.then(function(link) {
+          console.log(link);
+          if (link != "") {
+            var sections = generateSections_(user, link);
+            $scope.selectedUser.sections = sections;
+          }
+        });
+        promise2.then(function(link) {
+          console.log(link);
+          if (link != "") {
+            var sections = generateSections_(user, link);
+            $scope.selectedUser.sections = sections;
+          }
+        });
+      }
+
+      function generateSections_(user, resumeLink){
         var professionFields = [];
 
         if (user.profile.profession == "S") {
@@ -340,42 +400,37 @@ angular.module('reg')
             name: 'Confirmation',
             fields: [
               {
+                name: 'ID Type',
+                value: user.confirmation.idType
+              },{
+                name: 'ID Numebr',
+                value: user.confirmation.idNumber
+              },{
+                name: 'Phone Number',
+                value: user.confirmation.phoneNumber
+              },{
+                name: 'Healthy Enough?',
+                value: user.confirmation.healthConsent
+              },{
                 name: 'Dietary Restrictions',
                 value: user.confirmation.dietaryRestrictions.join(', ')
               },{
+                name: 'Current Medicine',
+                value: user.confirmation.currentMed
+              },{
                 name: 'Shirt Size',
                 value: user.confirmation.shirtSize
-              },{
-                name: 'Needs Hardware',
-                value: user.confirmation.wantsHardware,
-                type: 'boolean'
-              },{
-                name: 'Hardware Requested',
-                value: user.confirmation.hardware
-              }
+              },
             ]
           },{
             name: 'Travel',
             fields: [
               {
                 name: 'Needs Reimbursement',
-                value: user.profile.travelReimbursement == "Y",
-                type: 'boolean'
+                value: user.confirmation.needsReimbursement
               },{
-                name: 'Received Reimbursement',
-                value: user.profile.travelReimbursement == "Y" && user.status.reimbursementGiven
-              },{
-                name: 'Address',
-                value: user.confirmation.address ? [
-                  user.confirmation.address.line1,
-                  user.confirmation.address.line2,
-                  user.confirmation.address.city,
-                  ',',
-                  user.confirmation.address.state,
-                  user.confirmation.address.zip,
-                  ',',
-                  user.confirmation.address.country,
-                ].join(' ') : ''
+                name: 'Reimbursement Amount',
+                value: user.confirmation.reimbursementAmount
               },{
                 name: 'Additional Notes',
                 value: user.confirmation.notes
