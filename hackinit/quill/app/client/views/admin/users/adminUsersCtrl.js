@@ -35,30 +35,13 @@ angular.module('reg')
 
       function getUserResume(user) {
         var id = user._id;
-        var prefix = 'upload/resume/' + id + '_resume';
+        var prefix = 'upload/resume/hackinit/' + id + '_resume';
         return $http
           .get('https://api.thehack.org.cn/s3/prefix/' + prefix)
           .then(function(res) {
             if (res.data.result != "None") {
               var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
               console.log(user);
-              return url;
-            } else {
-              return "";
-            }
-          });
-      }
-
-      function getUserResume2(user) {
-        var id = user._id;
-        var prefix2 = 'upload/resume/hackinit/' + id + '_resume';
-        return $http
-          .get('https://api.thehack.org.cn/s3/prefix/' + prefix2)
-          .then(function(res) {
-            console.log(res);
-            if (res.data.result != "None") {
-              var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
-              console.log(url);
               return url;
             } else {
               return "";
@@ -230,16 +213,8 @@ angular.module('reg')
 
       function generateSections(user) {
         var promise = getUserResume(user);
-        var promise2 = getUserResume2(user);
 
         promise.then(function(link) {
-          console.log(link);
-          if (link != "") {
-            var sections = generateSections_(user, link);
-            $scope.selectedUser.sections = sections;
-          }
-        });
-        promise2.then(function(link) {
           console.log(link);
           if (link != "") {
             var sections = generateSections_(user, link);
