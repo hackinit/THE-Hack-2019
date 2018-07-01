@@ -216,10 +216,8 @@ angular.module('reg')
 
         promise.then(function(link) {
           console.log(link);
-          if (link != "") {
-            var sections = generateSections_(user, link);
-            $scope.selectedUser.sections = sections;
-          }
+          var sections = generateSections_(user, link);
+          $scope.selectedUser.sections = sections;
         });
       }
 
