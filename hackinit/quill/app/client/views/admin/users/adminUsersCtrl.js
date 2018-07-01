@@ -356,6 +356,9 @@ angular.module('reg')
               },{
                 name: 'Interested in',
                 value: (user.profile.ideaTracks || []).join(", "),
+              }, {
+                name: 'Resume',
+                value: resumeLink,
               },{
                 name: 'Profession',
                 value: user.profile.profession,
