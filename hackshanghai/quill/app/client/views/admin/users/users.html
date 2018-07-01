@@ -184,16 +184,9 @@
 
             <td
               class="collapsing">
-              <span ng-if="user.status.confirmed">
-                <i
-                  ng-if="user.confirmation.needsReimbursement && !user.status.reimbursementGiven"
-                  class="red money icon">
-                </i>
-                <i
-                  ng-if="user.confirmation.needsReimbursement && user.status.reimbursementGiven"
-                  class="green money icon">
-                </i>
-              </span>
+
+              {{user.profile.travelReimbursement}}
+
             </td>
 
             <td
