@@ -68,14 +68,14 @@
           {{ timeClose }} <br />
         </div>
 
-        <!--<div
+        <div
           ng-class="settings.timeConfirm"
           ng-if="dashState('admittedAndCanConfirm') || dashState('admittedAndCannotConfirm') || dashState('confirmed') || dashState('declined')">
           <strong>
             确认参赛截止日期：
           </strong>
           {{ timeConfirm }}
-        </div>-->
+        </div>
 
         <div
           ng-if="dashState('openAndIncomplete')"
@@ -99,11 +99,6 @@
         <div
           ng-if="dashState('openAndSubmitted')"
           class="description">
-          <p>
-            <strong>
-                {{ DASHBOARD.SUBMITTED_TITLE }}
-            </strong>
-          </p>
           <p>
             {{ DASHBOARD.SUBMITTED }}
           </p>
@@ -162,7 +157,7 @@
           </div>
         </div>-->
 
-        <!--<div
+        <div
           class="description"
           ng-if="dashState('admittedAndCanConfirm')">
 
@@ -230,12 +225,12 @@
 
           <div class="ui purple button"
                ui-sref="app.confirmation">
-            {{pastConfirmation ? 'View' : 'Edit'}} your confirmation information
+            {{pastConfirmation ? '查看' : '修改'}} 你的确认参赛信息
           </div>
 
           <div class="ui red button"
                ng-click="declineAdmission()">
-            Sorry, I can't make it
+            抱歉，我无法参赛。
           </div>
 
         </div>
@@ -247,7 +242,7 @@
           <p>
             {{ DASHBOARD.DECLINED }}
           </p>
-        </div>-->
+        </div>
 
       </div>
     </div>
