@@ -254,6 +254,14 @@ module.exports = function(router) {
     UserController.admitUser(id, user, defaultResponse(req, res));
   });
 
+  router.post('/users/:id/updatereimburse/:amount', isAdmin, function(req, res) {
+    var id = req.params.id;
+    var amount = req.params.amount;
+    var user = req.user;
+
+    UserController.updateReimburseById(id, amount, user, defaultResponse(req, res));
+  });
+
   /**
    * Check in a user. ADMIN ONLY, DUH
    */
