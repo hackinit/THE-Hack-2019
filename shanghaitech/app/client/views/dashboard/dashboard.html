@@ -68,14 +68,14 @@
           {{ timeClose }} <br />
         </div>
 
-        <!--<div
+        <div
           ng-class="settings.timeConfirm"
           ng-if="dashState('admittedAndCanConfirm') || dashState('admittedAndCannotConfirm') || dashState('confirmed') || dashState('declined')">
           <strong>
             确认参赛截止日期：
           </strong>
           {{ timeConfirm }}
-        </div>-->
+        </div>
 
         <div
           ng-if="dashState('openAndIncomplete')"
@@ -99,11 +99,6 @@
         <div
           ng-if="dashState('openAndSubmitted')"
           class="description">
-          <p>
-            <strong>
-                {{ DASHBOARD.SUBMITTED_TITLE }}
-            </strong>
-          </p>
           <p>
             {{ DASHBOARD.SUBMITTED }}
           </p>
@@ -159,18 +154,20 @@
             ng-show="user.teamCode"
             ui-sref="app.team">
             查看你的团队
-          </div>
-        </div>-->
+          </div>-->
+        </div>
 
-        <!--<div
+        <div
           class="description"
           ng-if="dashState('admittedAndCanConfirm')">
 
+          <!--
           <div class="markdown">
             <h4>
                 {{ DASHBOARD.ADMITTED_AND_CAN_CONFIRM_TITLE }}
             </h4>
           </div>
+          -->
 
           <div
             class="markdown"
@@ -215,6 +212,7 @@
           class="description"
           ng-if="dashState('confirmed')">
 
+          <!--
           <div
             ng-show="!pastConfirmation"
             class="markdown">
@@ -222,6 +220,7 @@
                 {{ DASHBOARD.CONFIRMED_NOT_PAST_TITLE }}
             </h4>
           </div>
+          -->
 
           <div
             class="markdown"
@@ -230,12 +229,25 @@
 
           <div class="ui purple button"
                ui-sref="app.confirmation">
-            {{pastConfirmation ? 'View' : 'Edit'}} your confirmation information
+            {{pastConfirmation ? '查看' : '修改'}} 你的确认参赛信息
           </div>
+
+          <br>
+          <br>
+          <br>
+          扫码添加 THE Hack 小助手，加入选手群：
+          <br>
+          <br>
+          <br>
+
+          <img src="https://s3.cn-north-1.amazonaws.com.cn/thehack/web-assets/img/shared/assistant-qr.jpeg" alt="选手群" width="30%" min-width="300px">
+          <br>
+          <br>
+          <br>
 
           <div class="ui red button"
                ng-click="declineAdmission()">
-            Sorry, I can't make it
+            抱歉，我无法参赛。
           </div>
 
         </div>
@@ -247,7 +259,7 @@
           <p>
             {{ DASHBOARD.DECLINED }}
           </p>
-        </div>-->
+        </div>
 
       </div>
     </div>

@@ -96,8 +96,9 @@
             <th>School</th>
             <th>Grad</th>
             <th>V/S/A/C</th>
-            <th>Host</th>
+            <th>City</th>
             <th>$</th>
+            <th></th>
             <th></th>
             <th></th>
           </tr>
@@ -177,35 +178,22 @@
             <td
               class="collapsing">
 
-              <span ng-if="user.status.confirmed">
-                <i
-                  ng-if="user.confirmation.hostNeededFri"
-                  class="home icon">
-                </i>
-                <i
-                  ng-if="!user.confirmation.hostNeededFri && user.confirmation.hostNeededSat"
-                  class="no icon">
-                </i>
-                <i
-                  ng-if="user.confirmation.hostNeededSat"
-                  class="home icon">
-                </i>
-              </span>
+              {{user.profile.city}}
 
             </td>
 
             <td
               class="collapsing">
-              <span ng-if="user.status.confirmed">
-                <i
-                  ng-if="user.confirmation.needsReimbursement && !user.status.reimbursementGiven"
-                  class="red money icon">
-                </i>
-                <i
-                  ng-if="user.confirmation.needsReimbursement && user.status.reimbursementGiven"
-                  class="green money icon">
-                </i>
-              </span>
+
+              {{user.profile.travelReimbursement}}
+
+            </td>
+
+            <td
+              class="collapsing">
+              <div class="field">
+                <input type="text" name="reimbursementAmount" ng-model="user.confirmation.reimbursementAmount">
+              </div>
             </td>
 
             <td
