@@ -4,7 +4,8 @@ angular.module('reg')
     '$state',
     '$stateParams',
     'UserService',
-    function($scope, $state, $stateParams, UserService){
+    '$http',
+    function($scope, $state, $stateParams, UserService, $http){
 
       $scope.pages = [];
       $scope.users = [];
@@ -30,6 +31,22 @@ angular.module('reg')
           p.push(i);
         }
         $scope.pages = p;
+      }
+
+      function getUserResume(user) {
+        var id = user._id;
+        var prefix = 'upload/resume/shanghaitech/' + id + '_resume';
+        return $http
+          .get('https://api.thehack.org.cn/s3/prefix/' + prefix)
+          .then(function(res) {
+            if (res.data.result != "None") {
+              var url = "https://s3.cn-north-1.amazonaws.com.cn/thehack/" + res.data.result;
+              console.log(user);
+              return url;
+            } else {
+              return "";
+            }
+          });
       }
 
       UserService
@@ -118,10 +135,15 @@ angular.module('reg')
               }, function(){
 
                 UserService
-                  .admitUser(user._id)
-                  .success(function(user){
-                    $scope.users[index] = user;
-                    swal("Accepted", user.profile.name + ' has been admitted.', "success");
+                  .updateReimbursement(user._id, user.confirmation.reimbursementAmount)
+                  .success(function() {
+
+                    UserService
+                      .admitUser(user._id)
+                      .success(function(user){
+                        $scope.users[index] = user;
+                        swal("Accepted", user.profile.name + ' has been admitted.', "success");
+                      });
                   });
 
               });
@@ -183,45 +205,24 @@ angular.module('reg')
 
       function selectUser(user){
         $scope.selectedUser = user;
-        $scope.selectedUser.sections = generateSections(user);
+        //$scope.selectedUser.sections = generateSections(user);
+        generateSections(user);
         $('.long.user.modal')
           .modal('show');
       }
 
-      function generateSections(user){
-        var professionFields = [];
+      function generateSections(user) {
+        var promise = getUserResume(user);
 
-        if (user.profile.group == "S") {
-          professionFields = [
-            {
-              name: "Subject",
-              value: user.profile.hackshanghai.subject,
-            },
-            {
-              name: "Year of studies",
-              value: user.profile.hackshanghai.yearOfStudies,
-            },
-            {
-              name: "Graduation year",
-              value: user.profile.hackshanghai.graduationYear,
-            },
-            {
-              name: "Tech Stack",
-              value: user.profile.hackshanghai.techStack,
-            },
-          ];
-        } else if (user.profile.group == "I") {
-          professionFields = [
-            {
-              name: "Work experience",
-              value: user.profile.hackinit.pastExperience,
-            },
-            {
-              name: "Tech Stack",
-              value: user.profile.hackinit.currentIssue,
-            },
-          ];
-        }
+        promise.then(function(link) {
+          console.log(link);
+          var sections = generateSections_(user, link);
+          $scope.selectedUser.sections = sections;
+        });
+      }
+
+      function generateSections_(user, resumeLink){
+        var professionFields = [];
 
         return [
           {
@@ -277,70 +278,96 @@ angular.module('reg')
                 value: user.profile.description
               },{
                 name: 'WeChat',
-                value: user.profile.wechat
+                value: user.profile.wechat,
+                type: "url",
               },{
                 name: 'LinkedIn',
-                value: user.profile.linkedin
+                value: user.profile.linkedin,
+                type: "url",
+              },{
+                name: 'DevPost',
+                value: user.profile.devpost,
+                type: "url",
               },{
                 name: 'Website',
-                value: user.profile.website
+                value: user.profile.website,
+                type: "url",
               },{
                 name: 'Github',
-                value: user.profile.github
+                value: user.profile.github,
+                type: "url",
+              },{
+                name: 'Past Experience',
+                value: user.profile.pastExperience,
+              },{
+                name: 'STEM Interest',
+                value: user.profile.stemInterest,
+              },{
+                name: 'Project Experience',
+                value: user.profile.projExp,
+              },{
+                name: 'Current Real-world Issue',
+                value: user.profile.currentIssue,
               },{
                 name: 'Has idea',
-                value: user.profile.idea
+                value: user.profile.idea,
+                type: "enum",
+                enum: {
+                  "Y": "Yes",
+                  "S": "Somewhat, yes",
+                  "N": "No, not yet",
+                }
               },{
                 name: 'Interested in',
                 value: (user.profile.ideaTracks || []).join(", "),
+              }, {
+                name: 'Resume',
+                value: resumeLink,
               },{
                 name: 'Profession',
-                value: user.profile.group
+                value: user.profile.profession,
+                type: "enum",
+                enum: {
+                  "W": "Working",
+                  "S": "Student",
+                }
               },
             ]
-          },{
-            name: "Profession",
-            fields: professionFields,
           },{
             name: 'Confirmation',
             fields: [
               {
+                name: 'ID Type',
+                value: user.confirmation.idType
+              },{
+                name: 'ID Numebr',
+                value: user.confirmation.idNumber
+              },{
+                name: 'Phone Number',
+                value: user.confirmation.phoneNumber
+              },{
+                name: 'Healthy Enough?',
+                value: user.confirmation.healthConsent
+              },{
                 name: 'Dietary Restrictions',
                 value: user.confirmation.dietaryRestrictions.join(', ')
               },{
+                name: 'Current Medicine',
+                value: user.confirmation.currentMed
+              },{
                 name: 'Shirt Size',
                 value: user.confirmation.shirtSize
-              },{
-                name: 'Needs Hardware',
-                value: user.confirmation.wantsHardware,
-                type: 'boolean'
-              },{
-                name: 'Hardware Requested',
-                value: user.confirmation.hardware
-              }
+              },
             ]
           },{
             name: 'Travel',
             fields: [
               {
                 name: 'Needs Reimbursement',
-                value: user.profile.travelReimbursement == "Y",
-                type: 'boolean'
+                value: user.confirmation.needsReimbursement
               },{
-                name: 'Received Reimbursement',
-                value: user.profile.travelReimbursement == "Y" && user.status.reimbursementGiven
-              },{
-                name: 'Address',
-                value: user.confirmation.address ? [
-                  user.confirmation.address.line1,
-                  user.confirmation.address.line2,
-                  user.confirmation.address.city,
-                  ',',
-                  user.confirmation.address.state,
-                  user.confirmation.address.zip,
-                  ',',
-                  user.confirmation.address.country,
-                ].join(' ') : ''
+                name: 'Reimbursement Amount',
+                value: user.confirmation.reimbursementAmount
               },{
                 name: 'Additional Notes',
                 value: user.confirmation.notes
