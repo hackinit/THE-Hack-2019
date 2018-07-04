@@ -662,6 +662,20 @@ UserController.admitUser = function(id, user, callback){
   });
 };
 
+UserController.updateReimburseById = function(id, amount, user, callback) {
+  User.findOneAndUpdate({
+    _id: id,
+    verified: true
+  }, {
+    $set: {
+      'confirmation.reimbursementAmount': amount
+    }
+  }, {
+    new: true
+  },
+  callback);
+};
+
 /**
  * [ADMIN ONLY]
  *
