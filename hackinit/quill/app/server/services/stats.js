@@ -118,9 +118,10 @@ function calculateStats(){
         // Count the number of people who need reimbursements
         newStats.reimbursementTotal += user.confirmation.reimbursementAmount;
 
-        // Count the number of people who still need to be reimbursed
-        newStats.reimbursementMissing += user.confirmation.needsReimbursement &&
-          !user.status.reimbursementGiven ? 1 : 0;
+        // Repurposed: Confirmed reimbursements
+        if (user.status.confirmed) {
+          newStats.reimbursementMissing += user.confirmation.reimbursementAmount;
+        }
 
         // Count the number of people who want hardware
         newStats.wantsHardware += user.confirmation.wantsHardware ? 1 : 0;
