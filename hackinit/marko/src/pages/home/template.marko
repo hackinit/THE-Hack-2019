@@ -107,10 +107,12 @@
             </div>
         </div>
     </div>
-    <div id="host-logos" class="container sponsor-partner section bg-black">
+
+    <div id="host-logos" class="container sponsor-partner section">
         <div class="row">
-            <div class="col">
-                <h2 class="color-white pixel-font tier-title">${data.hostTitle}</h2>
+            <div class="col-xs-12 section-title">
+                <h2 if(data.lang==="en")><b>Hosted by</b></h2>
+                <h2 if(data.lang==="zh")><b>主办方</b></h2>
             </div>
         </div>
         <div class="row">
@@ -119,16 +121,19 @@
                     <img alt="THE Hack" src="//static.thehack.org.cn/img/thehack/logo/th-1024px-c.png">
                 </a>
                 <a target="_blank" href="//hackinit.org">
-                    <img alt="hackShanghai" src="//static.thehack.org.cn/img/hackinit/logo/hi-1024px-c.png">
+                    <img alt="hack.init()" src="https://static.thehack.org.cn/img/hackinit/logo/hi-1024px-c.png">
+                </a>
+                <a target="_blank" href="//hackshanghai.com">
+                    <img alt="hackShanghai" src="//static.thehack.org.cn/img/hackshanghai/logo.png">
                 </a>
             </div>
         </div>
     </div>
-
     <div id="cohost-logos" class="container sponsor-partner section bg-black">
       <div class="row">
-          <div class="col">
-              <h2 class="color-white pixel-font tier-title">${data.cohostTitle}</h2>
+          <div class="col-xs-12 section-title">
+              <h2 if(data.lang==="en")><b>Co-hosted by</b></h2>
+              <h2 if(data.lang==="zh")><b>联合主办方</b></h2>
           </div>
       </div>
       <div class="row">
@@ -139,60 +144,99 @@
               <a target="_blank">
                   <img alt="Techomedia" src="//static.thehack.org.cn/img/shared/logos/Techo.png">
               </a>
-              <!--<a target="_blank" href="//www.kohler.com.cn">
+              <a target="_blank" href="//www.kohler.com.cn">
                   <img alt="Kohler" src="//static.thehack.org.cn/img/shared/logos/kohler.png">
-              </a>-->
+              </a>
+              <a target="_blank">
+                  <img alt="Sisui" src="//static.thehack.org.cn/img/shared/logos/c3.png">
+              </a>
           </div>
+      </div>
+    </div>
+    <div id="name-logos" class="container sponsor-partner section bg-black">
+      <div class="row">
+        <div class="col-xs-12 section-title">
+          <h2 if(data.lang==="en")><b>Name Sponsors</b></h2>
+          <h2 if(data.lang==="zh")><b>冠名赞助商</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 tier tier-sponsor-1">
+          <a target="_blank" href="//www.kohler.com.cn">
+            <img alt="Kohler" src="//static.thehack.org.cn/img/shared/logos/kohler.png">
+          </a>
+          <a target="_blank">
+            <img alt="Sisui" src="//static.thehack.org.cn/img/shared/logos/c3.png">
+          </a>
+        </div>
       </div>
     </div>
     <div id="giga-logos" class="container sponsor-partner section bg-black">
       <div class="row">
-          <div class="col">
-              <h2 class="color-white pixel-font tier-title">${data.gigaTitle}</h2>
+          <div class="col-xs-12 section-title">
+              <h2 if(data.lang==="en")><b>Giga Sponsors</b></h2>
+              <h2 if(data.lang==="zh")><b>白金赞助商</b></h2>
           </div>
       </div>
       <div class="row">
           <div class="col-xs-12 tier tier-sponsor-2">
               <a target="_blank" href="//www.microchip.com">
-                  <img alt="Microchip" src="//static.thehack.org.cn/img/shared/logos/microchip.jpeg">
+                <img alt="Microchip" src="//static.thehack.org.cn/img/shared/logos/microchip.jpeg">
               </a>
-              <a target="_blank" href="//">
-                  <img alt="Jiuzhang" src="//static.thehack.org.cn/img/shared/logos/images.png">
+              <a target="_blank" href="//www.sensetime.com">
+                <img alt="SenseTime" src="//static.thehack.org.cn/img/shared/logos/sensetime.png">
+              </a>
+              <a target="_blank" href="//www.jiuzhang.com">
+                <img alt="Jiuzhang" src="//static.thehack.org.cn/img/shared/logos/jiuzhang.png">
+              </a>
+              <a target="_blank" href="//www.kejisi.com">
+                <img alt="TechTemple" src="//static.thehack.org.cn/img/shared/logos/tech-temple.png">
               </a>
           </div>
       </div>
     </div>
     <div id="mega-logos" class="container sponsor-partner section bg-black">
       <div class="row">
-          <div class="col">
-              <h2 class="color-white pixel-font tier-title">${data.megaTitle}</h2>
+          <div class="col-xs-12 section-title">
+              <h2 if(data.lang==="en")><b>Mega Sponsors</b></h2>
+              <h2 if(data.lang==="zh")><b>黄金赞助商</b></h2>
           </div>
       </div>
       <div class="row">
           <div class="col-xs-12 tier tier-sponsor-3">
-              <a target="_blank" href="//www.oymotion.com">
-                  <img alt="OYMotion" src="//static.thehack.org.cn/img/shared/logos/oymotion.png">
-              </a>
-              <a target="_blank" href="//">
-                  <img alt="BiggerLab" src="//static.thehack.org.cn/img/shared/logos/biggerlab.png">
-              </a>
-              <a target="_blank" href="//">
-                  <img alt="JQInvestments" src="//static.thehack.org.cn/img/shared/logos/JQInvestments.png">
-              </a>
-              <a target="_blank" href="//www.ivymaker.cn">
-                  <img alt="ivymaker" src="//static.thehack.org.cn/img/shared/logos/ivy-maker.png">
-              </a>
+            <a target="_blank" href="//microsoft.com">
+              <img alt="Microsoft" src="//static.thehack.org.cn/img/shared/logos/ms.png">
+            </a>
+            <a target="_blank" href="//www.rokid.com">
+              <img alt="Rokid" src="//static.thehack.org.cn/img/shared/logos/rokid-w.png">
+            </a>
+            <a target="_blank" href="http://www.oymotion.com">
+              <img alt="OYMotion" src="//static.thehack.org.cn/img/shared/logos/oymotion.png">
+            </a>
+            <a target="_blank" href="//">
+              <img alt="BiggerLab" src="//static.thehack.org.cn/img/shared/logos/biggerlab.png">
+            </a>
+            <a target="_blank" href="//">
+              <img alt="JQInvestments" src="//static.thehack.org.cn/img/shared/logos/JQInvestments.png">
+            </a>
+            <a target="_blank" href="//www.ivymaker.com">
+              <img alt="ivymaker" src="//static.thehack.org.cn/img/shared/logos/ivy-maker.png">
+            </a>
           </div>
       </div>
     </div>
     <div id="kilo-logos" class="container sponsor-partner section bg-black">
       <div class="row">
-          <div class="col">
-              <h2 class="color-white pixel-font tier-title">${data.kiloTitle}</h2>
+          <div class="col-xs-12 section-title">
+              <h2 if(data.lang==="en")><b>Kilo Sponsors</b></h2>
+              <h2 if(data.lang==="zh")><b>白银赞助商</b></h2>
           </div>
       </div>
       <div class="row">
           <div class="col-xs-12 tier tier-sponsor-4">
+              <a target="_blank" href="//www.vmware.com">
+                  <img alt="VMWare" src="//static.thehack.org.cn/img/shared/logos/vmware.jpg">
+              </a>
               <a target="_blank" href="//www.amaris.com">
                   <img alt="Amaris" src="//static.thehack.org.cn/img/shared/logos/amaris.png">
               </a>
@@ -202,15 +246,17 @@
           </div>
       </div>
     </div>
-    <div id="community-logos" class="container sponsor-partner section bg-black">
+
+    <div id="community-logos" class="container sponsor-partner section">
         <div class="row">
-            <div class="col">
-                <h2 class="color-white pixel-font tier-title">${data.communityTitle}</h2>
+            <div class="col-xs-12 section-title">
+                <h2 if(data.lang==="en")><b>Strategic Partner Communities</b></h2>
+                <h2 if(data.lang==="zh")><b>战略合作技术社区</b></h2>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 tier tier-sponsor-3">
-                <a target="_blank" href="https://segmentfault.com/">
+                <a target="_blank" href="//segmentfault.com/">
                     <img alt="SegmentFault" src="//static.thehack.org.cn/img/shared/logos/segmentfault.png">
                 </a>
             </div>
