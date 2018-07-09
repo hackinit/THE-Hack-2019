@@ -133,8 +133,9 @@ body {
     margin-top: 30px;
 }
 
-#host-logos, #cohost-logos, #giga-logos, #mega-logos, #kilo-logos, #community-logos {
+#host-logos, #cohost-logos, #name-logos, #giga-logos, #mega-logos, #kilo-logos, #community-logos {
     padding-bottom: 60px;
+    max-width: 1200px;
 }
 
 #media-logos {
@@ -191,7 +192,7 @@ body {
 }
 
 .sponsor-partner .tier-sponsor-2 a img {
-    max-width: 320px;
+    max-width: 270px;
     max-height: 140px;
 }
 
