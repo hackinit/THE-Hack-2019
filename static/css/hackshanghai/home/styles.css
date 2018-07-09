@@ -135,7 +135,7 @@ body {
 
 #host-logos, #cohost-logos, #name-logos, #giga-logos, #mega-logos, #kilo-logos, #community-logos {
     padding-bottom: 60px;
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 #media-logos {
@@ -181,7 +181,7 @@ body {
 }
 
 .sponsor-partner .tier-sponsor-1 a img {
-    max-width: 250px;
+    max-width: 180px;
     max-height: 150px;
 }
 
@@ -192,7 +192,7 @@ body {
 }
 
 .sponsor-partner .tier-sponsor-2 a img {
-    max-width: 270px;
+    max-width: 160px;
     max-height: 140px;
 }
 
@@ -203,7 +203,7 @@ body {
 }
 
 .sponsor-partner .tier-sponsor-3 a img {
-    max-width: 200px;
+    max-width: 140px;
     max-height: 130px;
 }
 
@@ -214,7 +214,7 @@ body {
 }
 
 .sponsor-partner .tier-sponsor-4 a img {
-    max-width: 145px;
+    max-width: 130px;
     max-height: 130px;
 }
 
