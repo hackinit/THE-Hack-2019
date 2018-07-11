@@ -12,14 +12,14 @@
 
       <div class="ui segment">
         <div
-          ng-show="!user.status.admitted">
+          ng-show="!user.status.completedProfile">
           <p>
             {{ TEAM.NO_TEAM_REG_CLOSED }}
           </p>
         </div>
         <div
           class="ui form"
-          ng-show="user.status.admitted">
+          ng-show="user.status.completedProfile">
 
           <div class="title">
             Join or Create a Team
