@@ -17,5 +17,5 @@ angular.module('reg')
         DECLINED: '很遗憾，我们今年无法邀请你参加我们的参赛计划 :(\n希望在明年的活动中见到你！',
     })
     .constant('TEAM',{
-        NO_TEAM_REG_CLOSED: 'Unfortunately, it\'s too late to enter the lottery with a team.\nHowever, you can still form teams on your own before or during the event!',
+        NO_TEAM_REG_CLOSED: '团队注册已关闭',
     });
