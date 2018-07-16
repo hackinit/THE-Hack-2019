@@ -8,7 +8,7 @@ import qrcode
 class QRGenerator(APIView):
     def get(self, request, data, format=None):
         img = qrcode.make(data)
-        output = io.ByteIO()
+        output = io.BytesIO()
         img.save(output)
 
         content = output.getvalue()
