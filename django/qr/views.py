@@ -5,7 +5,18 @@ from rest_framework.response import Response
 import io
 import qrcode
 
+class PNGRenderer(renderers.BaseRenderer):
+    media_type = "image/png"
+    format = "png"
+    charset = None
+    render_style = "binary"
+
+    def render(self, data, media_type=None, render_context=None):
+        return data
+
 class QRGenerator(APIView):
+    renderer_classes = (PNGRenderer,)
+
     def get(self, request, data, format=None):
         img = qrcode.make(data)
         output = io.BytesIO()
