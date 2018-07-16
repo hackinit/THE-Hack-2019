@@ -2,3 +2,4 @@ Django==1.11.12
 djangorestframework==3.8.2
 redis==2.10.6
 django-cors-headers==2.2.0
+qrcode==5.1
