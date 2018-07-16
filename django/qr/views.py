@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from rest_framework.views import APIView
+from rest_framework.renderers import BaseRenderer
 from rest_framework.response import Response
 
 import io
 import qrcode
 
-class PNGRenderer(renderers.BaseRenderer):
+class PNGRenderer(BaseRenderer):
     media_type = "image/png"
     format = "png"
     charset = None
