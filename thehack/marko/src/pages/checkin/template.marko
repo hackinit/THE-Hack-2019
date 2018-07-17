@@ -1,0 +1,40 @@
+<!--
+    MAINTAINER: Yuchong Pan
+    EMAIL:      panyuchong@gmail.com
+-->
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://static.thehack.org.cn/img/thehack/favicon.ico">
+
+    <title>THE Hack | Check-In</title>
+
+    <link href="https://static.thehack.org.cn/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://static.thehack.org.cn/lib/instascan/instascan.min.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <video id="preview"></video>
+    <script type="text/javascript">
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function(content) {
+        console.log(content);
+      });
+      Instascan.Camera.getCameras().then(function(cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          alert("no camera found");
+        }
+      }).catch(function(e) {
+        alert(e);
+      });
+    </script>
+  </body>
+</html>
