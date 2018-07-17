@@ -2,13 +2,15 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+import os
 import requests
 
 class CheckInInformation(APIView):
     def get(self, request, group, identity, format=None):
         url = 'http://{host}_quill:3000/api/users/{identity}'.format(host=group, identity=identity)
+        headers = {'x-access-token': os.environ['{}_JWT'.format(group.upper())]}
         try:
-            r = requests.get(url).json()
+            r = requests.get(url, headers=headers).json()
         except:
             return Response({
                 'status': 400,
