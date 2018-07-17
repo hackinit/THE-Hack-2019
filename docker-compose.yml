@@ -95,6 +95,9 @@ services:
             - "8000"
         links:
             - redis
+            - hackinit_quill
+            - hackshanghai_quill
+            - shanghaitech_quill
         env_file: ./django/secrets.env
 
     redis:
