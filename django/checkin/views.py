@@ -6,7 +6,7 @@ import requests
 
 class CheckInInformation(APIView):
     def get(self, request, group, identity, format=None):
-        url = 'http://{host}_quill:3000/users/{identity}'.format(host=group, identity=identity)
+        url = 'http://{host}_quill:3000/api/users/{identity}'.format(host=group, identity=identity)
         try:
             r = requests.get(url).json()
         except:
