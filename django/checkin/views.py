@@ -30,3 +30,26 @@ class CheckInInformation(APIView):
                 'knownCondition': r['confirmation']['knownCondition'],
             },
         })
+
+class CheckInConfirm(APIView):
+    def post(self, request, group, identity, format=None):
+        url = 'http://{host}_quill:3000/api/users/{identity}/checkin'.format(host=group, identity=identity)
+        headers = {'x-access-token': os.environ['{}_JWT'.format(group.upper())]}
+        try:
+            r = requests.post(url, headers=headers)
+        except:
+            return Response({
+                'status': 400,
+                'message': 'Bad Request',
+            })
+
+        if r.status_code == 200:
+            return Response({
+                'status': 200,
+                'message': 'OK',
+            })
+        else:
+            return Response({
+                'status': 400,
+                'message': 'Bad Request',
+            })
