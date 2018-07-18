@@ -17,6 +17,8 @@ angular.module('reg')
       $scope.timeClose = Utils.formatTime(Settings.timeClose);
       $scope.timeConfirm = Utils.formatTime(Settings.timeConfirm);
 
+      $scope.apiCall = "https://api.thehack.org.cn/qr/generate/hackinit/" + user._id;
+
       $scope.DASHBOARD = DASHBOARD;
 
       for (var msg in $scope.DASHBOARD) {
