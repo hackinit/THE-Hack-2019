@@ -46,7 +46,7 @@
             document.getElementById("dietary-restrictions").innerHTML = body.result.dietaryRestrictions;
             document.getElementById("known-condition").innerHTML = body.result.knownCondition;
             document.getElementById("button").onclick = () => {
-              Vue.http.get("https://api.thehack.org.cn/checkin/confirm/" + content)
+              Vue.http.post("https://api.thehack.org.cn/checkin/confirm/" + content)
                 .then(response => {
                   let body = response.body;
                   alert(body.message);
