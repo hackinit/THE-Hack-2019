@@ -23,14 +23,14 @@
 
   <body>
     <video id="preview"></video>
-    <div>姓名：<p id="name"></p></div>
-    <div>年龄：<p id="age"></p></div>
-    <div>组别：<p id="group"></p></div>
-    <div>衣服尺码：<p id="shirt-size"></p></div>
-    <div>证件类型：<p id="id-type"></p></div>
-    <div>证件号码：<p id="id-number"></p></div>
-    <div>饮食限制：<p id="dietary-restrictions"></p></div>
-    <div>已知情况：<p id="known-condition"></p></div>
+    <div>姓名：<span id="name"></span></div>
+    <div>年龄：<span id="age"></span></div>
+    <div>组别：<span id="group"></span></div>
+    <div>衣服尺码：<span id="shirt-size"></span></div>
+    <div>证件类型：<span id="id-type"></span></div>
+    <div>证件号码：<span id="id-number"></span></div>
+    <div>饮食限制：<span id="dietary-restrictions"></span></div>
+    <div>已知情况：<span id="known-condition"></span></div>
     <script type="text/javascript">
       function process(content) {
         Vue.http.get("https://api.thehack.org.cn/checkin/info/" + content)
