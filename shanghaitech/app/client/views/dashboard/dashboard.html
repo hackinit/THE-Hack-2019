@@ -227,10 +227,13 @@
             ng-bind-html="confirmationText">
           </div>
 
-          <div class="ui purple button"
-               ui-sref="app.confirmation">
-            {{pastConfirmation ? '查看' : '修改'}} 你的确认参赛信息
-          </div>
+          你的签到二维码：
+          <br>
+          <br>
+          <br>
+
+
+          <img src={{apiCall}} alt="签到二维码" width="30%" min-width="300px">
 
           <br>
           <br>
