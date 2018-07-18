@@ -6,6 +6,7 @@ db.sqlite3
 dump.rdb
 **/secrets.ssl/*
 !**/secrets.ssl/*.example
+secrets.htpasswd
 
 # Vim
 *.swp
