@@ -17,14 +17,31 @@
 
     <link href="https://static.thehack.org.cn/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://static.thehack.org.cn/lib/instascan/instascan.min.js" type="text/javascript"></script>
+    <script src="https://static.thehack.org.cn/lib/vue/vue.min.js" type="text/javascript"></script>
+    <script src="https://static.thehack.org.cn/lib/vue/vue-resource.min.js" type="text/javascript"></script>
   </head>
 
   <body>
     <video id="preview"></video>
+    <div>姓名：<p id="name"></p></div>
+    <div>年龄：<p id="age"></p></div>
+    <div>组别：<p id="group"></p></div>
+    <div>衣服尺码：<p id="shirt-size"></p></div>
+    <div>证件类型：<p id="id-type"></p></div>
+    <div>证件号码：<p id="id-number"></p></div>
+    <div>饮食限制：<p id="dietary-restrictions"></p></div>
+    <div>已知情况：<p id="known-condition"></p></div>
     <script type="text/javascript">
+      function process(content) {
+        Vue.http.get("https://api.thehack.org.cn/checkin/info/" + content)
+          .then(response => {
+            let body = response.body;
+            console.log(body);
+          });
+      }
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       scanner.addListener('scan', function(content) {
-        console.log(content);
+        process(content);
       });
       Instascan.Camera.getCameras().then(function(cameras) {
         if (cameras.length > 0) {
