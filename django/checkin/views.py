@@ -20,14 +20,14 @@ class CheckInInformation(APIView):
         return Response({
             'status': 200,
             'result': {
-                'name': r['profile']['name'],
-                'age': r['profile']['age'],
-                'group': group[4].upper() if group.startswith('hack') else r['profile']['group'],
-                'shirtSize': r['confirmation']['shirtSize'],
-                'idType': r['confirmation']['idType'],
-                'idNumber': r['confirmation']['idNumber'],
-                'dietaryRestrictions': r['confirmation']['dietaryRestrictions'],
-                'knownCondition': r['confirmation']['knownCondition'],
+                'name': r['profile']['name'] if 'name' in r['profile'] else '',
+                'age': r['profile']['age'] if 'age' in r['profile'] else '',
+                'group': group[4].upper() if group.startswith('hack') else (r['profile']['group'] if 'group' in r['profile'] else ''),
+                'shirtSize': r['confirmation']['shirtSize'] if 'shirtSize' in r['confirmation'] else '',
+                'idType': r['confirmation']['idType'] if 'idType' in r['confirmation'] else '',
+                'idNumber': r['confirmation']['idNumber'] if 'idNumber' in r['confirmation'] else '',
+                'dietaryRestrictions': r['confirmation']['dietaryRestrictions'] if 'dietaryRestrictions' in r['confirmation'] else '',
+                'knownCondition': r['confirmation']['knownCondition'] if 'knownCondition' in r['confirmation'] else '',
             },
         })
 
