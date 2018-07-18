@@ -36,7 +36,14 @@
         Vue.http.get("https://api.thehack.org.cn/checkin/info/" + content)
           .then(response => {
             let body = response.body;
-            console.log(body);
+            document.getElementById("name").innerHTML = body.result.name;
+            document.getElementById("age").innerHTML = body.result.age;
+            document.getElementById("group").innerHTML = body.result.group;
+            document.getElementById("shirt-size").innerHTML = body.result.shirtSize;
+            document.getElementById("id-type").innerHTML = body.result.idType;
+            document.getElementById("id-number").innerHTML = body.result.idNumber;
+            document.getElementById("dietary-restrictions").innerHTML = body.result.dietaryRestrictions;
+            document.getElementById("known-condition").innerHTML = body.result.knownCondition;
           });
       }
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
