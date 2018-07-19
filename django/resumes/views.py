@@ -50,18 +50,18 @@ class ResumesAll(APIView):
         hackshanghai = []
 
         for record in hackinit_raw:
-            hackinit.append(get_return_record(record), 'hackshanghai')
+            hackinit.append(get_return_record(record, 'hackshanghai'))
 
         for record in hackshanghai_raw:
-            hackshanghai.append(get_return_record(record), 'hackshanghai')
+            hackshanghai.append(get_return_record(record, 'hackshanghai'))
 
         for record in shanghaitech_raw:
             school = u'上海科技大学' if get_field(record, ['email']).endswith('@shanghaitech.edu.cn') else ''
             group = get_field(record, ['profile', 'group'])
             if group == 'I':
-                hackinit.append(get_return_record(record, school), 'hackshanghai')
+                hackinit.append(get_return_record(record, 'hackshanghai', school))
             elif group == 'S':
-                hackshanghai.append(get_return_record(record, school), 'hackshanghai')
+                hackshanghai.append(get_return_record(record, 'hackshanghai', school))
 
         return Response({
             'hackinit': hackinit,
