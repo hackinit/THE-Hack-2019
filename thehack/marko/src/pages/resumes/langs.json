@@ -3,6 +3,12 @@
         "en": "Sponsor Portal",
         "zh": "简历访问"
     },
+    "hackInitName": {
+        "default": "hack.init()"
+    },
+    "hackShanghaiName": {
+        "default": "hackShanghai"
+    },
     "nameTitle": {
         "en": "Name",
         "zh": "姓名"
@@ -18,5 +24,9 @@
     "resumeTitle": {
         "en": "Resume",
         "zh": "简历"
+    },
+    "unselectedText": {
+        "en": "Please select group: hack.init() / hackShanghai",
+        "zh": "请选择组别：hack.init() / hackShanghai"
     }
 }
