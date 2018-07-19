@@ -13,6 +13,8 @@ def get_by_group(group):
     except:
         return []
 
+    return r
+
 def get_field(record, keys):
     for key in keys:
         if key in record:
