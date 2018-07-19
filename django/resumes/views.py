@@ -36,7 +36,7 @@ def get_return_record(record, group, school=None):
         'email': get_field(record, ['email']),
         'school': get_field(record, ['profile', 'school']) if school is None else school,
         'resume': search_resume(get_field(record, ['_id']), group),
-    })
+    }
 
 class CheckInInformation(APIView):
     def get(self, request, format=None):
