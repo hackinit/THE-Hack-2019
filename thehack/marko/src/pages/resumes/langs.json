@@ -1,0 +1,22 @@
+{
+    "title": {
+        "en": "Sponsor Portal",
+        "zh": "简历访问"
+    },
+    "nameTitle": {
+        "en": "Name",
+        "zh": "姓名"
+    },
+    "emailTitle": {
+        "en": "Email",
+        "zh": "电子邮箱"
+    },
+    "schoolTitle": {
+        "en": "School",
+        "zh": "学校"
+    },
+    "resumeTitle": {
+        "en": "Resume",
+        "zh": "简历"
+    }
+}

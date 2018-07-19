@@ -1,0 +1,38 @@
+<include("./../../components/layout.marko", data)>
+
+<@body>
+  <div class="container">
+    <div class="row">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">hack.init()</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#">hackShanghai</a>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <table class="table">
+        <thead>
+          <th scope="col">#</th>
+          <th scope="col">${data.nameTitle}</th>
+          <th scope="col">${data.emailTitle}</th>
+          <th scope="col">${data.schoolTitle}</th>
+          <th scope="col">${data.resumeTitle}</th>
+        </thead>
+        <tbody>
+          <tr for(user in data.currentUsers | status-var=loop)>
+            <th scope="row">${loop.getIndex() + 1}</th>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.school}</td>
+            <td>${user.resume}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</@body>
+
+</include>
