@@ -1,14 +1,14 @@
 <include("./../../components/layout.marko", data)>
 
 <@body>
-  <div class="container">
+  <div class="container" id="sponsor-portal">
     <div class="row">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#">${data.hackInitName}</a>
+          <a class="nav-link active" href="#" v-on:click="switchTo(hackinit)">${data.hackInitName}</a>
         </li>
         <li>
-          <a class="nav-link" href="#">${data.hackShanghaiName}</a>
+          <a class="nav-link" href="#" v-on:click="switchTo(hackShanghai)">${data.hackShanghaiName}</a>
         </li>
       </ul>
     </div>
