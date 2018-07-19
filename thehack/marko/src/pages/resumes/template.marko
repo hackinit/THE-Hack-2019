@@ -5,10 +5,10 @@
     <div class="row">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#">hack.init()</a>
+          <a class="nav-link active" href="#">${data.hackInitName}</a>
         </li>
         <li>
-          <a class="nav-link" href="#">hackShanghai</a>
+          <a class="nav-link" href="#">${data.hackShanghaiName}</a>
         </li>
       </ul>
     </div>
@@ -22,17 +22,26 @@
           <th scope="col">${data.resumeTitle}</th>
         </thead>
         <tbody>
-          <tr for(user in data.currentUsers | status-var=loop)>
-            <th scope="row">${loop.getIndex() + 1}</th>
-            <td>${user.name}</td>
-            <td>${user.email}</td>
-            <td>${user.school}</td>
-            <td>${user.resume}</td>
+          <tr v-for="(user, index) in currentUsers">
+            <th scope="row">{{index + 1}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.school}}</td>
+            <td>{{user.resume}}</td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div class="row">
+      <div class="alert alert-warning" role="alert" v-if="currentUsers.length == 0">
+        ${data.unselectedText}
+      </div>
+    </div>
   </div>
 </@body>
+
+<@javascript>
+  <script src="//static.thehack.org.cn/js/thehack/resumes/controller.js"></script>
+</@javascript>
 
 </include>
