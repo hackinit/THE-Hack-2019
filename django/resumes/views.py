@@ -58,7 +58,7 @@ class CheckInInformation(APIView):
             group = get_field(record, ['profile', 'group'])
             if group == 'I':
                 hackinit.append(get_return_record(record, school), 'hackshanghai')
-            else if group == 'S':
+            elif group == 'S':
                 hackshanghai.append(get_return_record(record, school), 'hackshanghai')
 
         return Response({
