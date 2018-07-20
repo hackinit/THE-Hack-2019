@@ -14,7 +14,11 @@ let controller = new Vue({
   },
   methods: {
     switchTo: function(group) {
-      currentUsers = group;
+      if (group == 'hackinit') {
+        currentUsers = hackinit;
+      } else if (group == 'hackshanghai') {
+        currentUsers = hackshanghai;
+      }
     }
   }
 });
