@@ -19,7 +19,7 @@ let controller = new Vue({
   methods: {
     switchTo: function(group) {
       let that = this;
-      current = group;
+      that.current = group;
       if (group == 'hackinit') {
         that.currentUsers = that.hackinit;
       } else if (group == 'hackshanghai') {
