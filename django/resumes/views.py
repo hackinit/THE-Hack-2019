@@ -23,21 +23,12 @@ def get_field(record, keys):
             return ''
     return record
 
-def search_resume(identity, group):
-    url = 'https://api.thehack.org.cn/s3/prefix/upload/resume/confirmation/{group}/{identity}'.format(group=group, identity=identity)
-    try:
-        r = requests.get(url).json()
-    except:
-        return ''
-
-    return 'https://s3.cn-north-1.amazonaws.com.cn/thehack/{}'.format(r['result'])
-
 def get_return_record(record, group, school=None):
     return {
         'name': get_field(record, ['profile', 'name']),
         'email': get_field(record, ['email']),
         'school': get_field(record, ['profile', 'school']) if school is None else school,
-        'resume': search_resume(get_field(record, ['_id']), group),
+        'resume': 'https://s3.cn-north-1.amazonaws.com.cn/thehack/{}'.format(get_field(record, ['resumeLink'])),
     }
 
 class ResumesAll(APIView):
