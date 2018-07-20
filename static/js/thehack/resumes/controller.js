@@ -6,18 +6,21 @@ let controller = new Vue({
     hackshanghai: []
   },
   mounted: function () {
-    this.$http.get("https://api.thehack.org.cn/resumes/all")
+    let that = this;
+    that.$http.get("https://api.thehack.org.cn/resumes/all")
     .then(response => {
-      hackinit = response.body.hackinit;
-      hackshanghai = response.body.hackshanghai;
+      console.log(response);
+      that.hackinit = response.body.hackinit;
+      that.hackshanghai = response.body.hackshanghai;
     });
   },
   methods: {
     switchTo: function(group) {
+      let that = this;
       if (group == 'hackinit') {
-        currentUsers = hackinit;
+        that.currentUsers = that.hackinit;
       } else if (group == 'hackshanghai') {
-        currentUsers = hackshanghai;
+        that.currentUsers = that.hackshanghai;
       }
     }
   }
