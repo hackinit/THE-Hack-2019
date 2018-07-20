@@ -7,6 +7,7 @@ dump.rdb
 **/secrets.ssl/*
 !**/secrets.ssl/*.example
 secrets.htpasswd
+secrets.htpasswd.sponsors
 
 # Vim
 *.swp
