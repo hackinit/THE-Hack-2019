@@ -8,11 +8,11 @@
 
 <@body>
   <div class="container" id="sponsor-portal">
-    <div class="row">
-      <ul class="nav nav-pills nav-justified">
+    <div class="row" style="margin-top: 30px;">
+      <nav class="nav nav-pills">
         <a v-bind:class="['nav-item', 'nav-link', current == 'hackinit' ? 'active' : '']" href="#hackinit" v-on:click="switchTo('hackinit')">${data.hackInitName}</a>
         <a v-bind:class="['nav-item', 'nav-link', current == 'hackshanghai' ? 'active' : '']" href="#hackshanghai" v-on:click="switchTo('hackshanghai')">${data.hackShanghaiName}</a>
-      </ul>
+      </nav>
     </div>
     <div class="row hide">
       <table class="table">
