@@ -13,6 +13,7 @@ let controller = new Vue({
       that.hackinit = response.body.hackinit;
       that.hackshanghai = response.body.hackshanghai;
     });
+    $(".hide").removeClass("hide");
   },
   methods: {
     switchTo: function(group) {
