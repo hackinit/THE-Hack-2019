@@ -3,7 +3,8 @@ let controller = new Vue({
   data: {
     currentUsers: [],
     hackinit: [],
-    hackshanghai: []
+    hackshanghai: [],
+    current: ''
   },
   mounted: function () {
     let that = this;
@@ -18,6 +19,7 @@ let controller = new Vue({
   methods: {
     switchTo: function(group) {
       let that = this;
+      current = group;
       if (group == 'hackinit') {
         that.currentUsers = that.hackinit;
       } else if (group == 'hackshanghai') {
