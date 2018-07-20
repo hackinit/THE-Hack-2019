@@ -27,7 +27,7 @@
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>
             <td>{{user.school}}</td>
-            <td>{{user.resume}}</td>
+            <td><a target="_blank" v-bind:href="user.resume">${data.linkText}</a></td>
           </tr>
         </tbody>
       </table>
