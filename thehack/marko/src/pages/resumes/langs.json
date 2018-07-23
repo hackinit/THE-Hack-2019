@@ -17,6 +17,10 @@
         "en": "Email",
         "zh": "电子邮箱"
     },
+    "phoneTitle": {
+        "en": "Phone",
+        "zh": "电话"
+    },
     "schoolTitle": {
         "en": "School",
         "zh": "学校"
