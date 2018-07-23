@@ -20,6 +20,7 @@
           <th scope="col">#</th>
           <th scope="col">${data.nameTitle}</th>
           <th scope="col">${data.emailTitle}</th>
+          <th scope="col">${data.phoneTitle}</th>
           <th scope="col">${data.schoolTitle}</th>
           <th scope="col">${data.resumeTitle}</th>
         </thead>
@@ -28,6 +29,7 @@
             <th scope="row">{{index + 1}}</th>
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
             <td>{{user.school}}</td>
             <td><a target="_blank" v-bind:href="user.resume">${data.linkText}</a></td>
           </tr>
