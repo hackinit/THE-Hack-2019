@@ -27,6 +27,7 @@ def get_return_record(record, group, school=None):
     return {
         'name': get_field(record, ['profile', 'name']),
         'email': get_field(record, ['email']),
+        'phone': get_field(record, ['profile', 'phoneNum']),
         'school': get_field(record, ['profile', 'study', 'school']) if school is None else school,
         'resume': 'https://s3.cn-north-1.amazonaws.com.cn/thehack/{}'.format(get_field(record, ['resumeLink'])),
     }
