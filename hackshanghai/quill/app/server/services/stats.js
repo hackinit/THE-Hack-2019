@@ -116,10 +116,11 @@ function calculateStats(){
         newStats.declined += user.status.declined ? 1 : 0;
 
         // Count the number of people who need reimbursements
-        newStats.reimbursementTotal += user.confirmation.reimbursementAmount;
-
-        // Repurposed: Confirmed reimbursements
         if (user.status.confirmed) {
+          newStats.reimbursementTotal += user.confirmation.needsReimbursement ? 1 : 0;
+        }
+        // Count the number of people who still need to be reimbursed
+        if (user.status.checkedIn) {
           newStats.reimbursementMissing += user.confirmation.reimbursementAmount;
         }
 
