@@ -1,0 +1,313 @@
+<div id="application" class="page">
+  <div class="ui page dimmer" id="uploading-loader" style="z-index:10000;">
+    <div class="ui text loader">Uploading...</div>
+  </div>
+  <div class="divided title">
+    Application
+  </div>
+
+  <div class="ui stackable page grid">
+    <div class="column">
+      <div class="ui form" ng-class="{'loading': loading}">
+        <div class="divided title">Basic Information</div>
+        <fieldset ng-disabled="regIsClosed">
+          <div class="field" required>
+            <label>Email*</label>
+            <input type="email" name="email" disabled="disabled" ng-model="user.email">
+          </div>
+
+          <div class="field" required>
+            <label>Full Name*</label>
+            <input type="text" name="name" ng-model="user.profile.name" placeholder="请填写你的法定全名">
+          </div>
+
+          <div class="field" required>
+            <label>Phone Number*</label>
+            <input type="text"
+            name="phoneNum"
+            ng-model="user.profile.phoneNum">
+          </div>
+
+          <div class="field" required>
+            <label>Age on July 21*</label>
+            <input type="text" name="age" ng-model="user.profile.age">
+          </div>
+
+          <div class="field" required>
+            <label>Gender*</label>
+            <select name="gender" ng-model="user.profile.gender">
+              <option value="">Please select...</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other</option>
+              <option value="N">I prefer not to respond</option>
+            </select>
+          </div>
+
+          <div class="field" requied>
+            <label>City*</label>
+            <input type="text" name="city" ng-model="user.profile.city" placeholder="From where will you come to Shanghai?">
+          </div>
+
+        </fieldset>
+
+        <br>
+
+        <br>
+
+        <div class="divided title">Professional Information</div>
+        <fieldset ng-disabled="regIsClosed">
+          <div class="field" required>
+            <label>Your Current Occupation*</label>
+
+            <div class="ui stackable grid">
+              <div class="four wide column">
+                <div class="ui radio checkbox">
+                  <input type="radio" id="profession-student" name="profession" ng-model="user.profile.profession" value="S">
+                  <label for="profession-student">I am a student</label>
+                </div>
+              </div>
+
+              <div class="six wide column">
+                <div class="ui radio checkbox">
+                  <input type="radio" id="profession-work" name="profession" ng-model="user.profile.profession" value="W">
+                  <label for="profession-work">I am working</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="user.profile.profession == 'S'">
+
+            <div class="field" required>
+              <label>School*</label>
+              <input type="text" name="school" ng-model="user.profile.study.school">
+            </div>
+
+            <div class="field" required>
+              <label>Major*</label>
+              <input type="text" placeholder="Computer Science, UX Engineering, etc" name="subject-of-study" ng-model="user.profile.study.subject">
+            </div>
+
+            <div class="field" required>
+              <label>Year of Studies*</label>
+              <select name="year-of-studies" ng-model="user.profile.study.yearOfStudies">
+                <option value="">Please select...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
+
+            <div class="field" required>
+              <label>Graduating Year*</label>
+              <select name="graduation-year" ng-model="user.profile.study.graduationYear">
+                <option value="">Please select...</option>
+                <option value="{{year}}" ng-repeat="year in graduationYears">{{year}}</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Please briefly describe your tech stack and level.</label>
+              <textarea ng-model="user.profile.study.techStack"></textarea>
+            </div>
+
+          </div>
+
+          <div ng-show="user.profile.profession == 'W'">
+            <div class="field" required>
+              <label>Year of Working*</label>
+              <input name="work-experience" type="number" min="0" max="100" ng-model="user.profile.work.experience">
+            </div>
+
+            <div class="field">
+              <label>Please briefly describe your current work.</label>
+              <textarea ng-model="user.profile.work.techStack"></textarea>
+            </div>
+
+          </div>
+        </fieldset>
+        <br>
+        <br>
+
+        <div class="divided title">Travel Reimbursement</div>
+        <fieldset ng-disabled="regIsClosed">
+          <div class="field" required>
+            <label>Will you need travel reimbursement to come to hack.init()?*</label>
+            <p>If you are traveling to hack.init() from other places, the Organizing Committee will provide travel grant up to full amount of trip fare. Travel grant will be reimbursed through bank transfer within 30 days after completion of hack.init(). Eligible travel methods are listed below:</p>
+            <ul>
+              <li>Within Shanghai: No reimbursement</li>
+              <li>Zhejiang and Jiangsu: Train (G/D/C or other, Coach) or by Car</li>
+              <li>Other Region: Train (G/D/C/ or other, Coach), by Car, or by Air</li>
+            </ul>
+            <p>
+              <b>Important Notice:</b> To receive travel grant, you MUST submit the ORIGINAL ticket at the event. We will retain a copy of your National ID Card or Passport for tax purposes.
+            </p>
+            <div class="ui stackable grid">
+              <div class="two wide column">
+                <div class="ui radio checkbox">
+                  <input id="travel-reimbursement-y" name="travel-reimbursement" type="radio" value="Y" ng-model="user.profile.travelReimbursement">
+                  <label for="travel-reimbursement-y">yes</label>
+                </div>
+              </div>
+              <div class="two wide column">
+                <div class="ui radio checkbox">
+                  <input id="travel-reimbursement-n" name="travel-reimbursement" type="radio" value="N" ng-model="user.profile.travelReimbursement">
+                  <label for="travel-reimbursement-n">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field" required ng-show="user.profile.travelReimbursement == 'Y'">
+            <label>Category of Reimbursement*</label>
+            <p>From where will you travel to hack.init()?</p>
+
+            <select name="travel-reimbursement-type" ng-model="user.profile.travelReimbursementType">
+              <option value="">Please select...</option>
+              <option value="S">Shanghai</option>
+              <option value="T">Zhejiang or Jiangsu</option>
+              <option value="O">Other</option>
+            </select>
+          </div>
+
+          <br>
+
+          <div class="divided title">Personal Information</div>
+
+          <div class="field">
+            <label>LinkedIn Profile</label>
+            <input type="text" placeholder="https://linkedin.com/in/yourname" ng-model="user.profile.linkedin">
+          </div>
+
+          <div class="field">
+            <label>GitHub Profile</label>
+            <input type="text" placeholder="https://github.com/yourname" ng-model="user.profile.github">
+          </div>
+
+          <div class="field">
+            <label>WeChat ID</label>
+            <input type="text" ng-model="user.profile.wechat">
+          </div>
+
+          <div class="field">
+            <label>Personal Website</label>
+            <input type="text" ng-model="user.profile.website">
+          </div>
+
+          <div class="field" required>
+            <label>Resume*</label>
+            <input type="file" id="resume">
+          </div>
+
+          <br>
+          <br>
+
+          <div class="divided title">Specialization</div>
+
+          <div class="field" required>
+            <label>Please list your fields of interest. *</label>
+            <input name="interestedField" ng-model="user.profile.interestedField" placeholder="e.g. AI, MedTech, FinTech">
+          </div>
+
+          <div class="field" required>
+            <label>I think I am a... *</label>
+            <select name="description" ng-model="user.profile.description">
+              <option value="">Please select...</option>
+              <option value="Engineer">Engineer (EE, CE, Software Engineering, etc.)</option>
+              <option value="Designer">Designer (Graphic, User Experience, etc)</option>
+              <option value="Entrepreneur">Entrepreneur</option>
+            </select>
+          </div>
+
+          <div class="field" required>
+            <label>Do you have some idea about what you will do at hack.init()? *</label>
+            <select name="idea" ng-model="user.profile.idea">
+              <option value="">Please select...</option>
+              <option value="N">None</option>
+              <option value="S">Some</option>
+              <option value="Y">I am very certain</option>
+            </select>
+          </div>
+
+          <div class="field" required>
+            <label>Please select your most interested track. *</label>
+            <div class="inline fields">
+              <div class="field" ng-repeat="(key, value) in tracks">
+                <div class="ui checkbox">
+                  <input type="checkbox" id="tracks-{{$index}}" ng-model="tracks[key]" />
+                  <label for="tracks-{{$index}}">{{key}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>
+                Have you attended hackathons?
+            </label>
+            <textarea ng-model="user.profile.pastExperience">
+            </textarea>
+          </div>
+
+          <div class="field" required>
+            <label>
+              Why are you interested in STEM and Arts? *
+            </label>
+            <textarea ng-model="user.profile.stemInterest">
+            </textarea>
+          </div>
+
+          <div class="field" required>
+            <label>
+                Please briefly describe your most prided project or product and tell us how you commit to it. *
+            </label>
+            <textarea ng-model="user.profile.projExp">
+            </textarea>
+          </div>
+
+          <div class="field" required>
+            <label>
+                Please share a problem you face and outline how technology can play a role in optimizing it. *
+            </label>
+            <textarea ng-model="user.profile.currentIssue">
+            </textarea>
+          </div>
+
+        </fieldset>
+
+        <div class="divided title">Legal Notice</div>
+        <fieldset ng-disabled="regIsClosed">
+
+          <div class="field" required>
+            <label>Code of Conduct *</label>
+            <div class="ui checkbox">
+              <input type="checkbox" name="cocRead" value="Y" ng-model="user.profile.legal.cocRead">
+              <label>I have read and agreed to adhere to the <a href="//static.thehack.org.cn/doc/shared/Code-of-Conduct.pdf" target="_blank"> Code of Conduct</a>.</label>
+            </div>
+          </div>
+
+          <div class="field" required>
+            <label>Official Rule *</label>
+            <div class="ui checkbox">
+              <input type="checkbox" name="mlh-terms" value="Y" ng-model="user.profile.legal.terms">
+              <label>I have read and agreed to adhere to the <a href="//static.thehack.org.cn/doc/shared/Hackathon-Official-Rule-zh.pdf" target="_blank">Hackathon Official Rule</a>.</label>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="field" ng-hide="regIsClosed">
+            <button type="submit" class="fluid ui purple button" ng-click="submitForm()">Save Application</button>
+          </div>
+        </fieldset>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

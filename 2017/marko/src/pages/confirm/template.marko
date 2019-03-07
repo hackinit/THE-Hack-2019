@@ -1,0 +1,385 @@
+<!--
+    MAINTAINER: Yuchong Pan
+    EMAIL:      panyuchong@gmail.com
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title if(data.lang==="en")>hack.init() | Confirm</title>
+        <title if(data.lang==="zh")>hack.init() | 参赛确认</title>
+        <link rel="icon" href="/s/img/favicon.ico">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/s/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/s/lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/s/lib/alertify/css/alertify.css">
+        <link rel="stylesheet" href="/s/css/confirm-styles.css">
+        <link rel="stylesheet" href="/s/css/font.css">
+        <!-- /CSS -->
+    </head>
+
+    <body>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-93677768-8', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+        <!-- HEADER -->
+        <nav id="navbar-container" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <if(data.lang==="en")>
+                        <a class="navbar-brand navbar-brand-logo" href="/">
+                            <img alt="Brand" src="/s/img/favicon.ico">
+                        </a>
+                        <a class="navbar-brand navbar-brand-text" href="/">
+                            hack.init()
+                        </a>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <a class="navbar-brand navbar-brand-logo" href="/zh">
+                            <img alt="Brand" src="/s/img/favicon.ico">
+                        </a>
+                        <a class="navbar-brand navbar-brand-text" href="/zh">
+                            hack.init()
+                        </a>
+                    </if>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
+                        <!--
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
+                        -->
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/confirm">简体中文</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
+                        <!--
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
+                        -->
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/confirm">ENGLISH</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- /HEADER -->
+
+        <!-- MAIN -->
+        <div id="confirm" class="container">
+            <div class="row">
+                <div class="col-xs-12 horizontal-center">
+                    <h2 if(data.lang==="en")>Confirmation</h2>
+                    <h2 if(data.lang==="zh")>确认参赛</h2>
+                </div>
+            </div>
+            <div class="row agreement-section">
+                <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+                    <div if(data.lang==="en")>
+                        <p>The <b>hack.init()</b> Team has granted you a travel reimbursement of CNY {{reimbursementCap}} for your travel to Shanghai. <b>We will not reimburse travel cost from Shanghai.</b> If you have any question regarding travel, email <a href="mailto:travel@hackinit.org">travel@hackinit.org</a>.</p>
+                        <p>I have read and accept the <a target="_blank" href="/s/doc/Hackathon-Official-Rule.pdf"><em><b>Official Rule</b></em></a> and accept that this funding will be solely used for my travel to <b>hack.init()</b> event in Shanghai and will make reasonable purchases. I hereby acknowledge that any expenses going over this cap will not be covered. I hereby agree to submit acceptable reimbursement documents to <b>hack.init()</b> Travel Team at the event in order to receive full reimbursement.</p>
+                        <p>Acceptable reimbursement documents include Fapiao, Train ticket (original copy), bus ticket (original copy) and flight itinerary clearly showing price of travel.</p>
+                    </div>
+                    <div if(data.lang==="zh")>
+                        <p><b>hack.init()</b>团队将为你提供合计人民币{{reimbursementCap}}元的交通补助。<b>我们不会为上海市内的参赛者提供交通补助。</b>如果你对交通问题有任何疑问，请发送邮件至<a href="mailto:travel@hackinit.org">travel@hackinit.org</a>。</p>
+                        <p>我已阅读并接受<a target="_blank" href="/s/doc/Hackathon-Official-Rule-zh.pdf"><em><b>参赛规则</b></em></a>，并接受<b>hack.init()</b>团队提供的交通补助将仅被用作前往活动现场的交通费用合理使用。我认可所有超出限额的支出将不会被报销，并认可将在活动现场提交可被接受的报销凭证以获得报销。</p>
+                        <p>可被接受的报销凭证包括发票、火车票（原件）、汽车票（原件）及注明票价的航空运输电子客票行程单。</p>
+                    </div>
+                    <div class="accept-decline-section">
+                        <div class="accept-decline-branch">
+                            <input type="radio" name="accept-decline" id="accept-decline-yes" value="true" v-model="acceptOrDecline">
+                            <p if(data.lang==="en")>I accept the aforementioned terms and will participate in <b>hack.init()</b> on July 8, 2017.</p>
+                            <p if(data.lang==="zh")>我接受以上条款，并将于2017年7月8日前往上海参加活动。</p>
+                        </div>
+                        <div class="accept-decline-branch">
+                            <input type="radio" name="accept-decline" id="accept-decline-no" value="false" v-model="acceptOrDecline">
+                            <p if(data.lang==="en")>I decline my acceptance.</p>
+                            <p if(data.lang==="zh")>我放弃参赛资格。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-section" v-show="acceptOrDecline == 'true'">
+                <div class="col-xs-12 horizontal-center">
+                    <h3 if(data.lang==="en")>Verification</h3>
+                    <h3 if(data.lang==="zh")>身份验证信息</h3>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field first-field">
+                    <label for="name" if(data.lang==="en")>Please print your legal name here *</label>
+                    <label for="name" if(data.lang==="zh")>你的法定全名（这一全名应在你的身份证件上出现） *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="name-addon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <input type="text" class="form-control" id="name" autocomplete="off" aria-describedby="name-addon" v-model="name" @input="validateRequiredField(name, '#name')" @blur="validateRequiredField(name, '#name')">
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="id-type" if(data.lang==="en")>Please select your ID type *</label>
+                    <label for="id-type" if(data.lang==="zh")>请选择你的身份证件类型 *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="id-type-addon">
+                            <i class="fa fa-id-card"></i>
+                        </span>
+                        <select class="form-control select-box" id="id-type" aria-describedby="id-type-addon" v-model="idType" @change="validateSelectBox(idType, '#id-type')" @blur="validateSelectBox(idType, '#id-type')" if(data.lang==="en")>
+                            <option value="-">Choose...</option>
+                            <option value="N">National ID Card</option>
+                            <option value="P">Passport</option>
+                        </select>
+                        <select class="form-control select-box" id="id-type" aria-describedby="id-type-addon" v-model="idType" @change="validateSelectBox(idType, '#id-type')" @blur="validateSelectBox(idType, '#id-type')" if(data.lang==="zh")>
+                            <option value="-">请选择……</option>
+                            <option value="N">身份证</option>
+                            <option value="P">护照</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="id-number" if(data.lang==="en")>Please enter your ID *</label>
+                    <label for="id-number" if(data.lang==="zh")>请填写你的身份证件号码 *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="id-number-addon">
+                            <i class="fa fa-vcard-o"></i>
+                        </span>
+                        <input type="text" class="form-control" id="id-number" autocomplete="off" aria-describedby="id-number-addon" v-model="idNumber" @input="validateRequiredField(idNumber, '#id-number')" @blur="validateRequiredField(idNumber, '#id-number')">
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="resume" if(data.lang==="en")>Please upload your resume (resume will be shared with sponsors to be considered for internship or job offer) *</label>
+                    <label for="resume" if(data.lang==="zh")>请提交你的个人简历（简历将被共享至竞赛合作方以被考虑潜在实习或全职工作机会） *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="resume-addon">
+                            <i class="fa fa-file"></i>
+                        </span>
+                        <input type="file" class="form-control" id="resume" aria-describedby="resume-addon" @change="resumeSelected">
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="tshirt" if(data.lang==="en")>Select your T-shirt size *</label>
+                    <label for="tshirt" if(data.lang==="zh")>请选择你的T恤大小 *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="tshirt-addon">
+                            <i class="fa fa-sort-amount-asc"></i>
+                        </span>
+                        <select class="form-control select-box" id="tshirt" aria-describedby="tshirt-addon" @change="validateSelectBox(tshirt, '#tshirt')" @blur="validateSelectBox(tshirt, '#tshirt')" v-model="tshirt">
+                            <option value="-" if(data.lang==="en")>Choose...</option>
+                            <option value="-" if(data.lang==="zh")>请选择……</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-section" v-show="acceptOrDecline == 'true'">
+                <div class="col-xs-12 horizontal-center">
+                    <h3 if(data.lang==="en")>Medical Information</h3>
+                    <h3 if(data.lang==="zh")>医疗信息</h3>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 first-field">
+                    <label if(data.lang==="en")>Please ensure the authenticity and completeness of provided information. The Host and the Released Parties (as defined in the <a target="_blank" href="/s/doc/Hackathon-Official-Rule.pdf">Official Rule</a>) are not responsible nor liable to any civil and penal consequences resulted from omission of information provided in this section. The Host and the Released Parties also reserve the right to seek compensations may arise from omission of information provided in this section to the fullest extent permitted by the law.</label>
+                    <label if(data.lang==="zh")>请如实、完整填写以下信息。竞赛主体及被免责方（定义见<a target="_blank" href="/s/doc/Hackathon-Official-Rule-zh.pdf">参赛规则</a>）对因您信息遗漏造成的任何后果不承担任何形式的民事及刑事责任，并保留在法律许可范围内最大限度追究因您信息遗漏造成的任何后果的赔偿。</label>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field first-field">
+                    <label for="healthy" if(data.lang==="en")>Are you healthy enough to participate in this 24-hour event? *</label>
+                    <label for="healthy" if(data.lang==="zh")>你是否足够健康以参与本次24小时活动？ *</label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="horizontal-center">
+                                <input type="radio" name="healthy" id="healthy-yes" value="true" v-model="healthy" @change="validateRadio(healthy, '#healthy')">
+                                <span if(data.lang==="en")>Yes</span>
+                                <span if(data.lang==="zh")>是</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="horizontal-center">
+                                <input type="radio" name="healthy" id="healthy-no" value="false" v-model="healthy" @change="validateRadio(healthy, '#healthy')">
+                                <span if(data.lang==="en")>No</span>
+                                <span if(data.lang==="zh")>否</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="dietary" if(data.lang==="en")>Select the following dietary restrictions if applicable (Ctrl/Command + click to multi-select!)</label>
+                    <label for="dietary" if(data.lang==="zh")>若适用，请选择你的饮食限制（按住Ctrl或Command键多选）</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="dietary-addon">
+                            <i class="fa fa-glass"></i>
+                        </span>
+                        <select multiple class="form-control" id="dietary" size=5 v-model="dietary" aria-describedby="dietary-addon" if(data.lang==="en")>
+                            <option value="VA">Vegan</option>
+                            <option value="VE">Vegetarian</option>
+                            <option value="G">Gluten-free</option>
+                            <option value="S">Sugar-free</option>
+                            <option value="H">Halal</option>
+                        </select>
+                        <select multiple class="form-control" id="dietary" size=5 v-model="dietary" aria-describedby="dietary-addon" if(data.lang==="zh")>
+                            <option value="VA">素食主义者</option>
+                            <option value="VE">素食者</option>
+                            <option value="G">不含麸质</option>
+                            <option value="S">无糖</option>
+                            <option value="H">清真</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="dietary-other" if(data.lang==="en")>Do you have any other dietary restriction? If yes, identify and explain. *</label>
+                    <label for="dietary-other" if(data.lang==="zh")>你是否有其他饮食限制？如果有，请完整列出。 *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="dietary-other-addon">
+                            <i class="fa fa-lemon-o"></i>
+                        </span>
+                        <textarea class="form-control text-area" id="dietary-other" rows=4 aria-describedby="dietary-other-addon" v-model="dietaryOther" @input="validateRequiredField(dietaryOther, '#dietary-other')" @blur="validateRequiredField(dietaryOther, '#dietary-other')"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="allergy" if(data.lang==="en")>Do you have any allergy source? If yes, identify and explain. *</label>
+                    <label for="allergy" if(data.lang==="zh")>你是否有已知过敏源？如果有，请完整列出。 *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="allergy-addon">
+                            <i class="fa fa-ambulance"></i>
+                        </span>
+                        <textarea class="form-control text-area" id="allergy" rows=4 aria-describedby="allergy-addon" v-model="allergy" @input="validateRequiredField(allergy, '#allergy')" @blur="validateRequiredField(allergy, '#allergy')"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="medical-condition" if(data.lang==="en")>Do you have a history of, or currently suffer from, medical condition(s) about which we need to be aware? If yes, identify and explain. *</label>
+                    <label for="medical-condition" if(data.lang==="zh")>你是否有任何过往病史或目前拥有的疾病状况？如果有，请完整列出。 *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="medical-condition-addon">
+                            <i class="fa fa-heartbeat"></i>
+                        </span>
+                        <textarea class="form-control text-area" id="medical-condition" rows=4 aria-describedby="medical-condition-addon" v-model="medicalCondition" @input="validateRequiredField(medicalCondition, '#medical-condition')" @blur="validateRequiredField(medicalCondition, '#medical-condition')"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
+                    <label for="medication" if(data.lang==="en")>Are you currently taking medication that may interfere with ability to safely participate in <b>hack.init()</b>? If yes, identify and explain. *</label>
+                    <label for="medication" if(data.lang==="zh")>你是否目前正在摄入任何可能影响你安全参与<b>hack.init()</b>的药物？如果有，请完整列出。 *</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="medication-addon">
+                            <i class="fa fa-medkit"></i>
+                        </span>
+                        <textarea class="form-control text-area" id="medication" rows=4 aria-describedby="medication-addon" v-model="medication" @input="validateRequiredField(medication, '#medication')" @blur="validateRequiredField(medication, '#medication')"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-section" v-show="acceptOrDecline == 'true'">
+                <div class="col-xs-12 horizontal-center">
+                    <h3 if(data.lang==="en")>Workshops</h3>
+                    <h3 if(data.lang==="zh")>工作坊</h3>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field first-field">
+                    <label for="workshops" if(data.lang==="en")>We provide a wide range of pre-event and in-event workshops at <b>hack.init()</b>. Please select all that you are interested in. (Ctrl/Command + click to multi-select!) *</label>
+                    <label for="workshops" if(data.lang==="en")>Note: The duration of each workshop is between 1-2 hours. The detailed schedule for each workshop will be updated on the website after application is closed.</label>
+                    <label for="workshops" if(data.lang==="zh")><b>hack.init()</b>将在赛前与赛中提供一系列工作坊，请在如下选项中选择你感兴趣的主题。（按住Ctrl或Command键多选） *</label>
+                    <label for="workshops" if(data.lang==="zh")>注：每个工作坊的时长为1-2小时。工作坊的具体安排将于申请关闭后在网站上更新。</label>
+                    <div class="input-group workshops-select-wrapper">
+                        <span class="input-group-addon" id="workshops-addon">
+                            <i class="fa fa-wrench"></i>
+                        </span>
+                        <select multiple class="form-control" id="workshops" size=14 v-model="workshops" aria-describedby="workshops-addon" if(data.lang==="en")>
+                            <option value="P">Python Programming Language</option>
+                            <option value="M">Moby (Docker) Container Engine</option>
+                            <option value="G">Git/GitHub</option>
+                            <option value="U">UI/UX Design in Sketch</option>
+                            <option value="3">3D CAD Design in Solidworks</option>
+                            <option value="B">Business Plan</option>
+                            <option value="E">Entrepreneurship & Management</option>
+                            <option value="FE">Front-end Web Development</option>
+                            <option value="BE">Back-end Web Development in Django</option>
+                            <option value="GCP">Google Cloud Platform</option>
+                            <option value="V">VR Game Development in Unity</option>
+                            <option value="I">Internet of Things</option>
+                            <option value="L">Leap Motion Controller</option>
+                            <option value="F">Female Hackers Meetup</option>
+                        </select>
+                        <select multiple class="form-control" id="workshops" size=14 v-model="workshops" aria-describedby="workshops-addon" if(data.lang==="zh")>
+                            <option value="P">Python 编程语言</option>
+                            <option value="M">Moby (Docker) 容器引擎</option>
+                            <option value="G">Git/GitHub</option>
+                            <option value="U">Sketch UI/UX 设计</option>
+                            <option value="3">Solidworks 3D CAD 设计</option>
+                            <option value="B">商业计划书</option>
+                            <option value="E">创业及管理</option>
+                            <option value="FE">网页前端开发</option>
+                            <option value="BE">Django 网页后端开发</option>
+                            <option value="GCP">Google 云端平台</option>
+                            <option value="V">Unity VR 游戏开发</option>
+                            <option value="I">物联网</option>
+                            <option value="L">Leap Motion 控制器</option>
+                            <option value="F">女性创客工作坊</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row confirm-btn-row">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" v-show="acceptOrDecline == 'true'">
+                    <label if(data.lang==="en")>By clicking on "Confirm & Submit", I hereby confirm my participation in <b>hack.init()</b> and accept all rules and regulations of <b>hack.init()</b>.</label>
+                    <label if(data.lang==="zh")>通过点击“确认并提交”按钮，我确认参与<b>hack.init()</b>创客马拉松活动并接受所有相关规则。</label>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" v-show="acceptOrDecline == 'false'">
+                    <label if(data.lang==="en")>By clicking on "Confirm & Submit", I hereby decline my acceptance to <b>hack.init()</b>.</label>
+                    <label if(data.lang==="zh")>通过点击“确认并提交”按钮，我确认放弃<b>hack.init()</b>创客马拉松活动参赛资格。</label>
+                </div>
+                <div class="col-xs-12 confirm-btn-col">
+                    <div class="horizontal-center">
+                        <a type="button" id="confirm-btn" class="btn btn-primary btn-lg" @click="confirmParticipation()" if(data.lang==="en")>Confirm & Submit</a>
+                        <a type="button" id="confirm-btn" class="btn btn-primary btn-lg" @click="confirmParticipation()" if(data.lang==="zh")>确认并提交</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /MAIN -->
+
+        <!-- FOOTER -->
+        <div class="container-fluid darkgrey-background">
+            <div class="row">
+                <div class="col-xs-12 footer" if(data.lang==="en")>
+                    <div class="horizontal-center">
+                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                        <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
+                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                    </div>
+                </div>
+                <div class="col-xs-12 footer" if(data.lang==="zh")>
+                    <div class="horizontal-center">
+                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                        <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
+                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /FOOTER -->
+
+        <!-- JAVASCRIPT -->
+        <script src="/s/lib/jquery/jquery-3.1.1.min.js"></script>
+        <script src="/s/lib/vue/vue.min.js"></script>
+        <script src="/s/lib/vue/vue-resource.min.js"></script>
+        <script src="/s/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/s/lib/alertify/js/alertify.js"></script>
+        <script src="/s/js/confirm-controller.js"></script>
+        <!-- /JAVASCRIPT -->
+    </body>
+</html>

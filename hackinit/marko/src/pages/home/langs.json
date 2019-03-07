@@ -1,0 +1,318 @@
+{
+    "ga": {
+        "default": "115957013-5"
+    },
+    "title": {
+        "default": "July 21 - 22, 2018"
+    },
+    "date": {
+        "en": "July 21 - 22, 2018",
+        "zh": "2018年7月21-22日"
+    },
+    "city": {
+        "en": "Shanghai, China",
+        "zh": "中国，上海"
+    },
+    "location": {
+        "en": "ShanghaiTech University",
+        "zh": "上海科技大学"
+    },
+    "apply": {
+        "en": "Apply",
+        "zh": "参赛申请"
+    },
+    "prospectus": {
+        "en": "Prospectus",
+        "zh": "项目计划书"
+    },
+    "prospectusLink": {
+        "en": "//static.thehack.org.cn/doc/shared/Prospectus-en_US.pdf",
+        "zh": "//static.thehack.org.cn/doc/shared/Prospectus-zh_CN.pdf"
+    },
+    "wechat": {
+        "en": "Follow Us",
+        "zh": "关注我们"
+    },
+    "highlights": {
+        "en": ["Collaboration", "Workshops", "Resources", "Food", "Prizes", "Free Travel"],
+        "zh": ["合作", "工作坊", "资源", "食物", "奖品", "旅费报销"]
+    },
+    "highlightIcons": {
+        "default": ["handshake", "cogs", "code", "utensils", "trophy", "plane"]
+    },
+    "faqs": {
+        "zh": [{
+            "question": "什么是hack.init()？",
+            "answer": "hack.init()是中国最顶尖的青年人创客马拉松，也是第一个宣传包容性与文化多样性的开放给高中生的创客马拉松。我们将全国各地350名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。"
+        }, {
+            "question": "参加活动需要缴费么？",
+            "answer": "一点都不需要！创客马拉松是一个全免费活动，我们将会为你提供一整个周末的饮食、小吃、纪念品与休息区。我们还将报销你的路费！"
+        }, {
+            "question": "谁可以申请参加？",
+            "answer": "年龄在14至19岁间的人——不管是高中生、大学生或已经辍学——都可以报名参加我们的活动。对于超过年龄限制的申请者，请 <a href=\"http://hackshanghai.com\">点击这里</a> 查看 hackShanghai 的相关信息。"
+        }, {
+            "question": "我小于14岁，但是我还是想来参加。",
+            "answer": "请<a href=\"mailto:minors@hackinit.org\">发送一封邮件</a>给我们，并说明你的情况。我们可能可以邀请你参加我们的活动，但仍然取决于你的健康状况及监护人许可。"
+        }, {
+            "question": "我从未参加过创客马拉松，怎么办？",
+            "answer": "不要怕！hack.init()的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。"
+        }, {
+            "question": "我怎么抵达hack.init()活动现场？",
+            "answer": "上海本地参赛者可以通过轨道交通轻松到达上海科技大学活动现场。市内交通费用我们不会报销。对于非上海参赛者，我们将为你提供路费报销。更多关于报销的信息将在选手入选后发布。"
+        }, {
+            "question": "日程安排是怎样的？",
+            "answer": "hack.init()将在7月21日早上8点开始，7月22日下午4点30分结束。更详细的日程将在活动前发布。"
+        }, {
+            "question": "我可以睡觉、运动……嘛？",
+            "answer": "当然可以！我们在活动期间设置了休息区域，你也可以在上海科技大学的校园中慢跑健身。"
+        }, {
+            "question": "我需要带些什么？",
+            "answer": "请注意携带好由政府颁发的身份证明文件（身份证、护照等）。你的身份证件将作为允许你进入活动现场与租赁器材的依据。你也需要携带便携式电脑、充电器、毛毯或睡袋、卫生用品等日常用品。"
+        }, {
+            "question": "我还有别的问题！",
+            "answer": "请随时发邮件到<a href=\"mailto:contact@hackinit.org\">contact@hackinit.org</a>，hack.init()团队非常乐意帮助你解决任何问题！"
+        }],
+        "en": [{
+            "question": "What is hack.init()?",
+            "answer": "hack.init() is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 350 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning."
+        }, {
+            "question": "How much will this cost?",
+            "answer": "Nada. Zip. Zero. Zilch. We'll provide you with a weekend's worth of swag, meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, we'll even reimburse your travel."
+        }, {
+            "question": "Who can participate?",
+            "answer": "Anyone within 14-19 years old are welcome to participate, whether you are currently enrolled in high school, university or dropped out. For those who are over the age limit, please  <a href=\"http://hackshanghai.com\">click here</a> for more information of hackShanghai."
+        }, {
+            "question": "What if I’m under 14 and I want to come?",
+            "answer": "Please send us <a href=\"mailto:minors@hackinit.org\">an email</a> and indicate your situation. Perhaps we can invite you to join us, but this depends on your health and parental permission."
+        }, {
+            "question": "I have never been to a hackathon and I’m nervous.",
+            "answer": "Have no fear - hack.init() is, first and foremost, a fun learning experience! During the few weeks prior to hackathon and the actual assemble itself, we will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to over 10 workshops before and at the hackathon to better prepare yourself."
+        }, {
+            "question": "How can I get to hack.init()?",
+            "answer": "For Shanghai hackers, you can get to ShanghaiTech University easily by public transportation which will not be reimbursed. We do provide travel reimbursement to non-Shanghai hackers. More information will be available to you once accepted."
+        }, {
+            "question": "What’s the event schedule?",
+            "answer": "hack.init() will commence at 8 am, July 21st and last until 4:30 pm, July 22nd. More detailed schedule will be available closer to event date."
+        }, {
+            "question": "Can I sleep, workout…?",
+            "answer": "Of course! We will have designated resting area during our event. You can also enjoy the clean air in Pudong Suburban area by jogging around the campus!"
+        }, {
+            "question": "What should I bring?",
+            "answer": "Bring your government-issued ID for entrance and to borrow hardware from our rental booth. You’ll also need your laptop and charger for hacking, a blanket or a sleeping bag for resting, and toiletries for hygiene."
+        }, {
+            "question": "I still have more questions!",
+            "answer": "No problem! Email us anytime at <a href=\"mailto:contact@hackinit.org\">contact@hackinit.org</a>!"
+        }]
+
+    },
+    "faqTitle": {
+        "en": "Frequently Asked Questions",
+        "zh": "常见问题"
+    },
+    "eventTime": {
+        "en": "Time",
+        "zh": "时间"
+    },
+    "eventContent": {
+        "en": "Event",
+        "zh": "事件"
+    },
+    "eventSat": {
+        "en": "Saturday",
+        "zh": "周六"
+    },
+    "eventSun": {
+        "en": "Sunday",
+        "zh": "周日"
+    },
+    "satevent": {
+        "zh": [{
+            "time": "7:00 - 9:00",
+            "event": "参赛者签到"
+        }, {
+            "time": "8:45 - 10:45",
+            "event": "开幕式"
+        }, {
+            "time": "11:00",
+            "event": "开始开发"
+        }, {
+            "time": "12:00 - 14:00",
+            "event": "午餐供应"
+        }, {
+            "time": "12:30 - 13:30",
+            "event": "安卓开发工作坊"
+        }, {
+            "time": "12:30 - 13:30",
+            "event": "产品设计工作坊"
+        }, {
+            "time": "14:30 - 15:15",
+            "event": "嵌⼊式 Node.js 开发⼯作坊"
+        }, {
+            "time": "15:30 - 16:30",
+            "event": "3D建模与打印⼯作坊"
+        }, {
+            "time": "15:30 - 16:30",
+            "event": "⼈工智能⼯作坊"
+        }, {
+            "time": "17:00 - 19:00",
+            "event": "晚餐供应"
+        }, {
+            "time": "18:00 - 19:00",
+            "event": "手势控制 gForce 工作坊"
+        }, {
+            "time": "18:00 - 19:00",
+            "event": "智能家居与物联网工作坊"
+        }, {
+            "time": "23:00",
+            "event": "晚间零食"
+        }, {
+            "time": "23:59 - 6:00(次⽇)",
+            "event": "参赛者不允许离开⽐比赛场地"
+        }],
+        "en": [{
+            "time": "7:00 - 9:00",
+            "event": "参赛者签到"
+        }, {
+            "time": "8:45 - 10:45",
+            "event": "开幕式"
+        }, {
+            "time": "11:00",
+            "event": "开始开发"
+        }, {
+            "time": "12:00 - 14:00",
+            "event": "午餐供应"
+        }, {
+            "time": "12:30 - 13:30",
+            "event": "安卓开发工作坊"
+        }, {
+            "time": "12:30 - 13:30",
+            "event": "产品设计工作坊"
+        }, {
+            "time": "14:30 - 15:15",
+            "event": "嵌⼊式 Node.js 开发⼯作坊"
+        }, {
+            "time": "15:30 - 16:30",
+            "event": "3D建模与打印⼯作坊"
+        }, {
+            "time": "15:30 - 16:30",
+            "event": "⼈工智能⼯作坊"
+        }, {
+            "time": "17:00 - 19:00",
+            "event": "晚餐供应"
+        }, {
+            "time": "18:00 - 19:00",
+            "event": "手势控制 gForce 工作坊"
+        }, {
+            "time": "18:00 - 19:00",
+            "event": "智能家居与物联网工作坊"
+        }, {
+            "time": "23:00",
+            "event": "晚间零食"
+        }, {
+            "time": "23:59 - 6:00(次⽇)",
+            "event": "参赛者不允许离开⽐比赛场地"
+        }]
+    },
+    "sunevent": {
+        "zh": [{
+            "time": "7:00 - 8:30",
+            "event": "早餐供应"
+        }, {
+            "time": "9:00 - 9:30",
+            "event": "项⽬目展示技巧工作坊"
+        }, {
+            "time": "11:00 - 14:00",
+            "event": "午餐供应"
+        }, {
+            "time": "11:00",
+            "event": "停止开发；项⽬目提交通道关闭；评审开始"
+        }, {
+            "time": "11:00 - 13:00",
+            "event": "初审"
+        }, {
+            "time": "13:15 - 14:00",
+            "event": "STEM as an Educational Path 分享；宣布初审入围名单"
+        }, {
+            "time": "14:00 - 15:20",
+            "event": "前四名路路演"
+        }, {
+            "time": "15:30 - 16:30",
+            "event": "颁奖典礼、闭幕式"
+        }, {
+            "time": "17:00 - ",
+            "event": "非上科大选⼿必须离开现场"
+        }],
+        "en": [{
+            "time": "7:00 - 8:30",
+            "event": "早餐供应"
+        }, {
+            "time": "9:00 - 9:30",
+            "event": "项⽬目展示技巧工作坊"
+        }, {
+            "time": "11:00 - 14:00",
+            "event": "午餐供应"
+        }, {
+            "time": "11:00",
+            "event": "停止开发；项⽬目提交通道关闭；评审开始"
+        }, {
+            "time": "11:00 - 13:00",
+            "event": "初审"
+        }, {
+            "time": "13:15 - 14:00",
+            "event": "STEM as an Educational Path 分享；宣布初审入围名单"
+        }, {
+            "time": "14:00 - 15:20",
+            "event": "前四名路路演"
+        }, {
+            "time": "15:30 - 16:30",
+            "event": "颁奖典礼、闭幕式"
+        }, {
+            "time": "17:00 - ",
+            "event": "非上科大选⼿必须离开现场"
+        }]
+    },
+    "eventTitle": {
+        "en": "Schedule",
+        "zh": "日程表"
+    },
+    "sponsorTitle": {
+        "en": "Sponsorship",
+        "zh": "合作伙伴"
+    },
+    "becomeSponsor": {
+        "en": "<span id=\"first-word\">hack.init()</span> is a perfect place to feel the vibe of the newest generation. At hack.init(), you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.<br><br>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href=\"mailto:sponsorship@hackinit.org\">sponsorship@hackinit.org</a>.",
+        "zh": "<span id=\"first-word\">hack.init()</span>是感受新一代青年人活力与能力的绝佳活动。在hack.init()中，您可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传您的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望您能参与到我们的伟大任务中来。<br><br>请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到 <a href=\"mailto:sponsorship@hackinit.org\">sponsorship@hackinit.org</a> 与我们联系！"
+    },
+    "hostTitle": {
+        "en": "Hosted by",
+        "zh": "主办方"
+    },
+    "cohostTitle": {
+        "en": "Co-hosted by",
+        "zh": "联合主办方"
+    },
+    "nameTitle": {
+        "en": "Name Sponsors",
+        "zh": "冠名赞助商"
+    },
+    "teraTitle": {
+        "en": "Tera Sponsors",
+        "zh": "钻石赞助商"
+    },
+    "gigaTitle": {
+        "en": "Giga Sponsors",
+        "zh": "白金赞助商"
+    },
+    "megaTitle": {
+        "en": "Mega Sponsors",
+        "zh": "黄金赞助商"
+    },
+    "kiloTitle": {
+        "en": "Kilo Sponsors",
+        "zh": "白银赞助商"
+    },
+    "communityTitle": {
+        "en": "Strategic Partner Communities",
+        "zh": "战略合作社区"
+    }
+}
