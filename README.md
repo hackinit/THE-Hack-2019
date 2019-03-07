@@ -1,2 +1,2 @@
 # THE-Hack-2019
-THE Hack 2019 Website
+A Dockerized implementation of THE Hack 2019 Website 🚀!

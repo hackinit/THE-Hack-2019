@@ -1,0 +1,105 @@
+body {
+    font-family: 'Lato';
+}
+
+.darkgrey-background {
+    background-color: #252525;
+}
+
+.horizontal-center {
+    text-align: center;
+}
+
+.navbar-brand-logo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar-brand-logo img {
+    width: 40px;
+}
+
+.navbar-brand-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: -15px;
+    line-height: 20px;
+}
+
+#reset-container {
+    padding-top: 90px;
+    padding-bottom: 45px;
+}
+
+.title-row {
+    margin-bottom: 10px;
+}
+
+.input-group {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-control {
+    height: 40px;
+    font-size: 16px;
+}
+
+#reset-btn {
+    margin-top: 20px;
+}
+
+.login-link {
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+.login-link p {
+    margin-bottom: 0;
+}
+
+.alertify-logs {
+    z-index: 1000;
+}
+
+.footer {
+    color: #888;
+    font-size: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+.footer p a, .footer p a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (min-height: 600px) {
+    #reset-container {
+        padding-top: 0;
+        padding-bottom: 0;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-62.5%);
+    }
+
+    #footer-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 9999s ease-in-out 9999s;
+}
