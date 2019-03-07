@@ -1,0 +1,50 @@
+<!--
+    MAINTAINER: Yuchong Pan
+    EMAIL: panyuchong@gmail.com
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-${data.ga}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-${data.ga}');
+        </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <include(input.meta)/>
+
+        <title>hack.init() | ${data.title}</title>
+        <link rel="icon" href="//static.thehack.org.cn/img/hackinit/logo/hi-64px-c.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="//static.thehack.org.cn/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//static.thehack.org.cn/css/shared/font.css">
+        <link rel="stylesheet" href="//static.thehack.org.cn/css/shared/styles.css">
+        <link rel="stylesheet" href="//static.thehack.org.cn/css/hackinit/shared/header.css">
+
+        <include(input.css)/>
+        <!-- /CSS -->
+    </head>
+
+    <body>
+        <include("./header.marko", data)/>
+        <include(input.body)/>
+
+        <!-- JAVASCRIPT -->
+        <script src="//static.thehack.org.cn/lib/jquery/jquery-3.1.1.min.js"></script>
+        <script src="//static.thehack.org.cn/lib/vue/vue.min.js"></script>
+        <script src="//static.thehack.org.cn/lib/vue/vue-resource.min.js"></script>
+        <script src="//static.thehack.org.cn/lib/bootstrap/js/bootstrap.min.js"></script>
+
+        <include(input.javascript)/>
+        <!-- /JAVASCRIPT -->
+    </body>
+</html>

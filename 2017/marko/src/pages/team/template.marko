@@ -1,0 +1,890 @@
+<!--
+    MAINTAINER: Yuchong Pan
+    EMAIL:      panyuchong@gmail.com
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title if(data.lang==="en")>hack.init() | Our Team</title>
+        <title if(data.lang==="zh")>hack.init() | 我们的团队</title>
+        <link rel="icon" href="/s/img/favicon.ico">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/s/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/s/lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/s/css/team-styles.css">
+        <link rel="stylesheet" href="/s/css/font.css">
+        <!-- /CSS -->
+    </head>
+
+    <body>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-93677768-9', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+        <!-- HEADER -->
+        <nav id="navbar-container" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <if(data.lang==="en")>
+                        <a class="navbar-brand navbar-brand-logo" href="/">
+                            <img alt="Brand" src="/s/img/favicon.ico">
+                        </a>
+                        <a class="navbar-brand navbar-brand-text" href="/">
+                            hack.init()
+                        </a>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <a class="navbar-brand navbar-brand-logo" href="/zh">
+                            <img alt="Brand" src="/s/img/favicon.ico">
+                        </a>
+                        <a class="navbar-brand navbar-brand-text" href="/zh">
+                            hack.init()
+                        </a>
+                    </if>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
+                        <!--
+                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
+                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
+                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
+                        -->
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">简体中文</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
+                        <!--
+                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
+                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
+                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
+                        -->
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">ENGLISH</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- /HEADER -->
+
+        <!-- MAIN -->
+        <div id="team" class="container">
+            <div class="row">
+                <div class="col-xs-12 horizontal-center">
+                    <h2 if(data.lang==="en")>The <b>hack.init()</b> Team</h2>
+                    <h2 if(data.lang==="zh")><b>hack.init()</b> 团队</h2>
+                </div>
+            </div>
+            <div class="row content-text">
+                <div class="col-xs-12">
+                    <div if(data.lang==="en")>
+                        <p>The <b>hack.init()</b> Hackathon was founded in Philadelphia in January 2017. We at <b>hack.init()</b> love technology and devote ourselves to providing young hackers with a feast of creativity, collaboration and rapid learning.</p>
+                        <p>The masterminds behind <b>hack.init()</b> are a team of around 40 skilled college and high school students coming from various backgrounds and from different geolocations around the world.</p>
+                        <p>In pursuit of promoting STEM education, we are confident to deliver our message loud and clear: "this hackathon is for everyone; all you need to bring is passion in learning and making."</p>
+                    </div>
+                    <div if(data.lang==="zh")>
+                        <p><b>hack.init()</b> 创客马拉松于2017年一月在美国费城创立。<b>hack.init()</b> 团队热爱技术，并且致力于为年轻的创客们提供一场创意、协作和学习的盛宴。</p>
+                        <p><b>hack.init()</b> 团队由近40名有经验、有技能的高中生和大学生组成。他们来自世界各地，拥有不同的背景。</p>
+                        <p>致力于推动STEM教育，我们将响亮而清晰地传达这一信息：“这个创客马拉松为人人而设；而你所需的，即是学习的热情和创造的欲望！”</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/yuchong.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Yuchong Pan</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Co-Founder</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Tech Support</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>潘宇冲</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>联合创始人</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>技术支持</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:yuchong.pan@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/yuchong-pan/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/yuchong-pan">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a target="_blank" href="http://ypan.me/">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/shaolin.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Shaolin Zhang</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Co-Founder</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Legal</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>张劭麟</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>联合创始人</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>法务</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:shaolin.zhang@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/shaolinzhang/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/ShaolinZhang">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a target="_blank" href="http://shaolinzhang.com/">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/yiluo-compressed.jpg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Yiluo Li</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Co-Founder</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Corporate Relations</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>李依落</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>联合创始人</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>企业关系</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:yiluo.li@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/yiluo-photon/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/Yiluo-pHoton">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a target="_blank" href="http://yiluoli.weebly.com/">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/audrey.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Audrey Zheng</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Co-Founder</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Logistics</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>郑纪昕</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>联合创始人</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>活动执行</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:audrey.zheng@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/audrey-z-867b45131/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/vivian.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Vivian Kong</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Founding Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Marketing</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Public Relations</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>孔维钰</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>创始成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>市场及宣传</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>公共与媒体关系</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:vivian.kong@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/维钰-孔-b5b228139/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/simon.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Simon Guo</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Founding Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Logistics</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>郭子睿</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>创始成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>活动执行</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:simon.guo@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/simon-guo-427b4a112/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/simonguozirui">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a target="_blank" href="http://simonguo.tech/">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/tingting.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Tianheng Chen</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Founding Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Marketing</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>陈天恒</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>创始成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>市场及宣传</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:tianheng.chen@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/tianheng-chen-atc/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/starry.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Siqi He</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Executive Board Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Corporate Relations</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>何思齐</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>执行委员会成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>企业关系</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:siqi.he@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/siqihe/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/yiling.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Yiling Lu</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Executive Board Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Design</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>陆怡菱</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>执行委员会成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>设计</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:yiling.lu@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/yiling-lu/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/clare.jpg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Clare Chen</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Executive Board Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Public Relations</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>陈婧怡</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>执行委员会成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>公共与媒体关系</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:clare.chen@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/kinya.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Kinya Wang</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Executive Board Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Logistics</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>王清扬</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>执行委员会成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>活动执行</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:kinya.wang@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/minglu.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Minglu He</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Executive Board Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Marketing</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>何明露</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>执行委员会成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>市场及宣传</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:minglu.he@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/明露-何-92a4b1142/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/jingcheng.png">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Jingcheng Pan</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Executive Board Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Public Relations</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>潘镜丞</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>执行委员会成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>公共与媒体关系</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:jingcheng.pan@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/镜丞-潘-5b0473142/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/AlbertPan1008">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/yijun.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Yijun Huang</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Executive Board Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Logistics</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>黄逸君</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>执行委员会成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>活动执行</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:yijun.huang@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/keyu.jpeg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Keyu Lu</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>Executive Board Member</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>Logistics</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>逯柯妤</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>执行委员会成员</span>
+                            </h4>
+                            <h4 class="hi-team-role">
+                                <span>活动执行</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:keyu.lu@hackinit.org">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/keyu-lu-262958144/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/wentao.jpg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Wentao Lyu</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>ShanghaiTech University</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>吕文涛</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>上海科技大学</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a target="_blank" href="https://www.linkedin.com/in/eastpiger/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/eastpiger">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a target="_blank" href="http://eastpiger.com/">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/yangzhou.jpg">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Yang Zhou</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>ShanghaiTech University</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>周杨</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>上海科技大学</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:zhouyang@163.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/makee-zhou/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/makeecat">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a target="_blank" href="http://makeecat.github.io/">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/qihao.png">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Qihao Zhang</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>ShanghaiTech University</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>张起豪</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>上海科技大学</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a href="mailto:zhangqh@shanghaitech.edu.cn">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/%E8%B5%B7%E8%B1%AA-%E5%BC%A0-349659146/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/zhaqu">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="hi-team">
+                        <div class="hi-team-img">
+                            <img src="/s/img/xiting.png">
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="en")>
+                            <h3 class="hi-team-name">
+                                <span>Xiting Zhao</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>ShanghaiTech University</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-content" if(data.lang==="zh")>
+                            <h3 class="hi-team-name">
+                                <span>赵希亭</span>
+                            </h3>
+                            <h4 class="hi-team-role">
+                                <span>上海科技大学</span>
+                            </h4>
+                        </div>
+                        <div class="hi-team-link horizontal-center">
+                            <a target="_blank" href="https://www.linkedin.com/in/zhaoxiting/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/zzxxtt">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="advisors-title-row">
+                <div class="col-xs-12 horizontal-center">
+                    <h2 if(data.lang==="en")>Special Advisors</h2>
+                    <h2 if(data.lang==="zh")>特别顾问</h2>
+                </div>
+            </div>
+            <div class="row advisor-bio">
+                <div class="col-xs-12 col-sm-3">
+                    <img alt="Terry Crawford" src="/s/img/terryheadshot.png">
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <h3>Terry Crawford</h3>
+                    <p if(data.lang==="en")>Terry Crawford is a Co-Founder and the CEO of InitialView. A graduate of the University of Virginia and Michigan Law School and a former student at Tsinghua University, Terry is a recovering lawyer, having previously practiced law in Beijing with the Wall Street law firm of Simpson Thacher & Bartlett. Since starting InitialView in 2009, he has perhaps spoken to more Chinese high school students than anyone else in the world. He is a frequent commentator in the press on issues of China admissions, having been quoted in various publications such as The Atlantic, The Wall Street Journal, and The New York Times. Terry lives in Beijing with his co-founder wife and three children who go to a local Chinese school.</p>
+                    <p if(data.lang==="zh")>Terry Crawford是InitialView联合创始人之一，现任CEO. 他曾就读于弗吉尼亚大学、密歇根大学法学院与清华大学。Terry是一位律师，曾于华尔街律所Simpson Thacher & Bartlett在北京任职。从2009创办InitialView开始，他可能是全世界与面试过最多高中学生的人。在与中国相关的招生问题上，各著名媒体经常在报道中引用他的评论，包括《大西洋月刊》、《华尔街日报》、《纽约时报》等。Terry与妻子（也是另外一位联合创始人）与三个孩子常住北京，三个孩子都上中国本地学校。</p>
+                </div>
+            </div>
+            <div class="row advisor-bio">
+                <div class="col-xs-12 col-sm-3">
+                    <img alt="Gloria Chyou Crawford" src="/s/img/gloriaheadshot.jpg">
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <h3>Gloria Chyou Crawford</h3>
+                    <p if(data.lang==="en")>Gloria Chyou Crawford is the Chief Operating Officer and Co-Founder of InitialView, an interview services organization that provides a platform to top students who want to demonstrate their communication skills to admission officers in a credible and transparent fashion. Originally from Seattle and a graduate of Wellesley College and the Harvard Graduate School of Education, Gloria first came to Beijing in the early 2000s as an educator. In addition to managing the day-to-day processes at InitialView, Gloria is the mother of three children, and often writes about their adventures in a local Beijing elementary school on her blog, <a target="_blank" href="http://middleschoolkingdom.com/">www.middleschoolkingdom.com</a>.</p>
+                    <p if(data.lang==="zh")>Gloria Chyou Crawford是InitialView联合创始人，现任InitialView首席运营官。InitialView是一个面试服务机构，为优秀学生提供一个可靠、透明的平台来向招生官展示自己的沟通能力。Gloria来自于西雅图，毕业于韦尔斯利学院，在哈佛大学教育学院取得硕士学位，并曾于早期来到中国从事教育行业。目前，除了InitialView的日常运营之外，Gloria还是3个孩子的母亲，她还运营了一个博客，记录了孩子们在北京本地小学就读的一些故事：<a target="_blank" href="http://middleschoolkingdom.com/">www.middleschoolkingdom.com</a>。</p>
+                </div>
+            </div>
+        </div>
+        <!-- /MAIN -->
+
+        <!-- FOOTER -->
+        <div class="container-fluid darkgrey-background">
+            <div class="row">
+                <div class="col-xs-12 footer" if(data.lang==="en")>
+                    <div class="horizontal-center">
+                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                        <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
+                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                    </div>
+                </div>
+                <div class="col-xs-12 footer" if(data.lang==="zh")>
+                    <div class="horizontal-center">
+                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                        <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
+                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /FOOTER -->
+
+        <!-- JAVASCRIPT -->
+        <script src="/s/lib/jquery/jquery-3.1.1.min.js"></script>
+        <script src="/s/lib/vue/vue.min.js"></script>
+        <script src="/s/lib/vue/vue-resource.min.js"></script>
+        <script src="/s/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/s/js/team-controller.js"></script>
+        <!-- /JAVASCRIPT -->
+    </body>
+</html>

@@ -1,3 +1,26 @@
+# Docker
+secrets.env
+**/secrets.aws/*
+!**/secrets.aws/*.example
+db.sqlite3
+dump.rdb
+**/secrets.ssl/*
+!**/secrets.ssl/*.example
+secrets.htpasswd
+secrets.htpasswd.sponsors
+
+# Vim
+*.swp
+
+# Marko
+*.marko.js
+
+# Django
+*.pyc
+
+# macOS
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -36,7 +59,7 @@ build/Release
 node_modules/
 jspm_packages/
 
-# TypeScript v1 declaration files
+# Typescript v1 declaration files
 typings/
 
 # Optional npm cache directory
@@ -59,3 +82,7 @@ typings/
 
 # next.js build output
 .next
+
+# Vim Swap Files
+*.swp
+*~
