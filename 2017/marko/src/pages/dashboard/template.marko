@@ -1,0 +1,403 @@
+<!--
+    MAINTAINER: Yuchong Pan
+    EMAIL:      panyuchong@gmail.com
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title if(data.lang==="en")>hack.init() | Dashboard</title>
+        <title if(data.lang==="zh")>hack.init() | 控制面板</title>
+        <link rel="icon" href="/s/img/favicon.ico">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/s/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/s/lib/alertify/css/alertify.css">
+        <link rel="stylesheet" href="/s/css/dashboard-styles.css">
+        <link rel="stylesheet" href="/s/css/font.css">
+        <!-- /CSS -->
+    </head>
+
+    <body>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-93677768-7', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+        <!-- HEADER -->
+        <nav id="navbar-container" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <if(data.lang==="en")>
+                        <a class="navbar-brand navbar-brand-logo" href="/">
+                            <img alt="Brand" src="/s/img/favicon.ico">
+                        </a>
+                        <a class="navbar-brand navbar-brand-text" href="/">
+                            hack.init()
+                        </a>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <a class="navbar-brand navbar-brand-logo" href="/zh">
+                            <img alt="Brand" src="/s/img/favicon.ico">
+                        </a>
+                        <a class="navbar-brand navbar-brand-text" href="/zh">
+                            hack.init()
+                        </a>
+                    </if>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
+                        <!--
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
+                        -->
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">简体中文</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
+                        <!--
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
+                        -->
+                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">ENGLISH</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- /HEADER -->
+
+        <div id="dashboard">
+            <!-- MAIN -->
+            <div class="container dashboard-container not-applied hide" v-show="status == 'N'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: NOT APPLIED</h3>
+                            <h3 if(data.lang==="zh")>申请状态：未申请</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row btn-row">
+                    <div class="col-xs-12 input-field">
+                        <!--
+                        <a type="button" href="/apply" class="btn btn-warning btn-lg caapp-btn-sm" if(data.lang==="en")>Hacker Application</a>
+                        <a type="button" href="/zh/apply" class="btn btn-warning btn-lg caapp-btn-sm" if(data.lang==="zh")>参赛者申请</a>
+                        -->
+                        <h4 class="app-closed" if(data.lang==="en")>Application Has Been Closed</h4>
+                        <h4 class="app-closed" if(data.lang==="zh")>参赛者申请已关闭</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container dashboard-container rejected hide" v-show="status == 'R'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: REJECTED</h3>
+                            <h3 if(data.lang==="zh")>申请状态：未录取</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row paragraph-row">
+                    <div class="col-xs-12" if(data.lang==="en")>
+                        <p>We've read through hundreds of applications this year and made our decisions based on hackers' skills, passion and experience.</p>
+                        <p>Unfortunately, we are not able to extend an invitation to you at this time. We're sorry that you cannot be a part of <b>hack.init()</b> this year, but we encourage you to apply again next time!</p>
+                        <p>As always, if you have any questions, comments or concerns, please do not hesitate to email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</p>
+                    </div>
+                    <div class="col-xs-12" if(data.lang==="zh")>
+                        <p>我们今年审阅了数百份申请，并且根据创客的技能、热情和经验做出我们的决定。</p>
+                        <p>不幸的是，我们现在无法向你发出比赛邀请。我们很抱歉你不能成为今年<b>hack.init()</b>活动的一部分，但我们欢迎你下次继续申请！</p>
+                        <p>和往常一样，如果你有任何问题、意见或顾虑，请随时通过<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>联系我们。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container dashboard-container waitlisted hide" v-show="status == 'W'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: WAITLISTED</h3>
+                            <h3 if(data.lang==="zh")>申请状态：等候名单</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row paragraph-row">
+                    <div class="col-xs-12" if(data.lang==="en")>
+                        <p>We have received a huge amount of outstanding applications. Unfortunately, we are not able to extend an admission offer at this moment. You have been put on the waitlist for now, and we are expecting to send you another decision in upcoming days.</p>
+                        <p>As always, if you have any questions, comments or concerns, please do not hesitate to email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</p>
+                    </div>
+                    <div class="col-xs-12" if(data.lang==="zh")>
+                        <p>我们收到了许多非常优秀的申请。很遗憾，目前我们暂时无法向你发出录取。现在，你被放在了等候名单上，我们预计将在未来几天内明确通知你的录取结果。</p>
+                        <p>和往常一样，如果你有任何问题、意见或顾虑，请随时通过<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>联系我们。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container dashboard-container accepted hide" v-show="status == 'A'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: ACCEPTED</h3>
+                            <h4 if(data.lang==="en")>Reimbursement Cap: CNY {{reimbursementCap}}</h4>
+                            <h3 if(data.lang==="zh")>申请状态：录取</h3>
+                            <h4 if(data.lang==="zh")>旅费报销上限：{{reimbursementCap}} 人民币</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row btn-row">
+                    <div class="col-xs-12 input-field">
+                        <a type="button" href="/confirm" class="btn btn-success btn-lg caapp-btn-sm" if(data.lang==="en")>I'm going to <b>hack.init()</b>!</a>
+                        <a type="button" href="/zh/confirm" class="btn btn-success btn-lg caapp-btn-sm" if(data.lang==="zh")>我会参加<b>hack.init()</b>！</a>
+                    </div>
+                    <div class="col-xs-12 input-field">
+                        <a type="button" href="#" class="btn btn-danger btn-lg caapp-btn-sm" @click="declineInvitation()" if(data.lang==="en")>I'm not going to <b>hack.init()</b></a>
+                        <a type="button" href="#" class="btn btn-danger btn-lg caapp-btn-sm" @click="declineInvitation()" if(data.lang==="zh")>我无法参加<b>hack.init()</b></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container dashboard-container pending hide" v-show="status == 'P'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: UNDER REVIEW</h3>
+                            <h3 if(data.lang==="zh")>申请状态：审核中</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row paragraph-row">
+                    <div class="col-xs-12" if(data.lang==="en")>
+                        <p>Thanks for applying to this year's <b>hack.init()</b>! We can't wait to learn more about you.</p>
+                        <p>Don't forget to tell your friends to apply! Whether they're a first-time hacker or a ninth-time veteran, we want to see them at <b>hack.init()</b>.</p>
+                        <p>If you wish to make changes or add new information, don't worry! You can always email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a> with your account email to request resubmission.</p>
+                        <p>As always, if you have any questions, comments or concerns, please do not hesitate to email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</p>
+                    </div>
+                    <div class="col-xs-12" if(data.lang==="zh")>
+                        <p>感谢你申请今年的<b>hack.init()</b>活动！我们迫不及待地想了解你。</p>
+                        <p>别忘了告诉你的朋友一起来申请！不管他们是第一次参加创客马拉松的新手，还是久经沙场的老手，我们都希望能够在<b>hack.init()</b>现场见到他们。</p>
+                        <p>如果你希望更改你的申请内容，或者加入一些新的信息，别担心！你可以随时发送包含你的账号邮箱的邮件至<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>要求修改申请内容。</p>
+                        <p>和往常一样，如果你有任何问题、意见或顾虑，请随时通过<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>联系我们。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container dashboard-container declined hide" v-show="status == 'D'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: DECLINED</h3>
+                            <h3 if(data.lang==="zh")>申请状态：放弃参赛</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row paragraph-row">
+                    <div class="col-xs-12" if(data.lang==="en")>
+                        <p>We are sorry that you cannot make it to this year's <b>hack.init()</b> event. We hope to see you next time!</p>
+                        <p>If you change you mind, feel free to email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a> with your account email.</p>
+                        <p>As always, if you have any questions, comments or concerns, please do not hesitate to email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</p>
+                    </div>
+                    <div class="col-xs-12" if(data.lang==="zh")>
+                        <p>我们很遗憾你无法来参加今年的<b>hack.init()</b>活动。我们希望下次能见到你！</p>
+                        <p>如果你改变了主意，你可以随时发送包含你的账号邮箱的邮件至<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>联系我们。</p>
+                        <p>和往常一样，如果你有任何问题、意见或顾虑，请随时通过<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>联系我们。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container dashboard-container confirmed hide" v-show="status == 'C'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: CONFIRMED</h3>
+                            <h3 if(data.lang==="zh")>申请状态：确认参赛</h3>
+                            <h4 if(data.lang==="en")>Reimbursement Cap: CNY {{reimbursementCap}}</h4>
+                            <h4 if(data.lang==="zh")>旅费报销上限：{{reimbursementCap}} 人民币</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row paragraph-row">
+                    <div class="col-xs-12" if(data.lang==="en")>
+                        <p>Congratulations on your admission to <b>hack.init()</b>! Please carefully read the following documents and bring a signed copy of Participation Agreement with you when you travel to ShanghaiTech University for our Hackathon this July. If you are under 18 years old, please let your parent or legal guardian sign the document in corresponding fields.</p>
+                        <p class="horizontal-center"><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                        <p class="horizontal-center"><a target="_blank" href="/s/doc/Hackathon-Official-Rule.pdf"><b>hack.init()</b> Hackathon Official Rule</a></p>
+                        <p class="horizontal-center"><a target="_blank" href="/s/doc/Hackathon-Participation-Agreement.pdf"><b>hack.init()</b> Hackathon Participation Agreement</a></p>
+                        <p>The following documents are only applicable to Minors under 18:</p>
+                        <p class="horizontal-center"><a target="_blank" href="/s/doc/Emergency-Medical-Authorization.pdf">Emergency Medical Authorization Form</a></p>
+                        <p>If you have not yet joined the participants' WeChat group, please scan the QR code below immediately and ask <b>hack.init()</b> to invite you. If you have any questions, comments or concerns, please do not hesitate to email us at <a href="mailto:legal@hackinit.org">legal@hackinit.org</a>.</p>
+                    </div>
+                    <div class="col-xs-12" if(data.lang==="zh")>
+                        <p>恭喜你成功入选今年的<b>hack.init()</b>！请认真阅读以下文件并在7月前往上海科技大学参加比赛时携带一份签完名的参赛协议。如果你小于18岁，请让你的家长或法定监护人在对应位置签名。</p>
+                        <p class="horizontal-center"><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选手行为守则</a></p>
+                        <p class="horizontal-center"><a target="_blank" href="/s/doc/Hackathon-Official-Rule-zh.pdf"><b>hack.init()</b> 创客马拉松竞赛规则</a></p>
+                        <p class="horizontal-center"><a target="_blank" href="/s/doc/Hackathon-Participation-Agreement-zh.pdf"><b>hack.init()</b> 创客马拉松参赛协议</a></p>
+                        <p>以下文件仅需18岁以下参赛者查阅并签署：</p>
+                        <p class="horizontal-center"><a target="_blank" href="/s/doc/Emergency-Medical-Authorization-zh.pdf">紧急医疗授权书</a></p>
+                        <p>如果你还没有加入<b>hack.init()</b>选手微信群，请立刻扫描如下微信二维码并请<b>hack.init()</b>小助手邀请你入群。如果你有任何问题、意见或顾虑，请随时通过<a href="mailto:legal@hackinit.org">legal@hackinit.org</a>联系我们。</p>
+                    </div>
+                    <div class="col-xs-12 horizontal-center qrcode">
+                        <img alt="WeChat Group QR Code" src="/s/img/hackinit-assistant.jpeg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container dashboard-container duplicate hide" v-show="status == '2'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: DUPLICATE</h3>
+                            <h3 if(data.lang==="zh")>申请状态：重复申请</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row paragraph-row">
+                    <div class="col-xs-12" if(data.lang==="en")>
+                        <p>Thanks for your interest in this year's <b>hack.init()</b> event. We notice that you have submitted applications for multiple times. However, we only accept one application for each applicant. We made/will make our decision based on your first application.</p>
+                        <p>As always, if you have any questions, comments or concerns, please do not hesitate to email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</p>
+                    </div>
+                    <div class="col-xs-12" if(data.lang==="zh")>
+                        <p>感谢你对今年的<b>hack.init()</b>活动感兴趣。我们注意到你提交了多次申请。对于每位申请者，我们仅接受一份申请。我们已经／将会基于你提交的第一份申请来做出我们的决定。</p>
+                        <p>和往常一样，如果你有任何问题、意见或顾虑，请随时通过<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>联系我们。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container dashboard-container expired hide" v-show="status == 'E'">
+                <div class="row title-row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h1 if(data.lang==="en")>Dashboard</h1>
+                            <h1 if(data.lang==="zh")>控制面板</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="horizontal-center">
+                            <h3 if(data.lang==="en")>Status: EXPIRED</h3>
+                            <h3 if(data.lang==="zh")>申请状态：邀请过期</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row paragraph-row">
+                    <div class="col-xs-12" if(data.lang==="en")>
+                        <p>After multiple reminders, you have not yet confirmed your spot to <b>hack.init()</b> this summer. We regret to inform you that your invitation is expired. We look forward to seeing you again next year.</p>
+                        <p>As always, if you have any questions, comments or concerns, please do not hesitate to email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</p>
+                    </div>
+                    <div class="col-xs-12" if(data.lang==="zh")>
+                        <p>经过多次提醒，你仍然未在规定时间内确认你的参赛席位。我们很遗憾地通知你的邀请已经过期。我们期待在明年与你再次相遇。</p>
+                        <p>和往常一样，如果你有任何问题、意见或顾虑，请随时通过<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>联系我们。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /MAIN -->
+
+            <!-- FOOTER -->
+            <div v-bind:class="['container-fluid', 'footer-container', 'darkgrey-background', 'hide', status == 'N' ? 'not-applied' : '', status == 'R' ? 'rejected' : '', status == 'W' ? 'waitlisted' : '', status == 'A' ? 'accepted' : '', status == 'P' ? 'pending' : '', status == 'D' ? 'declined' : '', status == 'C' ? 'confirmed' : '', status == '2' ? 'duplicate': '', status == 'E' ? 'expired' : '']">
+                <div class="row">
+                    <div class="col-xs-12 footer" if(data.lang==="en")>
+                        <div class="horizontal-center">
+                            <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                            <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 footer" if(data.lang==="zh")>
+                        <div class="horizontal-center">
+                            <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                            <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选手行为守则</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /FOOTER -->
+        </div>
+
+        <!-- JAVASCRIPT -->
+        <script src="/s/lib/jquery/jquery-3.1.1.min.js"></script>
+        <script src="/s/lib/vue/vue.min.js"></script>
+        <script src="/s/lib/vue/vue-resource.min.js"></script>
+        <script src="/s/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/s/lib/alertify/js/alertify.js"></script>
+        <script src="/s/js/dashboard-controller.js"></script>
+        <!-- /JAVASCRIPT -->
+    </body>
+</html>

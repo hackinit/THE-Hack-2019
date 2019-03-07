@@ -1,0 +1,375 @@
+<div class="ui top attached segment">
+
+  <div class="ui header">
+    {{selectedUser.profile.name ? selectedUser.profile.name : selectedUser.email}}
+    <span
+      ng-show="selectedUser.admin">
+      (Admin)
+    </span>
+  </div>
+
+</div>
+
+<div class="ui bottom attached segment">
+
+  <div>
+    <p>
+      <strong> Status: </strong>
+      <span
+        class="ui label">
+        {{selectedUser.status.name.toUpperCase()}}
+      </span>
+    </p>
+    <p>
+      <strong> Admitted by: </strong> {{selectedUser.status.admittedBy ? selectedUser.status.admittedBy : 'N/A'}}
+    </p>
+  </div>
+
+  <div class="ui divider"></div>
+
+  <div class="ui form">
+
+    <fieldset ng-disabled="false">
+
+      <div class="ui header">
+        基本信息
+      </div>
+
+      <div class="field">
+        <strong>
+          创建于：
+        </strong>
+        {{formatTime(selectedUser.timestamp)}}
+      </div>
+
+      <div class="field">
+        <strong>
+          最后更新于：
+        </strong>
+        {{formatTime(selectedUser.lastUpdated)}}
+      </div>
+
+
+      <div class="field">
+        <label> 邮件地址 </label>
+        <input type="text" ng-model="selectedUser.email" />
+      </div>
+
+      <div class="field">
+        <label> 团队 </label>
+        <input type="text" ng-model="selectedUser.teamCode" />
+      </div>
+
+    </fieldset>
+
+  </div>
+
+  <div class="ui divider"></div>
+
+  <div class="ui form">
+
+    <fieldset ng-disabled="false">
+
+      <div class="ui header">
+       用户信息
+      </div>
+
+      <div class="field">
+        <label> 邮件地址 </label>
+        <input type="email"
+               name="email"
+               disabled="disabled"
+               ng-model="selectedUser.email">
+      </div>
+
+      <div class="field">
+        <label> 全名 </label>
+        <input type="text"
+               name="name"
+               ng-model="selectedUser.profile.name">
+      </div>
+
+      <div class="field">
+        <label> 手机号码 </label>
+        <input type="text"
+               name="name"
+               ng-model="selectedUser.profile.phoneNum">
+      </div>
+
+
+      <div class="field">
+        <label> 活动当天的年龄 </label>
+        <input type="text"
+               name="name"
+               ng-model="selectedUser.profile.age">
+      </div>
+
+      <div class="field">
+        <label>性别</label>
+        <select
+          name="gender"
+          ng-model="selectedUser.profile.gender">
+          <option value="">请选择</option>
+          <option value="M">男性</option>
+          <option value="F">女性</option>
+          <option value="O">其他</option>
+          <option value="N">我倾向不回答</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label> 所在城市 </label>
+        <input type="text"
+               name="name"
+               ng-model="selectedUser.profile.city">
+      </div>
+
+      <div class="field">
+        <label> 专业信息 </label>
+        <select ng-model="selectedUser.profile.profession">
+          <option value="S">学生</option>
+          <option value="W">已工作</option>
+        </select>
+      </div>
+
+      <div ng-show="selectedUser.profile.profession == 'S'">
+        <div class="field" ng-show="autoFilledSchool">
+          <label> 在读学校 </label>
+          <input class="ui input"
+                disabled="disabled"
+                ng-show="autoFilledSchool"
+                ng-model="selectedUser.profile.study.school">
+        </div>
+
+        <div class="field" ng-show="!autoFilledSchool">
+          <label> 在读学校 </label>
+          <input class="ui input"
+                name="school"
+                ng-model="selectedUser.profile.study.school">
+        </div>
+
+        <div class="field">
+          <label>在读专业</label>
+          <input type="text" ng-model="selectedUser.profile.study.subject">
+        </div>
+
+        <div class="field">
+          <label>已就读时长（年）</label>
+          <input type="text" ng-model="selectedUser.profile.study.yearOfStudies">
+        </div>
+
+        <div class="field">
+          <label>毕业年份</label>
+          <input type="text" ng-model="selectedUser.profile.study.graduationYear">
+        </div>
+
+        <div class="field">
+          <label>技术栈</label>
+          <input type="text" ng-model="selectedUser.profile.study.techStack">
+        </div>
+      </div>
+
+      <div ng-show="selectedUser.profile.profession == 'W'">
+        <div class="field">
+          <label>工作时长（年）</label>
+          <input type="text" ng-model="selectedUser.profile.work.experience">
+        </div>
+
+        <div class="field">
+          <label>技术栈</label>
+          <input type="text" ng-model="selectedUser.profile.work.techStack">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>交通补助</label>
+        <select ng-model="selectedUser.profile.travelReimbursement">
+          <option value="Y">需要</option>
+          <option value="N">不需要</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label> Github </label>
+        <input type="url" ng-model="selectedUser.profile.github" />
+      </div>
+
+      <div class="field">
+        <label> LinkedIn </label>
+        <input type="url" ng-model="selectedUser.profile.linkedin" />
+      </div>
+
+      <div class="field">
+          <label> 简历</label>
+          <a target="_blank" href="{{ selectedUser.profile.resume }}">{{selectedUser.profile.resume}}</a>
+      </div>
+
+      <div class="field">
+        <label>Idea?</label>
+        <select ng-model="selectedUser.profile.idea">
+          <option value="N">完全没有</option>
+          <option value="S">有一些想法</option>
+          <option value="Y">有非常确定的想法</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>我认为我是一个...的人</label>
+        <input type="text"
+               placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
+               ng-model="selectedUser.profile.description">
+      </div>
+
+      <div class="field">
+        <div
+          ng-click="updateProfile()"
+          class="ui positive right labeled icon button">
+          Update Profile
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+
+  <div class="ui divider"></div>
+
+  <div class="ui form">
+
+    <fieldset ng-disabled="false">
+
+      <div class="ui header">
+        Confirmation
+      </div>
+
+      <div class="field">
+        <label> Dietary Restrictions </label>
+        <input
+          type="text" ng-model="selectedUser.confirmation.dietaryRestrictions" />
+      </div>
+
+      <div class="field">
+        <label> Shirt Size </label>
+        <select
+          ng-model="selectedUser.confirmation.shirtSize">
+          <option value="">Shirt Size</option>
+          <option value="XS">Unisex X-Small</option>
+          <option value="S">Unisex Small</option>
+          <option value="M">Unisex Medium</option>
+          <option value="L">Unisex Large</option>
+          <option value="XL">Unisex X-Large</option>
+          <option value="XXL">Unisex XX-Large</option>
+          <option value="WXS">Women's X-Small</option>
+          <option value="WS">Women's Small</option>
+          <option value="WM">Women's Medium</option>
+          <option value="WL">Women's Large</option>
+          <option value="WXL">Women's X-Large</option>
+          <option value="WXXL">Women's XX-Large</option>
+        </select>
+      </div>
+
+      <div class="ui divider"></div>
+
+      <div class="field">
+        <label>
+          Needs Hardware
+        </label>
+        <div class="ui checkbox">
+          <input type="checkbox" ng-model="selectedUser.confirmation.wantsHardware">
+          <label> Yup, I need hardware </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>
+        Hardware
+        </label>
+        <input type="text" ng-model="selectedUser.confirmation.hardware">
+      </div>
+
+      <div class="ui divider"></div>
+
+      <div class="ui header">
+        Travel
+      </div>
+
+      <div class="field">
+        <strong> Needs Reimbursement</strong>
+        <i
+          ng-if="selectedUser.profile.travelReimbursement"
+          class="green check circle icon">
+        </i>
+        <i
+          ng-if="!selectedUser.profile.travelReimbursement"
+          class="red remove circle icon">
+        </i>
+      </div>
+
+      <div class="field">
+        <label>Full Name</label>
+        <input type="text"
+               name="name"
+               ng-model="selectedUser.confirmation.address.name">
+      </div>
+
+      <div class="field">
+        <label> Address Line 1 - Street address, P.O. box, company name, c/o </label>
+        <input
+          type="text"
+          name="addressLine1"
+          ng-model="selectedUser.confirmation.address.line1">
+      </div>
+
+      <div class="field">
+        <label> Address Line 2 - Apartment, suite, unit, building, floor, etc. </label>
+        <input
+          type="text"
+          name="addressLine2"
+          ng-model="selectedUser.confirmation.address.line2">
+      </div>
+
+      <div class="four fields">
+        <div class="field">
+          <label> City </label>
+          <input
+            type="text"
+            name="city"
+            ng-model="selectedUser.confirmation.address.city">
+        </div>
+        <div class="field">
+          <label> State/Province/Region </label>
+          <input
+            type="text"
+            name="state"
+            ng-model="selectedUser.confirmation.address.state">
+        </div>
+        <div class="field">
+          <label> ZIP </label>
+          <input
+            type="text"
+            name="zip"
+            ng-model="selectedUser.confirmation.address.zip">
+        </div>
+        <div class="field">
+          <label> Country </label>
+          <input
+            type="text"
+            name="country"
+            ng-model="selectedUser.confirmation.address.country">
+        </div>
+      </div>
+
+      <div class="field">
+        <label> Receipt </label>
+        <input type="url" ng-model="selectedUser.confirmation.receipt" />
+      </div>
+
+      <div class="field">
+        <label> Additional Notes </label>
+        <textarea ng-model="selectedUser.confirmation.notes"></textarea>
+      </div>
+
+    </fieldset>
+
+  </div>
+</div>
