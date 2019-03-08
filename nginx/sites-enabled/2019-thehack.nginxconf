@@ -1,0 +1,76 @@
+upstream 2019_thehack_marko_server {
+    server 2019_thehack_marko:8080;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name static.thehack.org.cn;
+    # Permanent redirect to https
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name static.thehack.org.cn;
+
+    # ssl settings and certificates
+    include ssl/static.thehack.org.cn.nginxconf;
+    include ssl/ssl.nginxconf;
+
+    location /2019 {
+        # The static files for year 2018
+        expires -1;
+        alias /usr/share/static/2019/;
+    }
+
+    location /2018 {
+        # The static files for year 2018
+        expires -1;
+        alias /usr/share/static/2018/;
+    }
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name thehack.org.cn;
+    # Permanent redirect to https
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name thehack.org.cn;
+
+    # ssl settings and certificates
+    include ssl/thehack.org.cn.nginxconf;
+    include ssl/ssl.nginxconf;
+
+    location / {
+        proxy_pass http://2019_thehack_marko_server/;
+        proxy_set_header Host $host;
+    }
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.thehack.org.cn;
+    # Permanent redirect to https
+    return 301 https://thehack.org.cn$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.thehack.org.cn;
+
+    # ssl settings and certificates
+    include ssl/www.thehack.org.cn.nginxconf;
+    include ssl/ssl.nginxconf;
+
+    return 301 https://thehack.org.cn$request_uri;
+}
