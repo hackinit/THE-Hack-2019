@@ -1,0 +1,330 @@
+<include("./../../components/layout.marko", data)>
+
+<@meta>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="hack.init() | July 21 - 22, 2018">
+    <meta property="og:description" content="hack.init() is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 350 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning.">
+    <meta property="og:image" content="https://static.thehack.org.cn/2018/img/hackinit/logo/hi-1024px-c.png">
+    <meta property="og:url" content="https://hackinit.org">
+</@meta>
+
+<@css>
+    <link rel="stylesheet" href="//static.thehack.org.cn/2018/lib/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/styles.css">
+    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/banner.css">
+    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/about.css">
+    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/faqs.css">
+    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/sponsor.css">
+    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/logos.css">
+</@css>
+
+<@body>
+    <div id="banner" class="container-fluid full-width full-height bg-black">
+        <img id="main-logo" alt="hack.init()" src="//static.thehack.org.cn/2018/img/hackinit/main-logo.png">
+        <div id="buttons">
+            <a target="_blank" href="//my.hackinit.org">
+                <h1>&lt; ${data.apply} /&gt;</h1>
+            </a>
+            <a target="_blank" href="#qr-modal" data-toggle="modal">
+                <h1>&lt; ${data.wechat} /&gt;</h1>
+            </a>
+            <a target="_blank" href="${data.prospectusLink}">
+                <h1>&lt; ${data.prospectus} /&gt;</h1>
+            </a>
+        </div>
+        <div id="qr-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                    <img id="wechat-qr" alt="THE Hack WeChat QR Code" src="//static.thehack.org.cn/2018/img/shared/wechat.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="about" class="container full-width bg-black">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div id="info">
+                    <h1 class="color-orange">${data.date}</h1>
+                    <h1 class="color-white">${data.city}</h1>
+                    <h1 class="color-white">${data.location}</h1>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="row">
+                    <for(i from 0 to data.highlights.length - 1)>
+                        <div class="col-6">
+                            <div class="highlight">
+                                <div class="horizontal-center">
+                                    <i class="fa-inverse fas fa-3x fa-${data.highlightIcons[i]}"></i>
+                                    <h2 class="title">${data.highlights[i]}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </for>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="faq" class="container full-width bg-block">
+        <div class="row">
+            <div class="col">
+                <h1 class="color-white pixel-font section-title">${data.faqTitle}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <for(i from 0 to data.faqs.length - 1)>
+                <div class="col-xs-12 col-md-6 faq">
+                    <a class="btn btn-light btn-lg btn-block faq-question" data-toggle="collapse" href="#faq${i}" role="button" aria-expanded="false" aria-controls="faq${i}">
+                        ${data.faqs[i].question}
+                    </a>
+                    <div class="collapse" id="faq${i}">
+                        <div class="card card-body faq-answer">
+                            $!{data.faqs[i].answer}
+                        </div>
+                    </div>
+                </div>
+            </for>
+        </div>
+    </div>
+    <div id="schedule" class="container bg-block">
+        <div class="row">
+            <div class="col">
+                <h1 class="color-white pixel-font section-title">${data.eventTitle}</h1>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <h4 class="mb-4 text-white">${data.eventSat}</h4>
+                    <table class="table table-striped table-dark">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">${data.eventTime}</th>
+                            <th scope="col">${data.eventContent}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <for(i from 0 to data.satevent.length - 1)>
+                            <tr>
+                            <td>${data.satevent[i].time}</td>
+                            <td>${data.satevent[i].event}</td>
+                            </tr>
+                            </for>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h4 class="mb-4 text-white">${data.eventSun}</h4>
+                    <table class="table table-striped table-dark">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">${data.eventTime}</th>
+                            <th scope="col">${data.eventContent}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <for(i from 0 to data.sunevent.length - 1)>
+                            <tr>
+                            <td>${data.sunevent[i].time}</td>
+                            <td>${data.sunevent[i].event}</td>
+                            </tr>
+                            </for>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+    <div id="sponsor" class="container bg-black">
+        <div class="row">
+            <div class="col">
+                <h1 class="color-white pixel-font section-title">${data.sponsorTitle}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p id="become-sponsor">$!{data.becomeSponsor}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="sponsor-button" class="pixel-font">
+                    <a target="_blank" href="${data.prospectusLink}">
+                        <h1>&lt; ${data.prospectus} /&gt;</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="host-logos" class="container sponsor-partner section bg-black">
+        <div class="row">
+            <div class="col">
+              <h2 class="color-white pixel-font tier-title">${data.hostTitle}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col tier tier-sponsor-1">
+                <a target="_blank" href="//thehack.org.cn">
+                    <img alt="THE Hack" src="//static.thehack.org.cn/2018/img/thehack/logo/th-1024px-c.png">
+                </a>
+                <a target="_blank" href="//hackinit.org">
+                    <img alt="hack.init()" src="https://static.thehack.org.cn/2018/img/hackinit/logo/hi-1024px-c.png">
+                </a>
+                <a target="_blank" href="//hackshanghai.com">
+                    <img alt="hackShanghai" src="//static.thehack.org.cn/2018/img/hackshanghai/logo.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="cohost-logos" class="container sponsor-partner section bg-black">
+      <div class="row">
+          <div class="col">
+            <h2 class="color-white pixel-font tier-title">${data.cohostTitle}</h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col tier tier-sponsor-1">
+              <a target="_blank" href="//www.shanghaitech.edu.cn">
+                  <img alt="ShanghaiTech" src="//static.thehack.org.cn/2018/img/shared/logos/shtech-w.png">
+              </a>
+              <a target="_blank">
+                  <img alt="Techomedia" src="//static.thehack.org.cn/2018/img/shared/logos/Techo.png">
+              </a>
+              <a target="_blank" href="http://www.kohler.com.cn">
+                  <img alt="Kohler" src="//static.thehack.org.cn/2018/img/shared/logos/kohler.png">
+              </a>
+              <a target="_blank">
+                  <img alt="Sisui" src="//static.thehack.org.cn/2018/img/shared/logos/c3.png">
+              </a>
+          </div>
+      </div>
+    </div>
+    <div id="name-logos" class="container sponsor-partner section bg-black">
+      <div class="row">
+        <div class="col">
+          <h2 class="color-white pixel-font tier-title">${data.nameTitle}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col tier tier-sponsor-1">
+          <a target="_blank" href="http://www.kohler.com.cn">
+            <img alt="Kohler" src="//static.thehack.org.cn/2018/img/shared/logos/kohler.png">
+          </a>
+          <a target="_blank">
+            <img alt="Sisui" src="//static.thehack.org.cn/2018/img/shared/logos/c3.png">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="tera-logos" class="container sponsor-partner section bg-black">
+      <div class="row">
+        <div class="col">
+          <h2 class="color-white pixel-font tier-title">${data.teraTitle}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col tier tier-sponsor-1">
+            <a target="_blank" href="http://www.dreamt.cn">
+              <img alt="DreamT" src="//static.thehack.org.cn/2018/img/shared/logos/dreamt-bg.png">
+            </a>
+            <a target="_blank" href="http://www.kfstartups.com">
+              <img alt="Kungfu" src="//static.thehack.org.cn/2018/img/shared/logos/kungfu-inverted.png">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div id="giga-logos" class="container sponsor-partner section bg-black">
+      <div class="row">
+          <div class="col">
+            <h2 class="color-white pixel-font tier-title">${data.gigaTitle}</h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col tier tier-sponsor-2">
+              <a target="_blank" href="//www.microchip.com">
+                <img alt="Microchip" src="//static.thehack.org.cn/2018/img/shared/logos/microchip.jpeg">
+              </a>
+              <a target="_blank" href="//www.sensetime.com">
+                <img alt="SenseTime" src="//static.thehack.org.cn/2018/img/shared/logos/sensetime.png">
+              </a>
+              <a target="_blank" href="//www.jiuzhang.com">
+                <img alt="Jiuzhang" src="//static.thehack.org.cn/2018/img/shared/logos/jiuzhang.png">
+              </a>
+              <a target="_blank" href="//www.kejisi.com">
+                <img alt="TechTemple" src="//static.thehack.org.cn/2018/img/shared/logos/tech-temple.png">
+              </a>
+          </div>
+      </div>
+    </div>
+    <div id="mega-logos" class="container sponsor-partner section bg-black">
+      <div class="row">
+          <div class="col">
+            <h2 class="color-white pixel-font tier-title">${data.megaTitle}</h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col tier tier-sponsor-3">
+            <a target="_blank" href="//microsoft.com">
+              <img alt="Microsoft" src="//static.thehack.org.cn/2018/img/shared/logos/ms.png">
+            </a>
+            <a target="_blank" href="//www.rokid.com">
+              <img alt="Rokid" src="//static.thehack.org.cn/2018/img/shared/logos/rokid-w.png">
+            </a>
+            <a target="_blank" href="http://www.oymotion.com">
+              <img alt="OYMotion" src="//static.thehack.org.cn/2018/img/shared/logos/oymotion.png">
+            </a>
+            <a target="_blank" href="http://www.biggerlab.com">
+              <img alt="BiggerLab" src="//static.thehack.org.cn/2018/img/shared/logos/biggerlab.png">
+            </a>
+            <a target="_blank" href="http://www.stratasys.com.cn">
+              <img alt="stratasys" src="//static.thehack.org.cn/2018/img/shared/logos/stratasys.png">
+            </a>
+            <a target="_blank" href="http://www.jqinvestments.com">
+              <img alt="JQInvestments" src="//static.thehack.org.cn/2018/img/shared/logos/JQInvestments.png">
+            </a>
+            <a target="_blank" href="//www.ivymaker.com">
+              <img alt="ivymaker" src="//static.thehack.org.cn/2018/img/shared/logos/ivy-maker.png">
+            </a>
+            <a target="_blank" href="//ruff.io">
+              <img alt="Ruff" src="//static.thehack.org.cn/2018/img/shared/logos/Ruff.png">
+            </a>
+          </div>
+      </div>
+    </div>
+    <div id="kilo-logos" class="container sponsor-partner section bg-black">
+      <div class="row">
+          <div class="col">
+            <h2 class="color-white pixel-font tier-title">${data.kiloTitle}</h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col tier tier-sponsor-4">
+              <a target="_blank" href="//www.vmware.com">
+                  <img alt="VMWare" src="//static.thehack.org.cn/2018/img/shared/logos/vmware.jpg">
+              </a>
+              <a target="_blank" href="//www.amaris.com">
+                  <img alt="Amaris" src="//static.thehack.org.cn/2018/img/shared/logos/amaris.png">
+              </a>
+              <a target="_blank" href="//www.lewagon.com">
+                  <img alt="Le Wagon" src="//static.thehack.org.cn/2018/img/shared/logos/le-wagon.png">
+              </a>
+          </div>
+      </div>
+    </div>
+
+    <div id="community-logos" class="container sponsor-partner section bg-black">
+        <div class="row">
+            <div class="col">
+              <h2 class="color-white pixel-font tier-title">${data.communityTitle}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col tier tier-sponsor-3">
+                <a target="_blank" href="//segmentfault.com/">
+                    <img alt="SegmentFault" src="//static.thehack.org.cn/2018/img/shared/logos/segmentfault-inverted.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</@body>
+
+</include>

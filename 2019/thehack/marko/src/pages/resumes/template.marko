@@ -1,0 +1,55 @@
+<include("./../../components/layout.marko", data)>
+
+<@css>
+  <link rel="stylesheet" href="//static.thehack.org.cn/2019/lib/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="//static.thehack.org.cn/2019/lib/font-awesome-animation/font-awesome-animation.min.css">
+  <link rel="stylesheet" href="//static.thehack.org.cn/2019/css/thehack/resumes/styles.css">
+</@css>
+
+<@body>
+  <div class="container" id="sponsor-portal">
+    <div class="row" style="margin-top: 30px;">
+      <nav class="nav nav-pills">
+        <a v-bind:class="['nav-item', 'nav-link', current == 'hackinit' ? 'active' : '']" href="#hackinit" v-on:click="switchTo('hackinit')">${data.hackInitName}</a>
+        <a v-bind:class="['nav-item', 'nav-link', current == 'hackshanghai' ? 'active' : '']" href="#hackshanghai" v-on:click="switchTo('hackshanghai')">${data.hackShanghaiName}</a>
+      </nav>
+    </div>
+    <div class="row hide">
+      <table class="table">
+        <thead>
+          <th scope="col">#</th>
+          <th scope="col">${data.nameTitle}</th>
+          <th scope="col">${data.emailTitle}</th>
+          <th scope="col">${data.phoneTitle}</th>
+          <th scope="col">${data.schoolTitle}</th>
+          <th scope="col">${data.resumeTitle}</th>
+        </thead>
+        <tbody>
+          <tr v-for="(user, index) in currentUsers">
+            <th scope="row">{{index + 1}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.school}}</td>
+            <td><a target="_blank" v-bind:href="user.resume">${data.linkText}</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row" v-if="hackinit.length == 0 && hackshanghai.length == 0">
+      <i class="fas fa-spinner fa-spin fa-3x" id="spinner"></i>
+    </div>
+    <div class="row">
+      <div class="alert alert-warning" role="alert" v-if="currentUsers.length == 0">
+        ${data.unselectedText}
+      </div>
+    </div>
+  </div>
+</@body>
+
+<@javascript>
+  <script src="//static.thehack.org.cn/2019/lib/jquery/jquery-3.1.1.min.js"></script>
+  <script src="//static.thehack.org.cn/2019/js/thehack/resumes/controller.js"></script>
+</@javascript>
+
+</include>
