@@ -1,75 +1,59 @@
-version: '2'
+version: '3'
+
+volumes:
+    tlscert:
 
 services:
-    hackinit_mongo:
+
+    nginx:
         restart: always
-        image: mongo:3.0.15-wheezy
-        expose:
-            - "27017"
+        build: ./nginx
+        ports:
+            - "80:80"
+            - "443:443"
         volumes:
-            - ../db/hackinit:/data/db
+            - ./nginx/sites-enabled:/etc/nginx/sites-enabled:ro
+            - ./2017/static:/usr/share/static/2017:ro
+            - ./2018/static:/usr/share/static/2018:ro
+            - ./2019/static:/usr/share/static/2019:ro
+            - tlscert:/etc/letsencrypt
 
-    hackinit_quill:
+    letsencrypt:
         restart: always
-        build: ./hackinit/quill
-        command: gulp server
-        expose:
-            - "3000"
-        links:
-            - hackinit_mongo
+        image: adferrand/letsencrypt-dns:2.10.1
+        environment:
+            - LETSENCRYPT_USER_MAIL=ye.shu@hackinit.org
+            - LEXICON_PROVIDER=cloudflare
+            - LEXICON_CLOUDFLARE_USERNAME=${CF_EMAIL}
+            - LEXICON_CLOUDFLARE_TOKEN=${CF_GLOBAL_API}
+        volumes:
+            - ./letsencrypt/domains.conf:/etc/letsencrypt/domains.conf
+            - tlscert:/etc/letsencrypt
 
-    hackinit_quill_en:
+    2019_thehack_marko:
         restart: always
-        build: ./hackinit/quill_en
-        command: gulp server
-        expose:
-            - "3000"
-        links:
-            - hackinit_mongo
-
-    hackinit_marko:
-        restart: always
-        build: ./hackinit/marko
+        build: ./2019/thehack/marko
         expose:
             - "8080"
         command: node app.js
 
-    hackshanghai_mongo:
+    2018_hackinit_marko:
         restart: always
-        image: mongo:3.0.15-wheezy
-        expose:
-            - "27017"
-        volumes:
-            - ../db/hackshanghai:/data/db
-
-    hackshanghai_quill:
-        restart: always
-        build: ./hackshanghai/quill
-        command: gulp server
-        expose:
-            - "3000"
-        links:
-            - hackshanghai_mongo
-
-    hackshanghai_quill_en:
-        restart: always
-        build: ./hackshanghai/quill_en
-        command: gulp server
-        expose:
-            - "3000"
-        links:
-            - hackshanghai_mongo
-
-    hackshanghai_marko:
-        restart: always
-        build: ./hackshanghai/marko
+        build: ./2018/hackinit/marko
         expose:
             - "8080"
         command: node app.js
 
-    thehack_marko:
+    2018_hackshanghai_marko:
         restart: always
-        build: ./thehack/marko
+        build: ./2018/hackshanghai/marko
+        expose:
+            - "8080"
+        command: node app.js
+
+    2018_thehack_marko:
+        restart: always
+        build: ./2018/thehack/marko
         expose:
             - "8080"
         command: node app.js
@@ -80,90 +64,3 @@ services:
         expose:
             - "8080"
         command: node app.js
-
-    2017_static:
-        restart: always
-        build: ./2017/static
-        volumes:
-            - ./2017/static:/usr/share/static/2017:ro
-
-    django:
-        restart: always
-        build: django
-        command: python manage.py runserver 0.0.0.0:8000
-        expose:
-            - "8000"
-        links:
-            - redis
-            - hackinit_quill
-            - hackshanghai_quill
-            - shanghaitech_quill
-        env_file: ./django/secrets.env
-
-    redis:
-        restart: always
-        image: redis:3.2.11
-        expose:
-            - "6379"
-
-    s3:
-        restart: always
-        build: s3
-        command: python listen.py
-        links:
-            - redis
-
-    ambassador_mongo:
-        restart: always
-        image: mongo:3.0.15-wheezy
-        expose:
-            - "27017"
-        volumes:
-            - ../db/ambassador:/data/db
-
-    ambassador_quill:
-        restart: always
-        build: ./ambassador
-        command: gulp server
-        expose:
-            - "3000"
-        links:
-            - ambassador_mongo
-
-    shanghaitech_mongo:
-        restart: always
-        image: mongo:3.0.15-wheezy
-        expose:
-            - "27017"
-        volumes:
-            - ../db/shanghaitech:/data/db
-
-    shanghaitech_quill:
-        restart: always
-        build: ./shanghaitech
-        command: gulp server
-        expose:
-            - "3000"
-        links:
-            - shanghaitech_mongo
-
-    nginx:
-        restart: always
-        build: ./nginx
-        ports:
-            - "80:80"
-            - "443:443"
-        links:
-            - django
-            - hackinit_quill
-            - hackinit_quill_en
-            - hackinit_marko
-            - hackshanghai_quill
-            - hackshanghai_quill_en
-            - hackshanghai_marko
-            - thehack_marko
-            - 2017_marko
-            - ambassador_quill
-            - shanghaitech_quill
-        volumes_from:
-            - 2017_static

@@ -1,0 +1,46 @@
+upstream 2018_hackinit_marko_server {
+    server 2018_hackinit_marko:8080;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name hackinit.org;
+    # Permanent redirect to https
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name hackinit.org;
+
+    # ssl settings and certificates
+    include ssl/hackinit.org.nginxconf;
+    include ssl/ssl.nginxconf;
+
+    location / {
+        proxy_pass http://2018_hackinit_marko_server/;
+        proxy_set_header Host $host;
+    }
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.hackinit.org;
+    # Permanent redirect to https
+    return 301 https://hackinit.org$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.hackinit.org;
+
+    # ssl settings and certificates
+    include ssl/hackinit.org.nginxconf;
+    include ssl/ssl.nginxconf;
+
+    return 301 https://hackinit.org$request_uri;
+}

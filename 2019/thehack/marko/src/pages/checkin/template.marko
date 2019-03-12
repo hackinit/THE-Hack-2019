@@ -1,0 +1,72 @@
+<!--
+    MAINTAINER: Yuchong Pan
+    EMAIL:      panyuchong@gmail.com
+-->
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://static.thehack.org.cn/2019/img/thehack/favicon.ico">
+
+    <title>THE Hack | Check-In</title>
+
+    <link href="https://static.thehack.org.cn/2019/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://static.thehack.org.cn/2019/lib/instascan/instascan.min.js" type="text/javascript"></script>
+    <script src="https://static.thehack.org.cn/2019/lib/vue/vue.min.js" type="text/javascript"></script>
+    <script src="https://static.thehack.org.cn/2019/lib/vue/vue-resource.min.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <video id="preview"></video>
+    <div>姓名：<span id="name"></span></div>
+    <div>年龄：<span id="age"></span></div>
+    <div>组别：<span id="group"></span></div>
+    <div>衣服尺码：<span id="shirt-size"></span></div>
+    <div>证件类型：<span id="id-type"></span></div>
+    <div>证件号码：<span id="id-number"></span></div>
+    <div>饮食限制：<span id="dietary-restrictions"></span></div>
+    <div>已知情况：<span id="known-condition"></span></div>
+    <button type="button" id="button">Check-In</button>
+    <script type="text/javascript">
+      function process(content) {
+        Vue.http.get("https://api.thehack.org.cn/checkin/info/" + content)
+          .then(response => {
+            let body = response.body;
+            document.getElementById("name").innerHTML = body.result.name;
+            document.getElementById("age").innerHTML = body.result.age;
+            document.getElementById("group").innerHTML = body.result.group;
+            document.getElementById("shirt-size").innerHTML = body.result.shirtSize;
+            document.getElementById("id-type").innerHTML = body.result.idType;
+            document.getElementById("id-number").innerHTML = body.result.idNumber;
+            document.getElementById("dietary-restrictions").innerHTML = body.result.dietaryRestrictions;
+            document.getElementById("known-condition").innerHTML = body.result.knownCondition;
+            document.getElementById("button").onclick = () => {
+              Vue.http.post("https://api.thehack.org.cn/checkin/confirm/" + content)
+                .then(response => {
+                  let body = response.body;
+                  alert(body.message);
+                });
+            };
+          });
+      }
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function(content) {
+        process(content);
+      });
+      Instascan.Camera.getCameras().then(function(cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          alert("no camera found");
+        }
+      }).catch(function(e) {
+        alert(e);
+      });
+    </script>
+  </body>
+</html>
