@@ -9,8 +9,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title if(data.lang==="en")>hack.init() | Campus Ambassador</title>
-        <title if(data.lang==="zh")>hack.init() | 校园大使</title>
+        <if(data.lang==="en")>
+            <title>hack.init() | Campus Ambassador</title>
+        </if>
+        <if(data.lang==="zh")>
+            <title>hack.init() | 校园大使</title>
+        </if>
         <link rel="icon" href="/s/img/favicon.ico">
 
         <!-- CSS -->
@@ -64,24 +68,28 @@
                     </if>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
-                        <!--
-                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
-                        -->
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/ambassador">简体中文</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
-                        <!--
-                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
-                        -->
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/ambassador">ENGLISH</a></li>
-                    </ul>
+                    <if(data.lang==="en")>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
+                            <!--
+                            <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
+                            -->
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/ambassador">简体中文</a></li>
+                        </ul>
+                    </if>
+                    <if(data.lang==="zh")
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
+                            <!--
+                            <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
+                            -->
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/ambassador">ENGLISH</a></li>
+                        </ul>
+                    </if>
                 </div>
             </div>
         </nav>
@@ -96,68 +104,76 @@
                     </div>
                     <div class="container description-container">
                         <div class="row">
-                            <div class="col-xs-12 col-md-8 description" if(data.lang==="en")>
-                                <h3><b>Ready to Become a Campus Ambassador?</b></h3>
-                                <p>Campus Ambassadors are some of the most influential people on your campus. As an Ambassador, you help us, The <b>hack.init()</b> Team, market and promote our events amongst your classmates and friends. Campus Ambassadors can play an important role in the marketing and promotion of <b>hack.init()</b>.</p>
-                                <p>Being a Campus Ambassador is a fun, varied and flexible job. People who are excited about the chance to share the <b>hack.init()</b> events and to gain marketing experiences are encouraged to apply.</p>
-                                <p>If you have any questions, email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</p>
-                            </div>
-                            <div class="col-xs-12 col-md-8 description" if(data.lang==="zh")>
-                                <h3><b>准备好成为一名校园大使了吗？</b></h3>
-                                <p>作为学校里最有影响力的少数派，你将会担负起一份对我们来说万分重要的责任——帮助我们在同学和朋友中推广<b>hack.init()</b>。</p>
-                                <p>当然，这是一份轻松有趣，充满弹性的工作。如果你对即将到来的挑战充满信心，或是渴望历练一下自己的市场推广技能，那么我们诚挚欢迎你的加入。</p>
-                                <p>如果你有任何相关的问题，欢迎发送邮件到<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>。</p>
-                            </div>
-                            <div class="col-xs-12 col-md-4 reasons" if(data.lang==="en")>
-                                <h4><b>TOP 5 REASONS TO BECOME A CAMPUS AMBASSADOR</b></h4>
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        You network with other like-minded people across the nation
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        If there is a significant increase in applications from your school, you and your team will be guaranteed admission to <b>hack.init()</b>!
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        You will receive EXCLUSIVE swags only for Campus Ambassadors
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        You help promote STEM education in your local community
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        You gain unparalleled marketing and promotion experiences
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-xs-12 col-md-4 reasons" if(data.lang==="zh")>
-                                <h4><b>五个成为校园大使的理由</b></h4>
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        你将和全国众多影响力强大的校园学生领袖一起工作，社交网络强大、分布广泛
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        如果你所在的学校在你的努力下申请数量有明显增加，你所在的队伍将会免审核直接通过，进入比赛
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        你将获得专属校园大使的礼品和证书
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        你为你所在的社区推动了STEM（Science、Technology、Engineering、Mathematics）教育
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="fa fa-check-square-o"></i>
-                                        你将获得大量市场营销和宣传推广的经验
-                                    </li>
-                                </ul>
-                            </div>
+                            <if(data.lang==="en")>
+                                <div class="col-xs-12 col-md-8 description">
+                                    <h3><b>Ready to Become a Campus Ambassador?</b></h3>
+                                    <p>Campus Ambassadors are some of the most influential people on your campus. As an Ambassador, you help us, The <b>hack.init()</b> Team, market and promote our events amongst your classmates and friends. Campus Ambassadors can play an important role in the marketing and promotion of <b>hack.init()</b>.</p>
+                                    <p>Being a Campus Ambassador is a fun, varied and flexible job. People who are excited about the chance to share the <b>hack.init()</b> events and to gain marketing experiences are encouraged to apply.</p>
+                                    <p>If you have any questions, email us at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</p>
+                                </div>
+                            </if>
+                            <if(data.lang==="zh")>
+                                <div class="col-xs-12 col-md-8 description">
+                                    <h3><b>准备好成为一名校园大使了吗？</b></h3>
+                                    <p>作为学校里最有影响力的少数派，你将会担负起一份对我们来说万分重要的责任——帮助我们在同学和朋友中推广<b>hack.init()</b>。</p>
+                                    <p>当然，这是一份轻松有趣，充满弹性的工作。如果你对即将到来的挑战充满信心，或是渴望历练一下自己的市场推广技能，那么我们诚挚欢迎你的加入。</p>
+                                    <p>如果你有任何相关的问题，欢迎发送邮件到<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>。</p>
+                                </div>
+                            </if>
+                            <if(data.lang==="en")>
+                                <div class="col-xs-12 col-md-4 reasons">
+                                    <h4><b>TOP 5 REASONS TO BECOME A CAMPUS AMBASSADOR</b></h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            You network with other like-minded people across the nation
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            If there is a significant increase in applications from your school, you and your team will be guaranteed admission to <b>hack.init()</b>!
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            You will receive EXCLUSIVE swags only for Campus Ambassadors
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            You help promote STEM education in your local community
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            You gain unparalleled marketing and promotion experiences
+                                        </li>
+                                    </ul>
+                                </div>
+                            </if>
+                            <if(data.lang==="zh")>
+                                <div class="col-xs-12 col-md-4 reasons">
+                                    <h4><b>五个成为校园大使的理由</b></h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            你将和全国众多影响力强大的校园学生领袖一起工作，社交网络强大、分布广泛
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            如果你所在的学校在你的努力下申请数量有明显增加，你所在的队伍将会免审核直接通过，进入比赛
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            你将获得专属校园大使的礼品和证书
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            你为你所在的社区推动了STEM（Science、Technology、Engineering、Mathematics）教育
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="fa fa-check-square-o"></i>
+                                            你将获得大量市场营销和宣传推广的经验
+                                        </li>
+                                    </ul>
+                                </div>
+                            </if>
                         </div>
                     </div>
                 </div>
@@ -176,8 +192,8 @@
         <div id="form" class="container">
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="name" if(data.lang==="en")>Your name *</label>
-                    <label for="name" if(data.lang==="zh")>你的名字 *</label>
+                    <if(data.lang==="en")><label for="name">Your name *</label></if>
+                    <if(data.lang==="zh")<label for="name">你的名字 *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="name-addon">
                             <i class="fa fa-id-card"></i>
@@ -186,29 +202,33 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="gender" if(data.lang==="en")>Gender you identify with *</label>
-                    <label for="gender" if(data.lang==="zh")>你的性别 *</label>
+                    <if(data.lang==="en")><label for="gender">Gender you identify with *</label></if>
+                    <if(data.lang==="zh")><label for="gender">你的性别 *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="gender-addon">
                             <i class="fa fa-venus-mars"></i>
                         </span>
-                        <select class="form-control select-box" id="gender" aria-describedby="gender-addon" v-model="gender" @change="validateSelectBox(gender, '#gender')" @blur="validateSelectBox(gender, '#gender')" if(data.lang==="en")>
-                            <option value="-">Choose...</option>
-                            <option value="M">Male</option>
-                            <option value="F">Female</option>
-                            <option value="N">Non-Binary</option>
-                        </select>
-                        <select class="form-control select-box" id="gender" aria-describedby="gender-addon" v-model="gender" @change="validateSelectBox(gender, '#gender')" @blur="validateSelectBox(gender, '#gender')" if(data.lang==="zh")>
-                            <option value="-">请选择……</option>
-                            <option value="M">男性</option>
-                            <option value="F">女性</option>
-                            <option value="N">非二元性别</option>
-                        </select>
+                        <if(data.lang==="en")>
+                            <select class="form-control select-box" id="gender" aria-describedby="gender-addon" v-model="gender" @change="validateSelectBox(gender, '#gender')" @blur="validateSelectBox(gender, '#gender')">
+                                <option value="-">Choose...</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                <option value="N">Non-Binary</option>
+                            </select>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <select class="form-control select-box" id="gender" aria-describedby="gender-addon" v-model="gender" @change="validateSelectBox(gender, '#gender')" @blur="validateSelectBox(gender, '#gender')">
+                                <option value="-">请选择……</option>
+                                <option value="M">男性</option>
+                                <option value="F">女性</option>
+                                <option value="N">非二元性别</option>
+                            </select>
+                        </if>
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="school" if(data.lang==="en")>School you attend (full name) *</label>
-                    <label for="school" if(data.lang==="zh")>你所在的学校（全称） *</label>
+                    <if(data.lang==="en")><label for="school">School you attend (full name) *</label></if>
+                    <if(data.lang==="zh")><label for="school">你所在的学校（全称） *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="school-addon">
                             <i class="fa fa-institution"></i>
@@ -217,37 +237,41 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="grade" if(data.lang==="en")>Grade you are in *</label>
-                    <label for="grade" if(data.lang==="zh")>你所在的年级 *</label>
+                    <if(data.lang==="en")><label for="grade">Grade you are in *</label></if>
+                    <if(data.lang==="zh")><label for="grade">你所在的年级 *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="grade-addon">
                             <i class="fa fa-graduation-cap"></i>
                         </span>
-                        <select class="form-control select-box" id="grade" aria-describedby="grade-addon" @change="gradeSelected(grade)" @blur="validateSelectBox(grade, '#grade')" v-model="grade" if(data.lang==="en")>
-                            <option value="-">Choose...</option>
-                            <option value="HSFR">Grade 9</option>
-                            <option value="HSSO">Grade 10</option>
-                            <option value="HSJR">Grade 11</option>
-                            <option value="HSSR">Grade 12</option>
-                            <option value="COFR">College Freshman</option>
-                            <option value="COSO">College Sophomore</option>
-                            <option value="OTHR">Other</option>
-                        </select>
-                        <select class="form-control select-box" id="grade" aria-describedby="grade-addon" @change="gradeSelected(grade)" @blur="validateSelectBox(grade, '#grade')" v-model="grade" if(data.lang==="zh")>
-                            <option value="-">请选择……</option>
-                            <option value="HSFR">九年级</option>
-                            <option value="HSSO">十年级</option>
-                            <option value="HSJR">十一年级</option>
-                            <option value="HSSR">十二年级</option>
-                            <option value="COFR">大一</option>
-                            <option value="COSO">大二</option>
-                            <option value="OTHR">其他</option>
-                        </select>
+                        <if(data.lang==="en")>
+                            <select class="form-control select-box" id="grade" aria-describedby="grade-addon" @change="gradeSelected(grade)" @blur="validateSelectBox(grade, '#grade')" v-model="grade">
+                                <option value="-">Choose...</option>
+                                <option value="HSFR">Grade 9</option>
+                                <option value="HSSO">Grade 10</option>
+                                <option value="HSJR">Grade 11</option>
+                                <option value="HSSR">Grade 12</option>
+                                <option value="COFR">College Freshman</option>
+                                <option value="COSO">College Sophomore</option>
+                                <option value="OTHR">Other</option>
+                            </select>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <select class="form-control select-box" id="grade" aria-describedby="grade-addon" @change="gradeSelected(grade)" @blur="validateSelectBox(grade, '#grade')" v-model="grade">
+                                <option value="-">请选择……</option>
+                                <option value="HSFR">九年级</option>
+                                <option value="HSSO">十年级</option>
+                                <option value="HSJR">十一年级</option>
+                                <option value="HSSR">十二年级</option>
+                                <option value="COFR">大一</option>
+                                <option value="COSO">大二</option>
+                                <option value="OTHR">其他</option>
+                            </select>
+                        </if>
                     </div>
                 </div>
                 <div id="grade-other-col" class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field" style="display: none">
-                    <label for="grade-other" if(data.lang==="en")>Tell us your grade *</label>
-                    <label for="grade-other" if(data.lang==="zh")>你的年级是？ *</label>
+                    <if(data.lang==="en")><label for="grade-other">Tell us your grade *</label></if>
+                    <if(data.lang==="zh")><label for="grade-other">你的年级是？ *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="grade-other-addon">
                             <i class="fa fa-pencil"></i>
@@ -256,27 +280,35 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="location" if(data.lang==="en")>Where is your school *</label>
-                    <label for="location" if(data.lang==="zh")>你的学校所在地 *</label>
+                    <if(data.lang==="en")><label for="location">Where is your school *</label></if>
+                    <if(data.lang==="zh")><label for="location">你的学校所在地 *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="location-addon">
                             <i class="fa fa-map"></i>
                         </span>
                         <div class="row" id="location">
                             <div class="col-xs-6 left-half">
-                                <input type="text" class="form-control" id="city" autocomplete="off" placeholder="City" aria-describedby="location-addon" v-model="city" @input="validateRequiredField(city, '#city')" @blur="validateRequiredField(city, '#city')" if(data.lang==="en")>
-                                <input type="text" class="form-control" id="city" autocomplete="off" placeholder="城市" aria-describedby="location-addon" v-model="city" @input="validateRequiredField(city, '#city')" @blur="validateRequiredField(city, '#city')" if(data.lang==="zh")>
+                                <if(data.lang==="en")>
+                                    <input type="text" class="form-control" id="city" autocomplete="off" placeholder="City" aria-describedby="location-addon" v-model="city" @input="validateRequiredField(city, '#city')" @blur="validateRequiredField(city, '#city')">
+                                </if>
+                                <if(data.lang==="zh")>
+                                    <input type="text" class="form-control" id="city" autocomplete="off" placeholder="城市" aria-describedby="location-addon" v-model="city" @input="validateRequiredField(city, '#city')" @blur="validateRequiredField(city, '#city')">
+                                </if>
                             </div>
                             <div class="col-xs-6 right-half">
-                                <input type="text" class="form-control" id="province" autocomplete="off" placeholder="Province/State" aria-describedby="location-addon" v-model="province" @input="validateRequiredField(province, '#province')" @blur="validateRequiredField(province, '#province')" if(data.lang==="en")>
-                                <input type="text" class="form-control" id="province" autocomplete="off" placeholder="省份／州" aria-describedby="location-addon" v-model="province" @input="validateRequiredField(province, '#province')" @blur="validateRequiredField(province, '#province')" if(data.lang==="zh")>
+                                <if(data.lang==="en")>
+                                    <input type="text" class="form-control" id="province" autocomplete="off" placeholder="Province/State" aria-describedby="location-addon" v-model="province" @input="validateRequiredField(province, '#province')" @blur="validateRequiredField(province, '#province')">
+                                </if>
+                                <if(data.lang==="zh")>
+                                    <input type="text" class="form-control" id="province" autocomplete="off" placeholder="省份／州" aria-describedby="location-addon" v-model="province" @input="validateRequiredField(province, '#province')" @blur="validateRequiredField(province, '#province')">
+                                </if>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="email" if(data.lang==="en")>Your email address *</label>
-                    <label for="email" if(data.lang==="zh")>你的电子邮箱地址 *</label>
+                    <if(data.lang==="en")><label for="email">Your email address *</label></if>
+                    <if(data.lang==="zh")><label for="email">你的电子邮箱地址 *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="email-addon">
                             <i class="fa fa-envelope"></i>
@@ -285,8 +317,8 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="mobile" if(data.lang==="en")>Your cellphone number *</label>
-                    <label for="mobile" if(data.lang==="zh")>你的手机号码 *</label>
+                    <if(data.lang==="en")><label for="mobile">Your cellphone number *</label></if>
+                    <if(data.lang==="zh")><label for="mobile">你的手机号码 *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="mobile-addon">
                             <i class="fa fa-phone"></i>
@@ -295,8 +327,8 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="file" if(data.lang==="en")>Your resume</label>
-                    <label for="file" if(data.lang==="zh")>你的简历</label>
+                    <if(data.lang==="en")><label for="file">Your resume</label></if>
+                    <if(data.lang==="zh")><label for="file">你的简历</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="file-addon">
                             <i class="fa fa-file"></i>
@@ -305,8 +337,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="how-know-hackinit" if(data.lang==="en")>How did you get to know of <b>hack.init()</b>? *</label>
-                    <label for="how-know-hackinit" if(data.lang==="zh")>你是通过什么渠道了解<b>hack.init()</b>的？ *</label>
+                    <if(data.lang==="en")>
+                        <label for="how-know-hackinit">How did you get to know of <b>hack.init()</b>? *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="how-know-hackinit">你是通过什么渠道了解<b>hack.init()</b>的？ *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="how-know-hackinit-addon">
                             <i class="fa fa-eye"></i>
@@ -315,8 +351,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="marketing-experience" if(data.lang==="en")>Do you have any event promotion experiences? If so, please elaborate.</label>
-                    <label for="marketing-experience" if(data.lang==="zh")>你过去是否有推广活动的经历？如有，请详述。</label>
+                    <if(data.lang==="en")>
+                        <label for="marketing-experience">Do you have any event promotion experiences? If so, please elaborate.</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="marketing-experience">你过去是否有推广活动的经历？如有，请详述。</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="marketing-experience-addon">
                             <i class="fa fa-handshake-o"></i>
@@ -325,8 +365,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="hackathon-experience" if(data.lang==="en")>Have you participated in hackathons before? Please list all hackathons you have attended.</label>
-                    <label for="hackathon-experience" if(data.lang==="zh")>你是否参加过hackathon？请列出你参加过的hackathon。</label>
+                    <if(data.lang==="en")>
+                        <label for="hackathon-experience">Have you participated in hackathons before? Please list all hackathons you have attended.</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="hackathon-experience">你是否参加过hackathon？请列出你参加过的hackathon。</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="hackathon-experience-addon">
                             <i class="fa fa-code"></i>
@@ -335,8 +379,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="hackathon-understanding" if(data.lang==="en")>Please briefly describe your interpretation of hackathons.</label>
-                    <label for="hackathon-understanding" if(data.lang==="zh")>请简要描述你对hackathon的认识和理解。</label>
+                    <if(data.lang==="en")>
+                        <label for="hackathon-understanding">Please briefly describe your interpretation of hackathons.</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="hackathon-understanding">请简要描述你对hackathon的认识和理解。</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="hackathon-understanding-addon">
                             <i class="fa fa-comments-o"></i>
@@ -345,8 +393,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="promotion-plan" if(data.lang==="en")>Please briefly describe how you will promote <b>hack.init()</b> in your school. *</label>
-                    <label for="promotion-plan" if(data.lang==="zh")>请简要描述你计划如何在你的学校推广<b>hack.init()</b>。 *</label>
+                    <if(data.lang==="en")>
+                        <label for="promotion-plan">Please briefly describe how you will promote <b>hack.init()</b> in your school. *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="promotion-plan">请简要描述你计划如何在你的学校推广<b>hack.init()</b>。 *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="promotion-plan-addon">
                             <i class="fa fa-bullhorn"></i>
@@ -358,8 +410,12 @@
             <div class="row">
                 <div class="col-xs-12 submit-btn-col">
                     <div class="horizontal-center">
-                        <a type="button" id="submit-btn" class="btn btn-primary btn-lg" @click="submitApp()" if(data.lang==="en")>Submit</a>
-                        <a type="button" id="submit-btn" class="btn btn-primary btn-lg" @click="submitApp()" if(data.lang==="zh")>提交</a>
+                        <if(data.lang==="en")>
+                            <a type="button" id="submit-btn" class="btn btn-primary btn-lg" @click="submitApp()">Submit</a>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <a type="button" id="submit-btn" class="btn btn-primary btn-lg" @click="submitApp()">提交</a>
+                        </if>
                     </div>
                 </div>
             </div>
@@ -369,20 +425,24 @@
         <!-- FOOTER -->
         <div class="container-fluid darkgrey-background">
             <div class="row">
-                <div class="col-xs-12 footer" if(data.lang==="en")>
-                    <div class="horizontal-center">
-                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
-                        <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                <if(data.lang==="en")>
+                    <div class="col-xs-12 footer">
+                        <div class="horizontal-center">
+                            <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                            <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-12 footer" if(data.lang==="zh")>
-                    <div class="horizontal-center">
-                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
-                        <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                </if>
+                <if(data.lang==="zh")>
+                    <div class="col-xs-12 footer">
+                        <div class="horizontal-center">
+                            <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                            <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                        </div>
                     </div>
-                </div>
+                </if>
             </div>
         </div>
         <!-- /FOOTER -->

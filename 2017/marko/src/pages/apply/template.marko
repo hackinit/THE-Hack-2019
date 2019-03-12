@@ -9,8 +9,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title if(data.lang==="en")>hack.init() | Apply</title>
-        <title if(data.lang==="zh")>hack.init() | 申请</title>
+        <if(data.lang==="en")><title>hack.init() | Apply</title></if>
+        <if(data.lang==="zh")><title>hack.init() | 申请</title></if>
         <link rel="icon" href="/s/img/favicon.ico">
 
         <!-- CSS -->
@@ -65,24 +65,28 @@
                     </if>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
-                        <!--
-                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
-                        -->
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/apply">简体中文</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
-                        <!--
-                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
-                        -->
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/apply">ENGLISH</a></li>
-                    </ul>
+                    <if(data.lang==="en")>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
+                            <!--
+                            <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
+                            -->
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/apply">简体中文</a></li>
+                        </ul>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
+                            <!--
+                            <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
+                            -->
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/apply">ENGLISH</a></li>
+                        </ul>
+                    </if>
                 </div>
             </div>
         </nav>
@@ -92,18 +96,18 @@
         <div id="form" class="container">
             <div class="row">
                 <div class="col-xs-12 horizontal-center">
-                    <h2 if(data.lang==="en")>Participant Application</h2>
-                    <h2 if(data.lang==="zh")>参赛申请</h2>
+                    <if(data.lang==="en")><h2>Participant Application</h2></if>
+                    <if(data.lang==="zh")><h2>参赛申请</h2></if>
                 </div>
             </div>
             <div class="row form-section">
                 <div class="col-xs-12 horizontal-center">
-                    <h3 if(data.lang==="en")>General Information</h3>
-                    <h3 if(data.lang==="zh")>一般信息</h3>
+                    <if(data.lang==="en")><h3>General Information</h3></if>
+                    <if(data.lang==="zh")><h3>一般信息</h3></if>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="email" if(data.lang==="en")>Email *</label>
-                    <label for="email" if(data.lang==="zh")>邮箱 *</label>
+                    <if(data.lang==="en")><label for="email">Email *</label><if>
+                    <if(data.lang==="zh")><label for="email">邮箱 *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="email-addon">
                             <i class="fa fa-envelope"></i>
@@ -112,8 +116,8 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="name" if(data.lang==="en")>Full Legal Name *</label>
-                    <label for="name" if(data.lang==="zh")>全名（请填写你身份证上的姓名） *</label>
+                    <if(data.lang==="en")><label for="name">Full Legal Name *</label></if>
+                    <if(data.lang==="zh")><label for="name">全名（请填写你身份证上的姓名） *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="name-addon">
                             <i class="fa fa-id-card"></i>
@@ -122,29 +126,37 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="gender" if(data.lang==="en")>Gender *</label>
-                    <label for="gender" if(data.lang==="zh")>性别 *</label>
+                    <if(data.lang==="en")><label for="gender">Gender *</label></if>
+                    <if(data.lang==="zh")><label for="gender" >性别 *</label></if>
                     <div class="input-group">
                         <span class="input-group-addon" id="gender-addon">
                             <i class="fa fa-venus-mars"></i>
                         </span>
-                        <select class="form-control select-box" id="gender" aria-describedby="gender-addon" v-model="gender" @change="validateSelectBox(gender, '#gender')" @blur="validateSelectBox(gender, '#gender')" if(data.lang==="en")>
-                            <option value="-">Choose...</option>
-                            <option value="M">Male</option>
-                            <option value="F">Female</option>
-                            <option value="N">Non-Binary</option>
-                        </select>
-                        <select class="form-control select-box" id="gender" aria-describedby="gender-addon" v-model="gender" @change="validateSelectBox(gender, '#gender')" @blur="validateSelectBox(gender, '#gender')" if(data.lang==="zh")>
-                            <option value="-">请选择……</option>
-                            <option value="M">男性</option>
-                            <option value="F">女性</option>
-                            <option value="N">非二元性别</option>
-                        </select>
+                        <if(data.lang==="en")>
+                            <select class="form-control select-box" id="gender" aria-describedby="gender-addon" v-model="gender" @change="validateSelectBox(gender, '#gender')" @blur="validateSelectBox(gender, '#gender')">
+                                <option value="-">Choose...</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                <option value="N">Non-Binary</option>
+                            </select>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <select class="form-control select-box" id="gender" aria-describedby="gender-addon" v-model="gender" @change="validateSelectBox(gender, '#gender')" @blur="validateSelectBox(gender, '#gender')">
+                                <option value="-">请选择……</option>
+                                <option value="M">男性</option>
+                                <option value="F">女性</option>
+                                <option value="N">非二元性别</option>
+                            </select>
+                        </if>
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="birth" if(data.lang==="en")>Birth Date (MM/DD/YYYY) *</label>
-                    <label for="birth" if(data.lang==="zh")>出生日期（MM/DD/YYYY）*</label>
+                    <if(data.lang==="en")>
+                        <label for="birth">Birth Date (MM/DD/YYYY) *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="birth">出生日期（MM/DD/YYYY）*</label>
+                    </if>
                     <div class="input-group date" id="birth-input-group">
                         <span class="input-group-addon" id="birth-addon">
                             <i class="fa fa-birthday-cake"></i>
@@ -153,8 +165,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="school" if(data.lang==="en")>Full School Name *</label>
-                    <label for="school" if(data.lang==="zh")>就读院校全名 *</label>
+                    <if(data.lang==="en")>
+                        <label for="school">Full School Name *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="school">就读院校全名 *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="school-addon">
                             <i class="fa fa-institution"></i>
@@ -163,13 +179,17 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="grade" if(data.lang==="en")>Grade *</label>
-                    <label for="grade" if(data.lang==="zh")>年级 *</label>
+                    <if(data.lang==="en")>
+                        <label for="grade">Grade *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="grade">年级 *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="grade-addon">
                             <i class="fa fa-graduation-cap"></i>
                         </span>
-                        <select class="form-control select-box" id="grade" aria-describedby="grade-addon" @change="validateSelectBox(grade, '#grade')" @blur="validateSelectBox(grade, '#grade')" v-model="grade" if(data.lang==="en")>
+                        <select class="form-control select-box" id="grade" aria-describedby="grade-addon" @change="validateSelectBox(grade, '#grade')" @blur="validateSelectBox(grade, '#grade')" v-model="grade">
                             <option value="-">Choose...</option>
                             <option value="HSFR">Grade 9</option>
                             <option value="HSSO">Grade 10</option>
@@ -179,7 +199,7 @@
                             <option value="COSO">College Sophomore</option>
                             <option value="OTHR">Other</option>
                         </select>
-                        <select class="form-control select-box" id="grade" aria-describedby="grade-addon" @change="validateSelectBox(grade, '#grade')" @blur="validateSelectBox(grade, '#grade')" v-model="grade" if(data.lang==="zh")>
+                        <select class="form-control select-box" id="grade" aria-describedby="grade-addon" @change="validateSelectBox(grade, '#grade')" @blur="validateSelectBox(grade, '#grade')" v-model="grade">
                             <option value="-">请选择……</option>
                             <option value="HSFR">九年级</option>
                             <option value="HSSO">十年级</option>
@@ -192,8 +212,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field" v-show="grade == 'OTHR'">
-                    <label for="grade-other" if(data.lang==="en")>Please Specify *</label>
-                    <label for="grade-other" if(data.lang==="zh")>请注明 *</label>
+                    <if(data.lang==="en")>
+                        <label for="grade-other">Please Specify *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="grade-other">请注明 *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="grade-other-addon">
                             <i class="fa fa-pencil"></i>
@@ -202,27 +226,43 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="location" if(data.lang==="en")>Where are you traveling from? *</label>
-                    <label for="location" if(data.lang==="zh")>你将从哪里出发来到我们的会场？ *</label>
+                    <if(data.lang==="en")>
+                        <label for="location">Where are you traveling from? *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="location">你将从哪里出发来到我们的会场？ *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="location-addon">
                             <i class="fa fa-map"></i>
                         </span>
                         <div class="row" id="location">
                             <div class="col-xs-6 left-half">
-                                <input type="text" class="form-control" id="city" autocomplete="off" placeholder="City" aria-describedby="location-addon" v-model="city" @input="validateRequiredField(city, '#city')" @blur="validateRequiredField(city, '#city')" if(data.lang==="en")>
-                                <input type="text" class="form-control" id="city" autocomplete="off" placeholder="城市" aria-describedby="location-addon" v-model="city" @input="validateRequiredField(city, '#city')" @blur="validateRequiredField(city, '#city')" if(data.lang==="zh")>
+                                <if(data.lang==="en")>
+                                    <input type="text" class="form-control" id="city" autocomplete="off" placeholder="City" aria-describedby="location-addon" v-model="city" @input="validateRequiredField(city, '#city')" @blur="validateRequiredField(city, '#city')">
+                                </if>
+                                <if(data.lang==="zh")>
+                                    <input type="text" class="form-control" id="city" autocomplete="off" placeholder="城市" aria-describedby="location-addon" v-model="city" @input="validateRequiredField(city, '#city')" @blur="validateRequiredField(city, '#city')">
+                                </if>
                             </div>
                             <div class="col-xs-6 right-half">
-                                <input type="text" class="form-control" id="province" autocomplete="off" placeholder="Province/State" aria-describedby="location-addon" v-model="province" @input="validateRequiredField(province, '#province')" @blur="validateRequiredField(province, '#province')" if(data.lang==="en")>
-                                <input type="text" class="form-control" id="province" autocomplete="off" placeholder="省份／州" aria-describedby="location-addon" v-model="province" @input="validateRequiredField(province, '#province')" @blur="validateRequiredField(province, '#province')" if(data.lang==="zh")>
+                                <if(data.lang==="en")>
+                                    <input type="text" class="form-control" id="province" autocomplete="off" placeholder="Province/State" aria-describedby="location-addon" v-model="province" @input="validateRequiredField(province, '#province')" @blur="validateRequiredField(province, '#province')">
+                                </if>
+                                <if(data.lang==="zh")>
+                                    <input type="text" class="form-control" id="province" autocomplete="off" placeholder="省份／州" aria-describedby="location-addon" v-model="province" @input="validateRequiredField(province, '#province')" @blur="validateRequiredField(province, '#province')">
+                                </if>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="mobile" if(data.lang==="en")>Cellphone number *</label>
-                    <label for="mobile" if(data.lang==="zh")>手机号码 *</label>
+                    <if(data.lang==="en")>
+                        <label for="mobile">Cellphone number *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="mobile">手机号码 *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="mobile-addon">
                             <i class="fa fa-phone"></i>
@@ -231,8 +271,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="wechat" if(data.lang==="en")>WeChat ID</label>
-                    <label for="wechat" if(data.lang==="zh")>微信号</label>
+                    <if(data.lang==="en")>
+                        <label for="wechat">WeChat ID</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="wechat">微信号</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="wechat-addon">
                             <i class="fa fa-wechat"></i>
@@ -241,8 +285,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="linkedin" if(data.lang==="en")>LinkedIn</label>
-                    <label for="linkedin" if(data.lang==="zh")>领英</label>
+                    <if(data.lang==="en")>
+                        <label for="linkedin">LinkedIn</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="linkedin">领英</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="linkedin-addon-icon">
                             <i class="fa fa-linkedin"></i>
@@ -275,8 +323,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="website" if(data.lang==="en")>Personal Website</label>
-                    <label for="website" if(data.lang==="zh")>个人网站</label>
+                    <if(data.lang==="en")>
+                        <label for="website">Personal Website</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="website">个人网站</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="website-addon">
                             <i class="fa fa-laptop"></i>
@@ -285,21 +337,25 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="is-ca" if(data.lang==="en")>I am a Campus Ambassador! *</label>
-                    <label for="is-ca" if(data.lang==="zh")>我是一名校园大使！ *</label>
+                    <if(data.lang==="en")>
+                        <label for="is-ca">I am a Campus Ambassador! *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="is-ca">我是一名校园大使！ *</label>
+                    </if>
                     <div class="row">
                         <div class="col-xs-6">
                             <div class="horizontal-center">
                                 <input type="radio" name="is-ca" id="is-ca-yes" value="true" v-model="isCA" @change="validateRadio(isCA, '#is-ca')">
-                                <span if(data.lang==="en")>Yes</span>
-                                <span if(data.lang==="zh")>是</span>
+                                <if(data.lang==="en")><span>Yes</span></if>
+                                <if(data.lang==="zh")><span>是</span></if>
                             </div>
                         </div>
                         <div class="col-xs-6">
                             <div class="horizontal-center">
                                 <input type="radio" name="is-ca" id="is-ca-no" value="false" v-model="isCA" @change="validateRadio(isCA, '#is-ca')">
-                                <span if(data.lang==="en")>No</span>
-                                <span if(data.lang==="zh")>否</span>
+                                <if(data.lang==="en")><span>No</span></if>
+                                <if(data.lang==="zh")><span>否</span></if>
                             </div>
                         </div>
                     </div>
@@ -307,47 +363,59 @@
             </div>
             <div class="row form-section">
                 <div class="col-xs-12 horizontal-center">
-                    <h3 if(data.lang==="en")>Skills</h3>
-                    <h3 if(data.lang==="zh")>技能</h3>
+                    <if(data.lang==="en")><h3>Skills</h3></if>
+                    <if(data.lang==="zh")><h3>技能</h3></if>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="skills" if(data.lang==="en")>What are you skilled in? (Ctrl/Command + click to multi-select!) *</label>
-                    <label for="skills" if(data.lang==="zh")>你擅长以下中的哪几项？（按住Ctrl或Command键多选） *</label>
+                    <if(data.lang==="en")>
+                        <label for="skills">What are you skilled in? (Ctrl/Command + click to multi-select!) *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="skills">你擅长以下中的哪几项？（按住Ctrl或Command键多选） *</label>
                     <div class="input-group">
+                    </if>
                         <span class="input-group-addon" id="other-skills-addon">
                             <i class="fa fa-wrench"></i>
                         </span>
-                        <select multiple class="form-control" id="skills" v-model="skills" aria-describedby="other-skills-addon" if(data.lang==="en")>
-                            <option value="WEB">Web Development</option>
-                            <option value="GAME">Game Development</option>
-                            <option value="GRAPHIC">Graphic Design</option>
-                            <option value="PM">Product Management</option>
-                            <option value="VRAR">Virtual / Augmented Reality</option>
-                            <option value="UAV">UAV (Unmanned Aerial Vehicle) / Drones</option>
-                            <option value="IOT">Internet of Things</option>
-                            <option value="ML">Machine Learning</option>
-                            <option value="ANDROID">Android</option>
-                            <option value="IOS">iOS</option>
-                            <option value="ALGORITHM">Algorithms</option>
-                        </select>
-                        <select multiple class="form-control" id="skills" v-model="skills" aria-describedby="other-skills-addon" if(data.lang==="zh")>
-                            <option value="WEB">网页开发</option>
-                            <option value="GAME">游戏开发</option>
-                            <option value="GRAPHIC">平面设计</option>
-                            <option value="PM">产品管理</option>
-                            <option value="VRAR">虚拟现实／增强现实</option>
-                            <option value="UAV">无人机</option>
-                            <option value="IOT">物联网</option>
-                            <option value="ML">机器学习</option>
-                            <option value="ANDROID">Android</option>
-                            <option value="IOS">iOS</option>
-                            <option value="ALGORITHM">算法</option>
-                        </select>
+                        <if(data.lang==="en")>
+                            <select multiple class="form-control" id="skills" v-model="skills" aria-describedby="other-skills-addon">
+                                <option value="WEB">Web Development</option>
+                                <option value="GAME">Game Development</option>
+                                <option value="GRAPHIC">Graphic Design</option>
+                                <option value="PM">Product Management</option>
+                                <option value="VRAR">Virtual / Augmented Reality</option>
+                                <option value="UAV">UAV (Unmanned Aerial Vehicle) / Drones</option>
+                                <option value="IOT">Internet of Things</option>
+                                <option value="ML">Machine Learning</option>
+                                <option value="ANDROID">Android</option>
+                                <option value="IOS">iOS</option>
+                                <option value="ALGORITHM">Algorithms</option>
+                            </select>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <select multiple class="form-control" id="skills" v-model="skills" aria-describedby="other-skills-addon">
+                                <option value="WEB">网页开发</option>
+                                <option value="GAME">游戏开发</option>
+                                <option value="GRAPHIC">平面设计</option>
+                                <option value="PM">产品管理</option>
+                                <option value="VRAR">虚拟现实／增强现实</option>
+                                <option value="UAV">无人机</option>
+                                <option value="IOT">物联网</option>
+                                <option value="ML">机器学习</option>
+                                <option value="ANDROID">Android</option>
+                                <option value="IOS">iOS</option>
+                                <option value="ALGORITHM">算法</option>
+                            </select>
+                        </if>
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="other-skills" if(data.lang==="en")>I have other skills!</label>
-                    <label for="other-skills" if(data.lang==="zh")>我有其他技能！</label>
+                    <if(data.lang==="en")>
+                        <label for="other-skills">I have other skills!</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="other-skills">我有其他技能！</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="other-skills-addon">
                             <i class="fa fa-gavel"></i>
@@ -356,21 +424,25 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="is-guru" if(data.lang==="en")>I want to become a hacker guru! (Hacker gurus are hackers who know their way around a hackathon and are eager to share their knowledge.) *</label>
-                    <label for="is-guru" if(data.lang==="zh")>我想成为一名黑客导师！（黑客导师是熟悉创客马拉松并渴望分享他们知识的创客们。） *</label>
+                    <if(data.lang==="en")>
+                        <label for="is-guru">I want to become a hacker guru! (Hacker gurus are hackers who know their way around a hackathon and are eager to share their knowledge.) *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="is-guru">我想成为一名黑客导师！（黑客导师是熟悉创客马拉松并渴望分享他们知识的创客们。） *</label>
+                    </if>
                     <div class="row">
                         <div class="col-xs-6">
                             <div class="horizontal-center">
                                 <input type="radio" name="is-guru" id="is-guru-yes" value="true" v-model="isGuru" @change="validateRadio(isGuru, '#is-guru')">
-                                <span if(data.lang==="en")>Yes</span>
-                                <span if(data.lang==="zh")>是</span>
+                                <if(data.lang==="en")><span>Yes</span></if>
+                                <if(data.lang==="zh")><span>是</span></if>
                             </div>
                         </div>
                         <div class="col-xs-6">
                             <div class="horizontal-center">
                                 <input type="radio" name="is-guru" id="is-guru-no" value="false" v-model="isGuru" @change="validateRadio(isGuru, '#is-guru')">
-                                <span if(data.lang==="en")>No</span>
-                                <span if(data.lang==="zh")>否</span>
+                                <if(data.lang==="en")><span>No</span></if>
+                                <if(data.lang==="zh")><span>否</span></if>
                             </div>
                         </div>
                     </div>
@@ -378,39 +450,51 @@
             </div>
             <div class="row form-section">
                 <div class="col-xs-12 horizontal-center">
-                    <h3 if(data.lang==="en")>Short Answers</h3>
-                    <h3 if(data.lang==="zh")>请简要回答</h3>
+                    <if(data.lang==="en")><h3>Short Answers</h3></if>
+                    <if(data.lang==="zh")><h3>请简要回答</h3></if>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="how-know-hackinit" if(data.lang==="en")>How did you hear of <b>hack.init()</b>? *</label>
-                    <label for="how-know-hackinit" if(data.lang==="zh")>你是通过何渠道听说<b>hack.init()</b>的？ *</label>
+                    <if(data.lang==="en")>
+                        <label for="how-know-hackinit">How did you hear of <b>hack.init()</b>? *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="how-know-hackinit">你是通过何渠道听说<b>hack.init()</b>的？ *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="how-know-hackinit-addon">
                             <i class="fa fa-eye"></i>
                         </span>
-                        <select class="form-control select-box" id="how-know-hackinit" aria-describedby="how-know-hackinit-addon" @change="validateSelectBox(howKnowHackinit, '#how-know-hackinit')" @blur="validateSelectBox(howKnowHackinit, '#how-know-hackinit')" v-model="howKnowHackinit" if(data.lang==="en")>
-                            <option value="-">Choose...</option>
-                            <option value="F">Friend</option>
-                            <option value="T">Teacher</option>
-                            <option value="S">Social Media</option>
-                            <option value="C">Campus Ambassador</option>
-                            <option value="I">Info Session</option>
-                            <option value="O">Other</option>
-                        </select>
-                        <select class="form-control select-box" id="how-know-hackinit" aria-describedby="how-know-hackinit-addon" @change="validateSelectBox(howKnowHackinit, '#how-know-hackinit')" @blur="validateSelectBox(howKnowHackinit, '#how-know-hackinit')" v-model="howKnowHackinit" if(data.lang==="zh")>
-                            <option value="-">请选择……</option>
-                            <option value="F">朋友推荐</option>
-                            <option value="T">老师推荐</option>
-                            <option value="S">社交媒体宣传</option>
-                            <option value="C">校园大使宣传</option>
-                            <option value="I">宣讲会</option>
-                            <option value="O">其他</option>
-                        </select>
+                        <if(data.lang==="en")>
+                            <select class="form-control select-box" id="how-know-hackinit" aria-describedby="how-know-hackinit-addon" @change="validateSelectBox(howKnowHackinit, '#how-know-hackinit')" @blur="validateSelectBox(howKnowHackinit, '#how-know-hackinit')" v-model="howKnowHackinit">
+                                <option value="-">Choose...</option>
+                                <option value="F">Friend</option>
+                                <option value="T">Teacher</option>
+                                <option value="S">Social Media</option>
+                                <option value="C">Campus Ambassador</option>
+                                <option value="I">Info Session</option>
+                                <option value="O">Other</option>
+                            </select>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <select class="form-control select-box" id="how-know-hackinit" aria-describedby="how-know-hackinit-addon" @change="validateSelectBox(howKnowHackinit, '#how-know-hackinit')" @blur="validateSelectBox(howKnowHackinit, '#how-know-hackinit')" v-model="howKnowHackinit">
+                                <option value="-">请选择……</option>
+                                <option value="F">朋友推荐</option>
+                                <option value="T">老师推荐</option>
+                                <option value="S">社交媒体宣传</option>
+                                <option value="C">校园大使宣传</option>
+                                <option value="I">宣讲会</option>
+                                <option value="O">其他</option>
+                            </select>
+                        </if>
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field" v-show="howKnowHackinit == 'O'">
-                    <label for="how-know-hackinit-other" if(data.lang==="en")>Please Specify *</label>
-                    <label for="how-know-hackinit-other" if(data.lang==="zh")>请注明 *</label>
+                    <if(data.lang==="en")>
+                        <label for="how-know-hackinit-other">Please Specify *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="how-know-hackinit-other">请注明 *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="how-know-hackinit-other-addon">
                             <i class="fa fa-pencil"></i>
@@ -419,8 +503,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="hackathon-experience" if(data.lang==="en")>Have you participated in hackathons before? Please list all hackathons you have attended. *</label>
-                    <label for="hackathon-experience" if(data.lang==="zh")>你是否参加过hackathon？请列出你参加过的hackathon。 *</label>
+                    <if(data.lang==="en")>
+                        <label for="hackathon-experience">Have you participated in hackathons before? Please list all hackathons you have attended. *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="hackathon-experience">你是否参加过hackathon？请列出你参加过的hackathon。 *</label>
+                    </if>
                     <div class="input-group">
                         <span class="input-group-addon" id="hackathon-experience-addon">
                             <i class="fa fa-code"></i>
@@ -430,8 +518,12 @@
                 </div>
                 <div id="hacker-questions" v-show="isGuru == 'false'">
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="why-interested-stem" if(data.lang==="en")>Why are you interested in STEAM (Science, Technology, Engineering, Arts, Mathematics)? *</label>
-                        <label for="why-interested-stem" if(data.lang==="zh")>你为何对科学、技术、工程、艺术或数学感兴趣？ *</label>
+                        <if(data.lang==="en")>
+                            <label for="why-interested-stem">Why are you interested in STEAM (Science, Technology, Engineering, Arts, Mathematics)? *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="why-interested-stem">你为何对科学、技术、工程、艺术或数学感兴趣？ *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="why-interested-stem-addon">
                                 <i class="fa fa-pie-chart"></i>
@@ -440,8 +532,12 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="project-hacker" if(data.lang==="en")>Name one project/product that you are proud of. It can be in any field of expertise. Elaborate your experience with it. *</label>
-                        <label for="project-hacker" if(data.lang==="zh")>请简述你所做过的最满意的一个项目或产品，可以是任何你所感兴趣的领域，并描述你是如何对其付出精力和时间的。 *</label>
+                        <if(data.lang==="en")>
+                            <label for="project-hacker">Name one project/product that you are proud of. It can be in any field of expertise. Elaborate your experience with it. *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="project-hacker">请简述你所做过的最满意的一个项目或产品，可以是任何你所感兴趣的领域，并描述你是如何对其付出精力和时间的。 *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="project-hacker-addon">
                                 <i class="fa fa-code-fork"></i>
@@ -450,8 +546,12 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="tech-issue" if(data.lang==="en")>Name one issue you bumped into today and how it can be solved/improved by technology . (Be creative!) *</label>
-                        <label for="tech-issue" if(data.lang==="zh")>请分享一个当下你碰到的问题，并描述它可以如何被科技解决或改善。 *</label>
+                        <if(data.lang==="en")>
+                            <label for="tech-issue">Name one issue you bumped into today and how it can be solved/improved by technology . (Be creative!) *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="tech-issue">请分享一个当下你碰到的问题，并描述它可以如何被科技解决或改善。 *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="tech-issue-addon">
                                 <i class="fa fa-magic"></i>
@@ -460,8 +560,12 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="file-hacker" if(data.lang==="en")>Resume</label>
-                        <label for="file-hacker" if(data.lang==="zh")>简历</label>
+                        <if(data.lang==="en")>
+                            <label for="file-hacker">Resume</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="file-hacker">简历</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="file-hacker-addon">
                                 <i class="fa fa-file"></i>
@@ -472,8 +576,12 @@
                 </div>
                 <div id="guru-questions" v-show="isGuru == 'true'">
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="help-experience" if(data.lang==="en")>Describe one time you’ve helped other people learn something. *</label>
-                        <label for="help-experience" if(data.lang==="zh")>请简述你帮助他人学会某项技能的一次经历。 *</label>
+                        <if(data.lang==="en")>
+                            <label for="help-experience">Describe one time you’ve helped other people learn something. *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="help-experience">请简述你帮助他人学会某项技能的一次经历。 *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="help-experience-addon">
                                 <i class="fa fa-handshake-o"></i>
@@ -482,8 +590,12 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="project-guru" if(data.lang==="en")>Describe one project you've created or largely contributed to. What inspired you to start this project? How did you overcome the challenges you met during the development process. Please attach the GitHub link if applicable. *</label>
-                        <label for="project-guru" if(data.lang==="zh")>请简述你开发或积极参与过的某个项目。是什么让你产生了开发该项目的灵感？你又是如何克服项目开发过程中所遇到的挑战的？如有GitHub链接请附于答案末。 *</label>
+                        <if(data.lang==="en")>
+                            <label for="project-guru">Describe one project you've created or largely contributed to. What inspired you to start this project? How did you overcome the challenges you met during the development process. Please attach the GitHub link if applicable. *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="project-guru">请简述你开发或积极参与过的某个项目。是什么让你产生了开发该项目的灵感？你又是如何克服项目开发过程中所遇到的挑战的？如有GitHub链接请附于答案末。 *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="project-guru-addon">
                                 <i class="fa fa-code-fork"></i>
@@ -492,8 +604,12 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="file-guru" if(data.lang==="en")>Resume *</label>
-                        <label for="file-guru" if(data.lang==="zh")>简历 *</label>
+                        <if(data.lang==="en")>
+                            <label for="file-guru">Resume *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="file-guru">简历 *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="file-guru-addon">
                                 <i class="fa fa-file"></i>
@@ -505,46 +621,54 @@
             </div>
             <div class="row form-section">
                 <div class="col-xs-12 horizontal-center">
-                    <h3 if(data.lang==="en")>Team Information</h3>
-                    <h3 if(data.lang==="zh")>团队信息</h3>
+                    <if(data.lang==="en")><h3>Team Information</h3></if>
+                    <if(data.lang==="zh")><h3>团队信息</h3></if>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                    <label for="have-team" if(data.lang==="en")>I already have a team! *</label>
-                    <label for="have-team" if(data.lang==="zh")>我已经组好了团队！ *</label>
+                    <if(data.lang==="en")>
+                        <label for="have-team">I already have a team! *</label>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <label for="have-team">我已经组好了团队！ *</label>
+                    </if>
                     <div class="row">
                         <div class="col-xs-6">
                             <div class="horizontal-center">
                                 <input type="radio" name="have-team" id="have-team-yes" value="true" v-model="haveTeam" @change="validateRadio(haveTeam, '#have-team')">
-                                <span if(data.lang==="en")>Yes</span>
-                                <span if(data.lang==="zh")>是</span>
+                                <if(data.lang==="en")><span>Yes</span></if>
+                                <if(data.lang==="zh")><span>是</span></if>
                             </div>
                         </div>
                         <div class="col-xs-6">
                             <div class="horizontal-center">
                                 <input type="radio" name="have-team" id="have-team-no" value="false" v-model="haveTeam" @change="validateRadio(haveTeam, '#have-team')">
-                                <span if(data.lang==="en")>No</span>
-                                <span if(data.lang==="zh")>否</span>
+                                <if(data.lang==="en")><span>No</span></if>
+                                <if(data.lang==="zh")><span>否</span></if>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="not-have-team-yet" v-show="haveTeam == 'false'">
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="assign-team" if(data.lang==="en")>I would like to have <b>hack.init()</b> assign me to a team! *</label>
-                        <label for="assign-team" if(data.lang==="zh")>我愿意由组委会分配团队！ *</label>
+                        <if(data.lang==="en")>
+                            <label for="assign-team">I would like to have <b>hack.init()</b> assign me to a team! *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="assign-team">我愿意由组委会分配团队！ *</label>
+                        </if>
                         <div class="row">
                             <div class="col-xs-6">
                                 <div class="horizontal-center">
                                     <input type="radio" name="assign-team" id="assign-team-yes" value="true" v-model="assignTeam" @change="validateRadio(assignTeam, '#assign-team')">
-                                    <span if(data.lang==="en")>Yes</span>
-                                    <span if(data.lang==="zh")>是</span>
+                                    <if(data.lang==="en")><span>Yes</span></if>
+                                    <if(data.lang==="zh")><span>是</span></if>
                                 </div>
                             </div>
                             <div class="col-xs-6">
                                 <div class="horizontal-center">
                                     <input type="radio" name="assign-team" id="assign-team-no" value="false" v-model="assignTeam" @change="validateRadio(assignTeam, '#assign-team')">
-                                    <span if(data.lang==="en")>No</span>
-                                    <span if(data.lang==="zh")>否</span>
+                                    <if(data.lang==="en")><span>No</span></if>
+                                    <if(data.lang==="zh")><span>否</span></if>
                                 </div>
                             </div>
                         </div>
@@ -552,8 +676,12 @@
                 </div>
                 <div id="already-have-team" v-show="haveTeam == 'true'">
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="number-member" if(data.lang==="en")>How many team members do you have in your team? (Teams are at most 4 people for our main event and at most 5 people for the invitational. If your team passes our selection, you will have the opportunity to select which event your team is going to participate in upon confirmation of attendance.) *</label>
-                        <label for="number-member" if(data.lang==="zh")>你的团队中有几名成员？（参与主活动的每个团队最多包含4名成员。邀请赛团队最多包含5名成员。若你的团队通过选拔，在提交确认信息时将有机会进行参赛组别的选择。） *</label>
+                        <if(data.lang==="en")>
+                            <label for="number-member">How many team members do you have in your team? (Teams are at most 4 people for our main event and at most 5 people for the invitational. If your team passes our selection, you will have the opportunity to select which event your team is going to participate in upon confirmation of attendance.) *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="number-member">你的团队中有几名成员？（参与主活动的每个团队最多包含4名成员。邀请赛团队最多包含5名成员。若你的团队通过选拔，在提交确认信息时将有机会进行参赛组别的选择。） *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="number-member-addon">
                                 <i class="fa fa-question"></i>
@@ -562,8 +690,12 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="captain-name" if(data.lang==="en")>What's the full legal name of the team captain? (Please make sure it appears the same as your team captain's application) *</label>
-                        <label for="captain-name" if(data.lang==="zh")>请填写你所在团队队长的法定全名（请确保它和队长申请中的名字一致） *</label>
+                        <if(data.lang==="en")>
+                            <label for="captain-name">What's the full legal name of the team captain? (Please make sure it appears the same as your team captain's application) *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="captain-name">请填写你所在团队队长的法定全名（请确保它和队长申请中的名字一致） *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="captain-name-addon">
                                 <i class="fa fa-user"></i>
@@ -572,8 +704,12 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="captain-email" if(data.lang==="en")>Please include the email of your team captain (Please make sure it appears the same as your team captain's application)  *</label>
-                        <label for="captain-email" if(data.lang==="zh")>请填写团队队长的邮箱（请确保它和队长申请中的邮箱一致） *</label>
+                        <if(data.lang==="en")>
+                            <label for="captain-email">Please include the email of your team captain (Please make sure it appears the same as your team captain's application)  *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="captain-email">请填写团队队长的邮箱（请确保它和队长申请中的邮箱一致） *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="captain-email-addon">
                                 <i class="fa fa-envelope-open"></i>
@@ -582,8 +718,12 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
-                        <label for="members" if(data.lang==="en")>Please enter the full legal name of team members (one name per line) *</label>
-                        <label for="members" if(data.lang==="zh")>请分别填写团队成员的法定全名（每行一个） *</label>
+                        <if(data.lang==="en")>
+                            <label for="members">Please enter the full legal name of team members (one name per line) *</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="members">请分别填写团队成员的法定全名（每行一个） *</label>
+                        </if>
                         <div class="input-group">
                             <span class="input-group-addon" id="members-addon">
                                 <i class="fa fa-users"></i>
@@ -597,16 +737,24 @@
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-field">
                     <div class="input-group">
                         <input type="checkbox" id="checkbox" v-model="checked" @change="validateCheckbox(checked, '#checkbox')">
-                        <label for="checkbox" if(data.lang==="en")>I have read and accept <a target="_blank" href="/s/doc/Hackathon-Official-Rule.pdf"><em>hack.init() Official Rules</em></a>.</label>
-                        <label for="checkbox" if(data.lang==="zh")>我已阅读并接受<a target="_blank" href="/s/doc/Hackathon-Official-Rule-zh.pdf">《hack.init() 创客马拉松竞赛规则》</a>。</label>
+                        <if(data.lang==="en")>
+                            <label for="checkbox">I have read and accept <a target="_blank" href="/s/doc/Hackathon-Official-Rule.pdf"><em>hack.init() Official Rules</em></a>.</label>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <label for="checkbox">我已阅读并接受<a target="_blank" href="/s/doc/Hackathon-Official-Rule-zh.pdf">《hack.init() 创客马拉松竞赛规则》</a>。</label>
+                        </if>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 submit-btn-col">
                     <div class="horizontal-center">
-                        <a type="button" id="submit-btn" class="btn btn-primary btn-lg" @click="submitApp()" if(data.lang==="en")>Submit</a>
-                        <a type="button" id="submit-btn" class="btn btn-primary btn-lg" @click="submitApp()" if(data.lang==="zh")>提交</a>
+                        <if(data.lang==="en")>
+                            <a type="button" id="submit-btn" class="btn btn-primary btn-lg" @click="submitApp()">Submit</a>
+                        </if>
+                        <if(data.lang==="zh")>
+                            <a type="button" id="submit-btn" class="btn btn-primary btn-lg" @click="submitApp()">提交</a>
+                        </if>
                     </div>
                 </div>
             </div>
@@ -616,20 +764,24 @@
         <!-- FOOTER -->
         <div class="container-fluid darkgrey-background">
             <div class="row">
-                <div class="col-xs-12 footer" if(data.lang==="en")>
-                    <div class="horizontal-center">
-                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
-                        <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                <if(data.lang==="en")>
+                    <div class="col-xs-12 footer">
+                        <div class="horizontal-center">
+                            <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                            <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-12 footer" if(data.lang==="zh")>
-                    <div class="horizontal-center">
-                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
-                        <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                </if>
+                <if(data.lang==="zh")>
+                    <div class="col-xs-12 footer">
+                        <div class="horizontal-center">
+                            <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                            <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                        </div>
                     </div>
-                </div>
+                </if>
             </div>
         </div>
         <!-- /FOOTER -->
