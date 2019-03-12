@@ -1,6 +1,7 @@
-FROM node:9.3.0
+FROM node:10.15.3
 
-MAINTAINER Yuchong Pan <panyuchong@gmail.com>
+LABEL SUBMITTER="Yuchong Pan <panyuchong@gmail.com>"
+LABEL MAINTAINER="Ye Shu <shuye02@outlook.com>"
 
 RUN mkdir /code
 WORKDIR /code
