@@ -20,7 +20,7 @@ server {
     include ssl/ssl.nginxconf;
 
     location / {
-        proxy_pass http://2018_thehack_marko_server/;
+        proxy_pass http://2018_hackinit_marko_server/;
         proxy_set_header Host $host;
     }
 }
