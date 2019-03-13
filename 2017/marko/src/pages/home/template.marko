@@ -53,34 +53,38 @@
                     </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">ABOUT</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">FAQ</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">SCHEDULE</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">SPONSOR</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
-                        <!--
-                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
-                        -->
-                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="#recruit" @click="scrollTo('#recruit')">RECRUIT</a></li>-->
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh">简体中文</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">关于我们</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">常见问题</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">日程安排</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">合作伙伴</a></li>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
-                        <!--
-                        <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
-                        <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
-                        -->
-                        <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="#recruit" @click="scrollTo('#recruit')">团队招募</a></li>-->
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/">ENGLISH</a></li>
-                    </ul>
+                    <if(data.lang==="en")> 
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">ABOUT</a></li>
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">FAQ</a></li>
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">SCHEDULE</a></li>
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">SPONSOR</a></li>
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
+                            <!--
+                            <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/dashboard">DASHBOARD</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">LOG OUT</a></li>
+                            -->
+                            <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="#recruit" @click="scrollTo('#recruit')">RECRUIT</a></li>-->
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh">简体中文</a></li>
+                        </ul>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">关于我们</a></li>
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">常见问题</a></li>
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule" @click="scrollTo('#schedule')">日程安排</a></li>
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="#sponsor" @click="scrollTo('#sponsor')">合作伙伴</a></li>
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
+                            <!--
+                            <li v-show="!loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="/zh/dashboard">控制面板</a></li>
+                            <li v-show="loggedIn"><a data-toggle="collapse" data-target="#navbar.in" href="#" @click="userLogout()">退出</a></li>
+                            -->
+                            <!--<li><a data-toggle="collapse" data-target="#navbar.in" href="#recruit" @click="scrollTo('#recruit')">团队招募</a></li>-->
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/">ENGLISH</a></li>
+                        </ul>
+                    </if>
                 </div>
             </div>
         </nav>
@@ -98,8 +102,12 @@
                         <!--
                         <div class="col-xs-12 col-sm-6 input-field">
                             <div class="input-group">
-                                <input v-model="email" type="email" class="form-control" placeholder="Subscribe email updates" @keyup.enter="subscribeEmail(email)" if(data.lang==="en")>
-                                <input v-model="email" type="email" class="form-control" placeholder="订阅电子邮件更新" @keyup.enter="subscribeEmail(email)" if(data.lang==="zh")>
+                                <if(data.lang==="en")>
+                                    <input v-model="email" type="email" class="form-control" placeholder="Subscribe email updates" @keyup.enter="subscribeEmail(email)">
+                                </if>
+                                <if(data.lang==="zh")>
+                                    <input v-model="email" type="email" class="form-control" placeholder="订阅电子邮件更新" @keyup.enter="subscribeEmail(email)">
+                                </if>
                                 <span class="input-group-btn">
                                     <a id="subscribe-email-btn" class="btn btn-default" type="button" @click="subscribeEmail(email)"><i class="fa fa-envelope"></i></a>
                                 </span>
@@ -107,8 +115,12 @@
                         </div>
                         <div class="col-xs-12 col-sm-6 input-field">
                             <div class="input-group">
-                                <input id="cellphone-input" v-model="cellphone" type="tel" class="form-control" placeholder="Subscribe SMS updates" @keyup.enter="subscribeSMS(cellphone)" if(data.lang==="en")>
-                                <input id="cellphone-input" v-model="cellphone" type="tel" class="form-control" placeholder="订阅短信更新" @keyup.enter="subscribeSMS(cellphone)" if(data.lang==="zh")>
+                                <if(data.lang==="en")>
+                                    <input id="cellphone-input" v-model="cellphone" type="tel" class="form-control" placeholder="Subscribe SMS updates" @keyup.enter="subscribeSMS(cellphone)">
+                                </if>
+                                <if(data.lang==="zh")>
+                                    <input id="cellphone-input" v-model="cellphone" type="tel" class="form-control" placeholder="订阅短信更新" @keyup.enter="subscribeSMS(cellphone>
+                                </if>
                                 <span class="input-group-btn">
                                     <a id="subscribe-sms-btn" class="btn btn-default" type="button" @click="subscribeSMS()"><i class="glyphicon glyphicon-phone"></i></a>
                                 </span>
@@ -118,8 +130,8 @@
                         <div class="col-xs-12 col-sm-6 col-sm-offset-3 input-field">
                             <a target="_blank" href="/s/doc/Award-Recipients.pdf" class="btn btn-primary caapp-btn-sm">
                                 <i class="fa fa-cloud fa-resource"></i>
-                                <span if(data.lang==="en")>Award Recipients</span>
-                                <span if(data.lang==="zh")>获奖项目名单</span>
+                                <if(data.lang==="en")><span>Award Recipients</span></if>
+                                <if(data.lang==="zh")><span>获奖项目名单</span></if>
                             </a>
                         </div>
                     </div>
@@ -137,8 +149,12 @@
             <!--
             <div class="row caapp-btn-row">
                 <div class="col-xs-12">
-                    <a type="button" class="btn btn-info btn-lg caapp-btn" href="/ambassador" if(data.lang==="en")><i class="fa fa-user"></i>Apply for Campus Ambassador</a>
-                    <a type="button" class="btn btn-info btn-lg caapp-btn" href="/zh/ambassador" if(data.lang==="zh")><i class="fa fa-user"></i>申请成为校园大使</a>
+                    <if(data.lang==="en")>
+                        <a type="button" class="btn btn-info btn-lg caapp-btn" href="/ambassador"><i class="fa fa-user"></i>Apply for Campus Ambassador</a>
+                    </if>
+                    <if(data.lang==="zh">
+                        <a type="button" class="btn btn-info btn-lg caapp-btn" href="/zh/ambassador)><i class="fa fa-user"></i>申请成为校园大使</a>
+                    </if>
                 </div>
             </div>
             -->
@@ -146,16 +162,20 @@
 
         <div id="about" class="container-fluid grey-background">
             <div class="row">
-                <div class="col-xs-12 about" if(data.lang==="en")>
-                    <h2><b>Hi, Welcome to hack.init()!</b></h2>
-                    <p><b>hack.init()</b> is China's premier youth hackathon that promotes inclusivity and cultural diversity. As a rare hackathon open to high schoolers, we are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning. Unlike traditional hackathons, <b>hack.init()</b> pays special attention to local high school students, international high school students and university freshmen.</p>
-                    <p>This year, we are emphasizing on cultural diversity and fusion. Additionally, by expanding the range of eligible students to undergraduate freshmen, we are emphasizing in the word "<b>Fusion</b>", where high school students and university undergrads can team up to tackle issues at hand and create feasible solutions.</p>
-                </div>
-                <div class="col-xs-12 about" if(data.lang==="zh")>
-                    <h2><b>Hi，欢迎加入hack.init()！</b></h2>
-                    <p><b>hack.init()</b>是中国顶级的青年人创客马拉松，并以宣传包容性与文化多样性为核心。作为少有的开放给高中生的创客马拉松，我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。与传统的创客马拉松不同的是，<b>hack.init()</b>的参与者大多为高中生，也有相当一部分的大学低年级学生。我们将着重关注区域内本部高中学生、国际高中学生与区域内大学低年级学生这三个群体。</p>
-                    <p>我们推动文化多样性及文化间的融合。此外，通过将参与人范围扩大到大学低年级学生，我们着重强调“<b>融合</b>”一词，促使并希望高中生和大学生能携手合作解决问题，创造出可行的解决方案。</p>
-                </div>
+                <if(data.lang==="en")>
+                    <div class="col-xs-12 about">
+                        <h2><b>Hi, Welcome to hack.init()!</b></h2>
+                        <p><b>hack.init()</b> is China's premier youth hackathon that promotes inclusivity and cultural diversity. As a rare hackathon open to high schoolers, we are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning. Unlike traditional hackathons, <b>hack.init()</b> pays special attention to local high school students, international high school students and university freshmen.</p>
+                        <p>This year, we are emphasizing on cultural diversity and fusion. Additionally, by expanding the range of eligible students to undergraduate freshmen, we are emphasizing in the word "<b>Fusion</b>", where high school students and university undergrads can team up to tackle issues at hand and create feasible solutions.</p>
+                    </div>
+                </if>
+                <if(data.lang==="zh")>
+                    <div class="col-xs-12 about">
+                        <h2><b>Hi，欢迎加入hack.init()！</b></h2>
+                        <p><b>hack.init()</b>是中国顶级的青年人创客马拉松，并以宣传包容性与文化多样性为核心。作为少有的开放给高中生的创客马拉松，我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。与传统的创客马拉松不同的是，<b>hack.init()</b>的参与者大多为高中生，也有相当一部分的大学低年级学生。我们将着重关注区域内本部高中学生、国际高中学生与区域内大学低年级学生这三个群体。</p>
+                        <p>我们推动文化多样性及文化间的融合。此外，通过将参与人范围扩大到大学低年级学生，我们着重强调“<b>融合</b>”一词，促使并希望高中生和大学生能携手合作解决问题，创造出可行的解决方案。</p>
+                    </div>
+                </if>
             </div>
         </div>
         <div class="container-fluid lightgrey-background">
@@ -163,8 +183,8 @@
                 <div class="col-xs-12 col-sm-4 count-block">
                     <div class="horizontal-center">
                         <h1 id="hacker-number" class="count-number">300</h1>
-                        <h4 if(data.lang==="en")>Hackers</h4>
-                        <h4 if(data.lang==="zh")>创客</h4>
+                        <if(data.lang==="en")><h4>Hackers</h4></if>
+                        <if(data.lang==="zh")><h4>创客</h4></if>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 count-block">
@@ -172,15 +192,15 @@
                         <span id="age-range-lower" class="count-number">16</span>
                         <span class="count-number">-</span>
                         <span id="age-range-upper" class="count-number">21</span>
-                        <h4 if(data.lang==="en")>Age Range</h4>
-                        <h4 if(data.lang==="zh")>年龄范围</h4>
+                        <if(data.lang==="en")><h4>Age Range</h4></if>
+                        <if(data.lang==="zh")><h4>年龄范围</h4></if>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 count-block">
                     <div class="horizontal-center">
                         <h1 id="hack-hours" class="count-number">24</h1>
-                        <h4 if(data.lang==="en")>Hours</h4>
-                        <h4 if(data.lang==="zh")>小时</h4>
+                        <if(data.lang==="en")><h4>Hours</h4></if>
+                        <if(data.lang==="zh")><h4>小时</h4></if>
                     </div>
                 </div>
             </div>
@@ -189,8 +209,8 @@
         <div id="faq" class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Frequently Asked Questions</b></h2>
-                    <h2 if(data.lang==="zh")><b>常见问题</b></h2>
+                    <if(data.lang==="en")><h2><b>Frequently Asked Questions</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>常见问题</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -201,14 +221,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq1-collapse" aria-expanded="false" aria-controls="faq1">
                                     <div class="panel-heading" role="tab" id="faq1">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What is <b>hack.init()</b>?</span>
-                                        <span if(data.lang==="zh")>什么是<b>hack.init()</b>？</span>
+                                        <if(data.lang==="en")><span>What is <b>hack.init()</b>?</span></if>
+                                        <if(data.lang==="zh")><span>什么是<b>hack.init()</b>？</span></if>
                                     </div>
                                 </a>
                                 <div id="faq1-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq1">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")><b>hack.init()</b> is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning.</span>
-                                        <span if(data.lang==="zh")><b>hack.init()</b>是中国最顶级的青年人创客马拉松，也是第一个宣传包容性与文化多样性的开放给高中生的创客马拉松。我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。</span>
+                                        <if(data.lang==="en")>
+                                            <span><b>hack.init()</b> is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning.</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span><b>hack.init()</b>是中国最顶级的青年人创客马拉松，也是第一个宣传包容性与文化多样性的开放给高中生的创客马拉松。我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -218,14 +242,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq2-collapse" aria-expanded="false" aria-controls="faq2">
                                     <div class="panel-heading" role="tab" id="faq2">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>How much will this cost?</span>
-                                        <span if(data.lang==="zh")>参加活动需要缴费么？</span>
+                                        <if(data.lang==="en")><span>How much will this cost?</span></if>
+                                        <if(data.lang==="zh")><span>参加活动需要缴费么？</span></if>
                                     </div>
                                 </a>
                                 <div id="faq2-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq2">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>Nada. Zip. Zero. Zilch. We'll provide you with a weekend's worth of swag, meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, we'll even reimburse your travel.</span>
-                                        <span if(data.lang==="zh")>一点都不需要！创客马拉松是一个全免费活动，我们将会为你提供一整个周末的饮食、小吃、纪念品与休息区。我们还将报销你的路费！</span>
+                                        <if(data.lang==="en")>
+                                            <span>Nada. Zip. Zero. Zilch. We'll provide you with a weekend's worth of swag, meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, we'll even reimburse your travel.</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span>一点都不需要！创客马拉松是一个全免费活动，我们将会为你提供一整个周末的饮食、小吃、纪念品与休息区。我们还将报销你的路费！</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -235,14 +263,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq3-collapse" aria-expanded="false" aria-controls="faq3">
                                     <div class="panel-heading" role="tab" id="faq3">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>Who can participate?</span>
-                                        <span if(data.lang==="zh")>谁可以申请参加？</span>
+                                        <if(data.lang==="en")><span>Who can participate?</span></if>
+                                        <if(data.lang==="zh")><span>谁可以申请参加？</span></if>
                                     </div>
                                 </a>
                                 <div id="faq3-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq3">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>Anyone within 16-21 years old are welcome to participate, whether you are currently enrolled in high school, university or dropped out. For those who are over the age limit, you are still encouraged to apply to be considered for our Invitational that runs simultaneously with our main event. Our VC and incubator partners will pay more attention to your work!</span>
-                                        <span if(data.lang==="zh")>年龄在16至21岁间的人——不管是高中生、大学生或已经辍学——都可以报名参加我们的主活动。对于超过年龄限制的申请者，我们仍然鼓励你申请——你将有机会进入与主活动同时展开的邀请赛中进行开发，并获得来自风投与创业孵化机构更多的关注。</span>
+                                        <if(data.lang==="en")>
+                                            <span>Anyone within 16-21 years old are welcome to participate, whether you are currently enrolled in high school, university or dropped out. For those who are over the age limit, you are still encouraged to apply to be considered for our Invitational that runs simultaneously with our main event. Our VC and incubator partners will pay more attention to your work!</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span>年龄在16至21岁间的人——不管是高中生、大学生或已经辍学——都可以报名参加我们的主活动。对于超过年龄限制的申请者，我们仍然鼓励你申请——你将有机会进入与主活动同时展开的邀请赛中进行开发，并获得来自风投与创业孵化机构更多的关注。</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -252,14 +284,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq4-collapse" aria-expanded="false" aria-controls="faq4">
                                     <div class="panel-heading" role="tab" id="faq4">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What if I am under 16 and I want to come?</span>
-                                        <span if(data.lang==="zh")>我小于16岁，但是我还是想来参加。</span>
+                                        <if(data.lang==="en")><span>What if I am under 16 and I want to come?</span></if>
+                                        <if(data.lang==="zh")><span>我小于16岁，但是我还是想来参加。</span></if>
                                     </div>
                                 </a>
                                 <div id="faq4-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq4">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>Unfortunately, due to legal restrictions, we are unable to host minors less than 16 years old. However, feel free to come to our expo on July 9 to check out awesome projects built by others during the hackathon.</span>
-                                        <span if(data.lang==="zh")>很可惜，由于法律限制，本次活动我们无法允许小于16岁的未成年人参赛。但是，欢迎在7月9日到活动现场了解本次创客马拉松中所创造出的一系列令人惊叹的项目！</span>
+                                        <if(data.lang==="en")>
+                                            <span>Unfortunately, due to legal restrictions, we are unable to host minors less than 16 years old. However, feel free to come to our expo on July 9 to check out awesome projects built by others during the hackathon.</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span>很可惜，由于法律限制，本次活动我们无法允许小于16岁的未成年人参赛。但是，欢迎在7月9日到活动现场了解本次创客马拉松中所创造出的一系列令人惊叹的项目！</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -269,14 +305,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq5-collapse" aria-expanded="false" aria-controls="faq5">
                                     <div class="panel-heading" role="tab" id="faq5">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>I've never been to a hackathon and I'm nervous.</span>
-                                        <span if(data.lang==="zh")>我从未参加过创客马拉松，怎么办？</span>
+                                        <if(data.lang==="en")><span>I've never been to a hackathon and I'm nervous.</span></if>
+                                        <if(data.lang==="zh")><span>我从未参加过创客马拉松，怎么办？</span></if>
                                     </div>
                                 </a>
                                 <div id="faq5-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq5">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>Have no fear - <b>hack.init()</b> is, first and foremost, a fun learning experience! We will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to over 10 workshops before and at the hackathon to better prepare yourself.</span>
-                                        <span if(data.lang==="zh")>不要怕！<b>hack.init()</b>的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。</span>
+                                        <if(data.lang==="en")>
+                                            <span>Have no fear - <b>hack.init()</b> is, first and foremost, a fun learning experience! We will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to over 10 workshops before and at the hackathon to better prepare yourself.</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span>不要怕！<b>hack.init()</b>的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -290,14 +330,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq6-collapse" aria-expanded="false" aria-controls="faq6">
                                     <div class="panel-heading" role="tab" id="faq6">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>How will I get to <b>hack.init()</b>?</span>
-                                        <span if(data.lang==="zh")>我怎么抵达<b>hack.init()</b>活动现场？</span>
+                                        <if(data.lang==="en")><span>How will I get to <b>hack.init()</b>?</span></if>
+                                        <if(data.lang==="zh")><span>我怎么抵达<b>hack.init()</b>活动现场？</span></if>
                                     </div>
                                 </a>
                                 <div id="faq6-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq6">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>For Shanghai hackers, you can get to ShanghaiTech University easily by public transportation which will not be reimbursed. We do provide travel reimbursement to non-Shanghai hackers. More information will be available to you once accepted.</span>
-                                        <span if(data.lang==="zh")>上海本地参赛者可以通过轨道交通轻松到达上海科技大学活动现场。市内交通费用我们不会报销。对于非上海参赛者，我们将为你提供路费报销。更多关于报销的信息将在选手入选后发布。</span>
+                                        <if(data.lang==="en")>
+                                            <span>For Shanghai hackers, you can get to ShanghaiTech University easily by public transportation which will not be reimbursed. We do provide travel reimbursement to non-Shanghai hackers. More information will be available to you once accepted.</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span>上海本地参赛者可以通过轨道交通轻松到达上海科技大学活动现场。市内交通费用我们不会报销。对于非上海参赛者，我们将为你提供路费报销。更多关于报销的信息将在选手入选后发布。</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -307,14 +351,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq7-collapse" aria-expanded="false" aria-controls="faq7">
                                     <div class="panel-heading" role="tab" id="faq7">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What's the event schedule?</span>
-                                        <span if(data.lang==="zh")>日程安排是怎样的？</span>
+                                        <if(data.lang==="en")><span>What's the event schedule?</span></if>
+                                        <if(data.lang==="zh")><span>日程安排是怎样的？</span></if>
                                     </div>
                                 </a>
                                 <div id="faq7-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq7">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")><b>hack.init()</b> will commence at 8 am, July 8 and last until 4:30 pm, July 9. More detailed schedule will be available closer to event date.</span>
-                                        <span if(data.lang==="zh")><b>hack.init()</b>将在7月8日早上8点开始，7月9日下午4点30分结束。更详细的日程将在活动前发布。</span>
+                                        <if(data.lang==="en")>
+                                            <span><b>hack.init()</b> will commence at 8 am, July 8 and last until 4:30 pm, July 9. More detailed schedule will be available closer to event date.</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span><b>hack.init()</b>将在7月8日早上8点开始，7月9日下午4点30分结束。更详细的日程将在活动前发布。</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -324,14 +372,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq8-collapse" aria-expanded="false" aria-controls="faq8">
                                     <div class="panel-heading" role="tab" id="faq8">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>Can I sleep, workout...?</span>
-                                        <span if(data.lang==="zh")>我可以睡觉、运动……嘛？</span>
+                                        <if(data.lang==="en")><span>Can I sleep, workout...?</span></if>
+                                        <if(data.lang==="zh")><span>我可以睡觉、运动……嘛？</span></if>
                                     </div>
                                 </a>
                                 <div id="faq8-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq8">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>Of course! We will have designated resting area during our event. You can also enjoy the clean air in Pudong Suburban area by jogging around the campus!</span>
-                                        <span if(data.lang==="zh")>当然可以！我们在活动期间设置了休息区域，你也可以在上海科技大学的校园中慢跑健身。</span>
+                                        <if(data.lang==="en")>
+                                            <span>Of course! We will have designated resting area during our event. You can also enjoy the clean air in Pudong Suburban area by jogging around the campus!</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span>当然可以！我们在活动期间设置了休息区域，你也可以在上海科技大学的校园中慢跑健身。</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -341,14 +393,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq9-collapse" aria-expanded="false" aria-controls="faq9">
                                     <div class="panel-heading" role="tab" id="faq9">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>What should I bring?</span>
-                                        <span if(data.lang==="zh")>我需要带些什么？</span>
+                                        <if(data.lang==="en")><span>What should I bring?</span></if>
+                                        <if(data.lang==="zh")><span>我需要带些什么？</span></if>
                                     </div>
                                 </a>
                                 <div id="faq9-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq9">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>Bring your government-issued ID for entrance and to borrow hardware from our rental booth. You’ll also need your laptop and charger for hacking, a blanket or a sleeping bag for resting, and toiletries for hygiene.</span>
-                                        <span if(data.lang==="zh")>请注意携带好由政府颁发的身份证明文件（身份证、护照等）。你的身份证件将作为允许你进入活动现场与租赁器材的依据。你也需要携带便携式电脑、充电器、毛毯或睡袋、卫生用品等日常用品。</span>
+                                        <if(data.lang==="en")>
+                                            <span>Bring your government-issued ID for entrance and to borrow hardware from our rental booth. You’ll also need your laptop and charger for hacking, a blanket or a sleeping bag for resting, and toiletries for hygiene.</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span>请注意携带好由政府颁发的身份证明文件（身份证、护照等）。你的身份证件将作为允许你进入活动现场与租赁器材的依据。你也需要携带便携式电脑、充电器、毛毯或睡袋、卫生用品等日常用品。</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -358,14 +414,18 @@
                                 <a class="panel-title" role="button" data-toggle="collapse" href="#faq10-collapse" aria-expanded="false" aria-controls="faq10">
                                     <div class="panel-heading" role="tab" id="faq10">
                                         <i class="fa fa-plus"></i>
-                                        <span if(data.lang==="en")>I still have more questions!</span>
-                                        <span if(data.lang==="zh")>我还有别的问题！</span>
+                                        <if(data.lang==="en")><span>I still have more questions!</span></if>
+                                        <if(data.lang==="zh")><span>我还有别的问题！</span></if>
                                     </div>
                                 </a>
                                 <div id="faq10-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq10">
                                     <div class="panel-body">
-                                        <span if(data.lang==="en")>No problem! Email us anytime at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</span>
-                                        <span if(data.lang==="zh")>请随时发邮件到<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>，<b>hack.init()</b>团队非常乐意帮助你解决任何问题！</span>
+                                        <if(data.lang==="en")>
+                                            <span>No problem! Email us anytime at <a href="mailto:contact@hackinit.org">contact@hackinit.org</a>.</span>
+                                        </if>
+                                        <if(data.lang==="zh")>
+                                            <span>请随时发邮件到<a href="mailto:contact@hackinit.org">contact@hackinit.org</a>，<b>hack.init()</b>团队非常乐意帮助你解决任何问题！</span>
+                                        </if>
                                     </div>
                                 </div>
                             </div>
@@ -379,8 +439,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 id="schedule-title">
-                        <b if(data.lang==="en")>Schedule</b>
-                        <b if(data.lang==="zh")>日程安排</b>
+                        <if(data.lang==="en")><b>Schedule</b></if>
+                        <if(data.lang==="zh")><b>日程安排</b></if>
                     </h2>
                 </div>
             </div>
@@ -389,75 +449,75 @@
                     <table class="day-schedule">
                         <tbody>
                             <tr class="day">
-                                <th colspan="3" if(data.lang==="en")>Saturday</th>
-                                <th colspan="3" if(data.lang==="zh")>星期六</th>
+                                <if(data.lang==="en")><th colspan="3">Saturday</th></if>
+                                <if(data.lang==="zh")><th colspan="3">星期六</th></if>
                             </tr>
                             <tr>
-                                <th if(data.lang==="en")>Time</th>
-                                <th if(data.lang==="zh")>时间</th>
-                                <th colspan="2" if(data.lang==="en")>Event</th>
-                                <th colspan="2" if(data.lang==="zh")>活动</th>
+                                <if(data.lang==="en")><th>Time</th></if>
+                                <if(data.lang==="zh")><th>时间</th></if>
+                                <if(data.lang==="en")><th colspan="2">Event</th></if>
+                                <if(data.lang==="zh")><th colspan="2">活动</th></if>
                             </tr>
                             <tr>
                                 <td>8:00 - 9:30</td>
-                                <td colspan="2" if(data.lang==="en")>Participant Check-In</td>
-                                <td colspan="2" if(data.lang==="zh")>参赛者签到</td>
+                                <if(data.lang==="en")><td colspan="2">Participant Check-In</td></if>
+                                <if(data.lang==="zh")><td colspan="2">参赛者签到</td></if>
                             </tr>
                             <tr>
                                 <td>9:30 - 10:55</td>
-                                <td colspan="2" if(data.lang==="en")>Opening Ceremony</td>
-                                <td colspan="2" if(data.lang==="zh")>开幕式</td>
+                                <if(data.lang==="en")><td colspan="2">Opening Ceremony</td></if>
+                                <if(data.lang==="zh")><td colspan="2">开幕式</td></if>
                             </tr>
                             <tr>
                                 <td>10:50 - 11:30</td>
-                                <td colspan="2" if(data.lang==="en")>Team Up Session & Ice Breaker</td>
-                                <td colspan="2" if(data.lang==="zh")>团队组建及破冰活动</td>
+                                <if(data.lang==="en")><td colspan="2">Team Up Session & Ice Breaker</td></if>
+                                <if(data.lang==="zh")><td colspan="2">团队组建及破冰活动</td></if>
                             </tr>
                             <tr>
                                 <td>11:30 - </td>
-                                <td colspan="2" if(data.lang==="en")>Hacking On</td>
-                                <td colspan="2" if(data.lang==="zh")>开始开发</td>
+                                <if(data.lang==="en")><td colspan="2">Hacking On</td></if>
+                                <if(data.lang==="zh")><td colspan="2">开始开发</td></if>
                             </tr>
                             <tr>
                                 <td>12:00 - 14:00</td>
-                                <td if(data.lang==="en")>Intro to Project Management</td>
-                                <td if(data.lang==="zh")>项目管理入门</td>
-                                <td if(data.lang==="en")>Microchip Hardware Workshop</td>
-                                <td if(data.lang==="zh")>Microchip 硬件工作坊</td>
+                                <if(data.lang==="en")><td>Intro to Project Management</td></if>
+                                <if(data.lang==="zh")><td>项目管理入门</td></if>
+                                <if(data.lang==="en")><td>Microchip Hardware Workshop</td></if>
+                                <if(data.lang==="zh")><td>Microchip 硬件工作坊</td></if>
                             </tr>
                             <tr>
                                 <td>12:45 - 14:45</td>
-                                <td colspan="2" if(data.lang==="en")>Lunch Served</td>
-                                <td colspan="2" if(data.lang==="zh")>午餐供应</td>
+                                <if(data.lang==="en")><td colspan="2">Lunch Served</td></if>
+                                <if(data.lang==="zh")><td colspan="2">午餐供应</td></if>
                             </tr>
                             <tr>
                                 <td>14:15 - 16:15</td>
-                                <td if(data.lang==="en")>Intro to Web Front-End Dev</td>
-                                <td if(data.lang==="zh")>网站前端开发入门</td>
-                                <td if(data.lang==="en")>Intro to Google Cloud Platform</td>
-                                <td if(data.lang==="zh")>Google 云平台入门</td>
+                                <if(data.lang==="en")><td>Intro to Web Front-End Dev</td></if>
+                                <if(data.lang==="zh")><td>网站前端开发入门</td></if>
+                                <if(data.lang==="en")><td>Intro to Google Cloud Platform</td></if>
+                                <if(data.lang==="zh")><td>Google 云平台入门</td></if>
                             </tr>
                             <tr>
                                 <td>16:30 - 18:30</td>
-                                <td if(data.lang==="en")>Intro to Machine Learning</td>
-                                <td if(data.lang==="zh")>机器学习入门</td>
-                                <td if(data.lang==="en")>Intro to Django</td>
-                                <td if(data.lang==="zh")>Django 入门</td>
+                                <if(data.lang==="en")><td>Intro to Machine Learning</td></if>
+                                <if(data.lang==="zh")><td>机器学习入门</td></if>
+                                <if(data.lang==="en")><td>Intro to Django</td></if>
+                                <if(data.lang==="zh")><td>Django 入门</td></if>
                             </tr>
                             <tr>
                                 <td>18:00 - 20:00</td>
-                                <td colspan="2" if(data.lang==="en")>Dinner Served</td>
-                                <td colspan="2" if(data.lang==="zh")>晚餐供应</td>
+                                <if(data.lang==="en")><td colspan="2">Dinner Served</td></if>
+                                <td colspan="2">晚餐供应</td></if>
                             </tr>
                             <tr>
                                 <td>23:30 - </td>
-                                <td colspan="2" if(data.lang==="en")>Late Night Snacks</td>
-                                <td colspan="2" if(data.lang==="zh")>夜间零食供应</td>
+                                <if(data.lang==="en")><td colspan="2">Late Night Snacks</td></if>
+                                <if(data.lang==="zh")><td colspan="2">夜间零食供应</td></if>
                             </tr>
                             <tr>
                                 <td>23:00 - 6:00 (Sunday)</td>
-                                <td colspan="2" if(data.lang==="en")>Participants Are Not Allowed to Leave the Hacking Area</td>
-                                <td colspan="2" if(data.lang==="zh")>参赛者不允许离开开发场地</td>
+                                <if(data.lang==="en")><td colspan="2">Participants Are Not Allowed to Leave the Hacking Area</td></if>
+                                <if(data.lang==="zh")><td colspan="2">参赛者不允许离开开发场地</td></if>
                             </tr>
                         </tbody>
                     </table>
@@ -466,74 +526,74 @@
                     <table class="day-schedule">
                         <tbody>
                             <tr class="day">
-                                <th colspan="3" if(data.lang==="en")>Sunday</th>
-                                <th colspan="3" if(data.lang==="zh")>星期日</th>
+                                <if(data.lang==="en")><th colspan="3">Sunday</th></if>
+                                <if(data.lang==="zh")><th colspan="3">星期日</th></if>
                             </tr>
                             <tr>
-                                <th if(data.lang==="en")>Time</th>
-                                <th if(data.lang==="zh")>时间</th>
-                                <th colspan="2" if(data.lang==="en")>Event</th>
-                                <th colspan="2" if(data.lang==="zh")>活动</th>
+                                <if(data.lang==="en")><th if(data.lang==="en")>Time</th></if>
+                                <if(data.lang==="zh")><th if(data.lang==="zh")>时间</th></if>
+                                <if(data.lang==="en")><th colspan="2">Event</th></if>
+                                <if(data.lang==="zh")><th colspan="2">活动</th></if>
                             </tr>
                             <tr>
                                 <td>8:30 - 9:30</td>
-                                <td colspan="2" if(data.lang==="en")>Breakfast Served</td>
-                                <td colspan="2" if(data.lang==="zh")>早餐供应</td>
+                                <if(data.lang==="en")><td colspan="2">Breakfast Served</td></if>
+                                <if(data.lang==="zh")><td colspan="2">早餐供应</td></if>
                             </tr>
                             <tr>
                                 <td>9:15 - 11:15</td>
-                                <td colspan="2" if(data.lang==="en")>Intro to HACKx Platform</td>
-                                <td colspan="2" if(data.lang==="zh")>HACKx 平台入门</td>
+                                <if(data.lang==="en")><td colspan="2">Intro to HACKx Platform</td></if>
+                                <if(data.lang==="zh")><td colspan="2">HACKx 平台入门</td></if>
                             </tr>
                             <tr>
                                 <td>10:00 - 11:00</td>
-                                <td colspan="2" if(data.lang==="en")>Women Hacker Meetup</td>
-                                <td colspan="2" if(data.lang==="zh")>女性创客聚会</td>
+                                <if(data.lang==="en")><td colspan="2">Women Hacker Meetup</td></if>
+                                <if(data.lang==="zh")><td colspan="2">女性创客聚会</td></if>
                             </tr>
                             <tr>
                                 <td>12:00 - 13:30</td>
-                                <td colspan="2" if(data.lang==="en")>Lunch Served</td>
-                                <td colspan="2" if(data.lang==="zh")>午餐供应</td>
+                                <if(data.lang==="en")><td colspan="2">Lunch Served</td></if>
+                                <if(data.lang==="zh")><td colspan="2">午餐供应</td></if>
                             </tr>
                             <tr>
                                 <td>11:30 - </td>
-                                <td colspan="2" if(data.lang==="en")>Hacking Stop; Project Submission Due</td>
-                                <td colspan="2" if(data.lang==="zh")>停止开发；项目提交截止</td>
+                                <if(data.lang==="en")><td colspan="2">Hacking Stop; Project Submission Due</td></if>
+                                <if(data.lang==="zh")><td colspan="2">停止开发；项目提交截止</td></if>
                             </tr>
                             <tr>
                                 <td>11:30 - 12:00</td>
-                                <td colspan="2" if(data.lang==="en")>Recession</td>
-                                <td colspan="2" if(data.lang==="zh")>休息</td>
+                                <if(data.lang==="en")><td colspan="2">Recession</td></if>
+                                <if(data.lang==="zh")><td colspan="2">休息</td></if>
                             </tr>
                             <tr>
                                 <td>12:00 - 12:40</td>
-                                <td colspan="2" if(data.lang==="en")>Expo Session 1</td>
-                                <td colspan="2" if(data.lang==="zh")>第一轮展示</td>
+                                <if(data.lang==="en")><td colspan="2">Expo Session 1</td></if>
+                                <if(data.lang==="zh")><td colspan="2">第一轮展示</td></if>
                             </tr>
                             <tr>
                                 <td>12:50 - 13:30</td>
-                                <td colspan="2" if(data.lang==="en")>Expo Session 2</td>
-                                <td colspan="2" if(data.lang==="zh")>第二轮展示</td>
+                                <if(data.lang==="en")><td colspan="2">Expo Session 2</td></if>
+                                <if(data.lang==="zh")><td colspan="2">第二轮展示</td></if>
                             </tr>
                             <tr>
                                 <td>14:00 - 15:30</td>
-                                <td colspan="2" if(data.lang==="en")>Top 10 Demo</td>
-                                <td colspan="2" if(data.lang==="zh")>前十名路演</td>
+                                <if(data.lang==="en")><td colspan="2">Top 10 Demo</td></if>
+                                <if(data.lang==="zh")><td colspan="2">前十名路演</td></if>
                             </tr>
                             <tr>
                                 <td>15:40 - 16:40</td>
-                                <td colspan="2" if(data.lang==="en")>Closing Ceremony</td>
-                                <td colspan="2" if(data.lang==="zh")>闭幕式</td>
+                                <if(data.lang==="en")><td colspan="2">Closing Ceremony</td></if>
+                                <if(data.lang==="zh")><td colspan="2">闭幕式</td></if>
                             </tr>
                             <tr>
                                 <td>16:30 - 18:00</td>
-                                <td colspan="2" if(data.lang==="en")>Clean-Up</td>
-                                <td colspan="2" if(data.lang==="zh")>清理</td>
+                                <if(data.lang==="en")><td colspan="2">Clean-Up</td></if>
+                                <if(data.lang==="zh")><td colspan="2">清理</td></if>
                             </tr>
                             <tr>
                                 <td>17:00 - </td>
-                                <td colspan="2" if(data.lang==="en")>Non-ShanghaiTech Students Must Leave the Campus</td>
-                                <td colspan="2" if(data.lang==="zh")>非上海科技大学学生必须离开校园</td>
+                                <if(data.lang==="en")><td colspan="2">Non-ShanghaiTech Students Must Leave the Campus</td></if>
+                                <if(data.lang==="zh")><td colspan="2">非上海科技大学学生必须离开校园</td></if>
                             </tr>
                         </tbody>
                     </table>
@@ -543,26 +603,30 @@
 
         <div id="sponsor" class="container">
             <div class="row">
-                <div class="col-xs-12 sponsorship" if(data.lang==="en")>
-                    <h2><b>Sponsorship</b></h2>
-                    <p><b>hack.init()</b> is a perfect place to feel the vibe of the newest generation. At <b>hack.init()</b>, you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.</p>
-                    <p>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href="mailto:sponsorship@hackinit.org">sponsorship@hackinit.org</a>.</p>
-                    <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="/s/doc/Program-Prospectus.pdf" class="btn btn-info btn-lg" role="button">Program Prospectus</a></div>
-                </div>
-                <div class="col-xs-12 sponsorship" if(data.lang==="zh")>
-                    <h2><b>与我们合作</b></h2>
-                    <p><b>hack.init()</b>是感受新一代青年人活力与能力的绝佳活动。在<b>hack.init()</b>中，你可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传你的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望你能参与到我们的伟大任务中来。</p>
-                    <p>有兴趣与我们合作？ 请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到<a href="mailto:sponsorship@hackinit.org">sponsorship@hackinit.org</a>与我们联系！</p>
-                    <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="/s/doc/Program-Prospectus-zh.pdf" class="btn btn-info btn-lg" role="button">项目计划书</a></div>
-                </div>
+                <if(data.lang==="en")>
+                    <div class="col-xs-12 sponsorship">
+                        <h2><b>Sponsorship</b></h2>
+                        <p><b>hack.init()</b> is a perfect place to feel the vibe of the newest generation. At <b>hack.init()</b>, you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.</p>
+                        <p>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href="mailto:sponsorship@hackinit.org">sponsorship@hackinit.org</a>.</p>
+                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="/s/doc/Program-Prospectus.pdf" class="btn btn-info btn-lg" role="button">Program Prospectus</a></div>
+                    </div>
+                </if>
+                <if(data.lang==="zh")>
+                    <div class="col-xs-12 sponsorship">
+                        <h2><b>与我们合作</b></h2>
+                        <p><b>hack.init()</b>是感受新一代青年人活力与能力的绝佳活动。在<b>hack.init()</b>中，你可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传你的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望你能参与到我们的伟大任务中来。</p>
+                        <p>有兴趣与我们合作？ 请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到<a href="mailto:sponsorship@hackinit.org">sponsorship@hackinit.org</a>与我们联系！</p>
+                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="/s/doc/Program-Prospectus-zh.pdf" class="btn btn-info btn-lg" role="button">项目计划书</a></div>
+                    </div>
+                </if>
             </div>
         </div>
 
         <div id="host-logos" class="container sponsor-partner">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Hosted by</b></h2>
-                    <h2 if(data.lang==="zh")><b>主办方</b></h2>
+                    <if(data.lang==="en")><h2><b>Hosted by</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>主办方</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -577,8 +641,8 @@
         <div id="cohost-logos" class="container sponsor-partner">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Co-hosted by</b></h2>
-                    <h2 if(data.lang==="zh")><b>共同主办方</b></h2>
+                    <if(data.lang==="en")><h2><b>Co-hosted by</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>共同主办方</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -596,8 +660,8 @@
         <div id="sponsor-logos" class="container sponsor-partner">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Sponsors</b></h2>
-                    <h2 if(data.lang==="zh")><b>赞助方</b></h2>
+                    <if(data.lang==="en")><h2><b>Sponsors</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>赞助方</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -744,8 +808,8 @@
         <div id="investment-partner-logos" class="container sponsor-partner">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Investment Partners</b></h2>
-                    <h2 if(data.lang==="zh")><b>合作资方</b></h2>
+                    <if(data.lang==="en")><h2><b>Investment Partners</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>合作资方</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -769,8 +833,8 @@
         <div id="partner-logos" class="container sponsor-partner">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Partners</b></h2>
-                    <h2 if(data.lang==="zh")><b>合作伙伴</b></h2>
+                    <if(data.lang==="en")><h2><b>Partners</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>合作伙伴</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -821,8 +885,8 @@
         <div id="hardware-provider-logos" class="container sponsor-partner">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Hardware Providers</b></h2>
-                    <h2 if(data.lang==="zh")><b>硬件提供方</b></h2>
+                    <if(data.lang==="en")><h2><b>Hardware Providers</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>硬件提供方</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -852,8 +916,8 @@
         <div id="media-logos" class="container sponsor-partner">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 if(data.lang==="en")><b>Media Support</b></h2>
-                    <h2 if(data.lang==="zh")><b>媒体支持</b></h2>
+                    <if(data.lang==="en")><h2><b>Media Support</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>媒体支持</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -910,18 +974,22 @@
 
         <div class="container-fluid darkgrey-background">
             <div class="row">
-                <div class="col-xs-12 footer" if(data.lang==="en")>
-                    <div class="horizontal-center">
-                        <p>Copyright <i class="fa fa-copyright"></i> 2017 <a href>hackinit.io</a>. All Rights Reserved.</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                <if(data.lang==="en")>
+                    <div class="col-xs-12 footer">
+                        <div class="horizontal-center">
+                            <p>Copyright <i class="fa fa-copyright"></i> 2017 <a href>hackinit.io</a>. All Rights Reserved.</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-12 footer" if(data.lang==="zh")>
-                    <div class="horizontal-center">
-                        <p>Copyright <i class="fa fa-copyright"></i> 2017 <a href>hackinit.io</a>. 版权所有。</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                </if>
+                <if(data.lang==="zh")>
+                    <div class="col-xs-12 footer">
+                        <div class="horizontal-center">
+                            <p>Copyright <i class="fa fa-copyright"></i> 2017 <a href>hackinit.io</a>. 版权所有。</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                        </div>
                     </div>
-                </div>
+                </if>
             </div>
         </div>
         <!-- /MAIN -->
