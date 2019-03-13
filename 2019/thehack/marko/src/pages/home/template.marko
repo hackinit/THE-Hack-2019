@@ -13,8 +13,8 @@
         <meta name="author" content="">
         <link rel="icon" href="https://static.thehack.org.cn/2019/img/thehack/favicon.ico">
 
-        <title if(data.lang==="en")>THE Hack | July 21 - 22, 2018</title>
-        <title if(data.lang==="zh")>德·创客马拉松 | 2018年7月21-22日</title>
+        <if(data.lang==="en")><title>THE Hack | July 21 - 22, 2018</title></if>
+        <if(data.lang==="zh")><title>德·创客马拉松 | 2018年7月21-22日</title></if>
 
         <!-- Bootstrap core CSS -->
         <link href="https://static.thehack.org.cn/2019/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,37 +36,77 @@
 
         <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
             <div class="col-md-5 p-lg-5 mx-auto my-5">
-                <h1 class="display-4 font-weight-normal" if(data.lang==="en")>THE Hack</h1>
-                <h1 class="display-4 font-weight-normal" if(data.lang==="zh")>德·创客马拉松</h1>
-                <p class="lead font-weight-normal" if(data.lang==="en")>Technology · Harvests · Enlightenment</p>
-                <p class="lead font-weight-normal" if(data.lang==="zh")>科技·收获·启蒙</p>
-                <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary main-btn" href="https://static.thehack.org.cn/2019/doc/shared/Prospectus-en_US.pdf" if(data.lang==="en")>Prospectus</a>
-                <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary main-btn" href="https://static.thehack.org.cn/2019/doc/shared/Prospectus-zh_CN.pdf" if(data.lang==="zh")>项目计划书</a>
-                <a role="button" class="btn btn-lg btn-outline-secondary main-btn" href="#hackathons" if(data.lang==="en")>Events</a>
-                <a role="button" class="btn btn-lg btn-outline-secondary main-btn" href="#hackathons" if(data.lang==="zh")>活动</a>
+                <if(data.lang==="en")>
+                  <h1 class="display-4 font-weight-normal">THE Hack</h1>
+                </if>
+                <if(data.lang==="zh")>
+                  <h1 class="display-4 font-weight-normal">德·创客马拉松</h1>
+                </if>
+                <if(data.lang==="en")>
+                  <p class="lead font-weight-normal">Technology · Harvests · Enlightenment</p>
+                </if>
+                <if(data.lang==="zh")>
+                  <p class="lead font-weight-normal">科技·收获·启蒙</p>
+                </if>
+                <if(data.lang==="en")>
+                  <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary main-btn" href="https://static.thehack.org.cn/2019/doc/shared/Prospectus-en_US.pdf">Prospectus</a>
+                </if>
+                <if(data.lang==="zh")>
+                  <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary main-btn" href="https://static.thehack.org.cn/2019/doc/shared/Prospectus-zh_CN.pdf">项目计划书</a>
+                </if>
+                <if(data.lang==="en")>
+                  <a role="button" class="btn btn-lg btn-outline-secondary main-btn" href="#hackathons">Events</a>
+                </if>
+                <if(data.lang==="zh")>
+                  <a role="button" class="btn btn-lg btn-outline-secondary main-btn" href="#hackathons">活动</a>
+                </if>
             </div>
         </div>
 
         <div id="hackathons" class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
             <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
                 <div class="my-3 py-3">
-                    <h2 class="display-5" if(data.lang==="en")>hack.init() 2018 - Enlightenment</h2>
-                    <h2 class="display-5" if(data.lang==="zh")>hack.init() 2018 - 启迪</h2>
-                    <p class="lead" if(data.lang==="en")>hack.init() is the premier youth hackathon in China. With a mission to build up the hacker culture in China, hack.init() adopted a tutorial approach that hosted over 20 workshops preevent and at-event, allowing teenagers from age 14 to 20 to get exposed to the latest technology and utilize them during their innovation.</p>
-                    <p class="lead" if(data.lang==="zh")>hack.init() 是中国顶尖的⻘年创客⻢拉松。以构建中国创客⽂化为使命，hack.init() 采⽤了基于教程的⽅式，在赛前与赛中举办了超过20场⼯作坊活动，让更多14⾄20岁间的⻘少年了解并应⽤业内先进技术于他们的创意中。</p>
-                    <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackinit.org" if(data.lang==="en")>Visit hack.init() 2018</a>
-                    <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackinit.org/zh" if(data.lang==="zh")>访问 hack.init() 2018</a>
+                    <if(data.lang==="en")>
+                      <h2 class="display-5">hack.init() 2018 - Enlightenment</h2>
+                    </if>
+                    <if(data.lang==="zh")>
+                      <h2 class="display-5">hack.init() 2018 - 启迪</h2>
+                    </if>
+                    <if(data.lang==="en")>
+                      <p class="lead">hack.init() is the premier youth hackathon in China. With a mission to build up the hacker culture in China, hack.init() adopted a tutorial approach that hosted over 20 workshops preevent and at-event, allowing teenagers from age 14 to 20 to get exposed to the latest technology and utilize them during their innovation.</p>
+                    </if>
+                    <if(data.lang==="zh")>
+                      <p class="lead">hack.init() 是中国顶尖的⻘年创客⻢拉松。以构建中国创客⽂化为使命，hack.init() 采⽤了基于教程的⽅式，在赛前与赛中举办了超过20场⼯作坊活动，让更多14⾄20岁间的⻘少年了解并应⽤业内先进技术于他们的创意中。</p>
+                    </if>
+                    <if(data.lang==="en")>
+                      <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackinit.org">Visit hack.init() 2018</a>
+                    </if>
+                    <if(data.lang==="zh")>
+                      <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackinit.org/zh">访问 hack.init() 2018</a>
+                    </if>
                 </div>
                 <img class="sub-logo" src="https://static.thehack.org.cn/2019/img/hackinit/logo/hi-1024px-c.png">
             </div>
             <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div class="my-3 p-3">
-                    <h2 class="display-5" if(data.lang==="en")>hackShanghai 2018 - Retro</h2>
-                    <h2 class="display-5" if(data.lang==="zh")>hackShanghai 2018 - 回归</h2>
-                    <p class="lead" if(data.lang==="en")>hackShanghai is the model of innovation and driving force of the current hackathon movement in Asia. Having already had very successful events in 2014 and 2015, HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</p>
-                    <p class="lead" if(data.lang==="zh")>hackShanghai（创客上海）是当今亚洲创客⻢拉松运动的创新典范及先驱。于2014及2015年成功举办两场活动，在过去数年中，hackShanghai 已经合作或⽀持了多场⼤型创客⻢拉松，包括 Unique Hack Day（华中科技⼤学）、HackNTU（国⽴⽴台湾⼤学）及THacks（清华⼤学）。</p>
-                    <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackshanghai.com" if(data.lang==="en")>Visit hackShanghai 2018</a>
-                    <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackshanghai.com/zh" if(data.lang==="zh")>访问 hackShanghai 2018</a>
+                    <if(data.lang==="en")>
+                      <h2 class="display-5">hackShanghai 2018 - Retro</h2>
+                    </if>
+                    <if(data.lang==="zh")>
+                      <h2 class="display-5">hackShanghai 2018 - 回归</h2>
+                    </if>
+                    <if(data.lang==="en")>
+                      <p class="lead">hackShanghai is the model of innovation and driving force of the current hackathon movement in Asia. Having already had very successful events in 2014 and 2015, HackShanghai has been collaborating with and supporting the development of several major hackathons, including Unique Hack Day, HackNTU and THacks.</p>
+                    </if>
+                    <if(data.lang==="zh")>
+                      <p class="lead">hackShanghai（创客上海）是当今亚洲创客⻢拉松运动的创新典范及先驱。于2014及2015年成功举办两场活动，在过去数年中，hackShanghai 已经合作或⽀持了多场⼤型创客⻢拉松，包括 Unique Hack Day（华中科技⼤学）、HackNTU（国⽴⽴台湾⼤学）及THacks（清华⼤学）。</p>
+                    </if>
+                    <if(data.lang==="en")>
+                      <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackshanghai.com">Visit hackShanghai 2018</a>
+                    </if>
+                    <if(data.lang==="zh")>
+                      <a role="button" target="_blank" class="btn btn-lg btn-outline-secondary sub-btn" href="//hackshanghai.com/zh">访问 hackShanghai 2018</a>
+                    </if>
                 </div>
                 <img class="sub-logo" src="https://static.thehack.org.cn/2019/img/hackshanghai/logo.png">
             </div>
@@ -75,8 +115,8 @@
         <div id="host-logos" class="container sponsor-partner section">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h2 if(data.lang==="en")><b>Hosted by</b></h2>
-                    <h2 if(data.lang==="zh")><b>主办方</b></h2>
+                    <if(data.lang==="en")><h2><b>Hosted by</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>主办方</b></h2></if>
                 </div>
             </div>
             <div class="row">
@@ -96,8 +136,8 @@
         <div id="cohost-logos" class="container sponsor-partner section bg-black">
           <div class="row">
               <div class="col-xs-12 section-title">
-                  <h2 if(data.lang==="en")><b>Co-hosted by</b></h2>
-                  <h2 if(data.lang==="zh")><b>联合主办方</b></h2>
+                  <if(data.lang==="en")><h2><b>Co-hosted by</b></h2></if>
+                  <if(data.lang==="zh")><h2><b>联合主办方</b></h2></if>
               </div>
           </div>
           <div class="row">
@@ -120,8 +160,8 @@
         <div id="name-logos" class="container sponsor-partner section bg-black">
           <div class="row">
             <div class="col-xs-12 section-title">
-              <h2 if(data.lang==="en")><b>Name Sponsors</b></h2>
-              <h2 if(data.lang==="zh")><b>冠名赞助商</b></h2>
+              <if(data.lang==="en")><h2><b>Name Sponsors</b></h2></if>
+              <if(data.lang==="zh")><h2><b>冠名赞助商</b></h2></if>
             </div>
           </div>
           <div class="row">
@@ -138,8 +178,8 @@
         <div id="tera-logos" class="container sponsor-partner section bg-black">
           <div class="row">
             <div class="col-xs-12 section-title">
-              <h2 if(data.lang==="en")><b>Tera Sponsors</b></h2>
-              <h2 if(data.lang==="zh")><b>钻石赞助商</b></h2>
+              <if(data.lang==="en")><h2><b>Tera Sponsors</b></h2></if>
+              <if(data.lang==="zh")><h2><b>钻石赞助商</b></h2></if>
             </div>
           </div>
           <div class="row">
@@ -156,8 +196,8 @@
         <div id="giga-logos" class="container sponsor-partner section bg-black">
           <div class="row">
               <div class="col-xs-12 section-title">
-                  <h2 if(data.lang==="en")><b>Giga Sponsors</b></h2>
-                  <h2 if(data.lang==="zh")><b>白金赞助商</b></h2>
+                  <if(data.lang==="en")><h2><b>Giga Sponsors</b></h2></if>
+                  <if(data.lang==="zh")><h2><b>白金赞助商</b></h2></if>
               </div>
           </div>
           <div class="row">
@@ -186,8 +226,8 @@
         <div id="mega-logos" class="container sponsor-partner section bg-black">
           <div class="row">
               <div class="col-xs-12 section-title">
-                  <h2 if(data.lang==="en")><b>Mega Sponsors</b></h2>
-                  <h2 if(data.lang==="zh")><b>黄金赞助商</b></h2>
+                  <if(data.lang==="en")><h2><b>Mega Sponsors</b></h2></if>
+                  <if(data.lang==="zh")><h2><b>黄金赞助商</b></h2></if>
               </div>
           </div>
           <div class="row">
@@ -222,8 +262,8 @@
         <div id="kilo-logos" class="container sponsor-partner section bg-black">
           <div class="row">
               <div class="col-xs-12 section-title">
-                  <h2 if(data.lang==="en")><b>Kilo Sponsors</b></h2>
-                  <h2 if(data.lang==="zh")><b>白银赞助商</b></h2>
+                  <if(data.lang==="en")><h2><b>Kilo Sponsors</b></h2></if>
+                  <if(data.lang==="zh")><h2><b>白银赞助商</b></h2></if>
               </div>
           </div>
           <div class="row">
@@ -244,8 +284,8 @@
         <div id="community-logos" class="container sponsor-partner section">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h2 if(data.lang==="en")><b>Strategic Partner Communities</b></h2>
-                    <h2 if(data.lang==="zh")><b>战略合作技术社区</b></h2>
+                    <if(data.lang==="en")><h2><b>Strategic Partner Communities</b></h2></if>
+                    <if(data.lang==="zh")><h2><b>战略合作技术社区</b></h2></if>
                 </div>
             </div>
             <div class="row">
