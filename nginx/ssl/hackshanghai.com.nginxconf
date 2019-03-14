@@ -1,3 +1,0 @@
-# www.hackshanghai.com & hackshanghai.com
-ssl_certificate /etc/letsencrypt/live/hackshanghai.com/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/hackshanghai.com/privkey.pem;
