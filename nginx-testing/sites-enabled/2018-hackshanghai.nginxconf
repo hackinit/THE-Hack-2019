@@ -1,0 +1,22 @@
+upstream 2018_hackshanghai_marko_server {
+    server 2018_hackshanghai_marko:8080;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name hackshanghai.com;
+
+    location / {
+        proxy_pass http://2018_hackshanghai_marko_server/;
+        proxy_set_header Host $host;
+    }
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.hackshanghai.com;
+
+    return 301 https://hackshanghai.com$request_uri;
+}
