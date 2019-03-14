@@ -1,0 +1,14 @@
+upstream 2018_thehack_marko_server {
+    server 2018_thehack_marko:8080;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name 2018.thehack.org.cn;
+
+    location / {
+        proxy_pass http://2018_thehack_marko_server/;
+        proxy_set_header Host $host;
+    }
+}
