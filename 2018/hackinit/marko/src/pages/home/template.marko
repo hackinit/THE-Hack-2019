@@ -53,7 +53,7 @@ import Layout from "./../../components/layout.marko"
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="row">
-                    <for(|i| from=0 to=data.highlights.length-1)>
+                    <for |i| from=0 to=data.highlights.length-1>
                         <div class="col-6">
                             <div class="highlight">
                                 <div class="horizontal-center">
@@ -74,7 +74,7 @@ import Layout from "./../../components/layout.marko"
             </div>
         </div>
         <div class="row">
-            <for|i| from=0 to=data.faqs.length-1)>
+            <for |i| from=0 to=data.faqs.length-1>
                 <div class="col-xs-12 col-md-6 faq">
                     <a class="btn btn-light btn-lg btn-block faq-question" data-toggle="collapse" href="#faq${i}" role="button" aria-expanded="false" aria-controls="faq${i}">
                         ${data.faqs[i].question}
@@ -105,11 +105,11 @@ import Layout from "./../../components/layout.marko"
                             </tr>
                         </thead>
                         <tbody>
-                            <for|i| from=0 to=data.satevent.length-1)>
-                            <tr>
-                            <td>${data.satevent[i].time}</td>
-                            <td>${data.satevent[i].event}</td>
-                            </tr>
+                            <for |i| from=0 to=data.satevent.length-1>
+                                <tr>
+                                    <td>${data.satevent[i].time}</td>
+                                    <td>${data.satevent[i].event}</td>
+                                </tr>
                             </for>
                         </tbody>
                     </table>
@@ -124,11 +124,11 @@ import Layout from "./../../components/layout.marko"
                             </tr>
                         </thead>
                         <tbody>
-                            <for(i from 0 to data.sunevent.length - 1)>
-                            <tr>
-                            <td>${data.sunevent[i].time}</td>
-                            <td>${data.sunevent[i].event}</td>
-                            </tr>
+                            <for |i| from=0 to=data.sunevent.length-1>
+                                <tr>
+                                    <td>${data.sunevent[i].time}</td>
+                                    <td>${data.sunevent[i].event}</td>
+                                </tr>
                             </for>
                         </tbody>
                     </table>
