@@ -39,7 +39,7 @@ server {
     server_name www.thehack.org.cn;
 
     # ssl settings and certificates
-    include ssl/www.thehack.org.cn.nginxconf;
+    include ssl/thehack.org.cn.nginxconf;
     include ssl/ssl.nginxconf;
 
     return 301 https://thehack.org.cn$request_uri;
