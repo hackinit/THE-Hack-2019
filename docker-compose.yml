@@ -14,38 +14,39 @@ services:
             - ./2017/static:/usr/share/static/2017:ro
             - ./2018/static:/usr/share/static/2018:ro
             - ./2019/static:/usr/share/static/2019:ro
+        depends_on:
+            - 2019_thehack_marko
+            - 2018_thehack_marko
+            - 2018_hackinit_marko
+            - 2018_hackshanghai_marko
+            - 2017_marko
 
     2019_thehack_marko:
         restart: always
         build: ./2019/thehack/marko
         expose:
             - "8080"
-        command: node app.js
 
     2018_hackinit_marko:
         restart: always
         build: ./2018/hackinit/marko
         expose:
             - "8080"
-        command: node app.js
 
     2018_hackshanghai_marko:
         restart: always
         build: ./2018/hackshanghai/marko
         expose:
             - "8080"
-        command: node app.js
 
     2018_thehack_marko:
         restart: always
         build: ./2018/thehack/marko
         expose:
             - "8080"
-        command: node app.js
 
     2017_marko:
         restart: always
         build: ./2017/marko
         expose:
             - "8080"
-        command: node app.js

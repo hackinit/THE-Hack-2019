@@ -3,10 +3,16 @@ FROM node:10.15.3
 LABEL SUBMITTER="Yuchong Pan <panyuchong@gmail.com>"
 LABEL MAINTAINER="Ye Shu <shuye02@outlook.com>"
 
-RUN mkdir /code
 WORKDIR /code
 
-RUN cd /code && npm install express --save
-RUN cd /code && npm install marko --save
+ADD package.json ./
+ADD package-lock.json ./
 
-ADD . /code/
+# npm ci is for production and needs the package-lock.json
+# RUN npm install
+RUN npm ci --only=production
+
+ADD . .
+
+EXPOSE 8080
+CMD [ "node", "app.js" ]

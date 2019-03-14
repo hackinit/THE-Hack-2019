@@ -9,8 +9,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title if(data.lang==="en")>hack.init() | Register</title>
-        <title if(data.lang==="zh")>hack.init() | 注册</title>
+        <if(data.lang==="en")><title>hack.init() | Register</title></if>
+        <if(data.lang==="zh")><title>hack.init() | 注册</title></if>
         <link rel="icon" href="/s/img/favicon.ico">
 
         <!-- CSS -->
@@ -62,20 +62,24 @@
                     </if>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="en")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
-                        <!--
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
-                        -->
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/register">简体中文</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right" if(data.lang==="zh")>
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
-                        <!--
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
-                        -->
-                        <li><a data-toggle="collapse" data-target="#navbar.in" href="/register">ENGLISH</a></li>
-                    </ul>
+                    <if(data.lang==="en")>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/team">OUR TEAM</a></li>
+                            <!--
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/login">LOG IN</a></li>
+                            -->
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/register">简体中文</a></li>
+                        </ul>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/team">我们的团队</a></li>
+                            <!--
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/zh/login">登录</a></li>
+                            -->
+                            <li><a data-toggle="collapse" data-target="#navbar.in" href="/register">ENGLISH</a></li>
+                        </ul>
+                    </if>
                 </div>
             </div>
         </nav>
@@ -86,8 +90,8 @@
             <div class="row title-row">
                 <div class="col-xs-12">
                     <div class="horizontal-center">
-                        <h1 if(data.lang==="en")>Hi, Welcome!</h1>
-                        <h1 if(data.lang==="zh")>嗨，欢迎！</h1>
+                        <if(data.lang==="en")><h1>Hi, Welcome!</h1></if>
+                        <if(data.lang==="zh")><h1>嗨，欢迎！</h1></if>
                     </div>
                 </div>
             </div>
@@ -99,12 +103,20 @@
                         </span>
                         <div class="row" id="name">
                             <div class="col-xs-6 left-half">
-                                <input type="text" class="form-control" id="first-name" autocomplete="off" placeholder="First Name" aria-describedby="name-addon" v-model="firstName" @input="validateRequiredField(firstName, '#first-name')" @blur="validateRequiredField(firstName, '#first-name')" @keyup.enter="firstNameEntered()" if(data.lang==="en")>
-                                <input type="text" class="form-control" id="first-name" autocomplete="off" placeholder="名" aria-describedby="name-addon" v-model="firstName" @input="validateRequiredField(firstName, '#first-name')" @blur="validateRequiredField(firstName, '#first-name')" @keyup.enter="firstNameEntered()" if(data.lang==="zh")>
+                                <if(data.lang==="en")>
+                                    <input type="text" class="form-control" id="first-name" autocomplete="off" placeholder="First Name" aria-describedby="name-addon" v-model="firstName" @input="validateRequiredField(firstName, '#first-name')" @blur="validateRequiredField(firstName, '#first-name')" @keyup.enter="firstNameEntered()">
+                                </if>
+                                <if(data.lang==="zh")>
+                                    <input type="text" class="form-control" id="first-name" autocomplete="off" placeholder="名" aria-describedby="name-addon" v-model="firstName" @input="validateRequiredField(firstName, '#first-name')" @blur="validateRequiredField(firstName, '#first-name')" @keyup.enter="firstNameEntered()">
+                                </if>
                             </div>
                             <div class="col-xs-6 right-half">
-                                <input type="text" class="form-control" id="last-name" autocomplete="off" placeholder="Last Name" aria-describedby="name-addon" v-model="lastName" @input="validateRequiredField(lastName, '#last-name')" @blur="validateRequiredField(lastName, '#last-name')" @keyup.enter="lastNameEntered()" if(data.lang==="en")>
-                                <input type="text" class="form-control" id="last-name" autocomplete="off" placeholder="姓" aria-describedby="name-addon" v-model="lastName" @input="validateRequiredField(lastName, '#last-name')" @blur="validateRequiredField(lastName, '#last-name')" @keyup.enter="lastNameEntered()" if(data.lang==="zh")>
+                                <if(data.lang==="en")>
+                                    <input type="text" class="form-control" id="last-name" autocomplete="off" placeholder="Last Name" aria-describedby="name-addon" v-model="lastName" @input="validateRequiredField(lastName, '#last-name')" @blur="validateRequiredField(lastName, '#last-name')" @keyup.enter="lastNameEntered()">
+                                </if>
+                                <if(data.lang==="zh")>
+                                    <input type="text" class="form-control" id="last-name" autocomplete="off" placeholder="姓" aria-describedby="name-addon" v-model="lastName" @input="validateRequiredField(lastName, '#last-name')" @blur="validateRequiredField(lastName, '#last-name')" @keyup.enter="lastNameEntered()">
+                                </if>
                             </div>
                         </div>
                     </div>
@@ -114,8 +126,12 @@
                         <span class="input-group-addon" id="email-addon">
                             <i class="fa fa-envelope"></i>
                         </span>
-                        <input type="email" class="form-control" id="email" aria-describedby="email-addon" placeholder="Email" v-model="email" @input="validateEmail(email)" @blur="validateEmail(email)" @keyup.enter="emailEntered()" if(data.lang==="en")>
-                        <input type="email" class="form-control" id="email" aria-describedby="email-addon" placeholder="邮箱" v-model="email" @input="validateEmail(email)" @blur="validateEmail(email)" @keyup.enter="emailEntered()" if(data.lang==="zh")>
+                        <if(data.lang==="en")>
+                            <input type="email" class="form-control" id="email" aria-describedby="email-addon" placeholder="Email" v-model="email" @input="validateEmail(email)" @blur="validateEmail(email)" @keyup.enter="emailEntered()">
+                        </if>
+                        <if(data.lang==="zh")>
+                            <input type="email" class="form-control" id="email" aria-describedby="email-addon" placeholder="邮箱" v-model="email" @input="validateEmail(email)" @blur="validateEmail(email)" @keyup.enter="emailEntered()">
+                        </if>
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 form-field">
@@ -123,8 +139,12 @@
                         <span class="input-group-addon" id="password-addon">
                             <i class="fa fa-key"></i>
                         </span>
-                        <input type="password" class="form-control" id="password" aria-describedby="password-addon" placeholder="Password" v-model="password" @input="validatePassword(password)" @blur="validatePassword(password)" @keyup.enter="passwordEntered()" if(data.lang==="en")>
-                        <input type="password" class="form-control" id="password" aria-describedby="password-addon" placeholder="密码" v-model="password" @input="validatePassword(password)" @blur="validatePassword(password)" @keyup.enter="passwordEntered()" if(data.lang==="zh")>
+                        <if(data.lang==="en")>
+                            <input type="password" class="form-control" id="password" aria-describedby="password-addon" placeholder="Password" v-model="password" @input="validatePassword(password)" @blur="validatePassword(password)" @keyup.enter="passwordEntered()">
+                        </if>
+                        <if(data.lang==="zh")>
+                            <input type="password" class="form-control" id="password" aria-describedby="password-addon" placeholder="密码" v-model="password" @input="validatePassword(password)" @blur="validatePassword(password)" @keyup.enter="passwordEntered()">
+                        </if>
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 form-field">
@@ -132,29 +152,37 @@
                         <span class="input-group-addon" id="confirm-password-addon">
                             <i class="fa fa-check-square-o"></i>
                         </span>
-                        <input type="password" class="form-control" id="confirm-password" aria-describedby="confirm-password-addon" placeholder="Confirm Password" v-model="confirmPassword" @input="validateConfirmPassword()" @blur="validateConfirmPassword()" @keyup.enter="userRegister()" if(data.lang==="en")>
-                        <input type="password" class="form-control" id="confirm-password" aria-describedby="confirm-password-addon" placeholder="确认密码" v-model="confirmPassword" @input="validateConfirmPassword()" @blur="validateConfirmPassword()" @keyup.enter="userRegister()" if(data.lang==="zh")>
+                        <if(data.lang==="en")>
+                            <input type="password" class="form-control" id="confirm-password" aria-describedby="confirm-password-addon" placeholder="Confirm Password" v-model="confirmPassword" @input="validateConfirmPassword()" @blur="validateConfirmPassword()" @keyup.enter="userRegister()">
+                        </if>
+                        <if(data.lang==="zh")>
+                            <input type="password" class="form-control" id="confirm-password" aria-describedby="confirm-password-addon" placeholder="确认密码" v-model="confirmPassword" @input="validateConfirmPassword()" @blur="validateConfirmPassword()" @keyup.enter="userRegister()">
+                        </if>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 register-btn-col">
                     <div class="horizontal-center">
-                        <a type="button" id="register-btn" class="btn btn-primary btn-lg" @click="userRegister()" if(data.lang==="en")>Register</a>
-                        <a type="button" id="register-btn" class="btn btn-primary btn-lg" @click="userRegister()" if(data.lang==="zh")>注册</a>
+                        <if(data.lang==="en")><a type="button" id="register-btn" class="btn btn-primary btn-lg" @click="userRegister()">Register</a></if>
+                        <if(data.lang==="zh")><a type="button" id="register-btn" class="btn btn-primary btn-lg" @click="userRegister()">注册</a></if>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="horizontal-center login-link" if(data.lang==="en")>
-                        <p>Already have an account?</p>
-                        <p>Click <a href="/login">here</a> to login!</p>
-                    </div>
-                    <div class="horizontal-center login-link" if(data.lang==="zh")>
-                        <p>已经有账户？</p>
-                        <p>点击<a href="/zh/login">这里</a>登录！</p>
-                    </div>
+                    <if(data.lang==="en")>
+                        <div class="horizontal-center login-link">
+                            <p>Already have an account?</p>
+                            <p>Click <a href="/login">here</a> to login!</p>
+                        </div>
+                    </if>
+                    <if(data.lang==="zh")>
+                        <div class="horizontal-center login-link">
+                            <p>已经有账户？</p>
+                            <p>点击<a href="/zh/login">这里</a>登录！</p>
+                        </div>
+                    </if>
                 </div>
             </div>
         </div>
@@ -163,20 +191,24 @@
         <!-- FOOTER -->
         <div id="footer-container" class="container-fluid darkgrey-background">
             <div class="row">
-                <div class="col-xs-12 footer" if(data.lang==="en")>
-                    <div class="horizontal-center">
-                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
-                        <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                <if(data.lang==="en")>
+                    <div class="col-xs-12 footer">
+                        <div class="horizontal-center">
+                            <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                            <p>Content licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a target="_blank" href="https://github.com/hackinit/hackinit.io">Open Source</a>.</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-12 footer" if(data.lang==="zh")>
-                    <div class="horizontal-center">
-                        <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
-                        <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
-                        <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选手行为守则</a></p>
+                </if>
+                <if(data.lang==="zh")>
+                    <div class="col-xs-12 footer">
+                        <div class="horizontal-center">
+                            <p><i class="fa fa-copyright"></i> hack.init() 2017</p>
+                            <p>本网站内容根据<a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">“署名-相同方式共享”</a>的许可方式发布。<a target="_blank" href="https://github.com/hackinit/hackinit.io">网站开源</a>。</p>
+                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选手行为守则</a></p>
+                        </div>
                     </div>
-                </div>
+                </if>
             </div>
         </div>
         <!-- /FOOTER -->

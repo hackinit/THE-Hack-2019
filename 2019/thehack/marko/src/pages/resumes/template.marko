@@ -1,4 +1,6 @@
-<include("./../../components/layout.marko", data)>
+import Layout from "./../../components/layout.marko"
+
+<${Layout} ...data>
 
 <@css>
   <link rel="stylesheet" href="//static.thehack.org.cn/2019/lib/font-awesome/css/fontawesome-all.min.css">
@@ -52,4 +54,4 @@
   <script src="//static.thehack.org.cn/2019/js/thehack/resumes/controller.js"></script>
 </@javascript>
 
-</include>
+</>

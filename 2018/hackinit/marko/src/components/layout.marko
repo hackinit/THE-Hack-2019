@@ -3,6 +3,8 @@
     EMAIL: panyuchong@gmail.com
 -->
 
+import header from "./header.marko"
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -19,7 +21,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <include(input.meta)/>
+        <${input.meta}/>
 
         <title>hack.init() | ${data.title}</title>
         <link rel="icon" href="//static.thehack.org.cn/2018/img/hackinit/logo/hi-64px-c.png">
@@ -30,13 +32,13 @@
         <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/shared/styles.css">
         <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/shared/header.css">
 
-        <include(input.css)/>
+        <${input.css}/>
         <!-- /CSS -->
     </head>
 
     <body>
-        <include("./header.marko", data)/>
-        <include(input.body)/>
+        <${header} ...data/>
+        <${input.body}/>
 
         <!-- JAVASCRIPT -->
         <script src="//static.thehack.org.cn/2018/lib/jquery/jquery-3.1.1.min.js"></script>
@@ -44,7 +46,7 @@
         <script src="//static.thehack.org.cn/2018/lib/vue/vue-resource.min.js"></script>
         <script src="//static.thehack.org.cn/2018/lib/bootstrap/js/bootstrap.min.js"></script>
 
-        <include(input.javascript)/>
+        <${input.javascript}/>
         <!-- /JAVASCRIPT -->
     </body>
 </html>
