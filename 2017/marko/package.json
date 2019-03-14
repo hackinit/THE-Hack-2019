@@ -1,0 +1,15 @@
+{
+  "name": "2017-Marko",
+  "version": "1.0.0",
+  "description": "Website for https://2017.hackinit.org",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "THE Hack Tech Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "marko": "^4.15.6"
+  }
+}
