@@ -1,0 +1,22 @@
+upstream 2018_hackinit_marko_server {
+    server 2018_hackinit_marko:8080;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name hackinit.org;
+
+    location / {
+        proxy_pass http://2018_hackinit_marko_server/;
+        proxy_set_header Host $host;
+    }
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.hackinit.org;
+
+    return 301 https://hackinit.org$request_uri;
+}
