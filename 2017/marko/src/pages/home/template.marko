@@ -53,7 +53,7 @@
                     </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <if(data.lang==="en")> 
+                    <if(data.lang==="en")>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a data-toggle="collapse" data-target="#navbar.in" href="#about" @click="scrollTo('#about')">ABOUT</a></li>
                             <li><a data-toggle="collapse" data-target="#navbar.in" href="#faq" @click="scrollTo('#faq')">FAQ</a></li>
@@ -507,7 +507,7 @@
                             <tr>
                                 <td>18:00 - 20:00</td>
                                 <if(data.lang==="en")><td colspan="2">Dinner Served</td></if>
-                                <td colspan="2">晚餐供应</td></if>
+                                <if(data.lang==="zh")><td colspan="2">晚餐供应</td></if>
                             </tr>
                             <tr>
                                 <td>23:30 - </td>
@@ -530,8 +530,8 @@
                                 <if(data.lang==="zh")><th colspan="3">星期日</th></if>
                             </tr>
                             <tr>
-                                <if(data.lang==="en")><th if(data.lang==="en")>Time</th></if>
-                                <if(data.lang==="zh")><th if(data.lang==="zh")>时间</th></if>
+                                <if(data.lang==="en")><th>Time</th></if>
+                                <if(data.lang==="zh")><th>时间</th></if>
                                 <if(data.lang==="en")><th colspan="2">Event</th></if>
                                 <if(data.lang==="zh")><th colspan="2">活动</th></if>
                             </tr>
