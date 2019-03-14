@@ -1,3 +1,9 @@
+# npm packages
+node_modules
+
+# compiled marko js
+*.marko.js
+
 # Docker
 secrets.env
 
