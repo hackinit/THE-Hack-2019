@@ -1,0 +1,12 @@
+# ADD THE FOLLOWING LINES TO YOUR HOSTS FILES
+# IF YOU ARE TO RUN TESTING SERVER LOCALLY
+
+127.0.0.1 thehack.org.cn
+127.0.0.1 www.thehack.org.cn
+127.0.0.1 2018.thehack.org.cn
+127.0.0.1 static.thehack.org.cn
+127.0.0.1 hackinit.org
+127.0.0.1 www.hackinit.org
+127.0.0.1 2017.hackinit.org
+127.0.0.1 hackshanghai.com
+127.0.0.1 www.hackshanghai.com

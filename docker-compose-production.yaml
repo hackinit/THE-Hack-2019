@@ -1,52 +1,66 @@
-# THIS FILE IS FOR TESTING ONLY
-
 version: '3'
+
+volumes:
+    tlscert:
 
 services:
 
     nginx:
         restart: always
-        build: ./nginx-testing
+        build: ./nginx
         ports:
             - "80:80"
+            - "443:443"
         volumes:
             - ./nginx/sites-enabled:/etc/nginx/sites-enabled:ro
             - ./2017/static:/usr/share/static/2017:ro
             - ./2018/static:/usr/share/static/2018:ro
             - ./2019/static:/usr/share/static/2019:ro
-        depends_on:
-            - 2019_thehack_marko
-            - 2018_thehack_marko
-            - 2018_hackinit_marko
-            - 2018_hackshanghai_marko
-            - 2017_marko
+            - tlscert:/etc/letsencrypt
+
+    letsencrypt:
+        restart: always
+        image: adferrand/letsencrypt-dns:2.10.1
+        environment:
+            - LETSENCRYPT_USER_MAIL=ye.shu@hackinit.org
+            - LEXICON_PROVIDER=cloudflare
+            - LEXICON_CLOUDFLARE_USERNAME=${CF_EMAIL}
+            - LEXICON_CLOUDFLARE_TOKEN=${CF_GLOBAL_API}
+        volumes:
+            - ./letsencrypt/domains.conf:/etc/letsencrypt/domains.conf
+            - tlscert:/etc/letsencrypt
 
     2019_thehack_marko:
         restart: always
         build: ./2019/thehack/marko
         expose:
             - "8080"
+        command: node app.js
 
     2018_hackinit_marko:
         restart: always
         build: ./2018/hackinit/marko
         expose:
             - "8080"
+        command: node app.js
 
     2018_hackshanghai_marko:
         restart: always
         build: ./2018/hackshanghai/marko
         expose:
             - "8080"
+        command: node app.js
 
     2018_thehack_marko:
         restart: always
         build: ./2018/thehack/marko
         expose:
             - "8080"
+        command: node app.js
 
     2017_marko:
         restart: always
         build: ./2017/marko
         expose:
             - "8080"
+        command: node app.js

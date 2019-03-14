@@ -1,0 +1,22 @@
+upstream 2019_thehack_marko_server {
+    server 2019_thehack_marko:8080;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name thehack.org.cn;
+
+    location / {
+        proxy_pass http://2019_thehack_marko_server/;
+        proxy_set_header Host $host;
+    }
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.thehack.org.cn;
+
+    return 301 https://thehack.org.cn$request_uri;
+}
