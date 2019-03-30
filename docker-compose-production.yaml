@@ -24,6 +24,7 @@ services:
             - 2018_hackshanghai_marko
             - 2017_marko
             - letsencrypt
+            - 2019_ambassador
 
     2019_ambassador:
         restart: always
@@ -31,9 +32,11 @@ services:
         expose:
             - "3000"
         command: gulp server
+        depends_on:
+            - 2019_ambassador_mongo
         environment:
             - NODE_ENV=dev
-            - DATABASE=mongodb://${AMBASSADOR_MONGODB_USER}:${AMBASSADOR_MONGODB_PASS}@2019_ambassador_mongo:27017/ambassador
+            - DATABASE=mongodb://2019_ambassador_mongo:27017
             - JWT_SECRET=${JWT_SECRET}
             - ROOT_URL=${AMBASSADOR_URL}
             - ADMIN_EMAIL=${AMBASSADOR_ADMIN_EMAIL}
@@ -54,9 +57,6 @@ services:
             - "27017"
         volumes:
             - ./database/ambassador-mongo:/data/db
-        environment:
-            - MONGO_INITDB_ROOT_USERNAME:${AMBASSADOR_MONGODB_USER}
-            - MONGO_INITDB_ROOT_PASSWORD:${AMBASSADOR_MONGODB_PASS}
 
     letsencrypt:
         restart: always
