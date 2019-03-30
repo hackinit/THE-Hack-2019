@@ -17,13 +17,6 @@ services:
             - ./2018/static:/usr/share/static/2018:ro
             - ./2019/static:/usr/share/static/2019:ro
             - tlscert:/etc/letsencrypt
-        depends_on:
-            - 2019_thehack_marko
-            - 2018_thehack_marko
-            - 2018_hackinit_marko
-            - 2018_hackshanghai_marko
-            - 2017_marko
-            - letsencrypt
 
     letsencrypt:
         restart: always
