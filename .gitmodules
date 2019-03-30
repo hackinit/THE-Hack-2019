@@ -1,0 +1,3 @@
+[submodule "2019/ambassador"]
+	path = 2019/ambassador
+	url = https://github.com/hackinit/ambassador.git
