@@ -10,7 +10,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - ./nginx-testing/sites-enabled:/etc/nginx/sites-enabled:ro
+            - ./nginx/sites-enabled:/etc/nginx/sites-enabled:ro
             - ./2017/static:/usr/share/static/2017:ro
             - ./2018/static:/usr/share/static/2018:ro
             - ./2019/static:/usr/share/static/2019:ro
