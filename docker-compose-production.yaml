@@ -32,20 +32,20 @@ services:
             - "3000"
         command: gulp server
         environment:
-            - NODE_ENV='dev'
-            - DATABASE='mongodb://${AMBASSADOR_MONGODB_USER}:${AMBASSADOR_MONGODB_PASS}@2019_ambassador_mongo:27017/ambassador'
+            - NODE_ENV=dev
+            - DATABASE=mongodb://${AMBASSADOR_MONGODB_USER}:${AMBASSADOR_MONGODB_PASS}@2019_ambassador_mongo:27017/ambassador
             - JWT_SECRET=${JWT_SECRET}
             - ROOT_URL=${AMBASSADOR_URL}
             - ADMIN_EMAIL=${AMBASSADOR_ADMIN_EMAIL}
             - ADMIN_PASS=${AMBASSADOR_ADMIN_PASS}
-            - EMAIL_CONTACT='THE Hack Marketing Team <marketing@hackinit.org>'
+            - EMAIL_CONTACT=THE Hack Marketing Team <marketing@hackinit.org>
             - EMAIL_HOST=${AMBASSADOR_EMAIL_HOST}
             - EMAIL_USER=${AMBASSADOR_EMAIL}
             - EMAIL_PASS=${AMBASSADOR_EMAIL_PASS}
             - EMAIL_PORT=${AMBASSADOR_EMAIL_HOST_PORT}
-            - EMAIL_HEADER_IMAGE='https://static.thehack.org.cn/2019/hackinit/email-header_900px.png'
+            - EMAIL_HEADER_IMAGE=https://static.thehack.org.cn/2019/hackinit/email-header_900px.png
             - EMAIL_ADDRESS=${AMBASSADOR_EMAIL}
-            - HACKATHON_NAME='THE Hack'
+            - HACKATHON_NAME=THE Hack
 
     2019_ambassador_mongo:
         restart: always
