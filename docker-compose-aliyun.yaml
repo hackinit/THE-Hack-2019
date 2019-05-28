@@ -20,9 +20,6 @@ services:
         depends_on:
             - 2019_thehack_marko
             - 2018_thehack_marko
-            - 2018_hackinit_marko
-            - 2018_hackshanghai_marko
-            - 2017_marko
             - letsencrypt
             - 2019_ambassador
             - 2019_apply
@@ -110,30 +107,9 @@ services:
             - "8080"
         command: node app.js
 
-    2018_hackinit_marko:
-        restart: always
-        build: ./2018/hackinit/marko
-        expose:
-            - "8080"
-        command: node app.js
-
-    2018_hackshanghai_marko:
-        restart: always
-        build: ./2018/hackshanghai/marko
-        expose:
-            - "8080"
-        command: node app.js
-
     2018_thehack_marko:
         restart: always
         build: ./2018/thehack/marko
-        expose:
-            - "8080"
-        command: node app.js
-
-    2017_marko:
-        restart: always
-        build: ./2017/marko
         expose:
             - "8080"
         command: node app.js
