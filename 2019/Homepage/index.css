@@ -3,6 +3,10 @@
     margin-left: 10px
 }
 
+.card-body span {
+    margin-left: 0 !important
+}
+
 .card-title {
     text-decoration: none !important;
 }
