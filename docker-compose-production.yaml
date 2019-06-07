@@ -61,7 +61,7 @@ services:
 
     2019_apply:
         restart: always
-        build: ../apply/ambassador
+        build: ./2019/apply
         expose:
             - "3000"
         command: gulp server
