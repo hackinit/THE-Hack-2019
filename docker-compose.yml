@@ -8,7 +8,7 @@ services:
         restart: always
         build: ./nginx-testing
         ports:
-            - "80:80"
+            - "3600:80"
         volumes:
             - ./nginx-testing/sites-enabled:/etc/nginx/sites-enabled:ro
             - ./2017/static:/usr/share/static/2017:ro
