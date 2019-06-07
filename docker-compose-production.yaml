@@ -16,9 +16,9 @@ services:
             - ./2017/static:/usr/share/static/2017:ro
             - ./2018/static:/usr/share/static/2018:ro
             - ./2019/static:/usr/share/static/2019:ro
+            - ./2019/homepage:/usr/share/Homepage/2019:ro
             - tlscert:/etc/letsencrypt
         depends_on:
-            - 2019_thehack_marko
             - 2018_thehack_marko
             - 2018_hackinit_marko
             - 2018_hackshanghai_marko
@@ -102,13 +102,6 @@ services:
         volumes:
             - ./letsencrypt/domains.conf:/etc/letsencrypt/domains.conf
             - tlscert:/etc/letsencrypt
-
-    2019_thehack_marko:
-        restart: always
-        build: ./2019/thehack/marko
-        expose:
-            - "8080"
-        command: node app.js
 
     2018_hackinit_marko:
         restart: always
