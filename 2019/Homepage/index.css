@@ -125,8 +125,8 @@ table.day-schedule tr.day th {
 }
 
 .empty-div {
-    height:100px; 
-    width:100%; 
+    height:100px;
+    width:100%;
     clear:both;
 }
 
@@ -137,4 +137,3 @@ table.day-schedule tr.day th {
 .hover-color-change:hover {
     color: rgba(255,255,255,.8);
 }
-
