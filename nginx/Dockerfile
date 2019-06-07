@@ -1,4 +1,4 @@
-FROM nginx:1.15.9
+FROM hackinit/nginx-brotli:latest
 
 LABEL SUBMITTER="Yuchong Pan <panyuchong@gmail.com>"
 LABEL MAINTAINER="Ye Shu <shuye02@outlook.com>"

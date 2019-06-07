@@ -1,3 +1,6 @@
 [submodule "2019/ambassador"]
 	path = 2019/ambassador
 	url = https://github.com/hackinit/ambassador.git
+[submodule "2019/apply"]
+	path = 2019/apply
+	url = https://github.com/hackinit/apply.git
