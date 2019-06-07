@@ -16,7 +16,7 @@ services:
             - ./2017/static:/usr/share/static/2017:ro
             - ./2018/static:/usr/share/static/2018:ro
             - ./2019/static:/usr/share/static/2019:ro
-            - ./2019/homepage:/usr/share/Homepage/2019:ro
+            - ./2019/homepage:/usr/share/homepage/2019:ro
             - tlscert:/etc/letsencrypt
         depends_on:
             - 2018_thehack_marko
@@ -61,7 +61,7 @@ services:
 
     2019_apply:
         restart: always
-        build: ../apply/ambassador
+        build: ./2019/apply
         expose:
             - "3000"
         command: gulp server
