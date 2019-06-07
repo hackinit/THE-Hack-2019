@@ -27,6 +27,11 @@ body {
     width: 100%;
     z-index: 1;
 }
+
+#navbarNav {
+    text-align: center;
+}
+
 .banner-container {
     min-height: 100vh;
     display: flex;
@@ -136,4 +141,27 @@ table.day-schedule tr.day th {
 
 .hover-color-change:hover {
     color: rgba(255,255,255,.8);
+}
+
+.sponsor-img {
+    width: 12vw;
+}
+
+
+@media(max-width:1000px) {
+    .sponsor-img {
+        width: 20vw;
+    }
+}
+
+@media(max-width:576px) {
+    .sponsor-img {
+        width: 80px;
+    }
+    #Google {
+        width: 120px;
+    }
+    .empty-div {
+        height: 8vh;
+    }
 }
