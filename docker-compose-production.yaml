@@ -61,7 +61,7 @@ services:
 
     2019_apply:
         restart: always
-        build: ./2019/apply
+        image: hackinit/apply
         expose:
             - "3000"
         command: gulp server
