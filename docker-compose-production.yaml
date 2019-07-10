@@ -17,6 +17,7 @@ services:
             - ./2018/static:/usr/share/static/2018:ro
             - ./2019/static:/usr/share/static/2019:ro
             - ./2019/homepage:/usr/share/homepage/2019:ro
+            - ./2019/apilist:/usr/share/apilist/2019:ro
             - tlscert:/etc/letsencrypt
         depends_on:
             - 2018_thehack_marko
