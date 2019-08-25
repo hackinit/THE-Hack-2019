@@ -1,7 +1,3 @@
-upstream 2019_apply {
-    server 2019_apply:3000;
-}
-
 server {
     listen 80;
     listen [::]:80;
