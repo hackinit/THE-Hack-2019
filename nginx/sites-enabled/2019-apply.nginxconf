@@ -19,8 +19,10 @@ server {
     include ssl/thehack.org.cn.nginxconf;
     include ssl/ssl.nginxconf;
 
-    location / {
-        proxy_pass http://2019_apply/;
-        proxy_set_header Host $host;
-    }
+    return 301 https://thehack.org.cn;
+
+    # location / {
+    #     proxy_pass http://2019_apply/;
+    #     proxy_set_header Host $host;
+    # }
 }
