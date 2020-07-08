@@ -1,4 +1,4 @@
-FROM node:10.15.3
+FROM node:12-alpine3.12
 
 LABEL SUBMITTER="Yuchong Pan <panyuchong@gmail.com>"
 LABEL MAINTAINER="Ye Shu <shuye02@outlook.com>"
