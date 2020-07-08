@@ -1,3 +1,0 @@
-# thehack.org.cn & www.thehack.org.cn
-ssl_certificate /etc/letsencrypt/live/thehack.org.cn/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/thehack.org.cn/privkey.pem;
