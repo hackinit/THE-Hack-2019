@@ -57,7 +57,7 @@ import Layout from "./../../components/layout.marko"
                         <div class="col-6">
                             <div class="highlight">
                                 <div class="horizontal-center">
-                                    <i class="fa-inverse fas fa-3x fa-${highlight}"></i>
+                                    <i class=`fa-inverse fas fa-3x fa-${highlight}`></i>
                                     <h2 class="title">${highlight}</h2>
                                 </div>
                             </div>
@@ -76,10 +76,10 @@ import Layout from "./../../components/layout.marko"
         <div class="row">
             <for|i| from=0 to=data.faqs.length-1>
                 <div class="col-xs-12 col-md-6 faq">
-                    <a class="btn btn-light btn-lg btn-block faq-question" data-toggle="collapse" href="#faq${i}" role="button" aria-expanded="false" aria-controls="faq${i}">
+                    <a class="btn btn-light btn-lg btn-block faq-question" data-toggle="collapse" href=`#faq${i}` role="button" aria-expanded="false" aria-controls=`faq${i}`>
                         ${data.faqs[i].question}
                     </a>
-                    <div class="collapse" id="faq${i}">
+                    <div class="collapse" id=`faq${i}`>
                         <div class="card card-body faq-answer">
                             $!{data.faqs[i].answer}
                         </div>
