@@ -33,9 +33,7 @@ app.get(["/team", "/:lang/team"], function (req, res) {
     default:
       // This page is only accessible for hackinit.org/:lang/team
       // hopefully Nginx can catch and re-write this 404 page
-      res.sendStatus(404);
-      break;
-    case "hackinit.org":
+    case "2017.hackinit.org":
       require("./src/pages/2017-team")(req, res);
   }
 });
@@ -47,7 +45,7 @@ app.get(["/:lang", "*"], function (req, res) {
       require("../2018/hackinit/marko/src/pages/home")(req, res);
       break;
     case "2017.hackinit.org":
-      require("../2017/marko/src/pages/home")(req, res);
+      require("./src/pages/2017/")(req, res);
       break;
     case "2018.hackshanghai.com":
       require("../2018/hackshanghai/marko/src/pages/home")(req, res);
