@@ -1,13 +1,13 @@
 {
   "dependencies": [
-    "../../../../2017/static/lib/bootstrap/css/bootstrap.min.css",
-    "../../../../2017/static/lib/font-awesome/css/font-awesome.min.css",
+    // "../../../../2017/static/lib/bootstrap/css/bootstrap.min.css",
+    // "../../../../2017/static/lib/font-awesome/css/font-awesome.min.css",
     "../../../../2017/static/css/team-styles.css",
     "../../../../2017/static/css/font.css",
-    "../../../../2017/static/lib/jquery/jquery-3.1.1.min.js",
+    // "../../../../2017/static/lib/jquery/jquery-3.1.1.min.js",
     // "../../../../2017/static/lib/vue/vue.min.js",
     // "../../../../2017/static/lib/vue/vue-resource.min.js",
-    "../../../../2017/static/lib/bootstrap/js/bootstrap.min.js",
+    // "../../../../2017/static/lib/bootstrap/js/bootstrap.min.js",
     "../../../../2017/static/js/team-controller.js"
   ]
 }
