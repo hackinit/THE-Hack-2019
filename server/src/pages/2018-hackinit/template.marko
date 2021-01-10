@@ -1,16 +1,39 @@
-import Layout from "./../../components/layout.marko"
+<!--
+    MAINTAINER: Yuchong Pan
+    EMAIL: panyuchong@gmail.com
+-->
 
-<${Layout} ...data>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src=`https://www.googletagmanager.com/gtag/js?id=UA-${data.ga}`></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-<@meta>
+          gtag('config', 'UA-${data.ga}');
+        </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="hack.init() | July 21 - 22, 2018">
     <meta property="og:description" content="hack.init() is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 350 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning.">
     <meta property="og:image" content="https://static.thehack.org.cn/2018/img/hackinit/logo/hi-1024px-c.png">
     <meta property="og:url" content="https://hackinit.org">
-</@meta>
 
-<@css>
+        <title>hack.init() | ${data.title}</title>
+        <link rel="icon" href="//static.thehack.org.cn/2018/img/hackinit/logo/hi-64px-c.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="//static.thehack.org.cn/2018/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/shared/font.css">
+        <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/shared/styles.css">
+        <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/shared/header.css">
+
     <link rel="stylesheet" href="//static.thehack.org.cn/2018/lib/font-awesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/styles.css">
     <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/banner.css">
@@ -18,9 +41,36 @@ import Layout from "./../../components/layout.marko"
     <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/faqs.css">
     <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/sponsor.css">
     <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/logos.css">
-</@css>
 
-<@body>
+    </head>
+
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-black bg-black navbar-hackinit">
+            <a class="navbar-brand" href="#">
+                <img src="//static.thehack.org.cn/2018/img/hackinit/logo/hi-256px-w.png" width="30" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">&lt; ${data.about} /&gt;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">&lt; ${data.faq} /&gt;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sponsor">&lt; ${data.sponsor} /&gt;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=`${data.altLink}`>&lt; ${data.alt} /&gt;</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
     <div id="banner" class="container-fluid full-width full-height bg-black">
         <img id="main-logo" alt="hack.init()" src="//static.thehack.org.cn/2018/img/hackinit/main-logo.png">
         <div id="buttons">
@@ -327,6 +377,14 @@ import Layout from "./../../components/layout.marko"
             </div>
         </div>
     </div>
-</@body>
 
-</>
+        <!-- JAVASCRIPT -->
+        <script src="//static.thehack.org.cn/2018/lib/jquery/jquery-3.1.1.min.js"></script>
+        <script src="//static.thehack.org.cn/2018/lib/vue/vue.min.js"></script>
+        <script src="//static.thehack.org.cn/2018/lib/vue/vue-resource.min.js"></script>
+        <script src="//static.thehack.org.cn/2018/lib/bootstrap/js/bootstrap.min.js"></script>
+
+        <${input.javascript}/>
+        <!-- /JAVASCRIPT -->
+    </body>
+</html>
