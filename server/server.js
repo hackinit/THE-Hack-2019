@@ -48,7 +48,7 @@ app.get(["/:lang", "*"], function (req, res) {
       require("./src/pages/2017/")(req, res);
       break;
     case "2018.hackshanghai.com":
-      require("../2018/hackshanghai/marko/src/pages/home")(req, res);
+      require("./src/pages/2018-hackshanghai")(req, res);
       break;
     // case not found
     default:
