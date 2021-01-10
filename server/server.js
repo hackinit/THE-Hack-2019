@@ -42,7 +42,7 @@ app.get(["/team", "/:lang/team"], function (req, res) {
 app.get(["/:lang", "*"], function (req, res) {
   switch (req.headers.host) {
     case "hackinit.org":
-      require("../2018/hackinit/marko/src/pages/home")(req, res);
+      require("./src/pages/2018-hackinit")(req, res);
       break;
     case "2017.hackinit.org":
       require("./src/pages/2017/")(req, res);

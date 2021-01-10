@@ -2,6 +2,7 @@
     MAINTAINER: Yuchong Pan
     EMAIL: panyuchong@gmail.com
 -->
+<lasso-page package-path="./browser.json"/>
 
 <!DOCTYPE HTML>
 <html>
@@ -26,28 +27,29 @@
     <meta property="og:url" content="https://hackinit.org">
 
         <title>hack.init() | ${data.title}</title>
-        <link rel="icon" href="//static.thehack.org.cn/2018/img/hackinit/logo/hi-64px-c.png">
+        <link rel="icon" href="https://static.thehack.org.cn/2018/img/hackinit/logo/hi-64px-c.png">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="//static.thehack.org.cn/2018/lib/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/shared/font.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/shared/styles.css">
-        <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/shared/header.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/shared/font.css"> -->
+        <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/shared/styles.css"> -->
+        <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/hackinit/shared/header.css"> -->
 
-    <link rel="stylesheet" href="//static.thehack.org.cn/2018/lib/font-awesome/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/styles.css">
-    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/banner.css">
-    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/about.css">
-    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/faqs.css">
-    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/sponsor.css">
-    <link rel="stylesheet" href="//static.thehack.org.cn/2018/css/hackinit/home/logos.css">
+    <link rel="stylesheet" href="https://static.thehack.org.cn/2018/lib/font-awesome/css/fontawesome-all.min.css">
+    <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/hackinit/home/styles.css"> -->
+    <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/hackinit/home/banner.css"> -->
+    <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/hackinit/home/about.css"> -->
+    <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/hackinit/home/faqs.css"> -->
+    <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/hackinit/home/sponsor.css"> -->
+    <!-- <link rel="stylesheet" href="https://static.thehack.org.cn/2018/css/hackinit/home/logos.css"> -->
+    <lasso-head/>
 
     </head>
 
     <body>
         <nav class="navbar fixed-top navbar-expand-lg navbar-black bg-black navbar-hackinit">
             <a class="navbar-brand" href="#">
-                <img src="//static.thehack.org.cn/2018/img/hackinit/logo/hi-256px-w.png" width="30" height="30" alt="">
+                <img src="https://static.thehack.org.cn/2018/img/hackinit/logo/hi-256px-w.png" width="30" height="30" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -72,9 +74,9 @@
         </nav>
 
     <div id="banner" class="container-fluid full-width full-height bg-black">
-        <img id="main-logo" alt="hack.init()" src="//static.thehack.org.cn/2018/img/hackinit/main-logo.png">
+        <img id="main-logo" alt="hack.init()" src="https://static.thehack.org.cn/2018/img/hackinit/main-logo.png">
         <div id="buttons">
-            <a target="_blank" href="//my.hackinit.org">
+            <a target="_blank" href="#ended-modal" data-toggle="modal">
                 <h1>&lt; ${data.apply} /&gt;</h1>
             </a>
             <a target="_blank" href="#qr-modal" data-toggle="modal">
@@ -84,10 +86,18 @@
                 <h1>&lt; ${data.prospectus} /&gt;</h1>
             </a>
         </div>
+        <div id="ended-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md modal-dialog-centered">
+                <div class="modal-content" style="padding: 1em;">
+                    <p>Unfortunately hack.init() 2017 has ended. You can visit <a href="https://thehack.org.cn/">THE Hack</a> website or <a href="#qr-modal" data-toggle="modal">follow us</a> on WeChat for our future events. </p>
+                    <p>很遗憾，hack.init() 2017 已经结束了。但你可以访问 <a href="https://thehack.org.cn/">THE Hack</a> 的网站或在微信上 <a href="#qr-modal" data-toggle="modal">关注我们</a> 来关注我们未来的活动。</p>
+                </div>
+            </div>
+        </div>
         <div id="qr-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm modal-dialog-centered">
                 <div class="modal-content">
-                    <img id="wechat-qr" alt="THE Hack WeChat QR Code" src="//static.thehack.org.cn/2018/img/shared/wechat.jpg">
+                    <img id="wechat-qr" alt="THE Hack WeChat QR Code" src="https://static.thehack.org.cn/2018/img/shared/wechat.jpg">
                 </div>
             </div>
         </div>
@@ -215,14 +225,14 @@
         </div>
         <div class="row">
             <div class="col tier tier-sponsor-1">
-                <a target="_blank" href="//thehack.org.cn">
-                    <img alt="THE Hack" src="//static.thehack.org.cn/2018/img/thehack/logo/th-1024px-c.png">
+                <a target="_blank" href="https://thehack.org.cn">
+                    <img alt="THE Hack" src="https://static.thehack.org.cn/2018/img/thehack/logo/th-1024px-c.png">
                 </a>
-                <a target="_blank" href="//hackinit.org">
+                <a target="_blank" href="https://hackinit.org">
                     <img alt="hack.init()" src="https://static.thehack.org.cn/2018/img/hackinit/logo/hi-1024px-c.png">
                 </a>
-                <a target="_blank" href="//hackshanghai.com">
-                    <img alt="hackShanghai" src="//static.thehack.org.cn/2018/img/hackshanghai/logo.png">
+                <a target="_blank" href="https://hackshanghai.com">
+                    <img alt="hackShanghai" src="https://static.thehack.org.cn/2018/img/hackshanghai/logo.png">
                 </a>
             </div>
         </div>
@@ -235,17 +245,17 @@
       </div>
       <div class="row">
           <div class="col tier tier-sponsor-1">
-              <a target="_blank" href="//www.shanghaitech.edu.cn">
-                  <img alt="ShanghaiTech" src="//static.thehack.org.cn/2018/img/shared/logos/shtech-w.png">
+              <a target="_blank" href="https://www.shanghaitech.edu.cn">
+                  <img alt="ShanghaiTech" src="https://static.thehack.org.cn/2018/img/shared/logos/shtech-w.png">
               </a>
               <a target="_blank">
-                  <img alt="Techomedia" src="//static.thehack.org.cn/2018/img/shared/logos/Techo.png">
+                  <img alt="Techomedia" src="https://static.thehack.org.cn/2018/img/shared/logos/Techo.png">
               </a>
               <a target="_blank" href="http://www.kohler.com.cn">
-                  <img alt="Kohler" src="//static.thehack.org.cn/2018/img/shared/logos/kohler.png">
+                  <img alt="Kohler" src="https://static.thehack.org.cn/2018/img/shared/logos/kohler.png">
               </a>
               <a target="_blank">
-                  <img alt="Sisui" src="//static.thehack.org.cn/2018/img/shared/logos/c3.png">
+                  <img alt="Sisui" src="https://static.thehack.org.cn/2018/img/shared/logos/c3.png">
               </a>
           </div>
       </div>
@@ -259,10 +269,10 @@
       <div class="row">
         <div class="col tier tier-sponsor-1">
           <a target="_blank" href="http://www.kohler.com.cn">
-            <img alt="Kohler" src="//static.thehack.org.cn/2018/img/shared/logos/kohler.png">
+            <img alt="Kohler" src="https://static.thehack.org.cn/2018/img/shared/logos/kohler.png">
           </a>
           <a target="_blank">
-            <img alt="Sisui" src="//static.thehack.org.cn/2018/img/shared/logos/c3.png">
+            <img alt="Sisui" src="https://static.thehack.org.cn/2018/img/shared/logos/c3.png">
           </a>
         </div>
       </div>
@@ -276,10 +286,10 @@
       <div class="row">
         <div class="col tier tier-sponsor-1">
             <a target="_blank" href="http://www.dreamt.cn">
-              <img alt="DreamT" src="//static.thehack.org.cn/2018/img/shared/logos/dreamt-bg.png">
+              <img alt="DreamT" src="https://static.thehack.org.cn/2018/img/shared/logos/dreamt-bg.png">
             </a>
             <a target="_blank" href="http://www.kfstartups.com">
-              <img alt="Kungfu" src="//static.thehack.org.cn/2018/img/shared/logos/kungfu-inverted.png">
+              <img alt="Kungfu" src="https://static.thehack.org.cn/2018/img/shared/logos/kungfu-inverted.png">
             </a>
         </div>
       </div>
@@ -292,17 +302,17 @@
       </div>
       <div class="row">
           <div class="col tier tier-sponsor-2">
-              <a target="_blank" href="//www.microchip.com">
-                <img alt="Microchip" src="//static.thehack.org.cn/2018/img/shared/logos/microchip.jpeg">
+              <a target="_blank" href="https://www.microchip.com">
+                <img alt="Microchip" src="https://static.thehack.org.cn/2018/img/shared/logos/microchip.jpeg">
               </a>
-              <a target="_blank" href="//www.sensetime.com">
-                <img alt="SenseTime" src="//static.thehack.org.cn/2018/img/shared/logos/sensetime.png">
+              <a target="_blank" href="https://www.sensetime.com">
+                <img alt="SenseTime" src="https://static.thehack.org.cn/2018/img/shared/logos/sensetime.png">
               </a>
-              <a target="_blank" href="//www.jiuzhang.com">
-                <img alt="Jiuzhang" src="//static.thehack.org.cn/2018/img/shared/logos/jiuzhang.png">
+              <a target="_blank" href="https://www.jiuzhang.com">
+                <img alt="Jiuzhang" src="https://static.thehack.org.cn/2018/img/shared/logos/jiuzhang.png">
               </a>
-              <a target="_blank" href="//www.kejisi.com">
-                <img alt="TechTemple" src="//static.thehack.org.cn/2018/img/shared/logos/tech-temple.png">
+              <a target="_blank" href="https://www.kejisi.com">
+                <img alt="TechTemple" src="https://static.thehack.org.cn/2018/img/shared/logos/tech-temple.png">
               </a>
           </div>
       </div>
@@ -315,29 +325,29 @@
       </div>
       <div class="row">
           <div class="col tier tier-sponsor-3">
-            <a target="_blank" href="//microsoft.com">
-              <img alt="Microsoft" src="//static.thehack.org.cn/2018/img/shared/logos/ms.png">
+            <a target="_blank" href="https://microsoft.com">
+              <img alt="Microsoft" src="https://static.thehack.org.cn/2018/img/shared/logos/ms.png">
             </a>
-            <a target="_blank" href="//www.rokid.com">
-              <img alt="Rokid" src="//static.thehack.org.cn/2018/img/shared/logos/rokid-w.png">
+            <a target="_blank" href="https://www.rokid.com">
+              <img alt="Rokid" src="https://static.thehack.org.cn/2018/img/shared/logos/rokid-w.png">
             </a>
             <a target="_blank" href="http://www.oymotion.com">
-              <img alt="OYMotion" src="//static.thehack.org.cn/2018/img/shared/logos/oymotion.png">
+              <img alt="OYMotion" src="https://static.thehack.org.cn/2018/img/shared/logos/oymotion.png">
             </a>
             <a target="_blank" href="http://www.biggerlab.com">
-              <img alt="BiggerLab" src="//static.thehack.org.cn/2018/img/shared/logos/biggerlab.png">
+              <img alt="BiggerLab" src="https://static.thehack.org.cn/2018/img/shared/logos/biggerlab.png">
             </a>
             <a target="_blank" href="http://www.stratasys.com.cn">
-              <img alt="stratasys" src="//static.thehack.org.cn/2018/img/shared/logos/stratasys.png">
+              <img alt="stratasys" src="https://static.thehack.org.cn/2018/img/shared/logos/stratasys.png">
             </a>
             <a target="_blank" href="http://www.jqinvestments.com">
-              <img alt="JQInvestments" src="//static.thehack.org.cn/2018/img/shared/logos/JQInvestments.png">
+              <img alt="JQInvestments" src="https://static.thehack.org.cn/2018/img/shared/logos/JQInvestments.png">
             </a>
-            <a target="_blank" href="//www.ivymaker.com">
-              <img alt="ivymaker" src="//static.thehack.org.cn/2018/img/shared/logos/ivy-maker.png">
+            <a target="_blank" href="https://www.ivymaker.com">
+              <img alt="ivymaker" src="https://static.thehack.org.cn/2018/img/shared/logos/ivy-maker.png">
             </a>
-            <a target="_blank" href="//ruff.io">
-              <img alt="Ruff" src="//static.thehack.org.cn/2018/img/shared/logos/Ruff.png">
+            <a target="_blank" href="https://ruff.io">
+              <img alt="Ruff" src="https://static.thehack.org.cn/2018/img/shared/logos/Ruff.png">
             </a>
           </div>
       </div>
@@ -350,14 +360,14 @@
       </div>
       <div class="row">
           <div class="col tier tier-sponsor-4">
-              <a target="_blank" href="//www.vmware.com">
-                  <img alt="VMWare" src="//static.thehack.org.cn/2018/img/shared/logos/vmware.jpg">
+              <a target="_blank" href="https://www.vmware.com">
+                  <img alt="VMWare" src="https://static.thehack.org.cn/2018/img/shared/logos/vmware.jpg">
               </a>
-              <a target="_blank" href="//www.amaris.com">
-                  <img alt="Amaris" src="//static.thehack.org.cn/2018/img/shared/logos/amaris.png">
+              <a target="_blank" href="https://www.amaris.com">
+                  <img alt="Amaris" src="https://static.thehack.org.cn/2018/img/shared/logos/amaris.png">
               </a>
-              <a target="_blank" href="//www.lewagon.com">
-                  <img alt="Le Wagon" src="//static.thehack.org.cn/2018/img/shared/logos/le-wagon.png">
+              <a target="_blank" href="https://www.lewagon.com">
+                  <img alt="Le Wagon" src="https://static.thehack.org.cn/2018/img/shared/logos/le-wagon.png">
               </a>
           </div>
       </div>
@@ -371,20 +381,19 @@
         </div>
         <div class="row">
             <div class="col tier tier-sponsor-3">
-                <a target="_blank" href="//segmentfault.com/">
-                    <img alt="SegmentFault" src="//static.thehack.org.cn/2018/img/shared/logos/segmentfault-inverted.png">
+                <a target="_blank" href="https://segmentfault.com/">
+                    <img alt="SegmentFault" src="https://static.thehack.org.cn/2018/img/shared/logos/segmentfault-inverted.png">
                 </a>
             </div>
         </div>
     </div>
 
         <!-- JAVASCRIPT -->
-        <script src="//static.thehack.org.cn/2018/lib/jquery/jquery-3.1.1.min.js"></script>
-        <script src="//static.thehack.org.cn/2018/lib/vue/vue.min.js"></script>
-        <script src="//static.thehack.org.cn/2018/lib/vue/vue-resource.min.js"></script>
-        <script src="//static.thehack.org.cn/2018/lib/bootstrap/js/bootstrap.min.js"></script>
-
-        <${input.javascript}/>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js"></script>
+        <!-- <script src="https://static.thehack.org.cn/2018/lib/vue/vue.min.js"></script> -->
+        <!-- <script src="https://static.thehack.org.cn/2018/lib/vue/vue-resource.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
         <!-- /JAVASCRIPT -->
+        <lasso-body/>
     </body>
 </html>

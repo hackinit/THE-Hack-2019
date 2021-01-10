@@ -1,0 +1,13 @@
+{
+  "dependencies": [
+    "../../../../static/2018/css/shared/font.css",
+    "../../../../static/2018/css/shared/styles.css",
+    "../../../../static/2018/css/hackinit/shared/header.css",
+    "../../../../static/2018/css/hackinit/home/styles.css",
+    "../../../../static/2018/css/hackinit/home/banner.css",
+    "../../../../static/2018/css/hackinit/home/about.css",
+    "../../../../static/2018/css/hackinit/home/faqs.css",
+    "../../../../static/2018/css/hackinit/home/sponsor.css",
+    "../../../../static/2018/css/hackinit/home/logos.css"
+  ]
+}
