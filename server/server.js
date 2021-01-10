@@ -26,6 +26,20 @@ require("lasso").configure({
 app.use(require("lasso/middleware").serveStatic());
 
 // Routing based on domain name
+
+// hackinit.org/team
+app.get(["/team", "/:lang/team"], function (req, res) {
+  switch (req.headers.host) {
+    default:
+      // This page is only accessible for hackinit.org/:lang/team
+      // hopefully Nginx can catch and re-write this 404 page
+      res.sendStatus(404);
+      break;
+    case "hackinit.org":
+      require("./src/pages/2017-team")(req, res);
+  }
+});
+
 // Since all routes are "/:lang", this is relatively straightforward
 app.get(["/:lang", "*"], function (req, res) {
   switch (req.headers.host) {

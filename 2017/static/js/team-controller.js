@@ -37,26 +37,27 @@ function logoutSuccess() {
     });
 }
 
-var navbar = new Vue({
-    el: "#navbar-container",
-    data: {
-        loggedIn: false
-    },
-    mounted: function() {
-        Vue.http.get("/api/usersys/user/current/").then(function(response) {
-            navbar.loggedIn = true;
-        }, function(response) {
-            navbar.loggedIn = false;
-        });
-    },
-    methods: {
-        userLogout: function() {
-            Vue.http.get("/api/usersys/user/logout/").then(function(response) {
-                navbar.loggedIn = false;
-                logoutSuccess();
-            }, function() {
-                logoutError();
-            });
-        }
-    }
-});
+// hack.init() has ended. We no longer provide user login services
+// var navbar = new Vue({
+//     el: "#navbar-container",
+//     data: {
+//         loggedIn: false
+//     },
+//     mounted: function() {
+//         Vue.http.get("/api/usersys/user/current/").then(function(response) {
+//             navbar.loggedIn = true;
+//         }, function(response) {
+//             navbar.loggedIn = false;
+//         });
+//     },
+//     methods: {
+//         userLogout: function() {
+//             Vue.http.get("/api/usersys/user/logout/").then(function(response) {
+//                 navbar.loggedIn = false;
+//                 logoutSuccess();
+//             }, function() {
+//                 logoutError();
+//             });
+//         }
+//     }
+// });
