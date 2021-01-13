@@ -81,7 +81,7 @@
 
         <!-- MAIN -->
         <div id="left-bar" class="col-xs-12 hidden-sm hidden-xs logo-background">
-            <img id="main-logo" alt="hackShanghai" src="https://static.thehack.org.cn/2018/img/hackshanghai/logo.png">
+            <img id="main-logo" alt="hackShanghai" src="https://static.thehack.org.cn/2018/img/hackshanghai/logo-medium.png">
             <if(data.lang==="en")>
                 <!-- <div class="horizontal-center buttons"><a id="apply-btn-left" target="_blank" href="https://my.hackshanghai.com" class="btn btn-hacksh btn-lg" role="button">Apply</a></div> -->
                 <div class="horizontal-center buttons"><a id="apply-btn-left" target="_blank" class="btn btn-hacksh btn-lg"
@@ -103,10 +103,10 @@
                 <div class="horizontal-center buttons"><a id="prospectus-btn-left" target="_blank" href="https://static.thehack.org.cn/2018/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button">项目计划书</a></div>
             </if>
             <if(data.lang==="en")>
-                <div class="horizontal-center buttons"><a id="wechat-btn-left" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.thehack.org.cn/2018/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="right">Follow us on WeChat <i class="fa fa-weixin"></i></a></div>
+                <div class="horizontal-center buttons"><a id="wechat-btn-left" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='https://static.thehack.org.cn/2018/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="right">Follow us on WeChat <i class="fa fa-weixin"></i></a></div>
             </if>
             <if(data.lang==="zh")>
-                <div class="horizontal-center buttons"><a id="wechat-btn-left" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.thehack.org.cn/2018/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="right">关注我们的公众号 <i class="fa fa-weixin"></i></a></div>
+                <div class="horizontal-center buttons"><a id="wechat-btn-left" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='https://static.thehack.org.cn/2018/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="right">关注我们的公众号 <i class="fa fa-weixin"></i></a></div>
             </if>
         </div>
         <div id="main" class="col-xs-12 full-width">
@@ -132,10 +132,18 @@
                     <img id="white-logo" alt="hackShanghai" src="https://static.thehack.org.cn/2018/img/hackshanghai/white-logo.svg">
                     <div class="mobile-buttons">
                         <if(data.lang==="en")>
-                            <div class="horizontal-center buttons"><a id="apply-btn-mobile" target="_blank" href="https://my.hackshanghai.com" class="btn btn-hacksh btn-lg" role="button">Apply</a></div>
+                            <!-- <div class="horizontal-center buttons"><a id="apply-btn-mobile" target="_blank" href="https://my.hackshanghai.com" class="btn btn-hacksh btn-lg" role="button">Apply</a></div> -->
+                            <div class="horizontal-center buttons"><a id="apply-btn-mobile" target="_blank" class="btn btn-hacksh btn-lg"
+                                role="button" tabindex="0" data-toggle="popover" data-trigger="focus"
+                                data-content="<div style='width:200px;color:black'>Unfortunately, hackShanghai 2018 has ended. However you can still <a target='_blank' href='https://thehack.org.cn'>visit THE Hack's main site</a> or follow us on WeChat for updates</div>"
+                                data-html="true" data-placement="top">Apply</a></div>
                         </if>
                         <if(data.lang==="zh")>
-                            <div class="horizontal-center buttons"><a id="apply-btn-mobile" target="_blank" href="https://my.hackshanghai.com" class="btn btn-hacksh btn-lg" role="button">参赛申请</a></div>
+                            <!-- <div class="horizontal-center buttons"><a id="apply-btn-mobile" target="_blank" href="https://my.hackshanghai.com" class="btn btn-hacksh btn-lg" role="button">参赛申请</a></div> -->
+                            <div class="horizontal-center buttons"><a id="apply-btn-mobile" target="_blank" class="btn btn-hacksh btn-lg"
+                                role="button" tabindex="0" data-toggle="popover" data-trigger="focus"
+                                data-content="<div style='width:200px;color:black'>很抱歉，hackShanghai 2018 已经落下帷幕。但你还可以访问 <a target='_blank' href='https://thehack.org.cn'>THE Hack 主站</a> 或者关注我们的公众号来获取更新</div>"
+                                data-html="true" data-placement="top">参赛申请</a></div>
                         </if>
                         <if(data.lang==="en")>
                             <div class="horizontal-center buttons"><a id="prospectus-btn-mobile" target="_blank" href="https://static.thehack.org.cn/2018/doc/shared/Prospectus-en_US.pdf" class="btn btn-hacksh btn-lg" role="button">Program Prospectus</a></div>
@@ -144,10 +152,10 @@
                             <div class="horizontal-center buttons"><a id="prospectus-btn-mobile" target="_blank" href="https://static.thehack.org.cn/2018/doc/shared/Prospectus-zh_CN.pdf" class="btn btn-hacksh btn-lg" role="button">项目计划书</a></div>
                         </if>
                         <if(data.lang==="en")>
-                            <div class="horizontal-center buttons"><a id="wechat-btn-mobile" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.thehack.org.cn/2018/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="top">Follow us on WeChat <i class="fa fa-weixin"></i></a></div>
+                            <div class="horizontal-center buttons"><a id="wechat-btn-mobile" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='https://static.thehack.org.cn/2018/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="top">Follow us on WeChat <i class="fa fa-weixin"></i></a></div>
                         </if>
                         <if(data.lang==="zh")>
-                            <div class="horizontal-center buttons"><a id="wechat-btn-mobile" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='//static.thehack.org.cn/2018/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="top">关注我们的公众号 <i class="fa fa-weixin"></i></a></div>
+                            <div class="horizontal-center buttons"><a id="wechat-btn-mobile" target="_blank" class="btn btn-hacksh btn-lg" role="button" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="<img id='wechat-qr' alt='THE Hack WeChat' src='https://static.thehack.org.cn/2018/img/shared/wechat.jpg' style='width:200px'>" data-html="true" data-placement="top">关注我们的公众号 <i class="fa fa-weixin"></i></a></div>
                         </if>
                     </div>
                 </div>
@@ -703,13 +711,13 @@
                 <div class="row">
                     <div class="col-xs-12 tier tier-sponsor-1">
                         <a target="_blank" href="https://2018.thehack.org.cn">
-                            <img alt="THE Hack" src="https://static.thehack.org.cn/2018/img/thehack/logo/th-1024px-c.png">
+                            <img alt="THE Hack" src="https://static.thehack.org.cn/2018/img/thehack/logo/th-256px-c.png">
                         </a>
                         <a target="_blank" href="https://hackinit.org">
-                            <img alt="hack.init()" src="https://static.thehack.org.cn/2018/img/hackinit/logo/hi-1024px-c.png">
+                            <img alt="hack.init()" src="https://static.thehack.org.cn/2018/img/hackinit/logo/hi-256px-c.png">
                         </a>
                         <a target="_blank" href="https://2018.hackshanghai.com">
-                            <img alt="hackShanghai" src="https://static.thehack.org.cn/2018/img/hackshanghai/logo.png">
+                            <img alt="hackShanghai" src="https://static.thehack.org.cn/2018/img/hackshanghai/logo-small.png">
                         </a>
                     </div>
                 </div>
@@ -727,7 +735,7 @@
                           <img alt="ShanghaiTech" src="https://static.thehack.org.cn/2018/img/shared/logos/shtech.png">
                       </a>
                       <a target="_blank">
-                          <img alt="Techomedia" src="https://static.thehack.org.cn/2018/img/shared/logos/Techo.png">
+                          <img alt="Techomedia" src="https://static.thehack.org.cn/2018/img/shared/logos/Techo.jpeg">
                       </a>
                       <a target="_blank" href="http://www.kohler.com.cn">
                           <img alt="Kohler" src="https://static.thehack.org.cn/2018/img/shared/logos/kohler.png">
@@ -787,7 +795,7 @@
                         <img alt="Microchip" src="https://static.thehack.org.cn/2018/img/shared/logos/microchip.jpeg">
                       </a>
                       <a target="_blank" href="https://www.sensetime.com">
-                        <img alt="SenseTime" src="https://static.thehack.org.cn/2018/img/shared/logos/sensetime.png">
+                        <img alt="SenseTime" src="https://static.thehack.org.cn/2018/img/shared/logos/sensetime.jpeg">
                       </a>
                       <a target="_blank" href="https://www.jiuzhang.com">
                         <img alt="Jiuzhang" src="https://static.thehack.org.cn/2018/img/shared/logos/jiuzhang.png">
@@ -877,7 +885,7 @@
                     <if(data.lang==="en")>
                         <div class="col-xs-12 footer">
                             <div class="horizontal-center">
-                                <p>Copyright <i class="fa fa-copyright"></i> 2018 <a href="http://2018.hackshanghai.com">Shanghai InnoCat Information Technology Co., Ltd</a>. All Rights Reserved.</p>
+                                <p>Copyright <i class="fa fa-copyright"></i> 2018-2021 <a href="https://2018.hackshanghai.com">Shanghai InnoCat Information Technology Co., Ltd</a>. All Rights Reserved.</p>
                                 <p><a target="_blank" href="https://static.thehack.org.cn/2018/doc/shared/Code-of-Conduct.pdf">Code of Conduct</a></p>
                             </div>
                         </div>
@@ -885,7 +893,7 @@
                     <if(data.lang==="zh")>
                         <div class="col-xs-12 footer">
                             <div class="horizontal-center">
-                                <p><i class="fa fa-copyright"></i> 2018 <a href="http://2018.hackshanghai.com">上海创喵信息科技有限公司</a>。版权所有。</p>
+                                <p><i class="fa fa-copyright"></i> 2018-2021 <a href="https://2018.hackshanghai.com">上海创喵信息科技有限公司</a>。版权所有。</p>
                                 <p><a target="_blank" href="https://static.thehack.org.cn/2018/doc/shared/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
                             </div>
                         </div>

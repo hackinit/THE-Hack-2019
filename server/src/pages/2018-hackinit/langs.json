@@ -26,8 +26,8 @@
         "zh": "项目计划书"
     },
     "prospectusLink": {
-        "en": "//static.thehack.org.cn/2018/doc/shared/Prospectus-en_US.pdf",
-        "zh": "//static.thehack.org.cn/2018/doc/shared/Prospectus-zh_CN.pdf"
+        "en": "https://static.thehack.org.cn/2018/doc/shared/Prospectus-en_US.pdf",
+        "zh": "https://static.thehack.org.cn/2018/doc/shared/Prospectus-zh_CN.pdf"
     },
     "wechat": {
         "en": "Follow Us",
@@ -49,7 +49,7 @@
             "answer": "一点都不需要！创客马拉松是一个全免费活动，我们将会为你提供一整个周末的饮食、小吃、纪念品与休息区。我们还将报销你的路费！"
         }, {
             "question": "谁可以申请参加？",
-            "answer": "年龄在14至19岁间的人——不管是高中生、大学生或已经辍学——都可以报名参加我们的活动。对于超过年龄限制的申请者，请 <a href=\"http://hackshanghai.com\">点击这里</a> 查看 hackShanghai 的相关信息。"
+            "answer": "年龄在14至19岁间的人——不管是高中生、大学生或已经辍学——都可以报名参加我们的活动。对于超过年龄限制的申请者，请 <a href=\"http://2018.hackshanghai.com\">点击这里</a> 查看 hackShanghai 的相关信息。"
         }, {
             "question": "我小于14岁，但是我还是想来参加。",
             "answer": "请<a href=\"mailto:minors@hackinit.org\">发送一封邮件</a>给我们，并说明你的情况。我们可能可以邀请你参加我们的活动，但仍然取决于你的健康状况及监护人许可。"
@@ -80,7 +80,7 @@
             "answer": "Nada. Zip. Zero. Zilch. We'll provide you with a weekend's worth of swag, meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, we'll even reimburse your travel."
         }, {
             "question": "Who can participate?",
-            "answer": "Anyone within 14-19 years old are welcome to participate, whether you are currently enrolled in high school, university or dropped out. For those who are over the age limit, please  <a href=\"http://hackshanghai.com\">click here</a> for more information of hackShanghai."
+            "answer": "Anyone within 14-19 years old are welcome to participate, whether you are currently enrolled in high school, university or dropped out. For those who are over the age limit, please  <a href=\"http://2018.hackshanghai.com\">click here</a> for more information of hackShanghai."
         }, {
             "question": "What if I’m under 14 and I want to come?",
             "answer": "Please send us <a href=\"mailto:minors@hackinit.org\">an email</a> and indicate your situation. Perhaps we can invite you to join us, but this depends on your health and parental permission."
