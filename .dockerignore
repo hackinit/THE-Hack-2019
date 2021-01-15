@@ -1,0 +1,21 @@
+# npm packages
+node_modules
+
+# compiled marko js
+*.marko.js
+
+# dotenv environment variables file
+.env
+
+# Nginx
+.htpasswd*
+
+# macOS
+.DS_Store
+
+# Vim Swap Files
+*.swp
+*~
+
+server/static/
+server/.cache
