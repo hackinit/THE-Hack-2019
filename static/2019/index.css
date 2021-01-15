@@ -172,3 +172,7 @@ table.day-schedule tr.day th {
         height: 8vh;
     }
 }
+
+html {
+  scroll-behavior: smooth;
+}

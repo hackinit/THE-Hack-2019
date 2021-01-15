@@ -52,6 +52,7 @@ app.get(["/:lang", "*"], function (req, res) {
       break;
     case "2018.thehack.org.cn":
       require("./src/pages/2018-thehack")(req, res);
+      break;
     default:
       // logging before fall-through to display thehack.org.cn
       console.log(
@@ -61,7 +62,7 @@ app.get(["/:lang", "*"], function (req, res) {
         req.headers
       );
     case "thehack.org.cn":
-      require("./src/pages/2019")(req, res)
+      require("./src/pages/2019")(req, res);
   }
 });
 

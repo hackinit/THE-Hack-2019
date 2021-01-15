@@ -1,5 +1,6 @@
 {
   "dependencies": [
-    "../../../../static/2019/index.css"
+    "../../../../static/2019/index.css",
+    "../../../../static/2019/font.css"
   ]
 }

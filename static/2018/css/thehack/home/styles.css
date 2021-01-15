@@ -1,6 +1,6 @@
 .main-btn {
     margin: 5px;
-    width: 150px;
+    width: 200px;
 }
 
 .sub-btn {
@@ -150,4 +150,8 @@
 
 .section-title, .tier {
     margin: 0 auto;
+}
+
+html {
+  scroll-behavior: smooth;
 }

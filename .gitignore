@@ -16,3 +16,6 @@ node_modules
 # Vim Swap Files
 *.swp
 *~
+
+server/static/
+server/.cache
