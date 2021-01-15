@@ -1,0 +1,836 @@
+<!--
+MAINTAINER: Yuchong Pan
+EMAIL:      panyuchong@gmail.com
+-->
+<lasso-page package-path="./browser.json"/>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>THE Hack 2019</title>
+        <meta charset="utf-8"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta
+            name="description"
+            content="THE Hack 是中国最顶级的青年人创客马拉松，也是第一个宣传包容性与文化多样性的开放给高中生的创客马拉松。我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。"/>
+        <link
+            rel="icon"
+            href="https://static.thehack.org.cn/2019/img/homepage/logo-c.png"/>
+        <!-- CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"/>
+        <!-- /CSS -->
+        <lasso-head/>
+    </head>
+    <body>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-93677768-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+        <!-- Navigation Bar -->
+        <nav
+            class="navbar navbar-expand-lg navbar-dark my-nav"
+            style="background-color: rgba(0, 0, 0, .85);">
+            <a class="navbar-brand" href="#">
+                <img
+                    src="https://static.thehack.org.cn/2019/img/homepage/logo.svg"
+                    width="30"
+                    height="30"
+                    class="mr-2 d-inline-block align-top"
+                    alt=""/>
+                <span class="hover-color-change">THE Hack 2019</span>
+            </a>
+            <button
+                class="navbar-toggler"
+                id="collapse"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"/>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <if(data.lang === "en")>
+                    <ul class="navbar-nav float-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#to-faq">FAQ</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#to-schedule">SCHEDULE</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#to-sponsor">SPONSERS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/zh">中文</a>
+                        </li>
+                    </ul>
+                </if>
+                <if(data.lang === "zh")>
+                    <ul class="navbar-nav float-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">关于我们</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#to-faq">常见问题</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#to-schedule">日程安排</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#to-sponsor">合作伙伴</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">ENGLISH</a>
+                        </li>
+                    </ul>
+                </if>
+            </div>
+        </nav>
+        <!-- banner -->
+        <main class="bd-masthead" id="content" role="main">
+            <div class="container pt-5">
+                <div class="row align-items-center m-5">
+                    <div class="col-6 mx-auto mb-3 col-md-4 order-1">
+                        <img
+                            src="https://static.thehack.org.cn/2019/img/homepage/logo.png"
+                            class="img-fluid"/>
+                    </div>
+                    <div class="col-md-6 order-2 text-center text-md-right pr-md-5 mr-md-5">
+                        <h1 class="mb-3 bg-text-purple-bright">THE Hack 2019</h1>
+                        <if(data.lang === "zh")>
+                            <p class="lead">上海交通大学闵行校区</p>
+                        </if>
+                        <if(data.lang === "en")>
+                            <p class="lead">Shanghai Jiao Tong University</p>
+                        </if>
+                        <p class="lead mb-4">7.13 - 7.14</p>
+                        <div class="row mx-n2 mb-2">
+                            <div class="col-md px-2">
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI1OTg2Nzg5OQ==&mid=2247484455&idx=1&sn=222f7f56675f027402a21348df4baee2" class="btn btn-outline-primary">
+                                    <if(data.lang === "zh")>获奖项目名单</if>
+                                    <if(data.lang === "en")>Award Recipients</if>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- about us -->
+        <div id="about" class="container-fluid bg-light">
+            <div class="row">
+                <div class="col-12 about">
+                    <h2>
+                        <b>
+                            <if(data.lang === "zh")>Hi, 欢迎加入 THE Hack 2019！</if>
+                            <if(data.lang === "en")>Hi, Welcome to THE Hack 2019！</if>
+                        </b>
+                    </h2>
+                    <p>
+                        <if(data.lang === "zh")>
+                            “THE”，与中⽂“德”谐⾳，寓意着我们希望可以将有热情有抱负的年轻⼈们聚集在⼀起，形成队伍，通过技术、知识以及他们对世界的独特观察来解决现实问题。
+                        </if>
+                        <if(data.lang === "en")>
+                            “THE”, a word that is homophonic to “virtue” in Chinese, represents our mission to invite more young, aspiring and talented youth to to apply their technical knowledge and skills, combined with their unique observation about the world, to solve issues of various kinds ranging from lifestyle to possibly, human future.
+                        </if>
+                    </p>
+                    <p>
+                        <if(data.lang === "zh")>
+                            今年，我们关注于 “<b>Technology Harvests Enlightenment</b> 科技 收获 启迪” 这⼀主题。<b>THE Hack</b> 将⿎励参赛者们以技术作为⼿段，通过在教育、健康、⾦融等多个不同领域寻找解决⽅案的尝试，便利⼈们的⽣活。
+                        </if>
+                        <if(data.lang === "en")>
+                            This year, we are focusing on <b>“Technology Harvests Enlightenment”</b>. THE Hack seeks to support the young generation to use technology as a mean to harvest human enlightenment, finding feasible solutions in various industries including education, healthcare, finance and more.
+                        </if>
+                    </p>
+                    <p>
+                        <if(data.lang === "zh")>
+                            与去年的THE Hack 2018相同，<b>THE Hack 2019</b> 将为经验丰富者提供资源与桥梁，为新⼿带来知识和实践平台。 同时，<b>THE Hack 2019</b> 也会在去年的基础上融合两⼤组别，邀请300名创客来到现场，为他们打造更精更好的开发体验。
+                        </if>
+                        <if(data.lang === "en")>
+                            Similar to THE Hack 2018, <b>THE Hack 2019</b> will provide sophisticated participants with resources and bridges to high-end technology as well as bringing knowledge and platforms for practice to novices. At the meantime, <b>THE Hack 2019</b> will incorporate the two groups of last year, invite 300 hackers to participate, and create better develop experience for them.
+                        </if>
+                    </p>
+                    <div
+                        class="container mt-4"
+                        style="width: 530px; max-width: 90%; margin: 0 auto;">
+                        <div class="row">
+                            <div class="col-6 text-center">
+                                <if(data.lang === "zh")>微信公众号：</if>
+                                <if(data.lang === "en")>WeChat Official Account:</if>
+                                <br/>
+                                <img
+                                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/Wechat.jpg"
+                                    style="width: 95px;"
+                                    class="mt-md-1"/>
+                                <br/>
+                                <b>鹰科技</b>
+                            </div>
+                            <div class="col-6 text-center">
+                                <if(data.lang === "zh")>往届入口：</if>
+                                <if(data.lang === "en")>Past events:</if>
+                                <br/>
+                                <a href="http://2017.hackinit.org">2017 hack.init()</a>
+                                <br/>
+                                <a href="http://2018.thehack.org.cn">THE Hack 2018</a>
+                                <br/>
+                                <a href="http://hackinit.org">hack.init() 2018</a>
+                                <br/>
+                                <a href="http://2018.hackshanghai.com">hackShanghai 2018</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 创客数量 年龄范围 时间 -->
+        <div class="container-fluid light-cyan pt-5 pb-5">
+            <div class="row bigger-h1">
+                <div class="col-12 col-sm-4 text-center">
+                    <h1>300</h1>
+                    <h4>
+                        <if(data.lang === "zh")>创客</if>
+                        <if(data.lang === "en")>Hackers</if>
+                    </h4>
+                </div>
+                <div class="col-12 col-sm-4 text-center">
+                    <h1>≥ 16</h1>
+                    <h4>
+                        <if(data.lang === "zh")>年龄范围</if>
+                        <if(data.lang === "en")>Ages</if>
+                    </h4>
+                </div>
+                <div class="col-12 col-sm-4 text-center">
+                    <h1 id="hack-hours">24</h1>
+                    <h4>
+                        <if(data.lang === "zh")>小时</if>
+                        <if(data.lang === "en")>Hours</if>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <!-- 常见问题 -->
+        <div id="faq" class="container mt-2">
+            <div id="to-faq" class="empty-div"/>
+            <div>
+                <h2 class="text-center mb-5">
+                    <b>
+                        <if(data.lang === "zh")>常见问题</if>
+                        <if(data.lang === "en")>Frequently Asked Questions</if>
+                    </b>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq1-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq1">
+                                    <div class="card-heading" role="tab" id="faq1">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>什么是<b>THE Hack</b>？</if>
+                                            <if(data.lang==='en')>What is <b>THE Hack</b>?</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq1-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq1">
+                                    <div class="card-body">
+                                        <span>
+                                            <b>THE Hack</b>
+                                            <if(data.lang==='zh')> 是中国最顶级的青年人创客马拉松，也是第一个宣传包容性与文化多样性的开放给高中生的创客马拉松。我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。</if>
+                                            <if(data.lang==='en')> is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning.</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq2-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq2">
+                                    <div class="card-heading" role="tab" id="faq2">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>参加活动需要交费吗？</if>
+                                            <if(data.lang==='en')>How much will this cost?</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq2-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq2">
+                                    <div class="card-body">
+                                        <span>
+                                            <if(data.lang==='zh')>一点都不需要！创客马拉松是一个全免费活动，我们将会为你提供一整个周末的饮食、小吃、纪念品与休息区。我们还将报销你的路费！</if>
+                                            <if(data.lang==='en')>Nada. Zip. Zero. Zilch. We'll provide you with a weekend's worth of swag, meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, we'll even reimburse your travel.</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq3-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq3">
+                                    <div class="card-heading" role="tab" id="faq3">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>谁可以申请参加？</if>
+                                            <if(data.lang==='en')>Who can participate?</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq3-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq3">
+                                    <div class="card-body">
+                                        <span>
+                                            <if(data.lang==='zh')>任何人——不管是高中生、大学生或已经辍学——都可以报名参加我们的主活动。——你将有机会进入与主活动同时展开的邀请赛中进行开发，并获得来自风投与创业孵化机构更多的关注。</if>
+                                            <if(data.lang==='en')>Anyone are welcome to participate, whether you are currently enrolled in high school, university or dropped out. For those who are over the age limit, you are still encouraged to apply to be considered for our Invitational that runs simultaneously with our main event. Our VC and incubator partners will pay more attention to your work!</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq4-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq4">
+                                    <div class="card-heading" role="tab" id="faq4">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>我小于16岁，但是我还是想来参加。</if>
+                                            <if(data.lang==='en')>What if I am under 16 and I want to come?</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq4-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq4">
+                                    <div class="card-body">
+                                        <span>
+                                            <if(data.lang==='zh')>很可惜，由于法律限制，本次活动我们无法允许小于16岁的未成年人参赛。但是，欢迎在7月13日到活动现场了解本次创客马拉松中所创造出的一系列令人惊叹的项目！</if>
+                                            <if(data.lang==='en')>Unfortunately, due to legal restrictions, we are unable to host minors less than 16 years old. However, feel free to come to our expo on July 13 to check out awesome projects built by others during the hackathon.</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq5-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq5">
+                                    <div class="card-heading" role="tab" id="faq5">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>我从未参加过创客马拉松，怎么办？</if>
+                                            <if(data.lang==='en')>I've never been to a hackathon and I'm nervous.</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq5-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq5">
+                                    <div class="card-body">
+                                        <span>
+                                            <if(data.lang==='zh')>不要怕！<b>THE Hack</b> 的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。</if>
+                                            <if(data.lang==='en')>Have no fear - <b>THE Hack</b> is, first and foremost, a fun learning experience! We will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to some workshops before and at the hackathon to better prepare yourself.</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq6-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq6">
+                                    <div class="card-heading" role="tab" id="faq6">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>我该如何前往 <b>THE Hack</b>活动现场？</if>
+                                            <if(data.lang==='en')>How will I get to <b>THE Hack</b>?</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq6-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq6">
+                                    <div class="card-body">
+                                        <span>
+                                            <if(data.lang==='zh')>上海本地参赛者可以通过轨道交通轻松到达上海交通大学闵行校区。市内交通费用我们不会报销。对于非上海参赛者，我们将为你提供路费报销。更多关于报销的信息将在选手入选后发布。</if>
+                                            <if(data.lang==='en')>For hackers in Shanghai, you can get to Shanghai Jiao Tong University easily by public transportation which will not be reimbursed. We do provide travel reimbursement to non-Shanghai hackers. More information will be available to you once accepted.</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq7-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq7">
+                                    <div class="card-heading" role="tab" id="faq7">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>日程安排是怎样的？</if>
+                                            <if(data.lang==='en')>What's the event schedule?</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq7-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq7">
+                                    <div class="card-body">
+                                        <span>
+                                            <b>THE Hack</b>
+                                            <if(data.lang==='zh')>将在7月13日早上8点开始，7月14日下午五点结束。更详细的日程将在活动前发布。</if>
+                                            <if(data.lang==='en')> will commence at 8 am, July 13 and last until 5 pm, July 14. More detailed schedule will be available prior to the opening.</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq8-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq8">
+                                    <div class="card-heading" role="tab" id="faq8">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>我可以睡觉、运动……吗？</if>
+                                            <if(data.lang==='en')>Can I sleep, workout...?</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq8-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq8">
+                                    <div class="card-body">
+                                        <span>
+                                            <if(data.lang==='zh')>当然可以！我们在活动期间设置了休息区域，你也可以在上海交通大学的校园中慢跑健身。</if>
+                                            <if(data.lang==='en')>Of course! We will have designated resting area during our event. You can also enjoy the clean air in Shanghai Jiao Tong University by jogging around the campus!</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq9-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq9">
+                                    <div class="card-heading" role="tab" id="faq9">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>我需要带些什么？</if>
+                                            <if(data.lang==='en')>What should I bring?</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq9-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq9">
+                                    <div class="card-body">
+                                        <span>
+                                            <if(data.lang==='zh')>请注意携带好由政府颁发的身份证明文件（身份证、护照等）。你的身份证件将作为允许你进入活动现场与租赁器材的依据。你也需要携带便携式电脑、充电器、毛毯或睡袋、卫生用品等日常用品。</if>
+                                            <if(data.lang==='en')>Bring your government-issued ID for entrance and to borrow hardware from our rental booth. You’ll also need your laptop and charger for hacking, a blanket or a sleeping bag for resting, and toiletries for hygiene.</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 m-2">
+                            <div class="card shadow-sm">
+                                <a
+                                    class="card-title mb-0 p-2"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    href="#faq10-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="faq10">
+                                    <div class="card-heading" role="tab" id="faq10">
+                                        <i class="fa fa-plus"/>
+                                        <span>
+                                            <if(data.lang==='zh')>我还有别的问题！</if>
+                                            <if(data.lang==='en')>I still have more questions!</if>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div
+                                    id="faq10-collapse"
+                                    class="card-collapse collapse"
+                                    role="tabpanel"
+                                    aria-labelledby="faq10">
+                                    <div class="card-body">
+                                        <span>
+                                            <if(data.lang==='zh')>请随时发邮件到 <a href="mailto:marketing@hackinit.org">marketing@hackinit.org</a>，我们的团队非常乐意帮助你解决任何问题！</if>
+                                            <if(data.lang==='en')>No problem! Email us anytime at <a href="mailto:marketing@hackinit.org">marketing@hackinit.org</a>. We are happy to help!</if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 日程 -->
+        <!-- <div id="schedule" class="container">
+            <div id="to-schedule" class="empty-div"></div>
+            <div class="row">
+                <div class="col-12">
+                    <h2 id="schedule-title">
+                        <b>日程安排</b>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <table class="day-schedule">
+                        <tbody>
+                            <tr class="day">
+                                <th colspan="3">星期六</th>
+                            </tr>
+                            <tr>
+                                <th>时间</th>
+                                <th colspan="2">活动</th>
+                            </tr>
+                            <tr>
+                                <td>8:00 - 9:30</td>
+                                <td colspan="2">参赛者签到</td>
+                            </tr>
+                            <tr>
+                                <td>9:30 - 10:55</td>
+                                <td colspan="2">开幕式</td>
+                            </tr>
+                            <tr>
+                                <td>10:50 - 11:30</td>
+                                <td colspan="2">团队组建及破冰活动</td>
+                            </tr>
+                            <tr>
+                                <td>11:30 - </td>
+                                <td colspan="2">开始开发</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 - 14:00</td>
+                                <td>项目管理入门</td>
+                                <td>Microchip 硬件工作坊</td>
+                            </tr>
+                            <tr>
+                                <td>12:45 - 14:45</td>
+                                <td colspan="2">午餐供应</td>
+                            </tr>
+                            <tr>
+                                <td>14:15 - 16:15</td>
+                                <td>网站前端开发入门</td>
+                                <td>Google 云平台入门</td>
+                            </tr>
+                            <tr>
+                                <td>16:30 - 18:30</td>
+                                <td>机器学习入门</td>
+                                <td>Django 入门</td>
+                            </tr>
+                            <tr>
+                                <td>18:00 - 20:00</td>
+                                <td colspan="2">晚餐供应</td>
+                            </tr>
+                            <tr>
+                                <td>23:30 - </td>
+                                <td colspan="2">夜间零食供应</td>
+                            </tr>
+                            <tr>
+                                <td>23:00 - 6:00 (Sunday)</td>
+                                <td colspan="2">参赛者不允许离开开发场地</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <table class="day-schedule">
+                        <tbody>
+                            <tr class="day">
+                                <th colspan="3">星期日</th>
+                            </tr>
+                            <tr>
+                                <th>时间</th>
+                                <th colspan="2">活动</th>
+                            </tr>
+                            <tr>
+                                <td>8:30 - 9:30</td>
+                                <td colspan="2">早餐供应</td>
+                            </tr>
+                            <tr>
+                                <td>9:15 - 11:15</td>
+                                <td colspan="2">HACKx 平台入门</td>
+                            </tr>
+                            <tr>
+                                <td>10:00 - 11:00</td>
+                                <td colspan="2">女性创客聚会</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 - 13:30</td>
+                                <td colspan="2">午餐供应</td>
+                            </tr>
+                            <tr>
+                                <td>11:30 - </td>
+                                <td colspan="2">停止开发；项目提交截止</td>
+                            </tr>
+                            <tr>
+                                <td>11:30 - 12:00</td>
+                                <td colspan="2">休息</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 - 12:40</td>
+                                <td colspan="2">第一轮展示</td>
+                            </tr>
+                            <tr>
+                                <td>12:50 - 13:30</td>
+                                <td colspan="2">第二轮展示</td>
+                            </tr>
+                            <tr>
+                                <td>14:00 - 15:30</td>
+                                <td colspan="2">前十名路演</td>
+                            </tr>
+                            <tr>
+                                <td>15:40 - 16:40</td>
+                                <td colspan="2">闭幕式</td>
+                            </tr>
+                            <tr>
+                                <td>16:30 - 18:00</td>
+                                <td colspan="2">清理</td>
+                            </tr>
+                            <tr>
+                                <td>17:00 - </td>
+                                <td colspan="2">非上海科技大学学生必须离开校园</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> -->
+        <!-- 主办方 -->
+        <div id="host" class="mb-5 text-center">
+            <div id="to-sponsor" class="empty-div"/>
+            <h2 class="text-center mb-3">
+                <b>
+                    <if(data.lang === "zh")>主办方</if>
+                    <if(data.lang === "en")>Hosted By</if>
+                </b>
+            </h2>
+            <img
+                class="m-md-4 m-2 sponsor-img"
+                src="https://static.thehack.org.cn/2019/img/homepage/logo-c.png"/>
+            <img
+                class="m-md-4 m-2 sponsor-img"
+                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/techomedia.jpeg"/>
+        </div>
+        <div id="sponsor" class="container mb-5 text-center">
+            <h2 class="text-center mb-3">
+                <b>
+                    <if(data.lang === "zh")>白金赞助商</if>
+                    <if(data.lang === "en")>Giga Sponsors</if>
+                </b>
+            </h2>
+            <div>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/plat_pegasus.jpg"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/plat_ruff.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/shunwang.jpg"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/AInnovation.png"/>
+            </div>
+            <h2 class="text-center mb-3">
+                <b>
+                    <if(data.lang === "zh")>黄金赞助商</if>
+                    <if(data.lang === "en")>Mega Sponsors</if>
+                </b>
+            </h2>
+            <div>
+                <!-- <div class="col"> -->
+                    <img
+                    class="m-md-4 m-2 sponsor-img"
+                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/Google.jpg"/>
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_microchip.jpg"/>
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="../../../../static/2019/img/homepage/sponsors/gold_biggerlab.png"/>
+                <!-- </div> -->
+                <!-- <div class="col"> -->
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_nav.jpg"/>
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_xnode.PNG"/>
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="../../../../static/2019/img/homepage/sponsors/jiuzhang.png"/>
+                    <!-- </div> -->
+                </div>
+            <h2 class="text-center mb-3">
+                <b>
+                    <if(data.lang === "zh")>白银赞助商</if>
+                    <if(data.lang === "en")>Kilo Sponsors</if>
+                </b>
+            </h2>
+            <div>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/JiuKouShan.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/ivy-maker-new.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/baiya.jpg"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/inroad.png"/>
+            </div>
+            <h2 class="text-center mb-3">
+                <b>
+                    <if(data.lang === "zh")>战略合作平台</if>
+                    <if(data.lang === "en")>Strategic Partnerships</if>
+                </b>
+            </h2>
+            <div>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/hackhub.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/segment_fault.jpg"/>
+                <!-- <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/coop_ark.jpg"/> -->
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/coop_kohler.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/plat_pegasus.jpg"/>
+            </div>
+        </div>
+        <footer
+            class="footer mt-auto py-2"
+            style="background-color: rgba(0, 0, 0, .85);">
+            <div class="container text-center">
+                <span class="text-muted" style="text-size: 16px;">
+                    <img src="https://static.thehack.org.cn/2019/img/homepage/logo.png" width="30px"/>
+                    &emsp;Copyright @ 2019-2021 by THE Hack
+                </span>
+            </div>
+        </footer>
+        <!-- JAVASCRIPT -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.slim.min.js"/>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"/> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"/>
+        <script>
+            var n = 0
+            $("#collapse").click(function(){
+                if (n%2 === 0) {
+                    document.getElementsByClassName("navbar-nav")[0].classList.remove("float-right")
+                }else {
+                    setTimeout(function(){
+                        document.getElementsByClassName("navbar-nav")[0].classList.add("float-right")
+                    }, 190)
+
+                }
+
+                n = n + 1;
+            })
+        </script>
+        <!-- /JAVASCRIPT -->
+        <lasso-body/>
+    </body>
+</html>

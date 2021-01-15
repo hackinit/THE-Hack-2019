@@ -1,0 +1,8 @@
+{
+  "dependencies": [
+    "../../../../static/2018/css/shared/styles.css",
+    "../../../../static/2018/css/shared/font.css",
+    "../../../../static/2018/css/hackshanghai/home/styles.css",
+    "../../../../static/2018/js/hackshanghai/home/controller.js"
+  ]
+}

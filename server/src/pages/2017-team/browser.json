@@ -1,0 +1,7 @@
+{
+  "dependencies": [
+    "../../../../static/2017/css/team-styles.css",
+    "../../../../static/2017/css/font.css",
+    "../../../../static/2017/js/team-controller.js"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "the-hack-2019",
+  "version": "1.0.0",
+  "description": "Monorepo for THE Hack 2019 websites",
+  "main": "server.js",
+  "repository": "https://github.com/hackinit/THE-Hack-2019",
+  "author": "THE Hack Team <ye.shu@hackinit.org>",
+  "license": "AGPL-3.0",
+  "private": true,
+  "dependencies": {
+    "@lasso/marko-taglib": "^1.0.15",
+    "express": "^4.17.1",
+    "lasso": "^3.4.0",
+    "lasso-marko": "^2.5.0",
+    "marko": "^4.23.10"
+  }
+}

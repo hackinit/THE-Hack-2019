@@ -2,6 +2,7 @@
     MAINTAINER: Yuchong Pan
     EMAIL:      panyuchong@gmail.com
 -->
+<lasso-page package-path="./browser.json"/>
 
 <!DOCTYPE HTML>
 <html>
@@ -10,17 +11,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>hack.init() | July 8 - 9, 2017</title>
-        <link rel="icon" href="/s/img/favicon.ico">
+        <link rel="icon" href="https://static.thehack.org.cn/2017/img/favicon.ico">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="/s/lib/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/s/lib/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/s/lib/font-awesome-animation/font-awesome-animation.min.css">
-        <link rel="stylesheet" href="/s/lib/alertify/css/alertify.css">
-        <link rel="stylesheet" href="/s/lib/intl-tel-input/css/intlTelInput.css">
-        <link rel="stylesheet" href="/s/css/styles.css">
-        <link rel="stylesheet" href="/s/css/font.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@0.0.10/dist/font-awesome-animation.min.css">
+        <!-- <link rel="stylesheet" href="/s/lib/alertify/css/alertify.css"> -->
+        <!-- <link rel="stylesheet" href="/s/lib/intl-tel-input/css/intlTelInput.css"> -->
+        <!-- <link rel="stylesheet" href="/s/css/styles.css"> -->
+        <!-- <link rel="stylesheet" href="/s/css/font.css"> -->
         <!-- /CSS -->
+        <lasso-head/>
     </head>
 
     <body>
@@ -46,7 +48,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand navbar-brand-logo" href>
-                        <img alt="Brand" src="/s/img/favicon.ico">
+                        <img alt="Brand" src="https://static.thehack.org.cn/2017/img/favicon.ico" />
                     </a>
                     <a class="navbar-brand navbar-brand-text" href>
                         hack.init()
@@ -95,8 +97,8 @@
             <div class="row">
                 <div class="col-xs-12 hackinit-logo-col">
                     <div class="horizontal-center">
-                        <img id="hackinit-horizontal" class="hackinit-logo" alt="HackInitLogoHorizontal" src="/s/img/hackinit-horizontal-small.png">
-                        <img id="hackinit-vertical" class="hackinit-logo" alt="HackInitLogoVertical" src="/s/img/hackinit-vertical-small.png">
+                        <img id="hackinit-horizontal" class="hackinit-logo" alt="HackInitLogoHorizontal" src="https://static.thehack.org.cn/2017/img/hackinit-horizontal-small.png" />
+                        <img id="hackinit-vertical" class="hackinit-logo" alt="HackInitLogoVertical" src="https://static.thehack.org.cn/2017/img/hackinit-vertical-small.png" />
                     </div>
                     <div class="row subscription-row">
                         <!--
@@ -128,7 +130,7 @@
                         </div>
                         -->
                         <div class="col-xs-12 col-sm-6 col-sm-offset-3 input-field">
-                            <a target="_blank" href="/s/doc/Award-Recipients.pdf" class="btn btn-primary caapp-btn-sm">
+                            <a target="_blank" href="https://static.thehack.org.cn/2017/doc/Award-Recipients.pdf" class="btn btn-primary caapp-btn-sm">
                                 <i class="fa fa-cloud fa-resource"></i>
                                 <if(data.lang==="en")><span>Award Recipients</span></if>
                                 <if(data.lang==="zh")><span>获奖项目名单</span></if>
@@ -228,7 +230,7 @@
                                 <div id="faq1-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq1">
                                     <div class="panel-body">
                                         <if(data.lang==="en")>
-                                            <span><b>hack.init()</b> is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning.</span>
+                                            <span><b>hack.init()</b> is China's premier youth hackathon and the first hackathon that promotes inclusivity and cultural diversity. We are bringing together 300 brightest minds across the country to Shanghai for a 24-hour, nonstop feast of creativity, collaboration, and rapid learning.</span>
                                         </if>
                                         <if(data.lang==="zh")>
                                             <span><b>hack.init()</b>是中国最顶级的青年人创客马拉松，也是第一个宣传包容性与文化多样性的开放给高中生的创客马拉松。我们将全国各地300名有才干的年轻人聚集在上海，参加全天24小时的协作和学习盛宴，创意的火花时刻迸发。</span>
@@ -312,7 +314,7 @@
                                 <div id="faq5-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq5">
                                     <div class="panel-body">
                                         <if(data.lang==="en")>
-                                            <span>Have no fear - <b>hack.init()</b> is, first and foremost, a fun learning experience! We will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to over 10 workshops before and at the hackathon to better prepare yourself.</span>
+                                            <span>Have no fear - <b>hack.init()</b> is, first and foremost, a fun learning experience! We will have beginner workshops held by industry professionals in design, mobile applications, web, hardware, AI, VR and more! Once you are accepted, you will have the opportunity to come to over 10 workshops before and at the hackathon to better prepare yourself.</span>
                                         </if>
                                         <if(data.lang==="zh")>
                                             <span>不要怕！<b>hack.init()</b>的创始宗旨是希望它能成为你人生中的第一场创客马拉松。我们将努力使活动变得非常有趣。在创客马拉松前数周与活动时，我们将开展一系列工作坊，让选手能够收获基本的开发知识，包括网页编程、移动应用、硬件、人工智能、虚拟现实等。当你入选后，你将有机会从中根据自己的时间选择。</span>
@@ -608,7 +610,7 @@
                         <h2><b>Sponsorship</b></h2>
                         <p><b>hack.init()</b> is a perfect place to feel the vibe of the newest generation. At <b>hack.init()</b>, you can build your brand images, uncover new talents and promote your products or API. We are doing our best to make this event the greatest of its kind, and would love to have you support our efforts.</p>
                         <p>Interested in sponsoring us? Read our prospectus and shoot us an email at <a href="mailto:sponsorship@hackinit.org">sponsorship@hackinit.org</a>.</p>
-                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="/s/doc/Program-Prospectus.pdf" class="btn btn-info btn-lg" role="button">Program Prospectus</a></div>
+                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="https://static.thehack.org.cn/2017/doc/Program-Prospectus.pdf" class="btn btn-info btn-lg" role="button">Program Prospectus</a></div>
                     </div>
                 </if>
                 <if(data.lang==="zh")>
@@ -616,7 +618,7 @@
                         <h2><b>与我们合作</b></h2>
                         <p><b>hack.init()</b>是感受新一代青年人活力与能力的绝佳活动。在<b>hack.init()</b>中，你可以提升品牌形象、发掘绝佳新人才、收获高质量的产品测试与反馈者、宣传你的产品或API。我们正在竭尽所能创造出中国创客马拉松的新巅峰，并无比希望你能参与到我们的伟大任务中来。</p>
                         <p>有兴趣与我们合作？ 请阅读我们的项目计划书。如果有意向与我们合作，请发送邮件到<a href="mailto:sponsorship@hackinit.org">sponsorship@hackinit.org</a>与我们联系！</p>
-                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="/s/doc/Program-Prospectus-zh.pdf" class="btn btn-info btn-lg" role="button">项目计划书</a></div>
+                        <div class="horizontal-center"><a id="prospectus-btn" target="_blank" href="https://static.thehack.org.cn/2017/doc/Program-Prospectus-zh.pdf" class="btn btn-info btn-lg" role="button">项目计划书</a></div>
                     </div>
                 </if>
             </div>
@@ -631,8 +633,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-1">
-                    <a target="_blank" href="http://hackinit.io/team">
-                        <img alt="The hack.init() Team" src="/s/img/hackinit-logo.png">
+                    <a target="_blank" href="http://2017.hackinit.org/team">
+                        <img alt="The hack.init() Team" src="https://static.thehack.org.cn/2017/img/hackinit-logo.png" />
                     </a>
                 </div>
             </div>
@@ -648,10 +650,10 @@
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-1">
                     <a>
-                        <img alt="Techomedia" src="/s/img/Techo.png">
+                        <img alt="Techomedia" src="https://static.thehack.org.cn/2017/img/Techo.png" />
                     </a>
                     <a target="_blank" href="http://www.shanghaitech.edu.cn/">
-                        <img alt="ShanghaiTech University" src="/s/img/shtech.png">
+                        <img alt="ShanghaiTech University" src="https://static.thehack.org.cn/2017/img/shtech.png" />
                     </a>
                 </div>
             </div>
@@ -667,139 +669,139 @@
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-2">
                     <a>
-                        <img alt="Coleadffee" src="/s/img/coleadffee.png">
+                        <img alt="Coleadffee" src="https://static.thehack.org.cn/2017/img/coleadffee.png"/>
                     </a>
                     <a target="_blank" href="https://www.sogou.com/">
-                        <img alt="Sogou" src="/s/img/sogou.png">
+                        <img alt="Sogou" src="https://static.thehack.org.cn/2017/img/sogou.png"/>
                     </a>
                     <a target="_blank" href="https://www.leapmotion.com/">
-                        <img alt="Leap Motion" src="/s/img/leap-motion.png">
+                        <img alt="Leap Motion" src="https://static.thehack.org.cn/2017/img/leap-motion.png"/>
                     </a>
                     <a target="_blank" href="https://www.initialview.com/">
-                        <img alt="InitialView" src="/s/img/IV.png">
+                        <img alt="InitialView" src="https://static.thehack.org.cn/2017/img/IV.png"/>
                     </a>
                     <a target="_blank" href="https://www.google.com/">
-                        <img alt="Google" src="/s/img/google.png">
+                        <img alt="Google" src="https://static.thehack.org.cn/2017/img/google.png"/>
                     </a>
                     <a>
-                        <img alt="Cisco" src="/s/img/cisco.png">
+                        <img alt="Cisco" src="https://static.thehack.org.cn/2017/img/cisco.png"/>
                     </a>
                     <a target="_blank" href="http://www.dreamt.cn/">
-                        <img alt="DreamT" src="/s/img/aws.png">
+                        <img alt="DreamT" src="https://static.thehack.org.cn/2017/img/aws.png"/>
                     </a>
                     <a target="_blank" href="http://www.cccoach.cn/">
-                        <img alt="CCCoach" src="/s/img/cccoach.png">
+                        <img alt="CCCoach" src="https://static.thehack.org.cn/2017/img/cccoach.png"/>
                     </a>
                     <a target="_blank" href="http://www.makeblock.com/">
-                        <img alt="Makeblock" src="/s/img/makeblock.png">
+                        <img alt="Makeblock" src="https://static.thehack.org.cn/2017/img/makeblock.png"/>
                     </a>
                     <a target="_blank" href="http://www.wolfram.com/">
-                        <img alt="Wolfram" src="/s/img/wolfram.png">
+                        <img alt="Wolfram" src="https://static.thehack.org.cn/2017/img/wolfram.png"/>
                     </a>
                     <a target="_blank" href="https://ruff.io/">
-                        <img alt="Ruff" src="/s/img/Ruff.jpg">
+                        <img alt="Ruff" src="https://static.thehack.org.cn/2017/img/Ruff.jpg"/>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-3">
                     <a target="_blank" href="https://www.lintcode.com/en/">
-                        <img alt="LintCode" src="/s/img/lintcode.jpeg">
+                        <img alt="LintCode" src="https://static.thehack.org.cn/2017/img/lintcode.jpeg"/>
                     </a>
                     <a target="_blank" href="http://www.ivymaker.com/">
-                        <img alt="Ivy Maker" src="/s/img/ivy-maker.png">
+                        <img alt="Ivy Maker" src="https://static.thehack.org.cn/2017/img/ivy-maker.png"/>
                     </a>
                     <a target="_blank" href="http://www.innospring.net/">
-                        <img alt="InnoSpring" src="/s/img/innospring.png">
+                        <img alt="InnoSpring" src="https://static.thehack.org.cn/2017/img/innospring.png"/>
                     </a>
                     <a target="_blank" href="https://indico.io/">
-                        <img alt="Indico" src="/s/img/Indico-Logo-Final-Black.png">
+                        <img alt="Indico" src="https://static.thehack.org.cn/2017/img/Indico-Logo-Final-Black.png"/>
                     </a>
                     <a target="_blank" href="http://www.microchip.com/">
-                        <img alt="Microchip" src="/s/img/microchip.jpeg">
+                        <img alt="Microchip" src="https://static.thehack.org.cn/2017/img/microchip.jpeg"/>
                     </a>
                     <a target="_blank" href="http://www.incake.net/">
-                        <img alt="InCake" src="/s/img/incake.png">
+                        <img alt="InCake" src="https://static.thehack.org.cn/2017/img/incake.png"/>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-4">
                     <a target="_blank" href="http://www.liulishuo.com/">
-                        <img alt="Yingyu Liulishuo" src="/s/img/liulishuo.png">
+                        <img alt="Yingyu Liulishuo" src="https://static.thehack.org.cn/2017/img/liulishuo.png"/>
                     </a>
                     <a target="_blank" href="https://www.dfrobot.com/">
-                        <img alt="DFRobot" src="/s/img/dfrobot.png">
+                        <img alt="DFRobot" src="https://static.thehack.org.cn/2017/img/dfrobot.png"/>
                     </a>
                     <a target="_blank" href="http://www.toutiao.com/">
-                        <img alt="Toutiao" src="/s/img/toutiao.png">
+                        <img alt="Toutiao" src="https://static.thehack.org.cn/2017/img/toutiao.png"/>
                     </a>
                     <a target="_blank" href="http://www.sujitech.com/">
-                        <img alt="Suji Tech" src="/s/img/sujitech_logo.png">
+                        <img alt="Suji Tech" src="https://static.thehack.org.cn/2017/img/sujitech_logo.png"/>
                     </a>
                     <a target="_blank" href="https://unity3d.com/">
-                        <img alt="Unity" src="/s/img/unity-logo-rgb.png">
+                        <img alt="Unity" src="https://static.thehack.org.cn/2017/img/unity-logo-rgb.png"/>
                     </a>
                     <a target="_blank" href="http://www.inaservice.com.cn/">
-                        <img alt="InaService" src="/s/img/inaservice.png">
+                        <img alt="InaService" src="https://static.thehack.org.cn/2017/img/inaservice.png"/>
                     </a>
                     <a target="_blank" href="https://c.m.suning.com/sc1.html">
-                        <img alt="Suning" src="/s/img/suning.png">
+                        <img alt="Suning" src="https://static.thehack.org.cn/2017/img/suning.png"/>
                     </a>
                     <a target="_blank" href="http://nic.club/">
-                        <img alt=".club" src="/s/img/club.png">
+                        <img alt=".club" src="https://static.thehack.org.cn/2017/img/club.png"/>
                     </a>
                     <a target="_blank" href="http://get.tech/">
-                        <img alt=".tech" src="/s/img/tech.png">
+                        <img alt=".tech" src="https://static.thehack.org.cn/2017/img/tech.png"/>
                     </a>
                     <a target="_blank" href="https://www.lewagon.com/shanghai">
-                        <img alt="Le Wagon" src="/s/img/le-wagon.png">
+                        <img alt="Le Wagon" src="https://static.thehack.org.cn/2017/img/le-wagon.png"/>
                     </a>
                     <a target="_blank" href="http://thunkable.com/#/">
-                        <img alt="Thunkable" src="/s/img/thunkable.png">
+                        <img alt="Thunkable" src="https://static.thehack.org.cn/2017/img/thunkable.png"/>
                     </a>
                     <a target="_blank" href="https://www.digitalocean.com/">
-                        <img alt="DigitalOcean" src="/s/img/digitalocean.png">
+                        <img alt="DigitalOcean" src="https://static.thehack.org.cn/2017/img/digitalocean.png"/>
                     </a>
                     <a>
-                        <img alt="Zhishu" src="/s/img/zs-steam.png">
+                        <img alt="Zhishu" src="https://static.thehack.org.cn/2017/img/zs-steam.png"/>
                     </a>
                     <a>
-                        <img alt="Yershari" src="/s/img/yershari.png">
+                        <img alt="Yershari" src="https://static.thehack.org.cn/2017/img/yershari.png"/>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-5">
                     <a target="_blank" href="http://www.amaris.com/">
-                        <img alt="Amaris" src="/s/img/amaris.png">
+                        <img alt="Amaris" src="https://static.thehack.org.cn/2017/img/amaris.png"/>
                     </a>
                     <a target="_blank" href="https://gocn.io/">
-                        <img alt="GoCN" src="/s/img/gocn.png">
+                        <img alt="GoCN" src="https://static.thehack.org.cn/2017/img/gocn.png"/>
                     </a>
                     <a target="_blank" href="https://www.jetbrains.com/">
-                        <img alt="JetBrains" src="/s/img/JetBrains.png">
+                        <img alt="JetBrains" src="https://static.thehack.org.cn/2017/img/JetBrains.png"/>
                     </a>
                     <a target="_blank" href="https://www.jisuanke.com/">
-                        <img alt="Jisuanke" src="/s/img/jisuanke.png">
+                        <img alt="Jisuanke" src="https://static.thehack.org.cn/2017/img/jisuanke.png"/>
                     </a>
                     <a target="_blank" href="https://www.thalmic.com/">
-                        <img alt="Thalmic Labs" src="/s/img/thalmic_labs.png">
+                        <img alt="Thalmic Labs" src="https://static.thehack.org.cn/2017/img/thalmic_labs.png"/>
                     </a>
                     <a target="_blank" href="http://www.choosemuse.com/">
-                        <img alt="Muse" src="/s/img/muse.png">
+                        <img alt="Muse" src="https://static.thehack.org.cn/2017/img/muse.png"/>
                     </a>
                     <a target="_blank" href="https://www.clarifai.com/">
-                        <img alt="Clarifai" src="/s/img/clarifai.png">
+                        <img alt="Clarifai" src="https://static.thehack.org.cn/2017/img/clarifai.png"/>
                     </a>
                     <a target="_blank" href="https://www.twilio.com/">
-                        <img alt="Twilio" src="/s/img/twilio.png">
+                        <img alt="Twilio" src="https://static.thehack.org.cn/2017/img/twilio.png"/>
                     </a>
                     <a target="_blank" href="http://codevs.cn/">
-                        <img alt="CodeVS" src="/s/img/codevs.jpg">
+                        <img alt="CodeVS" src="https://static.thehack.org.cn/2017/img/codevs.jpg"/>
                     </a>
                     <a target="_blank" href="https://www.codingame.com/">
-                        <img alt="CodinGame" src="/s/img/codingame.png">
+                        <img alt="CodinGame" src="https://static.thehack.org.cn/2017/img/codingame.png"/>
                     </a>
                 </div>
             </div>
@@ -815,16 +817,16 @@
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-3">
                     <a target="_blank" href="http://www.i-lab.sh.cn/">
-                        <img alt="i-lab" src="/s/img/ilab.png">
+                        <img alt="i-lab" src="https://static.thehack.org.cn/2017/img/ilab.png"/>
                     </a>
                     <a target="_blank" href="http://www.kfstartups.com/">
-                        <img alt="Kungfu" src="/s/img/kungfu.png">
+                        <img alt="Kungfu" src="https://static.thehack.org.cn/2017/img/kungfu.png"/>
                     </a>
                     <a target="_blank" href="http://www.tisiwi.com/">
-                        <img alt="Tisiwi" src="/s/img/tisiwi.png">
+                        <img alt="Tisiwi" src="https://static.thehack.org.cn/2017/img/tisiwi.png"/>
                     </a>
                     <a target="_blank" href="http://www.innospring.net/">
-                        <img alt="InnoSpring" src="/s/img/innospring.png">
+                        <img alt="InnoSpring" src="https://static.thehack.org.cn/2017/img/innospring.png"/>
                     </a>
                 </div>
             </div>
@@ -840,43 +842,43 @@
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor">
                     <a target="_blank" href="http://english.cast.org.cn/">
-                        <img alt="China Association for Science and Technology" src="/s/img/cast.png">
+                        <img alt="China Association for Science and Technology" src="https://static.thehack.org.cn/2017/img/cast.png"/>
                     </a>
                     <a>
-                        <img alt="CLH" src="/s/img/CLH_logo.png">
+                        <img alt="CLH" src="https://static.thehack.org.cn/2017/img/CLH_logo.png"/>
                     </a>
                     <a target="_blank" href="http://www.youthpowerchina.cn/">
-                        <img alt="Youth Power" src="/s/img/qingli.png">
+                        <img alt="Youth Power" src="https://static.thehack.org.cn/2017/img/qingli.png"/>
                     </a>
                     <a>
-                        <img alt="Voyage" src="/s/img/voyage.jpeg">
+                        <img alt="Voyage" src="https://static.thehack.org.cn/2017/img/voyage.jpeg"/>
                     </a>
                     <a>
-                        <img alt="Mushroom Cloud" src="/s/img/mushroom-cloud.png">
+                        <img alt="Mushroom Cloud" src="https://static.thehack.org.cn/2017/img/mushroom-cloud.png"/>
                     </a>
                     <a target="_blank" href="https://segmentfault.com/">
-                        <img alt="SegmentFault" src="/s/img/segmentfault.png">
+                        <img alt="SegmentFault" src="https://static.thehack.org.cn/2017/img/segmentfault.png"/>
                     </a>
                     <a target="_blank" href="http://www.maoyouhui.org/">
-                        <img alt="Maoyouhui" src="/s/img/myh.png">
+                        <img alt="Maoyouhui" src="https://static.thehack.org.cn/2017/img/myh.png"/>
                     </a>
                     <a target="_blank" href="https://www.womenwhocode.com/shanghai">
-                        <img alt="Women Who Code" src="/s/img/women-who-code.png">
+                        <img alt="Women Who Code" src="https://static.thehack.org.cn/2017/img/women-who-code.png"/>
                     </a>
                     <a target="_blank" href="https://www.teambition.com/">
-                        <img alt="Teambition" src="/s/img/teambition.png">
+                        <img alt="Teambition" src="https://static.thehack.org.cn/2017/img/teambition.png"/>
                     </a>
                     <a target="_blank" href="https://www.hackx.org/">
-                        <img alt="HACKx" src="/s/img/hackx.png">
+                        <img alt="HACKx" src="https://static.thehack.org.cn/2017/img/hackx.png"/>
                     </a>
                     <a target="_blank" href="https://jizhi.im/">
-                        <img alt="Jizhi" src="/s/img/jizhi.png">
+                        <img alt="Jizhi" src="https://static.thehack.org.cn/2017/img/jizhi.png"/>
                     </a>
                     <a target="_blank" href="http://technovationchallenge.org/">
-                        <img alt="Technovation" src="/s/img/technovation.png">
+                        <img alt="Technovation" src="https://static.thehack.org.cn/2017/img/technovation.png"/>
                     </a>
                     <a target="_blank" href="https://geekpie.org/zh/">
-                        <img alt="Geek Pie" src="/s/img/geekpie.png">
+                        <img alt="Geek Pie" src="https://static.thehack.org.cn/2017/img/geekpie.png"/>
                     </a>
                 </div>
             </div>
@@ -892,22 +894,22 @@
             <div class="row">
                 <div class="col-xs-12 tier tier-hardware">
                     <a target="_blank" href="http://www.makeblock.com/">
-                        <img alt="Makeblock" src="/s/img/makeblock.png">
+                        <img alt="Makeblock" src="https://static.thehack.org.cn/2017/img/makeblock.png"/>
                     </a>
                     <a target="_blank" href="https://www.dfrobot.com/">
-                        <img alt="DFRobot" src="/s/img/dfrobot.png">
+                        <img alt="DFRobot" src="https://static.thehack.org.cn/2017/img/dfrobot.png"/>
                     </a>
                     <a target="_blank" href="https://www.leapmotion.com/">
-                        <img alt="Leap Motion" src="/s/img/leap-motion.png">
+                        <img alt="Leap Motion" src="https://static.thehack.org.cn/2017/img/leap-motion.png"/>
                     </a>
                     <a target="_blank" href="https://ruff.io/">
-                        <img alt="Ruff" src="/s/img/Ruff.jpg">
+                        <img alt="Ruff" src="https://static.thehack.org.cn/2017/img/Ruff.jpg"/>
                     </a>
                     <a target="_blank" href="https://www.thalmic.com/">
-                        <img alt="Thalmic Labs" src="/s/img/thalmic_labs.png">
+                        <img alt="Thalmic Labs" src="https://static.thehack.org.cn/2017/img/thalmic_labs.png"/>
                     </a>
                     <a target="_blank" href="http://www.choosemuse.com/">
-                        <img alt="Muse" src="/s/img/muse.png">
+                        <img alt="Muse" src="https://static.thehack.org.cn/2017/img/muse.png"/>
                     </a>
                 </div>
             </div>
@@ -923,37 +925,37 @@
             <div class="row">
                 <div class="col-xs-12 tier tier-sponsor-media">
                     <a>
-                        <img alt="Chaping" src="/s/img/chaping.png">
+                        <img alt="Chaping" src="https://static.thehack.org.cn/2017/img/chaping.png"/>
                     </a>
                     <!--<a target="_blank" href="http://36kr.com/">
-                        <img alt="36Kr" src="/s/img/36kr.png">
+                        <img alt="36Kr" src="https://static.thehack.org.cn/2017/img/36kr.png"/>
                     </a>-->
                     <a target="_blank" href="http://technode.com/">
-                        <img alt="TechNode" src="/s/img/technode.png">
+                        <img alt="TechNode" src="https://static.thehack.org.cn/2017/img/technode.png"/>
                     </a>
                     <a target="_blank" href="https://juejin.im/">
-                        <img alt="Juejin" src="/s/img/juejin.png">
+                        <img alt="Juejin" src="https://static.thehack.org.cn/2017/img/juejin.png"/>
                     </a>
                     <a target="_blank" href="http://news.163.com/">
-                        <img alt="Netease News" src="/s/img/netease_news.png">
+                        <img alt="Netease News" src="https://static.thehack.org.cn/2017/img/netease_news.png"/>
                     </a>
                     <a target="_blank" href="http://news.qq.com/">
-                        <img alt="Tencent News" src="/s/img/tencent_news.png">
+                        <img alt="Tencent News" src="https://static.thehack.org.cn/2017/img/tencent_news.png"/>
                     </a>
                     <a target="_blank" href="http://sh.sina.com.cn/">
-                        <img alt="Sina Shanghai" src="/s/img/sina_shanghai.png">
+                        <img alt="Sina Shanghai" src="https://static.thehack.org.cn/2017/img/sina_shanghai.png"/>
                     </a>
                     <a target="_blank" href="http://www.sh.chinanews.com/">
-                        <img alt="China News Shanghai" src="/s/img/chinanews_shanghai.jpg">
+                        <img alt="China News Shanghai" src="https://static.thehack.org.cn/2017/img/chinanews_shanghai.jpg"/>
                     </a>
                     <a target="_blank" href="http://www.eastday.com/">
-                        <img alt="Eastday" src="/s/img/eastday.gif">
+                        <img alt="Eastday" src="https://static.thehack.org.cn/2017/img/eastday.gif"/>
                     </a>
                     <a>
-                        <img alt="Shanghai Television Station" src="/s/img/shanghai_tv_station.jpg">
+                        <img alt="Shanghai Television Station" src="https://static.thehack.org.cn/2017/img/shanghai_tv_station.jpg"/>
                     </a>
                     <a target="_blank" href="http://www.shanghaidaily.com/">
-                        <img alt="ShanghaiDaily" src="/s/img/shanghai_daily.jpg">
+                        <img alt="ShanghaiDaily" src="https://static.thehack.org.cn/2017/img/shanghai_daily.jpg"/>
                     </a>
                 </div>
             </div>
@@ -977,16 +979,16 @@
                 <if(data.lang==="en")>
                     <div class="col-xs-12 footer">
                         <div class="horizontal-center">
-                            <p>Copyright <i class="fa fa-copyright"></i> 2017 <a href>hackinit.io</a>. All Rights Reserved.</p>
-                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
+                            <p>Copyright <i class="fa fa-copyright"></i> 2017-2021 <a href>hackinit.org</a>. All Rights Reserved.</p>
+                            <p><a target="_blank" href="https://static.thehack.org.cn/2017/doc/Code-of-Conduct.pdf">Code of Conduct</a></p>
                         </div>
                     </div>
                 </if>
                 <if(data.lang==="zh")>
                     <div class="col-xs-12 footer">
                         <div class="horizontal-center">
-                            <p>Copyright <i class="fa fa-copyright"></i> 2017 <a href>hackinit.io</a>. 版权所有。</p>
-                            <p><a target="_blank" href="/s/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
+                            <p>Copyright <i class="fa fa-copyright"></i> 2017-2021 <a href>hackinit.org</a>. 版权所有。</p>
+                            <p><a target="_blank" href="https://static.thehack.org.cn/2017/doc/Code-of-Conduct.pdf">选⼿⾏为守则</a></p>
                         </div>
                     </div>
                 </if>
@@ -995,15 +997,16 @@
         <!-- /MAIN -->
 
         <!-- JAVASCRIPT -->
-        <script src="/s/lib/jquery/jquery-3.1.1.min.js"></script>
-        <script src="/s/lib/vue/vue.min.js"></script>
-        <script src="/s/lib/vue/vue-resource.min.js"></script>
-        <script src="/s/lib/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/s/lib/waypoints/jquery.waypoints.min.js"></script>
-        <script src="/s/lib/countUp/countUp.min.js"></script>
-        <script src="/s/lib/alertify/js/alertify.js"></script>
-        <script src="/s/lib/intl-tel-input/js/intlTelInput.min.js"></script>
-        <script src="/s/js/controller.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js"></script>
+        <!-- <script src="/s/lib/vue/vue.min.js"></script> -->
+        <!-- <script src="/s/lib/vue/vue-resource.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/jquery.waypoints.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/countup@1.8.2/dist/countUp.min.js"></script>
+        <!-- <script src="/s/lib/alertify/js/alertify.js"></script> -->
+        <!-- <script src="/s/lib/intl-tel-input/js/intlTelInput.min.js"></script> -->
+        <!-- <script src="/s/js/controller.js"></script> -->
         <!-- /JAVASCRIPT -->
+        <lasso-body/>
     </body>
 </html>
