@@ -6,8 +6,6 @@ const markoExpress = require("marko/express");
 const app = express();
 const port = 8080;
 
-var template = require("../2018/thehack/marko/src/pages/home/template.marko");
-
 app.use(markoExpress()); // enable res.marko(template, data)
 
 var isProduction = process.env.NODE_ENV === "production";
@@ -33,6 +31,8 @@ app.get(["/team", "/:lang/team"], function (req, res) {
     default:
       // This page is only accessible for hackinit.org/:lang/team
       // hopefully Nginx can catch and re-write this 404 page
+      res.sendStatus(404);
+      break;
     case "2017.hackinit.org":
       require("./src/pages/2017-team")(req, res);
   }
@@ -50,7 +50,8 @@ app.get(["/:lang", "*"], function (req, res) {
     case "2018.hackshanghai.com":
       require("./src/pages/2018-hackshanghai")(req, res);
       break;
-    // case not found
+    case "2018.thehack.org.cn":
+      require("./src/pages/2018-thehack")(req, res);
     default:
       // logging before fall-through to display thehack.org.cn
       console.log(
@@ -59,12 +60,10 @@ app.get(["/:lang", "*"], function (req, res) {
         "] The request with following headers is recognized",
         req.headers
       );
-    case "2018.thehack.org.cn":
-      require("../2018/thehack/marko/src/pages/home")(req, res);
-      break;
+    case "thehack.org.cn":
+      require("./src/pages/2019")(req, res)
   }
 });
-
 
 app.listen(port, function () {
   console.log("Server started! Try it out:\nhttp://localhost:" + port + "/");
