@@ -172,17 +172,18 @@ EMAIL:      panyuchong@gmail.com
                         class="container mt-4"
                         style="width: 530px; max-width: 90%; margin: 0 auto;">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-6 text-center">
                                 <if(data.lang === "zh")>微信公众号：</if>
                                 <if(data.lang === "en")>WeChat Official Account:</if>
-                                <b>鹰科技</b>
                                 <br/>
                                 <img
                                     src="https://static.thehack.org.cn/2019/img/homepage/sponsors/Wechat.jpg"
                                     style="width: 95px;"
                                     class="mt-md-1"/>
+                                <br/>
+                                <b>鹰科技</b>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6 text-center">
                                 <if(data.lang === "zh")>往届入口：</if>
                                 <if(data.lang === "en")>Past events:</if>
                                 <br/>
@@ -200,7 +201,7 @@ EMAIL:      panyuchong@gmail.com
             </div>
         </div>
         <!-- 创客数量 年龄范围 时间 -->
-        <div class="light-cyan pt-5 pb-5">
+        <div class="container-fluid light-cyan pt-5 pb-5">
             <div class="row bigger-h1">
                 <div class="col-12 col-sm-4 text-center">
                     <h1>300</h1>
@@ -694,11 +695,11 @@ EMAIL:      panyuchong@gmail.com
             </div>
         </div> -->
         <!-- 主办方 -->
-        <div id="sponsor" class="mb-5 text-center">
+        <div id="host" class="mb-5 text-center">
             <div id="to-sponsor" class="empty-div"/>
             <h2 class="text-center mb-3">
                 <b>
-    <if(data.lang === "zh")>主办方</if>
+                    <if(data.lang === "zh")>主办方</if>
                     <if(data.lang === "en")>Hosted By</if>
                 </b>
             </h2>
@@ -709,76 +710,100 @@ EMAIL:      panyuchong@gmail.com
                 class="m-md-4 m-2 sponsor-img"
                 src="https://static.thehack.org.cn/2019/img/homepage/sponsors/techomedia.jpeg"/>
         </div>
-        <div id="sponsor" class="mb-5 text-center">
+        <div id="sponsor" class="container mb-5 text-center">
             <h2 class="text-center mb-3">
                 <b>
-    <if(data.lang === "zh")>白金赞助商</if>
+                    <if(data.lang === "zh")>白金赞助商</if>
                     <if(data.lang === "en")>Giga Sponsors</if>
                 </b>
             </h2>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/plat_pegasus.jpg"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/plat_ruff.png"/>
-            <div id="to-sponsor" class="empty-div"/>
+            <div>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/plat_pegasus.jpg"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/plat_ruff.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/shunwang.jpg"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/AInnovation.png"/>
+            </div>
             <h2 class="text-center mb-3">
                 <b>
-    <if(data.lang === "zh")>黄金赞助商</if>
+                    <if(data.lang === "zh")>黄金赞助商</if>
                     <if(data.lang === "en")>Mega Sponsors</if>
                 </b>
             </h2>
-            <img
-                class="m-md-4 m-2 sponsor-img"
+            <div>
+                <!-- <div class="col"> -->
+                    <img
+                    class="m-md-4 m-2 sponsor-img"
                 src="https://static.thehack.org.cn/2019/img/homepage/sponsors/Google.jpg"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_microchip.jpg"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_nav.jpg"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_biggerlab.PNG"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_xnode.PNG"/>
-            <div id="to-sponsor" class="empty-div"/>
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_microchip.jpg"/>
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="../../../../static/2019/img/homepage/sponsors/gold_biggerlab.png"/>
+                <!-- </div> -->
+                <!-- <div class="col"> -->
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_nav.jpg"/>
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="https://static.thehack.org.cn/2019/img/homepage/sponsors/gold_xnode.PNG"/>
+                    <img
+                        class="m-md-4 m-2 sponsor-img"
+                        src="../../../../static/2019/img/homepage/sponsors/jiuzhang.png"/>
+                    <!-- </div> -->
+                </div>
             <h2 class="text-center mb-3">
                 <b>
-    <if(data.lang === "zh")>白银赞助商</if>
+                    <if(data.lang === "zh")>白银赞助商</if>
                     <if(data.lang === "en")>Kilo Sponsors</if>
                 </b>
             </h2>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/JiuKouShan.png"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/ivy-maker.png"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/baiya.jpg"/>
-            <div id="to-sponsor" class="empty-div"/>
+            <div>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/JiuKouShan.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/ivy-maker-new.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/baiya.jpg"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/inroad.png"/>
+            </div>
             <h2 class="text-center mb-3">
                 <b>
-    <if(data.lang === "zh")>战略合作平台</if>
+                    <if(data.lang === "zh")>战略合作平台</if>
                     <if(data.lang === "en")>Strategic Partnerships</if>
                 </b>
             </h2>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/hackhub.png"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/segment fault.jpg"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/coop_ark.jpg"/>
-            <img
-                class="m-md-4 m-2 sponsor-img"
-                src="https://static.thehack.org.cn/2019/img/homepage/sponsors/coop_kohler.png"/>
+            <div>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/hackhub.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/segment_fault.jpg"/>
+                <!-- <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/coop_ark.jpg"/> -->
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="https://static.thehack.org.cn/2019/img/homepage/sponsors/coop_kohler.png"/>
+                <img
+                    class="m-md-4 m-2 sponsor-img"
+                    src="../../../../static/2019/img/homepage/sponsors/plat_pegasus.jpg"/>
+            </div>
         </div>
         <footer
             class="footer mt-auto py-2"
@@ -792,7 +817,7 @@ EMAIL:      panyuchong@gmail.com
         </footer>
         <!-- JAVASCRIPT -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.slim.min.js"/>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"/>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"/> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"/>
         <script>
             var n = 0

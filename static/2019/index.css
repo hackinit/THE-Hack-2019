@@ -144,19 +144,26 @@ table.day-schedule tr.day th {
 }
 
 .sponsor-img {
-    width: 12vw;
+    max-width: 16vw;
+    max-height: 10vw;
+}
+
+#sponsor div {
+    margin-bottom: 2em;
 }
 
 
 @media(max-width:1000px) {
     .sponsor-img {
-        width: 20vw;
+        max-width: 20vw;
+        max-height: 12.5vw;
     }
 }
 
 @media(max-width:576px) {
     .sponsor-img {
-        width: 80px;
+        max-width: 30%;
+        max-height: 12vw;
     }
     #Google {
         width: 120px;
