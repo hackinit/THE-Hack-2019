@@ -9,7 +9,7 @@
   "author": "THE Hack Tech Team",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "marko": "^4.15.6"
   }
 }
