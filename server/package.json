@@ -9,7 +9,7 @@
   "private": true,
   "dependencies": {
     "@lasso/marko-taglib": "^1.0.15",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "lasso": "^3.4.0",
     "lasso-marko": "^2.5.0",
     "marko": "^4.23.10"
